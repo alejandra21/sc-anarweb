@@ -667,7 +667,7 @@ class YacimientoAdmin(admin.ModelAdmin):
                       ('manifestacion', 'La Manifestación'),
                       ('tecnicas', 'Técnicas'),
                       ('conservacion', 'Conservación'),
-                      ('manifestaciones', 'Valores de la Roca'),
+                      ('manifestaciones', 'Manifestaciones Asociadas'),
                       ('apoyos', 'Apoyos'),
                       ('observaciones', 'Observaciones')                      
                       )
