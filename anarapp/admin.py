@@ -667,7 +667,7 @@ class YacimientoAdmin(admin.ModelAdmin):
                       ('manifestacion', 'La Manifestación'),
                       ('tecnicas', 'Técnicas'),
                       ('conservacion', 'Conservación'),
-                      ('manifestaciones', 'Manifestaciones Asociadas'),
+                      ('manifestaciones', 'Valores de la Roca'),
                       ('apoyos', 'Apoyos'),
                       ('observaciones', 'Observaciones')                      
                       )
@@ -710,7 +710,7 @@ class PiedraAdmin (admin.ModelAdmin):
     suit_form_tabs = (('generales', 'Datos Generales de la Roca'),
                       ('figuras', 'Figuras'),
                       ('tratamientos', 'Tratamiento para fotografia'),
-                      ('manifestaciones', 'Manifestaciones Asociadas'),
+                      ('manifestaciones', 'Valores de la Roca'),
                       ('apoyos', 'Apoyos'),
                       ('observaciones', 'Observaciones')                        
                       )	
