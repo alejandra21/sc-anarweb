@@ -1580,10 +1580,10 @@ class Foto (models.Model):
     fecha = models.CharField('13.1.1. Fecha', blank = True, null= True, max_length=100)
     fotografo  = CharField('13.1.2. Fotógrafo')
     institucion  = CharField('13.1.3. Institucion ')
-    numReferencia = CharField('13.1.4. Nro de referencia')
-    numRollo = CharField('13.1.5. Nro de rollo')
-    numFoto = CharField('13.1.6. Nro de foto')
-    numMarcaNegativo = CharField('13.1.7. Nro marca en negativo')
+    numReferencia = CharField('13.1.4. Nro de referencia',blank=True,null=True)
+    numRollo = CharField('13.1.5. Nro de rollo',blank=True,null=True)
+    numFoto = CharField('13.1.6. Nro de foto',blank=True,null=True)
+    numMarcaNegativo = CharField('13.1.7. Nro marca en negativo',blank=True,null=True)
     esDeAnar = models.BooleanField('13.1.8. ¿Es de Anar?')
     numCopiaAnarFotoAN = CharField('13.1.8.1. Num Copia',blank=True,null=True)
 
@@ -2167,7 +2167,7 @@ class OtrosValPiedra(OtrosValores):
     
     class Meta:
         verbose_name = ''
-        verbose_name_plural = '15. Otros valores de la Roca'
+        verbose_name_plural = '15. Valores de la Roca'
 
 # Observaciones
 
