@@ -1578,12 +1578,12 @@ class Foto (models.Model):
     tipoFotoNA = models.BooleanField('13.1.0.2. No Aerea')
     tipoFotoS  = models.BooleanField('13.1.0.3. Satelital')
     fecha = models.CharField('13.1.1. Fecha', blank = True, null= True, max_length=100)
-    fotografo  = CharField('13.1.2. Fotógrafo')
-    institucion  = CharField('13.1.3. Institucion ')
+    fotografo  = CharField('13.1.2. Fotógrafo',blank = True, null= True)
+    institucion  = CharField('13.1.3. Institucion ',blank = True, null= True)
     numReferencia = CharField('13.1.4. Nro de referencia',blank=True,null=True)
     numRollo = CharField('13.1.5. Nro de rollo',blank=True,null=True)
     numFoto = CharField('13.1.6. Nro de foto',blank=True,null=True)
-    numMarcaNegativo = CharField('13.1.7. Nro marca en negativo',blank=True,null=True)
+    numMarcaNegativo = CharField('13.1.7. Nro marca en negativo',blank=True,null=True,default=None)
     esDeAnar = models.BooleanField('13.1.8. ¿Es de Anar?')
     numCopiaAnarFotoAN = CharField('13.1.8.1. Num Copia',blank=True,null=True)
 
@@ -1627,10 +1627,10 @@ class EscNatPiedra(RepGrafPiedra):
         (7, '7 - Papel de arroz'),
     )
     esEscNatPiedra = models.BooleanField('13.2.1. Reproducción gráfica escala natural')
-    tipoReproduccione = models.IntegerField('13.2.1.1. Reproducción gráfica', choices = TIPO_REPRODUCCION_NATURAL)
-    numPiezasP = models.IntegerField('13.2.1.2. Número de piezas')
-    institutoP  = CharField('13.2.1.3. Institución ', )
-    personaP  = CharField('13.2.1.4. Persona ', )
+    tipoReproduccione = models.IntegerField('13.2.1.1. Reproducción gráfica', choices = TIPO_REPRODUCCION_NATURAL,blank=True, null=True,default = None)
+    numPiezasP = models.IntegerField('13.2.1.2. Número de piezas',blank=True, null=True,default = None)
+    institutoP  = CharField('13.2.1.3. Institución ',blank=True, null=True,default = None)
+    personaP  = CharField('13.2.1.4. Persona ',blank=True, null=True,default = None)
 
     abbr = 'enp'
 
@@ -1648,10 +1648,10 @@ class EscRedPiedra(RepGrafPiedra):
         (2, '2 - Matriz'),
     )
     esEscNatPiedra = models.BooleanField('13.3.1. Reproducción gráfica escala reducida')
-    tipoReproduccion = models.IntegerField('13.3.1.1. Reproducción gráfica', choices = TIPO_REPRODUCCION_REDUCIDA)
-    numPiezasP = models.IntegerField('13.3.1.2. Número de piezas')
-    institutoP  = CharField('13.3.1.3. Institución ', )
-    personaP  = CharField('13.3.1.4. Persona ', )
+    tipoReproduccion = models.IntegerField('13.3.1.1. Reproducción gráfica', choices = TIPO_REPRODUCCION_REDUCIDA,blank=True, null=True,default = None)
+    numPiezasP = models.IntegerField('13.3.1.2. Número de piezas',blank=True, null=True,default = None)
+    institutoP  = CharField('13.3.1.3. Institución ',blank=True, null=True,default = None)
+    personaP  = CharField('13.3.1.4. Persona ',blank=True, null=True,default = None)
     
     abbr = 'erp'
 
