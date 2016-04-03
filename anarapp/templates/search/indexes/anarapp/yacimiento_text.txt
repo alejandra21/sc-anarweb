@@ -1,0 +1,5 @@
+{{ object.codigo }}
+{{ object.nombre }}
+{{ object.pais }}
+{{ object.estado }}
+{{ object.municipio }}

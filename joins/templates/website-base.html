@@ -1,0 +1,132 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>{% block pagetitle %}ANAR{% endblock %} - ANAR</title>
+        <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+        <!-- JQUERY -->
+		<script type="text/javascript" src="{% static "site/jquery/jquery-2.1.3.min.js" %}"></script>
+
+		<!-- BOOTSTRAP -->
+        <link rel="stylesheet" type="text/css" href=" {% static "site/bootstrap/css/bootstrap.min.css" %}"/>
+        <script type="text/javascript" src="{% static "site/bootstrap/js/bootstrap.min.js" %}"></script>
+
+        <!-- STYLE -->
+        <link rel="stylesheet" type="text/css" href="{% static "site/css/basico.css" %}"/>    </head>
+	<script>
+	        function setImageVisible(id, v) {
+        	var img = document.getElementById(id);
+		var atras = document.getElementById('contenido');
+		var fondo = document.getElementById('fondo');
+		if (v == 'block'){
+			atras.style.display ='none';
+			fondo.style.display ='block';
+		}else{
+			atras.style.display ='block';
+			fondo.style.display ='none';
+		}
+        	img.style.display = v;
+    		}
+
+			
+	</script>
+    <body>	
+
+	<table style="float:right"><tbody><tr><td style="font-size:16px;padding:2px">
+	 <b>IDIOMA:</b></td>
+	 <td style="padding:1px"><a href={% url en %}>
+		<img src="{% static "images/uk.jpg" %}" style="width:70%" />
+	 </a></td>
+	 <td style="padding:1px"><a href={% url index %}>
+		<img src="{% static "images/es.gif" %}" style="width:85%" />
+	 </a></td>
+	</tr></tbody></table>
+
+
+    	<div class="container-fluid" style="height: 100%;">
+    		<!-- TOPBAR -->
+    		<div class="row topbar"  style="background-image: url(/static/site/imagenes/backhead.jpg);background-size:20%;background-repeat:repeat;padding:1%" align="center">
+   				<!-- LOGO -->
+
+   				<div class="col-xs-10 logo " style="float:none">
+				<table><tbody><tr><td>
+                    <object pluginspage="http://www.macromedia.com/go/getflashplayer" wmode="transparent" type="application/x-shockwave-flash" style="display:inline;" width="100%" data="/static/site/imagenes/grabado-izquierdo2.swf"></object>
+		    </td><td><img width="50%" src="/static/site/imagenes/LogoANAR.gif" style="display:inline;"></td><td>
+   		    <object pluginspage="http://www.macromedia.com/go/getflashplayer" wmode="transparent" type="application/x-shockwave-flash" style="display:inline;" width="100%" data="/static/site/imagenes/grabado-derecho2.swf"></object>
+   				</td></tr></tbody></table></div>
+    		</div>
+            <!-- MAIN -->
+    		<div class="row main" style="height: 80%;">    			
+    			<div class="row-same-height" style="height: 100%;">
+    				<!-- MAIN MENU -->
+	    			<div class="col-xs-2 col-xs-height col-top main-menu izq" style="background:black" >
+							<table class="list-unstyled main-menu">
+				<tbody><tr>
+                                <td style="background-color:#BF3300"><a href="/cruces">
+					<span id="es_si" >Software Interactivo</span>
+					<span id="en_si" style="display:none">Interactive Software</span>
+					<span id="fr_si" style="display:none">Logiciel Interactif</span>
+			     </a></td></tr>
+                                <tr><td style="background-color:#FF4000"><a href="#">
+					<span id="es_ra" >Realidad Aumentada (demo)</span>
+					<span id="en_ra" style="display:none">Agumented Reality (demo)</span>
+					<span id="fr_ra" style="display:none">R&eacute;alit&eacute; augment&eacute;e</span>
+			     </a></td></tr>
+                                <tr><td style="background-color:#B18904"><a href="#">
+					<span id="es_gp" >Geoportal</span>
+					<span id="en_gp" style="display:none">Geoportal</span>
+					<span id="fr_gp" style="display:none">G&eacute;oportail</span>
+			     </a></td></tr>
+                                <tr><td style="background-color:#FFBF00"><a href="#">
+					<span id="es_jd" >Juegos Didacticos</span>
+					<span id="en_jd" style="display:none">Didactic Games</span>
+					<span id="fr_jd" style="display:none">Jeux didactiques</span>
+				</a></td></tr>
+				</tbody></table>
+	    			</div>
+	    			<!-- MAIN CONTENT -->
+	    			<div class="col-xs-10 col-xs-height col-top main-content der">
+
+
+	    				<!-- SUBMENU -->
+                        <div class="row">
+                            <div class="col-xs-12 sub-menu">
+                                    {% block submenu %}{% endblock %}
+                            </div>
+                        </div>
+	    				<!-- CONTENT -->
+	    				<div class="row">
+	    					<div class="col-xs-12 content" style="background-image: url(/static/site/imagenes/backhead.jpg); background-size:20%; background-repeat:repeat">
+	    						<h3 class="title">{% block title %}ANAR{% endblock %}</h3>
+	    						<ul>
+                                {% block content %}{% endblock %}
+								</ul>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+    		</div>
+
+		
+
+    		<!-- FOOTER -->
+    		<div class="row footer">
+    			<div class="col-xs-12 " style="">
+                    <a href="{% url index %}">Inicio</a>  |
+                    <a href="{% url origenytrayectoria %}">Quienes somos</a>  |
+                    <a href="{% url nota %}">Patrimonio Rupestre Venezolano</a>  |
+                    <a href="{% url manifestacionesylaescuela %}">Programa de Educaci&oacute;n</a>  |
+                    <a href="{% url productos %}">Productos y Servicios</a>  |
+                    <a href="{% url contacto %}">Contacto</a>  
+                </div>
+    		</div>
+    	</div>
+    </body>
+</html>

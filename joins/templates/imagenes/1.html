@@ -1,0 +1,64 @@
+{% extends "website-base.html" %}
+{% load staticfiles %}
+{% block pagetitle %}Pagina Principal{% endblock %}
+{% block title %}{% endblock %}
+{% block user %}
+Ruby de Valencia
+{% endblock %}
+
+{% block submenu %}
+<ul class="list-inline ">
+	<table><tr>
+        <td class="active"><a href="{% url index %}">Inicio</a></td>
+    <td role="presentation" class="dropdown ">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">Quienes somos</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url origenytrayectoria %}">Origen y Trayectoria</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url areasdeespecializacion %}">&Aacute;reas de Especializaci&oacute;n Organigrama</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url profesionalesadjuntos %}">Profesionales adjuntos</a></li>
+        </ul>
+    </td>
+    <td role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">Patrimonio Rupestre <br> Venezolano</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url leydeproteccion %}">Ley de Protecci&oacute;n del Patrimonio - Nota</a></li>
+            <li role="presentation"><a style="color: purple;" role="menuitem" tabindex="-1" href="{% url pinturasrupestres %}">Pinturas Rupestres</a></li>
+            <li role="presentation"><a style="color: #DF7401;" role="menuitem" tabindex="-1" href="{% url geoglifo %}">Geoglifo</a></li>
+            <li role="presentation"><a style="color: red;" role="menuitem" tabindex="-1" href="{% url petroglifo %}">Petroglifo</a></li>
+            <li role="presentation"><a style="color: #424242;" role="menuitem" tabindex="-1" href="{% url amoladores %}">Amoladores L&iacute;ticos, Puntos Acoplados, C&uacute;pulas</a></li>
+            <li role="presentation"><a style="color: #04B404;" role="menuitem" tabindex="-1" href="{% url monumentosmegaliticos %}">Monumentos Megal&iacute;ticos, Menhires, D&oacute;lmenes, Monolitos</a></li>
+            <li role="presentation"><a style="color: #DBA901;" role="menuitem" tabindex="-1" href="{% url micropetroglifos %}">Micropetroglifos</a></li>
+            <li role="presentation"><a style="color: #01A9DB;" role="menuitem" tabindex="-1" href="{% url piedrasycerrosmiticos %}">Piedras y Cerros M&iacute;ticos Naturales</a></li>
+        </ul>
+    </td>
+    <td role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">Programa <br>de Educaci&oacute;n</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url manifestacionesylaescuela %}">Las Manifestaciones Rupestres y la Escuela</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url convenios %}">Convenios - Alianzas</a></li>
+        </ul>
+    </td>
+    <td role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">Productos y <br>Servicios</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url publicaciones %}">Publicaciones</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url productos %}">Productos</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url asesorias %}">Asesor&iacute;as</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url visitasguiadas %}">Visitas Guiadas</a></li>
+        </ul>
+    </td>
+    <td style="border:0px"><a href="{% url contacto %}">Contacto</a></td>
+</tr></table>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-8">
+    <img src="{% static "images/inicio/1.png" %}" />
+    </div>
+    <p> 198 PETROGLIFO <br>Capitanejo<br>Estado Barinas<br>Fotog: E. Ruiz Guevara</p>
+    
+</div>
+<br>
+{% endblock %}

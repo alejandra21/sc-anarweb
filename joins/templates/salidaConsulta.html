@@ -1,0 +1,254 @@
+{% extends "website-base.html" %}
+{% load staticfiles %}
+{% block pagetitle %}Pagina Principal{% endblock %}
+{% block title %}{% endblock %}
+{% block user %}
+Ruby de Valencia
+{% endblock %}
+
+<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+
+{% block submenu %}
+<ul class="list-inline ">
+	<table><tr>
+        <td class="active"><a href="{% url index %}">Inicio</a></td>
+    <td role="presentation" class="dropdown ">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">Quienes somos</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url origenytrayectoria %}">Origen y Trayectoria</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url areasdeespecializacion %}">&Aacute;reas de Especializaci&oacute;n Organigrama</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url profesionalesadjuntos %}">Profesionales adjuntos</a></li>
+        </ul>
+    </td>
+    <td role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">Patrimonio Rupestre <br> Venezolano</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url leydeproteccion %}">Ley de Protecci&oacute;n del Patrimonio - Nota</a></li>
+            <li role="presentation"><a style="color: purple;" role="menuitem" tabindex="-1" href="{% url pinturasrupestres %}">Pinturas Rupestres</a></li>
+            <li role="presentation"><a style="color: #DF7401;" role="menuitem" tabindex="-1" href="{% url geoglifo %}">Geoglifo</a></li>
+            <li role="presentation"><a style="color: red;" role="menuitem" tabindex="-1" href="{% url petroglifo %}">Petroglifo</a></li>
+            <li role="presentation"><a style="color: #424242;" role="menuitem" tabindex="-1" href="{% url amoladores %}">Amoladores L&iacute;ticos, Puntos Acoplados, C&uacute;pulas</a></li>
+            <li role="presentation"><a style="color: #04B404;" role="menuitem" tabindex="-1" href="{% url monumentosmegaliticos %}">Monumentos Megal&iacute;ticos, Menhires, D&oacute;lmenes, Monolitos</a></li>
+            <li role="presentation"><a style="color: #DBA901;" role="menuitem" tabindex="-1" href="{% url micropetroglifos %}">Micropetroglifos</a></li>
+            <li role="presentation"><a style="color: #01A9DB;" role="menuitem" tabindex="-1" href="{% url piedrasycerrosmiticos %}">Piedras y Cerros M&iacute;ticos Naturales</a></li>
+        </ul>
+    </td>
+    <td role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">Programa <br>de Educaci&oacute;n</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url manifestacionesylaescuela %}">Las Manifestaciones Rupestres y la Escuela</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url convenios %}">Convenios - Alianzas</a></li>
+        </ul>
+    </td>
+    <td role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">Productos y <br>Servicios</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url publicaciones %}">Publicaciones</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url productos %}">Productos</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url asesorias %}">Asesor&iacute;as</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url visitasguiadas %}">Visitas Guiadas</a></li>
+        </ul>
+    </td>
+    <td style="border:0px"><a href="{% url contacto %}">Contacto</a></td>
+</tr></table>
+</ul>
+{% endblock %}
+
+{% block content %}
+
+<p>Busqueda de yacimientos: </p>
+
+<form action="/cruces/consulta/" method="get">
+
+    {% csrf_token %}
+
+    <table>
+
+        <td>
+            <label>Manifestacion</label>
+            {{ forma.manifestacion }}
+        </td>
+        <td>
+            <label>Estado</label>
+            {{ forma.estado }}
+        </td>
+
+        <td>
+            <label>Nombre</label>
+            {{ forma.nombre }}
+        </td>
+
+    </table> 
+
+    <br>
+    <center><input type="submit" value="Aceptar" /> </center>
+</form>
+
+<br>
+
+
+<h1>Resultados: </h1><br>
+Campos de búsqueda escogidos:
+<table>
+
+{% if nombreElegido %}
+
+<tr>
+    <td><ul><strong>Nombre :</strong></ul></td>
+    <td>{{nombreElegido}}</td>
+</tr>
+
+{% endif %}
+
+{% if estadoElegido != "---"  %}
+
+<tr>
+    <td><ul><strong>Estado :</strong></ul></td>
+    <td>{{estadoElegido}}</td>
+</tr>
+
+{% endif %}
+
+{% if manifestacionElegida != "---" %}
+
+<tr>
+    <td><ul><strong>Manifestacion :</strong></ul></td>
+    <td>{{ manifestacionElegida }}</td>
+</tr>
+
+{% endif %}
+
+</table>
+
+<br>
+
+
+{% if yacimiento  or manifestacion  %}
+
+    {% if yacimiento != "" %}
+
+        {% for y in yacimiento %}
+
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <div class="media">
+                  <div class="media-left media-middle">
+                      <img src="/upload/yacimiento/2014_11/ñañ0.jpg" style="width:100px;height:100px;"/>
+                  </div>
+                  <div class="media-body">
+                    <!--<h4 class="media-heading">{{ y.nombre }}</h4> -->
+                        <table>
+                                <tr>
+                                    <td><p><strong>Codigo:</strong></p></td>
+                                    <td>{{ y.codigo }}</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><p><strong>Manifestacion:</strong></p></td>
+                                    <td>{{ y.tipos_de_manifestaciones }}</td>
+
+                                </tr>
+
+                                <tr>
+                                    <td><p><strong>Estado:</strong></p></td>
+                                    <td>{{ y.estado }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td><p><strong>Nombre:</strong></p></td>
+                                    <td>{{ y.nombre }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td><p><strong>Autor de la fotografía:</strong></p></td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td><p><strong>Manifestacion asociada:</strong></p></td>
+                                    <td></td>
+                                </tr>
+
+                         </table>
+                  </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        {% endfor %}
+
+    {% else %}
+
+        {% for m in manifestacion %}
+
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                
+                <div class="media">
+                  <div class="media-left media-middle">
+
+                    <img  src="/upload/yacimiento/2014_11/ñañ0.jpg" alt="1.jpeg" style="cursor:pointer" 
+                          onclick="showImage('/upload/yacimiento/2014_11/ñañ0.jpg');">
+                    <div id="largeImgPanel" onclick="hideMe(this);">
+                    <img id="largeImg" style="height: 100%; margin: 0; padding: 0;">
+                    <!--  <img src="/upload/yacimiento/2014_11/ñañ0.jpg" style="width:100px;height:100px;"/> -->
+                  </div>
+                  <div class="media-body">
+                        <table>
+                                <tr>
+                                    <td><p><strong>Codigo :</strong></p></td>
+                                    <td>{{ m.yacimiento.codigo }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td><p><strong>Manifestacion :</strong></p></td>
+                                    <td>{{ m.yacimiento.tipos_de_manifestaciones }}</td>
+
+                                </tr>
+                                
+                                <tr>
+                                    <td><p><strong>Estado :</strong></p></td>
+                                    <td>{{ m.yacimiento.estado }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td><p><strong>Nombre :</strong></p></td>
+                                    <td>{{ m.yacimiento.nombre }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td><p><strong>Autor de la fotografía:</strong></p></td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td><p><strong>Manifestacion asociada:</strong></p></td>
+                                    <td></td>
+                                </tr>
+
+                         </table>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    {% endif %}
+
+{%else%}
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        Sin resultados.
+      </div>
+    </div>
+
+{% endif %}
+
+{% endblock %}

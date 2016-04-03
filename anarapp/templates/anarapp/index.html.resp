@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load staticfiles %}
+	{% load url from future %}
+	<title>Archivo Nacional de Arte Rupestre</title>
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'anarapp/chosen.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'anarapp/anar.css' %}">
+	
+	<script src="{% static 'anarapp/jquery-1.10.1.min.js' %}"></script>
+	<script src="{% static 'anarapp/chosen.jquery.js' %}"></script>
+	<script>
+		$(document).ready(function(){$(".chzn-select").chosen()})
+	</script>
+		<style type="text/css">
+			.chzn-container { width: 30% !important }
+			input[type="text"] { border: 1px solid #AAA; padding: 5px; width: 60% }
+			input[type="checkbox"] { margin-left: 100px !important }
+			.chzn-search input { height: 25px !important }
+		</style>	
+</head>
+<body>
+
+	<ul id="nav">
+		<li><a href="/">Inicio</a></li>
+		<li><a href="quienes">Quienes Somos</a></li>
+		<li><a href="patrimonio">Patrimonio Cultural Arqueológico</a></li>
+		<li><a href="#programa">Programa de Educacion</a></li>
+		<li><a href="#otros">Otros Servicios</a></li>
+		<li><a href="#contacto">Contacto</a></li>
+	</ul>
+
+	<div id="logo">
+		<img src="{% static 'anarapp/logo.png' %}" height="100"><br/>
+	</div>
+	<div id="buscador">
+    	<form method="get" action="{% url 'results' %}">
+		    {{ form.q }} <br/><br/>
+		    {{ form.manifestacion }}<br/><br/>
+		    <input type="submit" class="button" value="Buscar">
+		    <input type="button" class="button" value="Busqueda Avanzada" onclick="location='advanced'">
+ 		</form>
+	</div>
+
+
+
+</body>
+</html>

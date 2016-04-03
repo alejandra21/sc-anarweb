@@ -1,0 +1,78 @@
+{% extends "en/website-base.html" %}
+
+
+{% block user %}
+Ruby de Valencia
+{% endblock %}
+
+{% block submenu %}
+<ul class="list-inline ">
+	<table><tr>
+        <td class="inicial"><a href="{% url en %}">
+	Home
+	</a></td>
+    <td role="presentation" class="dropdown ">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
+	Who we are
+	</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enorigenytrayectoria %}">
+		Beggining and Development</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enareasdeespecializacion %}">
+		Specialization Areas - Organization</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enprofesionalesadjuntos %}">
+		Professionals attached</a></li>
+        </ul>
+    </td>
+    <td role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
+					Venezuelan Rupestrian <br> Heritage</a>
+	<ul class="dropdown-menu" role="menu">
+	    <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url ennota %}">
+					Note</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enleydeproteccion %}">
+					Cultural Heritage Protection Law</a></li>
+            <li role="presentation"><a style="color: purple;" role="menuitem" tabindex="-1" href="{% url enpinturasrupestres %}">
+					Rock Paintings</a></li>
+            <li role="presentation"><a style="color: #DF7401;" role="menuitem" tabindex="-1" href="{% url engeoglifo %}">Geoglyphs</a></li>
+            <li role="presentation"><a style="color: red;" role="menuitem" tabindex="-1" href="{% url enpetroglifo %}">
+					Petroglyphs</a></li>
+            <li role="presentation"><a style="color: #424242;" role="menuitem" tabindex="-1" href="{% url enamoladores %}">
+					Whetstones, Coupled points, Domes</a></li>
+            <li role="presentation"><a style="color: #04B404;" role="menuitem" tabindex="-1" href="{% url enmonumentosmegaliticos %}">
+					Megalithic monuments, Menhirs, Dolmens, Monoliths</a></li>
+            <li role="presentation"><a style="color: #DBA901;" role="menuitem" tabindex="-1" href="{% url enmicropetroglifos %}">Micropetroglyphs</a></li>
+            <li role="presentation"><a style="color: #01A9DB;" role="menuitem" tabindex="-1" href="{% url enpiedrasycerrosmiticos %}">
+					Natural Mythical Hills and Stones</a></li>
+        </ul>
+    </td>
+    <td style="background-color:#D40000" role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
+					Educational <br> programms</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enmanifestacionesylaescuela %}">
+					The rupestrian Art in the School</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enconvenios %}">
+					Agreements - Alliances</a></li>
+        </ul>
+    </td>
+    <td role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
+					Products and <br> Services</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enpublicaciones %}">
+					Releases</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enproductos %}">
+					Products</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enasesorias %}">
+					Advice</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url envisitasguiadas %}">
+					Guided visits</a></li>
+        </ul>
+    </td>
+    <td class="final" style="border:0px;"><a href="{% url encontacto %}">
+					Contact</a></td>
+</tr></table>
+</ul>
+{% endblock %}
+

@@ -1,0 +1,6 @@
+{{ object.codigo }}
+{{ object.yacimiento }}
+{{ object.nombre }}
+{{ object.manifiestacionAsociada }}
+{{ object.nombreFiguras }}
+{{ object.autorficha }}

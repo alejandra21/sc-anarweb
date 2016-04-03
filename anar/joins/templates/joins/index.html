@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load staticfiles %}
+		{% load url from future %}
+		<title>Archivo Nacional de Arte Rupestre</title>
+	
+		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/formstyle.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/avanzada.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/chosen.css' %}">
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		
+		<script src="{% static 'anarapp/jquery-1.10.1.min.js' %}"></script>
+		<script src="{% static 'anarapp/chosen.jquery.js' %}"></script>
+		<script>
+			$(document).ready(function(){$(".chzn-select").chosen({no_results_text: "Ningún resultado encontrado"})})
+		</script>
+		<style type="text/css">
+			.chzn-container { width: 15em !important }
+			input[type="text"] { border: 1px solid #AAA; padding: 5px }
+			input[type="checkbox"] { margin-left: 100px !important }
+			.chzn-search input { height: 25px !important }
+		</style>
+	</head>
+<body>
+
+	<ul id="nav">
+		<li><a href="/">Inicio</a></li>
+		<li><a href="quienes">Quienes Somos</a></li>
+		<li><a href="patrimonio">Patrimonio Cultural Arqueológico</a></li>
+		<li><a href="#programa">Programa de Educacion</a></li>
+		<li><a href="#otros">Otros Servicios</a></li>
+		<li><a href="#contacto">Contacto</a></li>
+	</ul>
+
+	<div id="banner">
+		<div id="logo">
+			<img src="{% static 'anarapp/logo.png' %}" height="75" width="200">
+		</div>
+	</div>
+
+		
+    <div style="width: 70%; margin: auto">
+
+    <h1  id="titulo" style="font-size: 16pt">Cruces  entre Yacimiento con Yacimiento</h1>
+    <ul>
+        <li>
+            <strong>Cruce 1:</strong><br/>
+            <p>
+                ¿Cuántos y cuáles yacimientos hay en el siguiente estado?<br/>
+                <form action="{% url 'joins:cruces' 1 %}">
+                    <label>Estado: {{ form.estado }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>
+        <li>
+            <strong>Cruce 2:</strong><br/>
+            <p>
+                ¿Qué nombre tiene el yacimiento con el siguiente código?<br/>
+                <form action="{% url 'joins:cruces' 2 %}">
+                    <label>Código: {{ form.codigo }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>
+        <li>
+            <strong>Cruce 3:</strong><br/>
+            <p>
+                ¿Qué coordenadas tiene el yacimiento con el siguiente código?<br/>
+                <form action="{% url 'joins:cruces' 3 %}">
+                    <label>Código: {{ form.codigo }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>
+        <li>
+            <strong>Cruce 4:</strong><br/>
+            <p>
+                ¿Qué apoyo bibliográfico tiene el yacimiento con el siguiente código?<br/>
+                <form action="{% url 'joins:cruces' 4 %}">
+                    <label>Código: {{ form.codigo }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>
+        <li>
+            <strong>Cruce 5:</strong><br/>
+            <p>
+                ¿Qué gráficos tiene el yacimiento con el siguiente código?<br/>
+                <form action="{% url 'joins:cruces' 5 %}">
+                    <label>Código: {{ form.codigo }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>
+        <li>
+            <strong>Cruce 6:</strong><br/>
+            <p>
+                ¿Qué material audiovisual tiene el yacimiento con el siguiente código?<br/>
+                <form action="{% url 'joins:cruces' 6 %}">
+                    <label>Código: {{ form.codigo }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>
+        <li>
+            <strong>Cruce 7:</strong><br/>
+            <p>
+                ¿En qué páginas web aparece el yacimiento con el siguiente código?<br/>
+                <form action="{% url 'joins:cruces' 7 %}">
+                    <label>Código: {{ form.codigo }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>        
+        <li>
+            <strong>Cruce 8:</strong><br/>
+            <p>
+                Listar todos los Dólmenes y Menhires en Venezuela y por estado:
+                <br/>
+                <form action="{% url 'joins:cruces' 8 %}">
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>
+        <li>
+            <strong>Cruce 9:</strong><br/>
+            <p>
+                Listar la proporción de número de piedras trabajadas a número de piedras en el yacimiento original en el siguiente estado:<br/>
+                <form action="{% url 'joins:cruces' 9 %}">
+                    <label>Estado: {{ form.estado }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>        
+        <li>
+            <strong>Cruce 10:</strong><br/>
+            <p>
+                Listar todos los Geoglifos, Pinturas Rupestres, Micropetroglifos, Petroglifos, Petroglifos Pintados, Piedras Míticas Naturales, Cerros Miticos Naturales, Bateas, Menhires, Amoladores, Puntos Acoplados y Cúpulas en el siguiente yacimiento y estado:<br/>
+                <form action="{% url 'joins:cruces' 10%}">
+                    <label>Código: {{ form.codigo }} </label></br>
+                <label>Estado: {{ form.estado }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>        
+        <li>
+            <strong>Cruce 11:</strong><br/>
+            <p>
+                Listar por estado el total de Geoglifos, Pinturas Rupestres, Micropetroglifos, Petroglifos, Petroglifos Pintados, Piedras Míticas Naturales, Cerros Miticos Naturales, Bateas, Menhires, Amoladores, Puntos Acoplados y Cúpulas en la siguiente ubicación:<br/>
+                <form action="{% url 'joins:cruces' 11 %}">
+                    <label>Ubicación: {{form.ubicacion}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>  
+        <li>
+            <strong>Cruce 12:</strong><br/>
+            <p>
+                Listar por estado el ancho y la profundidad del surco grabado para todos los yacimientos de Petroglifos<br/>
+                <form action="{% url 'joins:cruces' 12%}">
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>  
+        <li>
+            <strong>Cruce 13:</strong><br/>
+            <p>
+                Para un mismo Ancho y/o Profundidad de surco, cuántos Petroglifos tienen:<br/>
+                <form action="{% url 'joins:cruces' 13 %}">
+                    <label>Ubicación: <input type="text"/></label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li> 
+        <li>
+            <strong>Cruce 14:</strong><br/>
+            <p>
+                Lísteme por estado cuántos y cuáles Petroglifos tienen :<br/>
+                <form action="{% url 'joins:cruces' 14 %}">
+                    <label>Caracteristica: {{form.carasurcopetrotipo}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>
+        <li>
+            <strong>Cruce 15:</strong><br/>
+            <p>
+                Lísteme por estado, cuántas y cuáles Pinturas 
+                Rupestres de todos los yacimientos tienen: <br/>
+                <form action="{% url 'joins:cruces' 15 %}">
+                    <label><input type="text"></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>
+        <li>
+            <strong>Cruce 16:</strong><br/>
+            <p>
+                Cuáles petroglifos tienen :<br/>
+                <form action="{% url 'joins:cruces' 16 %}">
+                    <label>Area/Grabado: {{form.carasurcopetrotipo}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>
+        <li>
+            <strong>Cruce 17:</strong><br/>
+            <p>
+                Lísteme por estado, los petroglifos con:<br/>
+                <form action="{% url 'joins:cruces' 17 %}">
+                    <label>piedra/erosión: {{form.material}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>
+        <li>
+            <strong>Cruce 18:</strong><br/>
+            <p>
+                Cuales pinturas rupestres por estado, con la siguiente combinacion tiene:<br/>
+                <form action="{% url 'joins:cruces' 18 %}">
+                    <label>piedra/erosión: {{form.material}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>
+        <li>
+            <strong>Cruce 19:</strong><br/>
+            <p>
+                Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
+                <form action="{% url 'joins:cruces' 19 %}">
+                    <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+        </li>
+                <li>
+            <strong>Cruce 20:</strong><br/>
+            <p>
+                Lísteme por estado y yacimientos la proporcion de numero de piedras trabajadas a numero de piedras en el yacimientos original ubicadas en:<br/>
+                <form action="{% url 'joins:cruces' 20 %}">
+                    <label>Ubicacion: {{form.ubicacion}}</label></br></br>
+                </form>
+            </p>
+        </li>
+    </ul>
+    	</div>
+</body>

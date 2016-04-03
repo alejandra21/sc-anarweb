@@ -1,0 +1,200 @@
+{% extends "website-base.html" %}
+{% load staticfiles %}
+{% block pagetitle %}Pagina Principal{% endblock %}
+{% block title %}Consulta en Base de Datos{% endblock %}
+{% block user %}
+Ruby de Valencia
+{% endblock %}
+
+
+{% block submenu %}
+<ul class="list-inline " style="background-color:white">
+	<table><tr>
+        <td class="active"><a href="{% url index %}">Inicio	</a></td>
+    <td role="presentation" class="dropdown ">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
+					Quienes somos</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url origenytrayectoria %}">
+					Origen y Trayectoria</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url areasdeespecializacion %}">
+					&Aacute;reas de Especializaci&oacute;n - Organigrama</a></li>
+           <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url profesionalesadjuntos %}">
+					Profesionales adjuntos</a></li>
+    </ul>
+    </td>
+    <td role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
+					Patrimonio Rupestre <br> Venezolano
+        <ul class="dropdown-menu" role="menu">
+	    <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url nota %}">
+					Nota	</a></li>			
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url leydeproteccion %}">
+					Ley de Protecci&oacute;n del Patrimonio</a></li>
+            <li role="presentation"><a style="color: purple;" role="menuitem" tabindex="-1" href="{% url pinturasrupestres %}">
+					Pinturas Rupestres</a></li>
+            <li role="presentation"><a style="color: #DF7401;" role="menuitem" tabindex="-1" href="{% url geoglifo %}">
+					Geoglifo</a></li>
+            <li role="presentation"><a style="color: red;" role="menuitem" tabindex="-1" href="{% url petroglifo %}">
+					Petroglifos</a></li>
+            <li role="presentation"><a style="color: #424242;" role="menuitem" tabindex="-1" href="{% url amoladores %}">
+					Amoladores L&iacute;ticos, Puntos Acoplados, C&uacute;pulas</a></li>
+            <li role="presentation"><a style="color: #04B404;" role="menuitem" tabindex="-1" href="{% url monumentosmegaliticos %}">
+					Monumentos Megal&iacute;ticos, Menhires, D&oacute;lmenes, Monolitos</a></li>
+            <li role="presentation"><a style="color: #DBA901;" role="menuitem" tabindex="-1" href="{% url micropetroglifos %}">
+					Micropetroglifos</a></li>
+            <li role="presentation"><a style="color: #01A9DB;" role="menuitem" tabindex="-1" href="{% url piedrasycerrosmiticos %}">
+					Piedras y Cerros M&iacute;ticos Naturales</a></li>
+        </ul>
+    </td>
+    <td role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
+					Programa <br>de Educaci&oacute;n</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url manifestacionesylaescuela %}">
+					Las Manifestaciones Rupestres y la Escuela</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url convenios %}">
+					Convenios - Alianzas</a></li>
+        </ul>
+    </td>
+    <td role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
+					Productos y<br> Servicios</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url publicaciones %}">
+					Publicaciones</li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url productos %}">
+					Productos</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url asesorias %}">
+					Asesor&iacute;as</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url visitasguiadas %}">
+					Visitas Guiadas</a></li>
+        </ul>
+    </td>
+    <td style="border:0px"><a href="{% url contacto %}">
+					Contacto</a></td>
+</tr></table>
+</ul>
+{% endblock %}
+
+{% block content %}
+<ul id="fondo" style="width:100%;height:800px;z-index=1;display:none;"></ul>
+<ul id="1" class="dropdown-image " role="menu">
+	<div class ="row " >
+			<img src="{% static "images/inicio/198.png" %}" />
+			<div class="description" style="align:left"><span style="color:red"><b>198 <br> 
+									  PETROGLIFO</b><br></span>
+									  Capitanejo<br>
+									  Estado Barinas<br>
+                                                                          Fotog: E. Ruiz Guevara </p>
+			<div onclick="setImageVisible('1','none')" style="font-size:26px;text-align:right">&#x25C4;</a>
+	</div></div>
+</ul>
+<ul id="2" class="dropdown-image " role="menu">
+	<div class ="row">
+			<img src="{% static "images/inicio/51.png" %}" />
+			<div class="description" style="align:left"><span style="color:orange"><b>51 <br> 
+									  GEOGLIFO</b><br></span>
+									  La Rueda del Indio<br>
+									  Estado Carabobo<br>
+                                                                          Fotog: Victor Hern&aacute;ndez </p>
+			<div onclick="setImageVisible('2','none')" style="font-size:26px;text-align:right">&#x25C4;</a>
+	</div>
+</ul>
+<ul id="3" class="dropdown-image " role="menu">
+	<div class ="row">
+			<img src="{% static "images/inicio/84.png" %}" />
+			<div class="description" style="align:left"><span style="color:#04B404"><b>84 <br> 
+									  MONUMENTOS MEGAL&Iacute;TICOS</b><br>MENHIRES<br></span>
+									  Vigirima<br>
+									  Estado Carabobo<br>
+                                                                          Fotog: E. Victor Hern&aacute;ndez  </p>
+			<div onclick="setImageVisible('3','none')" style="font-size:26px;text-align:right">&#x25C4;</a>
+	</div>
+</ul>
+<ul id="4" class="dropdown-image " role="menu">
+	<div class ="row">
+			<img src="{% static "images/inicio/151.png" %}" />
+			<div class="description" style="align:left"><span style="color:purple"><b>451 <br> 
+									  PINTURA RUPESTRE</b><br></span>
+									  Cueva Cerro Gavil&aacute;<br>
+									  Estado Bol&iacute;var<br>
+                                                                          Fotog: Gabriela Montoto </p>
+			<div onclick="setImageVisible('4','none')" style="font-size:26px;text-align:right">&#x25C4;</a>
+	</div>
+</ul>
+
+
+<div id="contenido">
+	<table class="list-unstyled">
+		<tbody><tr><td width="20%">
+
+			<table class="list-unstyled">
+				<tbody><tr>
+                                <td class="menubusqueda" style="background-color:purple"><a href="#">
+					<span id="es_si" >Pinturas Rupestres</span>
+								     </a></td></tr>
+                                <tr><td class="menubusqueda" style="background-color:red"><a href="#">
+					<span id="es_ra" >Petroglifos</span>
+								     </a></td></tr>
+                                <tr><td class="menubusqueda" style="background-color:#04B404"><a href="#">
+					<span id="es_gp" >Monumentos Megaliticos</span>
+								     </a></td></tr>
+                                <tr><td class="menubusqueda" style="background-color:#424242"><a href="#">
+					<span id="es_gp" >Amoladores</span>
+								     </a></td></tr>
+                                <tr><td class="menubusqueda" style="background-color:#01A9DB"><a href="#">
+					<span id="es_jd" >Cerros Miticos Naturales</span>
+									</a></td></tr>
+                                <tr><td class="menubusqueda" style="background-color:#DF7401"><a href="#">
+					<span id="es_jd" >Geoglifos</span>
+									</a></td></tr>
+                                <tr><td class="menubusqueda" style="background-color:#DBA901"><a href="#">
+					<span id="es_jd" >Micropetroglifos</span>
+									</a></td></tr>
+                                <tr><td class="menubusqueda" style="background-color:black">
+					<span id="es_jd" >Estado(s)</span>
+									</td></tr>
+                                <tr><td class="menubusqueda" style="background-color:black">
+					<span id="es_jd" >MAPA</span>
+									</td></tr>
+				</tbody></table>
+			</td><td width="80%" style="background-color:white;padding:40px;border:1px solid black"> 
+	<table><tbody><tr><td >
+				<table style="margin-left: 50px"><tbody><tr>
+					<td style="border:1px solid black;padding-left: 100px;padding-top: 30px;"></td>
+					<td style="border:1px solid black;padding-left: 100px;padding-top: 30px;"></td></tr></tbody></table>
+					<br>
+					
+			</td>
+			<td >
+				<table style="margin-left: 50px"><tbody><tr>
+					<td style="border:1px solid black;padding: 2px">
+						<form action="demo_form.asp">
+							Busqueda (inserte consulta): <input type="text" name="Busqueda" value=""><br>
+
+							</form></td></tr></tbody></table>
+</td></tr>
+<tr>
+<td >
+<b>Marque los datos conocidos:</b>
+					<br>
+					<input type="checkbox" name="vehicle" value="Yacimiento"> Yacimiento<br>
+					<input type="checkbox" name="vehicle" value="Nro"> Nro de Yacimiento<br>
+					<input type="checkbox" name="vehicle" value="Datosyacimiento"> Datos del Yacimiento<br>
+					<input type="checkbox" name="vehicle" value="Nombre"> Nombre<br>
+					<input type="checkbox" name="vehicle" value="Localidad"> Localidad<br>
+					<input type="checkbox" name="vehicle" value="Uso"> Uso actual del suelo<br>
+</td><td>
+<br><br><b>Resultados de la busqueda:</b><br><br>
+					<table style="border:1px solid black;padding:50px"><tbody><tr><td style="padding:200px">
+					</td></tr></tbody></table>
+
+</td></tr>
+</tbody></table>
+		</td></tr></tbody></table>
+
+
+{% endblock %}
+
+

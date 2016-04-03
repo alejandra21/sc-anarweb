@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load staticfiles %}
+		{% load url from future %}
+		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/formstyle.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/anar.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/chosen.css' %}">
+		
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="{% static 'anarapp/chosen.jquery.js' %}"></script>
+		<script>
+
+			$(document).ready(function(){
+				$(".chzn-select").chosen();
+				$("#id_valor").hide();
+				$("#id_q").hide();
+				$("#Yaci").click(function(){
+					$("#id_q").val('Yacimiento')
+					}
+				);
+				$("#id_valor").val("");
+				
+			})
+			</script>
+
+			<script>
+			function Sele(){
+				var a = $('input:checkbox')
+				for(var i = 0; i<a.length;i++){
+					if(a[i].checked){
+						$('#id_valor').val(a[i].value)
+					}
+				}
+			}
+		</script>		
+
+		<title>Archivo Nacional de Arte Rupestre</title>
+	</head>
+<body>
+
+<ul id="nav">
+		<li><a href="/">Inicio</a></li>
+		<li><a href="#quienes">Quienes Somos</a></li>
+		<li><a href="#patrimonio">Patrimonio Cultural Arqueológico</a></li>
+		<li><a href="#programa">Programa de Educacion</a></li>
+		<li><a href="#otros">Otros Servicios</a></li>
+		<li><a href="#contacto">Contacto</a></li>
+	</ul>
+	<div id="contenedor">
+		<div id="filtro">
+			<p><label id="titulo">Filtrar</label></p><br>
+	    	<form method="get" action="{% url 'cruces' %}">
+	    		
+			<div id="selecciones">
+				<!-- <input type="hidden" value="{{ form.q.value }}" name="q" />
+				<p style="color: #505050; font-size: 12pt">Nombre:</p> {{ form.nombre }}
+				<p style="color: #505050; font-size: 12pt">Municipio/Distrito:</p> {{ form.yac_municipio }}
+				<p style="color: #505050; font-size: 12pt">Estado:</p> {{ form.yac_estado }} 
+				<p style="color: #505050; font-size: 12pt">Fotografia:</p> {{ form.hayFotografia }}
+				<p style="color: #505050; font-size: 12pt">Orientacion:</p> {{ form.orientacion }} -->
+				{{form.valor}}
+				<input type="checkbox" id="Yaci"> Yacimiento
+				{{form.q}}<br>
+				<input type="checkbox" onchange="Sele()" class="seleccion" value="cuantos,y,cuales">Cuantos y Cuales yacimientos hay en el estado: {{form.yac_estado}}<br>
+				<input type="checkbox" onchange="Sele()" class="seleccion" value="nombre">Que nombre tiene el yacimiento de codigo: {{form.yac_codigo}}<br>
+				<input type="checkbox" onchange="Sele()" class="seleccion" value="coordenadas">Que coordenadas tiene el yacimiento de codigo: {{form.yac_codigo}}<br>
+				<input type="checkbox" onchange="Sele()" class="seleccion" value="proporcion">Proporcion de numero de piedras en el yacimiento <br>
+				<input type="checkbox" onchange="Sele()" class="seleccion" value="TotTipoManUbi">Dolmenes y Menhires en cueva, abrigo terreno superficial y profundo <br>
+				<input type="checkbox" onchange="Sele()" class="seleccion" value="PetroAnchoProfu">Listar ancho y profundidad de surco grabado para petroglifos<br>
+			  </div>
+			<br/>
+			<input type="submit" class="button" value="Buscar">
+			</form>
+		</div>
+
+		<div id="res">
+        {% if query and valor != "" %}
+
+			<p><label id="titulo">Resultados</label></p><br>
+				<div class="resultados">
+				
+	            {% for result in page.object_list %}
+	            {% if valor == "cuantos,y,cuales" or valor == "nombre"%}
+				<div class="resultado" style="width:100%">
+					<div id="resImagen">
+						<img src="images/piedra.jpg" height="100">
+					</div>
+					<div id="resTexto">
+                		<p>C&oacute;digo: {{ result.object.codigo }}</p>
+						<table>
+							<tr><td >Nombre: {{ result.object.nombre }}</td></tr>
+							<tr><td >Yacimiento</td></tr>
+							<tr><td >Municipio: {{ result.object.municipio }}</td></tr>
+							<tr><td >Estado: {{ result.object.estado }}</td></tr>
+						</table>
+					</div>
+					<br/>
+					<hr>
+				</div>
+				{% elif valor == "coordenadas" %}
+				<div class="resultado" style="width:100%">
+					<div id="resImagen">
+						<img src="images/piedra.jpg" height="100">
+					</div>
+					<div id="resTexto">
+                		<p>C&oacute;digo: {{ result.object.codigo }}</p>
+						<table>
+							<tr><td >Nombre: {{ result.object.nombre }}</td></tr>
+							<tr><td >Yacimiento</td></tr>
+							<tr><td >Latitud: {{ result.crd_latitud }}</td></tr>
+							<tr><td >Longitud: {{ result.crd_longitud }}</td></tr>
+						</table>
+					</div>
+					<br/>
+					<hr>
+				</div>
+				{% elif valor == "proporcion"%}
+				<div class="resultado" style="width:100%">
+					<div id="resTexto">
+						<table>
+							<tr><td >Estado: {{result.object.estado}}</td></tr>
+							<tr><td >Grabadas: {{ result.cny_nroPiedrasGrabadas|default:"0" }}/{{ result.cny_nroPiedras|default:"0" }}</td></tr>
+							<tr><td >Pintadas: {{ result.cny_nroPiedrasPintadas|default:"0" }}/{{ result.cny_nroPiedras|default:"0" }}</td></tr>
+							<tr><td >Colocadas: {{ result.cny_nroPiedrasColocadas|default:"0" }}/{{ result.cny_nroPiedras|default:"0" }}</td></tr>
+						</table>
+					</div>
+					<br/>
+					<hr>
+				</div>
+				{% elif valor == "PetroAnchoProfu" %}
+				<div class="resultado" style="width:100%">
+					<div id="resTexto">
+						<table>
+							<tr><td >Estado: {{result.object.estado}}</td></tr>
+							<tr><td >Codigo: {{ result.object.codigo}}</td></tr>
+							<tr><td >Nombre: {{ result.object.nombre}}</td></tr>
+							<tr><td >Ancho: {{ result.cpe_anchoDe }}-{{ result.cpe_anchoA }}cm</td></tr>
+							<tr><td >Profundidad: {{ result.cpe_profundidadDe }}-{{ result.cpe_profundidadA }}cm</td></tr>
+						</table>
+					</div>
+					<br/>
+					<hr>
+				</div>
+				{% endif %}
+				{% empty %}
+                <p>No se ha encontrado ning&uacute;n resultado.</p>
+            	{% endfor %}
+				
+
+				 {% if page.has_previous or page.has_next %}
+					<div>
+						{% if page.has_previous %}
+						<a href="?q={{ query }}&valor={{valor}}&amp;page={{ page.previous_page_number }}">
+						{% endif %}&laquo; Anterior 
+						{% if page.has_previous %}</a>{% endif %}
+						|
+						{% if page.has_next %}
+						<a href="?q={{ query }}&valor={{valor}}&amp;page={{ page.next_page_number }}">
+						{% endif %}Siguiente &raquo;{% if page.has_next %}</a>{% endif %}
+                	</div>
+           	 	{% endif %}
+				<p>Mostrando {{ page.start_index }} - {{ page.end_index }} de {{ page.paginator.count }} resultados.</p>
+
+        {% else %}
+            <p>No ha realizado ninguna b&uacute;squeda.</p>
+        {% endif %}
+		</div>
+	</div>
+
+</body>
+</html>

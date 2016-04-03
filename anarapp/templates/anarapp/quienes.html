@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load staticfiles %}
+	{% load url from future %}
+	<title>Archivo Nacional de Arte Rupestre</title>
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'anarapp/chosen.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'anarapp/anar.css' %}">
+	
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="{% static 'anarapp/chosen.jquery.js' %}"></script>
+	<script>
+		$(document).ready(function(){$(".chzn-select").chosen()})
+	</script>
+	
+</head>
+<body>
+
+	<ul id="nav">
+		<li><a href="/">Inicio</a></li>
+		<li><a href="">Quienes Somos</a></li>
+		<li><a href="#patrimonio">Patrimonio Cultural Arqueológico</a></li>
+		<li><a href="#programa">Programa de Educacion</a></li>
+		<li><a href="#otros">Otros Servicios</a></li>
+		<li><a href="#contacto">Contacto</a></li>
+	</ul>
+	<div id="logo">
+		<img src="{% static 'anarapp/logo.png' %}" height="100"><br/>
+	</div>
+	
+	<div align="center">
+		<table border="0" cellpadding="10" width="100%">
+			<tr>
+				<td align="center" valign="bottom">
+					<table cellpadding="3" cellspacing="0" border="0">
+						<tr>
+							<td class="sz" align="center">
+								<img src="{% static 'anarapp/anar1p.png' %}" border="0">
+							</td>
+						</tr>
+					</table>
+				</td>		
+				<td align="center" valign="bottom">
+					<table cellpadding="3" cellspacing="0" border="0">
+						<tr>
+							<td class="sz" align="center">
+								<img src="{% static 'anarapp/anar2p.gif' %}" border="0">
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td align="center" valign="bottom">
+					<table cellpadding="3" cellspacing="0" border="0">
+						<tr>
+							<td class="sz" align="center">
+								<img src="{% static 'anarapp/anar3p.gif' %}" border="0">
+							</td>
+						</tr>
+					</table>
+				</td>			
+				<td align="center" valign="bottom">
+					<table cellpadding="3" cellspacing="0" border="0">
+						<tr>
+							<td class="sz" align="center">
+								<img src="{% static 'anarapp/anar4p.gif' %}" border="0">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<table width="700" cellspacing="0" cellpadding="5" border="0" align="center">			
+		<tr>
+			<td >
+				<p align="justify">El <strong>ANAR -Archivo Nacional de Arte Rupestre-</strong> tiene como prop&oacute;sito fundamental el servir de Centro de Referencia y Servicio de Informaci&oacute;n para el conocimiento y protecci&oacute;n de las Manifestaciones Rupestres en Venezuela, como parte de la conservaci&oacute;n de la memoria hist&oacute;rica y documental de este patrimonio cultural arqueol&oacute;gico del pa&iacute;s.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p>
+
+	<div>
+		<table width="700" cellspacing="0" cellpadding="5" border="0" align="center">
+			<tr>
+				<td>
+							
+					<p align="justify">El <strong>ANAR</strong> tiene su origen en el trabajo de investigaci&oacute;n y recopilaci&oacute;n documental sobre Arte Rupestre iniciado por la Antrop&oacute;logo Jeannine Sujo en 1972, trabajo que a su vez form&oacute; la base para publicaciones realizadas en: 1975 (UCAB), 1976 (Paris), 1978 (IVIC), la exposici&oacute;n Petroglifos del Guri en la Galer&iacute;a de Arte Nacional, Caracas en 1978, y la inclusi&oacute;n de este tema en el Diccionario de Historia de la Fundaci&oacute;n Polar en 1988.&nbsp;<br />
+					<br />
+					A partir de 1985 se integra a este trabajo la Arquitecto Paisajista Ruby De Valencia, quien enriquece adem&aacute;s el Archivo con una serie de documentos fotogr&aacute;ficos de las diferentes estaciones de Arte Rupestre venezolanas, pertenecientes a 17 de los 23 estados y lo complementa con un amplio archivo documental, cartogr&aacute;fico y bibliogr&aacute;fico sobre Arte Rupestre de Venezuela y otros pa&iacute;ses del mundo, materiales producto a la &eacute;poca de m&aacute;s de 10 a&ntilde;os de investigaci&oacute;n de campo, rese&ntilde;ados en art&iacute;culos de diferentes revistas especializadas.&nbsp;<br />
+					<br />
+					Este trabajo de investigaci&oacute;n form&oacute; la base para la publicaci&oacute;n por sus autoras:</p>
+				</td>
+			</tr>
+		</table>
+		<table width="700" cellspacing="0" cellpadding="5" border="0" align="center">
+			<tr>
+				<td>
+					<p align="justify"><br />
+						Ruby De Valencia y Jeannine Sujo, del libro <strong>El Dise&ntilde;o en los Petroglifos Venezolanos</strong>, edici&oacute;n triling&uuml;e de la Fundaci&oacute;n Pampero, Caracas, 1987, 410 p&aacute;gs; as&iacute; como la realizaci&oacute;n del proyecto de exposici&oacute;n museogr&aacute;fica del mismo nombre propuesto para la Sala de Exposiciones de la IBM en Nueva York (1988) y el proyecto que se prepara actualmente el <strong>ANAR</strong> sobre las Manifestaciones Rupestres en Venezuela.
+					</p>
+				</td>
+				<td align="center">
+					<img src="{% static 'anarapp/libro.jpg' %}" border="0" alt=" "><br>
+				</td>
+			</tr>
+		</table>
+		<table width="700" cellspacing="0" cellpadding="5" border="0" align="center">
+			<tr>
+				<td class="sz">
+					<p align="justify">La publicaci&oacute;n fue acreedora de los siguientes reconocimientos nacionales e internacionales: Medalla de Bronce, <strong>Exposici&oacute;n Internacional del Arte del Libro</strong>, 1989, Leipzig, Alemania y Reconocimiento en la <strong>IX Exposici&oacute;n Anual del Libro Ilustrado y la Fotograf&iacute;a Documental</strong>, 1988, Instituto Aut&oacute;nomo Biblioteca Nacional, Caracas.&nbsp;<br />
+					</p>
+					Su contenido permiti&oacute;:
+					<li>
+						<div align="justify">Presentar el primer inventario documentado fotogr&aacute;ficamente sobre la totalidad de estaciones rupestres registradas a nivel nacional hasta el momento, que conforman parte del patrimonio cultural arqueol&oacute;gico de Venezuela.&nbsp;<br />
+						</div>
+					</li>
+					<li>
+						<div align="justify">Sustentar importantes conclusiones en el campo de la investigaci&oacute;n antropol&oacute;gica referentes a Venezuela, en base al estudio e interrelaci&oacute;n de las caracter&iacute;sticas estil&iacute;sticas de estas estaciones; se formularon los horizontes estil&iacute;sticos que definen las diferentes zonas geogr&aacute;ficas del pa&iacute;s. Estos horizontes permitieron a su vez orientar varias hip&oacute;tesis referentes a algunas de las rutas migratorias m&aacute;s antiguas de nuestro pa&iacute;s. 
+						</div>
+					</li>
+				</td>
+			</tr>
+		</table>
+		<br>
+	</div>
+
+   	<div align="center">
+		<table border="0" cellpadding="3" width="80%" align="center">
+			<tr>
+				<td align="center" valign="bottom">
+					<table cellpadding="3" cellspacing="0" border="0">
+						<tr>
+							<td class="sz" align="center">
+								<img src="{% static 'anarapp/FUNDABITATp.gif' %}" border="0">
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td align="center" valign="bottom">
+					<table cellpadding="3" cellspacing="0" border="0">
+						<tr>
+							<td class="sz" align="center">
+								<img src="{% static 'anarapp/ucvp.gif' %}" border="0">
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td align="center" valign="bottom">
+					<table cellpadding="3" cellspacing="0" border="0">
+						<tr>
+							<td class="sz" align="center">
+								<img src="{% static 'anarapp/tamayop.gif' %}" border="0">
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td align="center" valign="bottom">
+					<table cellpadding="3" cellspacing="0" border="0">
+						<tr>
+							<td align="center">
+								<img src="{% static 'anarapp/ifrao-unescop.gif' %}" border="0">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<td>
+	<br>
+	<br>
+		<table width="705" border="0" align="center" cellpadding="0" cellspacing="0">
+			<tr>
+				<td width="400" align="left">
+						<b>Ruby De Valencia</b><br>
+							Concepto, Textos & Diseño
+							<br><br>
+				</td>
+				<td width="700" align="right">	
+							<b>Gil Benítez</b><br>
+							Asistencia diseño		
+				</td>
+			</tr>
+		</table>
+	</td>
+	<br>
+	<br>
+</body>
+</html>

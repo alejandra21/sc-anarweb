@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load staticfiles %}
+		{% load url from future %}
+		<title>Archivo Nacional de Arte Rupestre</title>
+	
+		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/formstyle.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/avanzada.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/chosen.css' %}">
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		
+		<script src="{% static 'anarapp/jquery-1.10.1.min.js' %}"></script>
+		<script src="{% static 'anarapp/chosen.jquery.js' %}"></script>
+		<script>
+			$(document).ready(function(){$(".chzn-select").chosen({no_results_text: "Ningún resultado encontrado"})})
+		</script>
+		<style type="text/css">
+			.chzn-container { width: 15em !important }
+			input[type="text"] { border: 1px solid #AAA; padding: 5px }
+			input[type="checkbox"] { margin-left: 100px !important }
+			.chzn-search input { height: 25px !important }
+		</style>
+	</head>
+<body>
+
+	<ul id="nav">
+		<li><a href="/">Inicio</a></li>
+		<li><a href="#quienes">Quienes Somos</a></li>
+		<li><a href="#patrimonio">Patrimonio Cultural Arqueológico</a></li>
+		<li><a href="#programa">Programa de Educacion</a></li>
+		<li><a href="#otros">Otros Servicios</a></li>
+		<li><a href="#contacto">Contacto</a></li>
+	</ul>
+
+	<div id="banner">
+		<div id="logo">
+			<img src="{% static 'anarapp/logo.png' %}" height="75" width="200">
+		</div>
+	</div>
+
+		
+    <div style="width: 70%; margin: auto">
+
+    <h1  id="titulo" style="font-size: 16pt">¿Qué nombre tiene el yacimiento de código {{ codigo }}?</h1>
+    <h2>{{ yacimiento.nombre }}</h2>
+</body>
+</html>

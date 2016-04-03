@@ -1,0 +1,76 @@
+Al realizar las migraciones, seleccionar opcion 2 y segun el atributo colocar
+lo que se indique a continuacion
+
+MatAudioVisual.formato -> ''
+MatAVPiedra.format -> ''
+MatAVYacimiento.format -> ''
+
+VideoYacimiento.anioy ->  0
+VideoYacimiento.formatoy -> ''
+VideoYacimiento.tituloy -> ''
+VideoYacimiento.autory -> '' 
+VideoYacimiento.instituciony -> ''
+VideoYacimiento.numReferenciay -> 0
+VideoYacimiento.numCopiay -> 0
+
+VideoPiedra.anioy ->  0
+VideoPiedra.formatoy -> ''
+VideoPiedra.tituloy -> ''
+VideoPiedra.autory -> '' 
+VideoPiedra.instituciony -> ''
+VideoPiedra.numReferenciay -> 0
+VideoPiedra.numCopiay -> 0
+
+Video.anio -> 0
+Video.autor -> ''
+Video.numReferencia -> 0
+Video.institucion -> '' 
+Video.formato -> ''
+Video.numCopia -> 0
+Video.titulo -> ''
+
+PeliYacimiento.anioy ->  0
+PeliYacimiento.formatoy -> ''
+PeliYacimiento.tituloy -> ''
+PeliYacimiento.autory -> '' 
+PeliYacimiento.instituciony -> ''
+PeliYacimiento.numReferenciay -> 0
+PeliYacimiento.numCopiay -> 0
+
+PeliculaPiedra.anioy ->  0
+PeliculaPiedra.formatoy -> ''
+PeliculaPiedra.tituloy -> ''
+PeliculaPiedra.autory -> '' 
+PeliculaPiedra.instituciony -> ''
+PeliculaPiedra.numReferenciay -> 0
+PeliculaPiedra.numCopiay -> 0
+
+PaginaWebYac.direccionURLy -> ''
+PaginaWeb.direccionURL -> ''
+PaginaWebPiedra.direccionURLP -> ''
+
+MultimediaPiedra.tecnicaP -> ''
+Multimedia.tecnica -> ''
+MultimediaYac.tecnicaY -> ''
+
+ObtencionInfo.nombre -> ''
+ObtInfoYac.nombreY -> ''
+ObtInfoPiedra.nombreP -> ''
+
+Observaciones.texto -> ''
+ObservacionesYac.textoY -> ''
+ObservacPiedra.textoP -> ''
+
+Foto.tipoFotografia -> 0
+
+EscRedPiedra.numPiezasP -> 0
+EscRedPiedra.institutoP -> ''
+EscRedPiedra.personaP -> ''
+
+EscNatPiedra.numPiezasP -> 0
+EscNatPiedra.institutoP -> ''
+EscNatPiedra.personaP -> ''
+
+RepGrafPiedra.numPiezasP -> 0
+RepGrafPiedra.institutoP -> ''
+RepGrafPiedra.personaP -> ''

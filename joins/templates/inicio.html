@@ -1,0 +1,171 @@
+{% extends "website-base.html" %}
+{% load staticfiles %}
+{% block pagetitle %}Pagina Principal{% endblock %}
+{% block title %}{% endblock %}
+{% block user %}
+Ruby de Valencia
+{% endblock %}
+
+
+{% block submenu %}
+<ul class="list-inline ">
+	<table><tr>
+        <td class="active inicial"><a href="{% url index %}">Inicio	</a></td>
+    <td role="presentation" class="dropdown ">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
+					Quienes somos</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url origenytrayectoria %}">
+					Origen y Trayectoria</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url areasdeespecializacion %}">
+					&Aacute;reas de Especializaci&oacute;n</a></li>
+      <!-- AQUI VA EL ORGANIGRAMA -->
+           <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url profesionalesadjuntos %}">
+					Profesionales adjuntos</a></li>
+    </ul>
+    </td>
+    <td role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
+					Patrimonio Rupestre <br> Venezolano
+        <ul class="dropdown-menu" role="menu">
+	    <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url nota %}">
+					Nota	</a></li>			
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url leydeproteccion %}">
+					Ley de Protecci&oacute;n del Patrimonio</a></li>
+            <li role="presentation"><a style="color: purple;" role="menuitem" tabindex="-1" href="{% url pinturasrupestres %}">
+					Pinturas Rupestres</a></li>
+            <li role="presentation"><a style="color: #DF7401;" role="menuitem" tabindex="-1" href="{% url geoglifo %}">
+					Geoglifo</a></li>
+            <li role="presentation"><a style="color: red;" role="menuitem" tabindex="-1" href="{% url petroglifo %}">
+					Petroglifos</a></li>
+            <li role="presentation"><a style="color: #424242;" role="menuitem" tabindex="-1" href="{% url amoladores %}">
+					Amoladores L&iacute;ticos, Puntos Acoplados, C&uacute;pulas</a></li>
+            <li role="presentation"><a style="color: #04B404;" role="menuitem" tabindex="-1" href="{% url monumentosmegaliticos %}">
+					Monumentos Megal&iacute;ticos, Menhires, D&oacute;lmenes, Monolitos</a></li>
+            <li role="presentation"><a style="color: #DBA901;" role="menuitem" tabindex="-1" href="{% url micropetroglifos %}">
+					Micropetroglifos</a></li>
+            <li role="presentation"><a style="color: #01A9DB;" role="menuitem" tabindex="-1" href="{% url piedrasycerrosmiticos %}">
+					Piedras y Cerros M&iacute;ticos Naturales</a></li>
+        </ul>
+    </td>
+    <td role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
+					Programa <br>de Educaci&oacute;n</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url manifestacionesylaescuela %}">
+					Las Manifestaciones Rupestres y la Escuela</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url convenios %}">
+					Convenios - Alianzas</a></li>
+        </ul>
+    </td>
+    <td role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
+					Productos y<br> Servicios</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url publicaciones %}">
+					Publicaciones</li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url productos %}">
+					Productos</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url asesorias %}">
+					Asesor&iacute;as</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url visitasguiadas %}">
+					Visitas Guiadas</a></li>
+        </ul>
+    </td>
+    <td class="final" style="border:0px;"><a href="{% url contacto %}">
+					Contacto</a></td>
+</tr></table>
+</ul>
+{% endblock %}
+
+{% block content %}
+<ul id="fondo" style="width:100%;height:800px;z-index=1;display:none;"></ul>
+<ul id="1" class="dropdown-image " role="menu">
+	<div class ="row " >
+			<img src="{% static "images/inicio/198.png" %}" />
+			<div class="description" style="align:left"><span style="color:red"><b>198 <br> 
+									  PETROGLIFO</b><br></span>
+									  Capitanejo<br>
+									  Estado Barinas<br>
+                                                                          Fotog: E. Ruiz Guevara </p>
+			<div onclick="setImageVisible('1','none')" style="font-size:26px;text-align:right">&#x25C4;</a>
+	</div></div>
+</ul>
+<ul id="2" class="dropdown-image " role="menu">
+	<div class ="row">
+			<img src="{% static "images/inicio/51.png" %}" />
+			<div class="description" style="align:left"><span style="color:orange"><b>51 <br> 
+									  GEOGLIFO</b><br></span>
+									  La Rueda del Indio<br>
+									  Estado Carabobo<br>
+                                                                          Fotog: Victor Hern&aacute;ndez </p>
+			<div onclick="setImageVisible('2','none')" style="font-size:26px;text-align:right">&#x25C4;</a>
+	</div>
+</ul>
+<ul id="3" class="dropdown-image " role="menu">
+	<div class ="row">
+			<img src="{% static "images/inicio/84.png" %}" />
+			<div class="description" style="align:left"><span style="color:#04B404"><b>84 <br> 
+									  MONUMENTOS MEGAL&Iacute;TICOS</b><br>MENHIRES<br></span>
+									  Vigirima<br>
+									  Estado Carabobo<br>
+                                                                          Fotog: E. Victor Hern&aacute;ndez  </p>
+			<div onclick="setImageVisible('3','none')" style="font-size:26px;text-align:right">&#x25C4;</a>
+	</div>
+</ul>
+<ul id="4" class="dropdown-image " role="menu">
+	<div class ="row">
+			<img src="{% static "images/inicio/151.png" %}" />
+			<div class="description" style="align:left"><span style="color:purple"><b>451 <br> 
+									  PINTURA RUPESTRE</b><br></span>
+									  Cueva Cerro Gavil&aacute;<br>
+									  Estado Bol&iacute;var<br>
+                                                                          Fotog: Gabriela Montoto </p>
+			<div onclick="setImageVisible('4','none')" style="font-size:26px;text-align:right">&#x25C4;</a>
+	</div>
+</ul>
+
+
+<div id="contenido">
+<div class="row">
+
+    <div class="col-sm-3 img-resize" onclick="setImageVisible('1','block')">
+    <img src="{% static "images/inicio/1.png" %}" />	
+    </div>
+    <div class="col-sm-3" onclick="setImageVisible('2','block')">
+    <img src="{% static "images/inicio/2.gif" %}"  />
+    </div>
+    <div class="col-sm-3" onclick="setImageVisible('3','block')">
+    <img src="{% static "images/inicio/3.gif" %}"  />
+    </div>
+    <div class="col-sm-3" onclick="setImageVisible('4','block')">
+    <img src="{% static "images/inicio/4.gif" %}"  />
+    </div>
+</div>
+<br>
+<p style="font-size:20px">
+<b>ANAR -Archivo Nacional de Arte Rupestre </b><br><br> tiene como propósito fundamental el servir de Centro de Referencia y Servicio de Información para el conocimiento y protección de las Manifestaciones Rupestres en Venezuela, como parte de la conservación de la memoria histórica y documental de este patrimonio cultural arqueológico del país.
+</p>
+<br>
+<div class="row" >
+    <div class="col-sm-2" style="width:19%">
+    <img src="{% static "images/inicio/FUNDABITAT.gif"  %}"  />
+    </div>
+    <div class="col-sm-2" style="width:19%">
+    <img src="{% static "images/inicio/IFRAO.gif" %}"  />
+    </div>
+    <div class="col-sm-2" style="width:19%">
+    <img src="{% static "images/inicio/tamayop.gif" %}"  />
+    </div>
+    <div class="col-sm-2" style="width:19%">
+    <img src="{% static "images/inicio/ucvg.gif" %}"  />
+    </div>
+    <div class="col-sm-2" style="width:19%">
+    <img src="{% static "images/inicio/USB.png" %}" />
+    </div>
+</div>
+</div>
+<br>
+{% endblock %}
+
+

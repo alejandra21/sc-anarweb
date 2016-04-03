@@ -1,0 +1,173 @@
+html, body, head {
+	margin:0;
+	padding:0;
+}
+
+#nav {
+	width: 100%;
+	background-color:#812428;
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+
+
+#nav li {
+    display:inline;
+}
+
+#nav a:link, a:visited {
+    display:inline-block;
+    padding:10px;
+    font-family: verdana;
+    color: #FFFFFF;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+#nav a:hover, a:active{
+	background-color: #601D22;
+}
+
+#banner {
+    background-color:#f1f1f1;
+    border-bottom: 1px solid;
+    border-color: #e5e5e5;
+    margin:0;
+    width: 100%;
+    height:90px;
+}
+
+#logo {
+    padding:7px;
+    text-align: center;
+}
+
+#formulario {
+    margin-left: 300px;
+    padding-top: 30px;
+    padding-left: 100px;
+    font-family: verdana;
+    font-size: 1em;
+    font-family: verdana;
+
+}
+
+#formulario label {
+    width:400px;    /*Or however much space you need for the form’s labels*/
+    float:left;
+}
+
+#formulario input[type="text"] {
+    width:18em;
+    height:1em;
+    font-size:1em;
+    margin-top: 5px;
+}
+
+#formulario input[type="checkbox"] {
+    margin-left: 400px;
+    font-size:1em;
+    height:1em;
+    width: 1em;
+}
+
+#formulario select {
+    width:10em;
+    height:1.5em;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+#busqueda {
+    color:#812428;
+    font-size: 2em;
+}
+
+#title {
+    font-size: 1.5em;
+}
+
+#subtitle {
+    font-size:1em;
+    font-weight: bold;
+}
+
+#menu {
+    float:left;
+    width: 300px;
+    margin-top: 110px;
+    height:100%;
+    font-size: 1em;
+    font-family: verdana;
+    border-right: 1px solid;
+    border-color: #e5e5e5;
+}
+
+#menu li {
+    display:block;
+}
+
+#menu a:link, a:visited {
+    display:inline-block;
+    padding:10px;
+    font-family: verdana;
+    color: #000000;
+    font-size: 1em;
+    text-decoration: none;
+}
+    
+#menu a:hover, a:active{
+    margin:0 ;
+    font-weight: bold;
+    background-color: #e5e5e5;
+}
+
+#buscador {
+    padding-top: 10em;
+    text-align: center;
+}
+
+#buscador input[type="text"]{
+    font-size:1.5em;
+    width: 30em;
+}
+
+#buscador th {
+	display: none;
+}
+
+#buscador li {
+	display: inline;
+	list-style-type: none;
+	padding-right: 10px;
+}
+
+.button {
+    margin-left: 2em;
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+    background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+    background-color:#ededed;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    color:#777777;
+    font-family:Verdana;
+    font-size:12px;
+    font-weight:bold;
+    padding:6px 10px;
+    text-decoration:none;
+    text-shadow:1px 1px 0px #ffffff;
+}.button:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+    background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+    background-color:#dfdfdf;
+}.button:active {
+    position:relative;
+    top:1px;
+}
+

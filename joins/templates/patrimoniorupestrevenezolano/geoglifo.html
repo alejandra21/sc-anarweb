@@ -1,0 +1,64 @@
+
+{% extends "patrimoniorupestre-base.html" %}
+{% load staticfiles%}
+
+{% block pagetitle %}Geoglifo{% endblock %}
+{% block title %}<span style="color:orange">Geoglifo</span>{% endblock %}
+
+{% block content %}
+<ul id="fondo" style="width:100%;height:800px;z-index=1;display:none;"></ul>
+<ul id="1" class="dropdown-image " role="menu">
+	<div class ="row " >
+			<img src="{% static "images/patrimoniorupestrevenezolano/geoglifo/ubigeoglifo.png" %}" style="width:100%;border:solid 2px orange"/>
+			<div class="description" style="align:left"><b><span style="color:orange">Ubicacion de las Pinturas Rupestres en Venezuela</span></b></p>
+			<div onclick="setImageVisible('1','none')" style="width:100%;font-size:26px;text-align:right">&#x25C4;</a>
+	</div>
+</ul>
+<ul id="2" class="dropdown-image " role="menu">
+	<div class ="row " >
+			<img src="{% static "images/patrimoniorupestrevenezolano/pinturarupestre/434grande.png" %}" style="width:100%"/>
+			<div class="description" style="align:left"><p><b><span style="color:orange;">Código ANAR: 51</span><br><u>La Rueda del Indio</u><br></b>Estado Carabobo<br>Fotog: Ruby De Valencia<br></p>
+			<div onclick="setImageVisible('2','none')" style="width:100%;font-size:26px;text-align:right">&#x25C4;</a>
+	</div>
+</ul>
+
+
+<p>
+Los <span style="color:orange"><b>Geoglifos</b></span> son manifestaciones rupestres grabadas sobre tierra, que como los petroglifos monumentales del <b>estado Amazonas</b>, sin duda buscaban asegurar su visibilidad a lo lejos, posiblemente son contemporáneos de los <b>Petroglifos</b>. 
+</p>
+<p>
+Son conocidos en el mundo entero los <span style="color:orange"><b>Geoglifos</b></span> de <b>Nazca</b>, Perú, pero muy pocos venezolanos y aún menos extranjeros, saben de la existencia de los <span style="color:orange"><b>Geoglifos</b></span> en el <b>estado Carabobo</b> y de enigmáticos relatos que los ubican también en el <b>estado Yaracuy</b>. 
+</p>
+
+<!-- <p><img src="{% static "images/patrimoniorupestrevenezolano/geoglifo/ubigeoglifo.png"  %}" style="width:70%;border:solid 2px orange"/></p>
+<p> -->
+El <b>ANAR</b> los documenta en videos de fotografía aérea, mapas y publicaciones ilustradas.
+</p>
+
+<!-- Las páginas que tienen una imagen, se llenan con un gif -->
+<table width="50%" align="left">
+	<tbody>
+        <tr>
+            <td align="center" width="20%" onclick="setImageVisible('2','block')">
+			<img src="{% static "images/patrimoniorupestrevenezolano/geoglifo/chirgua.png"  %}" width="20%" />
+			</td>
+        </tr>
+		<tr>
+			<td align="center" width="30%">
+			<!-- GIF DE GEOGLIFO VA AQUI <img src="{% static "images/patrimoniorupestrevenezolano/pinturarupestre/geoglifo.gif"  %}" style="width:50%" /> -->
+			</td>
+		</tr>	
+    </tbody>
+</table>
+
+<table width="50%" align="right">
+	<tbody>
+        <tr>
+            <td align="center" width="20%" onclick="setImageVisible('1','block')">
+			<img src="{% static "images/patrimoniorupestrevenezolano/geoglifo/ubigeoglifo.png"  %}" style="width:70%;border:solid 2px orange"/>
+			</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

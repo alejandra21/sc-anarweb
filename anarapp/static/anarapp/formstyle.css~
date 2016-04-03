@@ -1,0 +1,78 @@
+body {
+
+	margin: 20px;
+	padding: 0;
+	font-family: verdana;
+}
+
+h3{
+
+	margin: 0;
+	padding: 0;
+}
+
+div.resultado  {
+	background-color: white; color: black;
+	padding-bottom: 4px;
+}
+
+.resultados{
+
+    width: 95%;
+    
+    }
+
+#close {
+    display:block;
+    float:right;
+    width:30px;
+    height:29px;
+    background:url(images/mas.png) no-repeat center center;
+}
+
+#contenedor {
+    width: 100%;
+    overflow: auto; /* will contain if #first is longer than #second */
+    font: verdana;
+    padding-top: 30px;
+}
+#filtro {
+	float:left;
+    width: 250px;
+    float:left; /* add this */
+    padding-left: 5px;
+    border-right: 1px solid;
+    border-color: #C0C0C0;
+}
+#res {
+	margin: 0 0 0 252px;
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+    padding-left: 30px;
+}
+#resImagen {
+    width: 100px;
+    float:left; /* add this */
+    padding: 2em 0 0 2em;
+}
+#resTexto {
+	margin: 0 50px 0 230px;
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+}
+#selecciones{
+	padding-left: 15px;
+}
+#tituloRes{
+	padding-left: 30px;
+	padding-bottom: 10px;
+}
+#botonFiltrar{
+	margin: 0 0 0 20px;
+	text-align: center;
+}
+
+#titulo {
+    color:#812414;
+    font-size: 2em;
+    padding-left: 20px;
+}
+

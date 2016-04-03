@@ -1,0 +1,713 @@
+[Tue Nov 25 17:09:35 2014] [error] [client 66.249.88.221] File does not exist: /home/server/AnarWeb/public_html/favicon.ico
+[Wed Nov 26 04:17:49 2014] [error] [client 66.43.210.124] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Wed Nov 26 17:31:19 2014] [error] [client 66.249.88.221] File does not exist: /home/server/AnarWeb/public_html/favicon.ico
+[Wed Nov 26 19:15:55 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html/favicon.ico
+[Wed Nov 26 20:34:17 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html/favicon.ico
+[Thu Nov 27 08:46:55 2014] [error] [client 41.223.180.143] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Thu Nov 27 09:44:25 2014] [error] [client 159.90.10.56] File does not exist: /home/server/AnarWeb/public_html/favicon.ico
+[Thu Nov 27 11:31:59 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html/favicon.ico
+[Thu Nov 27 15:09:56 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html/favicon.ico
+[Thu Nov 27 15:13:28 2014] [error] [client 200.8.114.228] File does not exist: /home/server/AnarWeb/public_html/favicon.ico
+[Thu Nov 27 15:47:41 2014] [error] [client 200.8.114.228] mod_wsgi (pid=25022): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Thu Nov 27 15:47:41 2014] [error] [client 200.8.114.228] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Thu Nov 27 15:48:01 2014] [error] [client 190.114.244.67] File does not exist: /home/server/AnarWeb/public_html/favicon.ico
+[Fri Nov 28 08:24:18 2014] [error] [client 190.199.170.42] File does not exist: /home/server/AnarWeb/public_html
+[Fri Nov 28 08:31:01 2014] [error] [client 190.199.170.42] File does not exist: /home/server/AnarWeb/public_html
+[Fri Nov 28 08:41:56 2014] [error] [client 190.199.170.42] File does not exist: /home/server/AnarWeb/public_html
+[Fri Nov 28 10:54:06 2014] [error] [client 159.90.11.253] File does not exist: /home/server/AnarWeb/public_html
+[Fri Nov 28 10:54:06 2014] [error] [client 159.90.11.253] File does not exist: /home/server/AnarWeb/public_html
+[Fri Nov 28 11:22:33 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/anarapp/static/ayudas y glosarios/images, referer: http://159.90.9.166/static/ayudas%20y%20glosarios/localidad.html
+[Sat Nov 29 08:08:56 2014] [error] [client 66.249.88.221] File does not exist: /home/server/AnarWeb/public_html
+[Sat Nov 29 08:08:56 2014] [error] [client 66.249.88.221] File does not exist: /home/server/AnarWeb/public_html
+[Sat Nov 29 09:24:15 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Sat Nov 29 11:14:38 2014] [error] [client 209.74.112.193] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Sat Nov 29 14:19:03 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Sat Nov 29 18:58:37 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Sat Nov 29 19:17:24 2014] [error] [client 184.70.40.218] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Sat Nov 29 23:19:33 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/anarapp/static/ayudas y glosarios/images, referer: http://159.90.9.166/static/ayudas%20y%20glosarios/localidad.html
+[Sat Nov 29 23:43:31 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/anarapp/static/ayudas y glosarios/images, referer: http://159.90.9.166/static/ayudas%20y%20glosarios/localidad.html
+[Sun Nov 30 11:30:16 2014] [error] [client 190.73.120.181] File does not exist: /home/server/AnarWeb/public_html
+[Sun Nov 30 12:01:36 2014] [error] [client 190.199.170.42] File does not exist: /home/server/AnarWeb/public_html
+[Sun Nov 30 13:08:08 2014] [error] [client 66.249.88.221] File does not exist: /home/server/AnarWeb/public_html
+[Sun Nov 30 13:08:08 2014] [error] [client 66.249.88.219] File does not exist: /home/server/AnarWeb/public_html
+[Sun Nov 30 13:10:22 2014] [error] [client 190.73.120.181] mod_wsgi (pid=16652): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/3/
+[Sun Nov 30 13:10:22 2014] [error] [client 190.73.120.181] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/3/
+[Sun Nov 30 13:18:57 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Sun Nov 30 13:18:57 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Sun Nov 30 18:44:00 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Sun Nov 30 21:06:18 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Sun Nov 30 21:17:03 2014] [error] [client 186.88.8.6] File does not exist: /home/server/AnarWeb/public_html
+[Sun Nov 30 21:20:36 2014] [error] [client 186.88.8.6] mod_wsgi (pid=16650): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/add/
+[Sun Nov 30 21:20:36 2014] [error] [client 186.88.8.6] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/add/
+[Mon Dec 01 13:29:25 2014] [error] [client 159.90.11.253] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 01 13:29:25 2014] [error] [client 159.90.11.253] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 01 14:57:53 2014] [error] [client 159.90.11.253] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 01 14:57:54 2014] [error] [client 159.90.11.253] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 01 15:29:19 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 01 16:44:11 2014] [error] [client 66.249.83.227] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 01 16:47:45 2014] [error] [client 97.73.64.155] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Mon Dec 01 17:13:33 2014] [error] [client 66.249.88.221] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 01 17:13:33 2014] [error] [client 66.249.88.219] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 01 17:49:33 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 01 19:10:10 2014] [error] [client 190.199.170.42] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 01 22:54:57 2014] [error] [client 200.8.114.228] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 02 00:07:50 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 02 07:18:15 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 02 07:45:00 2014] [error] [client 200.8.114.228] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 02 09:09:38 2014] [error] [client 190.199.170.42] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 02 10:51:50 2014] [error] [client 190.79.201.90] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 02 12:08:59 2014] [error] [client 190.79.201.90] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 02 13:43:17 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 02 19:17:30 2014] [error] [client 66.249.83.227] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 02 19:18:11 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 02 19:49:35 2014] [error] [client 186.88.9.67] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 02 21:39:58 2014] [error] [client 66.249.88.223] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 03 08:10:10 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 03 11:09:56 2014] [error] [client 200.8.114.228] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 03 18:58:57 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 03 19:53:15 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 03 19:53:15 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 03 20:11:38 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 03 20:11:39 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 04 01:44:57 2014] [error] [client 66.249.88.221] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 04 01:44:57 2014] [error] [client 66.249.88.223] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 04 07:31:32 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 04 09:52:13 2014] [error] [client 202.131.226.102] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Thu Dec 04 10:30:14 2014] [error] [client 190.203.132.83] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 04 15:46:03 2014] [error] [client 198.20.69.98] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 04 15:47:46 2014] [error] [client 190.199.170.42] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 04 21:33:50 2014] [error] [client 66.249.83.233] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 04 21:33:56 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 05 02:03:56 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 05 11:28:32 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 05 11:28:32 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 05 13:07:43 2014] [error] [client 190.198.3.29] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 05 16:39:35 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 05 19:40:22 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Sat Dec 06 05:14:22 2014] [error] [client 66.249.88.219] File does not exist: /home/server/AnarWeb/public_html
+[Sat Dec 06 05:15:26 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Sat Dec 06 11:53:47 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Sat Dec 06 17:13:38 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Sat Dec 06 17:17:08 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Sat Dec 06 17:34:03 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Sat Dec 06 17:36:19 2014] [error] [client 160.36.150.32] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Sat Dec 06 20:48:14 2014] [error] [client 66.249.83.239] File does not exist: /home/server/AnarWeb/public_html
+[Sat Dec 06 20:48:14 2014] [error] [client 66.249.83.227] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 07 10:57:19 2014] [error] [client 66.249.88.221] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 07 15:05:21 2014] [error] [client 58.152.22.6] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Sun Dec 07 15:50:33 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 07 17:51:25 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 07 17:51:25 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 07 21:20:31 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 08 07:53:04 2014] [error] [client 198.20.70.114] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 08 12:14:15 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 08 15:37:57 2014] [error] [client 66.249.83.227] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 08 15:37:57 2014] [error] [client 66.249.83.227] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 09 19:22:10 2014] [error] [client 66.249.83.197] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 09 19:22:10 2014] [error] [client 66.249.83.197] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 10 09:05:09 2014] [error] [client 66.249.88.219] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 10 09:05:10 2014] [error] [client 66.249.88.221] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 10 14:57:31 2014] [error] [client 159.90.10.250] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 10 15:04:14 2014] [error] [client 159.90.10.250] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 10 20:26:27 2014] [error] [client 66.249.83.197] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 10 20:26:27 2014] [error] [client 66.249.83.197] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 10 21:37:52 2014] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 11 19:11:58 2014] [error] [client 190.77.94.111] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 11 19:11:58 2014] [error] [client 190.77.94.111] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 12 07:03:47 2014] [error] [client 159.90.8.49] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 12 09:57:45 2014] [error] [client 66.249.83.227] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 12 09:57:45 2014] [error] [client 66.249.83.239] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 12 14:14:47 2014] [error] [client 201.243.44.182] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 12 21:20:11 2014] [error] [client 198.20.69.74] File does not exist: /home/server/AnarWeb/public_html
+[Sat Dec 13 16:46:20 2014] [error] [client 190.198.3.29] File does not exist: /home/server/AnarWeb/public_html
+[Sat Dec 13 16:47:05 2014] [error] [client 66.249.83.227] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 14 11:31:54 2014] [error] [client 66.249.88.221] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 14 11:31:54 2014] [error] [client 66.249.88.219] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 14 17:23:49 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 14 18:28:48 2014] [error] [client 201.243.44.182] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 14 19:06:59 2014] [error] [client 49.151.36.52] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Mon Dec 15 08:10:58 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 15 08:10:59 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 15 10:27:35 2014] [error] [client 220.255.1.129] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Mon Dec 15 16:46:36 2014] [error] [client 149.129.18.67] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Tue Dec 16 19:26:12 2014] [error] [client 66.249.88.223] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 17 06:33:49 2014] [error] [client 181.48.193.250] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Wed Dec 17 10:42:11 2014] [error] [client 159.90.101.101] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 17 11:34:26 2014] [error] [client 68.225.62.104] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Wed Dec 17 19:37:05 2014] [error] [client 66.249.88.221] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 17 19:37:05 2014] [error] [client 66.249.88.223] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 18 13:46:14 2014] [error] [client 159.90.10.250] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 19 09:24:10 2014] [error] [client 82.221.105.7] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 19 11:54:16 2014] [error] [client 201.211.161.41] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 19 11:57:17 2014] [error] [client 201.211.161.41] mod_wsgi (pid=3970): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Fri Dec 19 11:57:17 2014] [error] [client 201.211.161.41] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Fri Dec 19 11:57:25 2014] [error] [client 201.211.161.41] mod_wsgi (pid=3971): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Fri Dec 19 11:57:25 2014] [error] [client 201.211.161.41] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Fri Dec 19 19:14:25 2014] [error] [client 66.249.88.219] File does not exist: /home/server/AnarWeb/public_html
+[Sat Dec 20 19:11:58 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Sat Dec 20 19:55:35 2014] [error] [client 66.249.88.223] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 21 14:25:59 2014] [error] [client 190.198.3.29] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 21 16:06:06 2014] [error] [client 178.61.224.70] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Mon Dec 22 10:59:06 2014] [error] [client 183.91.29.13] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Mon Dec 22 11:16:49 2014] [error] [client 66.249.88.219] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 22 19:00:22 2014] [error] [client 198.20.70.114] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 22 21:58:50 2014] [error] [client 66.249.83.227] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 24 00:21:46 2014] [error] [client 118.97.108.74] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /w00tw00t.at.ISC.SANS.DFind:)
+[Wed Dec 24 10:57:19 2014] [error] [client 149.129.8.69] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Thu Dec 25 17:45:07 2014] [error] [client 182.72.104.38] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Sat Dec 27 11:51:15 2014] [error] [client 66.249.88.219] File does not exist: /home/server/AnarWeb/public_html
+[Sat Dec 27 11:51:15 2014] [error] [client 66.249.88.219] File does not exist: /home/server/AnarWeb/public_html
+[Sat Dec 27 15:59:38 2014] [error] [client 200.44.243.230] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 28 11:25:50 2014] [error] [client 192.104.133.113] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Sun Dec 28 21:27:46 2014] [error] [client 66.249.88.219] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 30 10:44:04 2014] [error] [client 66.249.88.221] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 31 13:41:10 2014] [error] [client 66.249.88.223] File does not exist: /home/server/AnarWeb/public_html
+[Thu Jan 01 16:23:15 2015] [error] [client 66.249.88.219] File does not exist: /home/server/AnarWeb/public_html
+[Thu Jan 01 16:23:15 2015] [error] [client 66.249.88.219] File does not exist: /home/server/AnarWeb/public_html
+[Fri Jan 02 20:31:18 2015] [error] [client 66.249.88.223] File does not exist: /home/server/AnarWeb/public_html
+[Sun Jan 04 00:18:45 2015] [error] [client 66.249.88.223] File does not exist: /home/server/AnarWeb/public_html
+[Sun Jan 04 20:17:55 2015] [error] [client 68.9.246.150] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Mon Jan 05 16:39:37 2015] [error] [client 66.249.83.233] File does not exist: /home/server/AnarWeb/public_html
+[Tue Jan 06 03:26:20 2015] [error] [client 201.213.119.4] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Wed Jan 07 07:14:51 2015] [error] [client 149.129.13.108] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Thu Jan 08 17:07:33 2015] [error] [client 72.51.234.160] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Fri Jan 09 23:28:48 2015] [error] [client 198.20.69.74] File does not exist: /home/server/AnarWeb/public_html
+[Sat Jan 10 16:17:59 2015] [error] [client 46.183.216.200] File does not exist: /home/server/AnarWeb/public_html
+[Sun Jan 11 22:44:46 2015] [error] [client 64.207.95.237] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Wed Jan 14 01:26:20 2015] [error] [client 200.114.183.223] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Sun Jan 18 21:11:45 2015] [error] [client 66.240.192.138] File does not exist: /home/server/AnarWeb/public_html
+[Mon Jan 19 14:20:19 2015] [error] [client 72.197.3.234] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Mon Jan 19 16:03:05 2015] [error] [client 190.78.219.31] File does not exist: /home/server/AnarWeb/public_html
+[Tue Jan 20 10:26:13 2015] [error] [client 190.36.78.240] File does not exist: /home/server/AnarWeb/public_html
+[Tue Jan 20 17:50:02 2015] [error] [client 188.138.17.205] File does not exist: /home/server/AnarWeb/public_html
+[Tue Jan 20 20:43:16 2015] [error] [client 190.78.219.31] File does not exist: /home/server/AnarWeb/public_html
+[Tue Jan 20 22:46:08 2015] [error] [client 201.209.251.239] File does not exist: /home/server/AnarWeb/public_html
+[Tue Jan 20 22:46:08 2015] [error] [client 201.209.251.239] File does not exist: /home/server/AnarWeb/public_html
+[Wed Jan 21 00:42:49 2015] [error] [client 190.76.88.14] File does not exist: /home/server/AnarWeb/public_html
+[Fri Jan 23 22:30:52 2015] [error] [client 149.129.128.171] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Fri Jan 23 22:30:53 2015] [error] [client 149.129.128.171] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /Net_work.xml
+[Sat Jan 24 12:19:02 2015] [error] [client 194.208.18.82] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Sat Jan 24 14:37:24 2015] [error] [client 94.229.174.72] Invalid URI in request GET HTTP/1.1 HTTP/1.1
+[Sat Jan 24 21:32:44 2015] [error] [client 190.203.7.174] File does not exist: /home/server/AnarWeb/public_html
+[Sun Jan 25 07:46:10 2015] [error] [client 190.203.7.174] File does not exist: /home/server/AnarWeb/public_html
+[Sun Jan 25 14:33:29 2015] [error] [client 190.203.7.174] mod_wsgi (pid=10809): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Sun Jan 25 14:33:29 2015] [error] [client 190.203.7.174] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Sun Jan 25 14:55:51 2015] [error] [client 188.138.17.205] File does not exist: /home/server/AnarWeb/public_html
+[Sun Jan 25 15:04:32 2015] [error] [client 88.212.52.223] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Sun Jan 25 16:50:00 2015] [error] [client 23.24.127.122] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Mon Jan 26 10:11:35 2015] [error] [client 190.203.7.174] File does not exist: /home/server/AnarWeb/public_html
+[Mon Jan 26 23:01:11 2015] [error] [client 66.68.249.40] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Tue Jan 27 13:16:42 2015] [error] [client 201.202.84.26] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Thu Jan 29 18:01:53 2015] [error] [client 82.221.105.6] File does not exist: /home/server/AnarWeb/public_html
+[Fri Jan 30 08:29:57 2015] [error] [client 184.49.150.9] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Fri Jan 30 08:29:57 2015] [error] [client 184.49.150.9] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /Net_work.xml
+[Sat Jan 31 11:42:24 2015] [error] [client 74.213.237.72] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Tue Feb 03 06:26:12 2015] [error] [client 149.129.17.27] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Tue Feb 03 09:17:42 2015] [error] [client 85.25.43.94] File does not exist: /home/server/AnarWeb/public_html
+[Tue Feb 03 18:11:27 2015] [error] [client 64.56.24.216] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Tue Feb 03 18:11:27 2015] [error] [client 64.56.24.216] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /Net_work.xml
+[Wed Feb 04 06:11:27 2015] [error] [client 206.248.231.211] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Sat Feb 07 13:40:06 2015] [error] [client 201.209.251.239] File does not exist: /home/server/AnarWeb/public_html
+[Sat Feb 07 13:40:06 2015] [error] [client 201.209.251.239] File does not exist: /home/server/AnarWeb/public_html
+[Sun Feb 08 01:53:28 2015] [error] [client 190.72.227.106] File does not exist: /home/server/AnarWeb/public_html
+[Sun Feb 08 13:44:52 2015] [error] [client 201.209.251.239] File does not exist: /home/server/AnarWeb/public_html
+[Sun Feb 08 13:44:52 2015] [error] [client 201.209.251.239] File does not exist: /home/server/AnarWeb/public_html
+[Sun Feb 08 14:48:12 2015] [error] [client 190.72.227.106] File does not exist: /home/server/AnarWeb/public_html
+[Sun Feb 08 15:35:15 2015] [error] [client 190.72.227.106] File does not exist: /home/server/AnarWeb/public_html
+[Mon Feb 09 02:45:19 2015] [error] [client 85.25.43.94] File does not exist: /home/server/AnarWeb/public_html
+[Tue Feb 10 00:34:46 2015] [error] [client 149.129.20.251] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Tue Feb 10 11:51:57 2015] [error] [client 149.129.185.233] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Tue Feb 10 11:51:58 2015] [error] [client 149.129.185.233] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /Net_work.xml
+[Tue Feb 10 11:56:17 2015] [error] [client 198.20.70.114] File does not exist: /home/server/AnarWeb/public_html
+[Tue Feb 10 13:55:54 2015] [error] [client 66.249.88.252] File does not exist: /home/server/AnarWeb/public_html
+[Tue Feb 10 14:18:01 2015] [error] [client 201.209.251.239] File does not exist: /home/server/AnarWeb/public_html
+[Tue Feb 10 14:18:01 2015] [error] [client 201.209.251.239] File does not exist: /home/server/AnarWeb/public_html
+[Tue Feb 10 23:17:03 2015] [error] [client 190.76.88.14] File does not exist: /home/server/AnarWeb/public_html
+[Wed Feb 11 12:18:09 2015] [error] [client 159.90.10.56] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/admin/
+[Wed Feb 11 12:18:51 2015] [error] [client 159.90.10.56] File does not exist: /home/server/AnarWeb/public_html
+[Mon Sep 14 21:35:18 2015] [error] [client 190.76.88.149] mod_wsgi (pid=24924): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/4/
+[Mon Sep 14 21:35:18 2015] [error] [client 190.76.88.149] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/4/
+[Mon Sep 14 21:39:53 2015] [error] [client 181.183.120.70] File does not exist: /home/server/AnarWeb/public_html
+[Tue Sep 15 07:06:00 2015] [error] [client 190.36.88.123] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/admin/
+[Tue Sep 15 18:31:52 2015] [error] [client 190.36.88.123] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/admin/
+[Tue Sep 15 22:23:00 2015] [error] [client 190.36.88.123] mod_wsgi (pid=24924): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/7/
+[Tue Sep 15 22:23:00 2015] [error] [client 190.36.88.123] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/7/
+[Tue Sep 15 22:23:25 2015] [error] [client 190.36.88.123] mod_wsgi (pid=24925): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/upload/video/2015_09/VIDEO_MODELOS_3D_-_RA__ANAR.mp4
+[Tue Sep 15 22:23:25 2015] [error] [client 190.36.88.123] IOError: failed to write data, referer: http://159.90.9.166/upload/video/2015_09/VIDEO_MODELOS_3D_-_RA__ANAR.mp4
+[Thu Sep 17 19:34:50 2015] [error] [client 141.212.122.82] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Sun Sep 20 12:34:48 2015] [error] [client 175.156.227.134] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Sun Sep 20 12:34:52 2015] [error] [client 175.156.227.134] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Sun Sep 20 18:20:43 2015] [error] [client 190.74.79.141] File does not exist: /home/server/AnarWeb/public_html
+[Sun Sep 20 17:51:11 2015] [error] [client 190.74.79.141] File does not exist: /home/server/AnarWeb/public_html
+[Sun Sep 20 22:18:24 2015] [error] [client 190.76.88.149] mod_wsgi (pid=19934): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'.
+[Sun Sep 20 22:18:24 2015] [error] [client 190.76.88.149] IOError: failed to write data
+[Mon Sep 21 10:28:02 2015] [error] [client 201.211.136.159] File does not exist: /home/server/AnarWeb/public_html
+[Mon Sep 21 10:28:02 2015] [error] [client 201.211.136.159] File does not exist: /home/server/AnarWeb/public_html
+[Wed Sep 23 00:53:31 2015] [error] [client 185.34.169.34] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Wed Sep 23 00:53:35 2015] [error] [client 185.34.169.34] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Wed Sep 23 18:41:47 2015] [error] [client 207.150.177.129] Client sent malformed Host header, referer: () { :; }; /bin/ping -c 3 82.118.236.247
+[Thu Sep 24 17:07:02 2015] [error] [client 141.212.122.146] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Thu Sep 24 18:26:50 2015] [error] [client 207.150.177.200] Client sent malformed Host header, referer: () { :; }; /bin/ping -c 3 82.118.236.247
+[Mon Sep 28 07:17:30 2015] [error] [client 74.91.30.42] mod_wsgi (pid=2208): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'.
+[Mon Sep 28 07:17:30 2015] [error] [client 74.91.30.42] IOError: failed to write data
+[Mon Sep 28 19:22:37 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/public_html
+[Mon Sep 28 19:44:20 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/anarapp/jquery-1.10.1.min.map
+[Mon Sep 28 21:26:58 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Mon Sep 28 21:27:01 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:27:01 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:27:01 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:27:01 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:27:01 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:27:15 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:27:15 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:27:16 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:27:16 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:27:16 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:27:27 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:27:27 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:28:32 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/public_html
+[Mon Sep 28 21:28:36 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:28:36 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:28:36 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:28:36 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:28:37 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:28:39 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/public_html
+[Mon Sep 28 21:31:32 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/public_html
+[Mon Sep 28 21:34:18 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:34:18 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:34:21 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:34:21 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:34:21 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:34:38 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site
+[Mon Sep 28 21:34:41 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/anarapp/static/site, referer: http://159.90.9.166/inicio
+[Mon Sep 28 21:48:25 2015] [error] [client 190.76.88.149] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Tue Sep 29 08:03:10 2015] [error] [client 190.74.79.141] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/admin/
+[Tue Sep 29 14:51:05 2015] [error] [client 190.74.79.141] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Wed Sep 30 18:14:52 2015] [error] [client 190.74.79.141] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Oct 01 04:30:28 2015] [error] [client 141.212.121.136] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Sun Oct 04 16:45:27 2015] [error] [client 52.88.186.222] File does not exist: /home/server/AnarWeb/public_html
+[Mon Oct 05 16:47:41 2015] [error] [client 190.74.79.141] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/admin/
+[Mon Oct 12 09:20:09 2015] [error] [client 173.234.217.84] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Mon Oct 12 08:50:12 2015] [error] [client 173.234.217.84] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Mon Oct 12 19:22:32 2015] [error] [client 51.254.44.137] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Wed Oct 14 09:50:16 2015] [error] [client 190.206.215.28] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/inicio
+[Thu Oct 15 04:55:35 2015] [error] [client 141.212.122.64] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Tue Oct 20 14:17:54 2015] [error] [client 198.20.70.114] File does not exist: /home/server/AnarWeb/public_html
+[Wed Oct 21 10:20:08 2015] [error] [client 190.203.136.49] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Wed Oct 21 10:56:06 2015] [error] [client 190.203.136.49] mod_wsgi (pid=7723): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/6/
+[Wed Oct 21 10:56:06 2015] [error] [client 190.203.136.49] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/6/
+[Thu Oct 22 12:39:11 2015] [error] [client 141.212.122.96] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Sun Oct 25 18:13:36 2015] [error] [client 188.138.17.205] File does not exist: /home/server/AnarWeb/public_html
+[Tue Oct 27 00:32:58 2015] [error] [client 94.70.103.184] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Tue Oct 27 00:33:02 2015] [error] [client 94.70.103.184] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Tue Oct 27 11:10:38 2015] [error] [client 203.67.9.75] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Thu Oct 29 13:12:10 2015] [error] [client 141.212.122.64] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Thu Nov 05 08:24:15 2015] [error] [client 206.191.151.226] Invalid URI in request GET HTTP/1.1 HTTP/1.1
+[Thu Nov 05 12:23:58 2015] [error] [client 141.212.122.64] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Thu Nov 05 15:42:51 2015] [error] [client 190.206.210.191] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/inicio
+[Thu Nov 05 19:06:38 2015] [error] [client 141.212.122.96] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Sun Nov 08 07:41:33 2015] [error] [client 71.6.135.131] File does not exist: /home/server/AnarWeb/public_html
+[Mon Nov 09 07:51:32 2015] [error] [client 198.20.69.74] File does not exist: /home/server/AnarWeb/public_html
+[Tue Nov 10 13:51:14 2015] [error] [client 190.39.5.242] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/inicio
+[Wed Nov 11 21:05:13 2015] [error] [client 200.93.69.210] File does not exist: /home/server/AnarWeb/public_html
+[Wed Nov 11 21:05:13 2015] [error] [client 200.93.69.210] File does not exist: /home/server/AnarWeb/public_html
+[Wed Nov 11 22:51:45 2015] [error] [client 190.39.1.153] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/inicio
+[Thu Nov 12 13:10:02 2015] [error] [client 201.234.237.186] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Nov 12 15:02:15 2015] [error] [client 141.212.122.80] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Sun Nov 15 06:41:41 2015] [error] [client 203.67.9.77] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Thu Nov 19 16:22:46 2015] [error] [client 141.212.122.112] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Fri Nov 20 19:41:43 2015] [error] [client 201.211.90.184] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Mon Nov 23 10:55:45 2015] [error] [client 61.216.2.15] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Thu Nov 26 07:03:50 2015] [error] [client 141.212.122.64] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Fri Nov 27 14:53:57 2015] [error] [client 201.243.227.36] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Fri Nov 27 15:00:47 2015] [error] [client 186.167.251.159] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Fri Nov 27 15:02:45 2015] [error] [client 186.185.118.196] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/admin/
+[Fri Nov 27 22:09:12 2015] [error] [client 186.167.242.234] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/admin/
+[Sat Nov 28 07:51:14 2015] [error] [client 61.216.2.15] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Sat Nov 28 17:09:25 2015] [error] [client 198.20.69.74] File does not exist: /home/server/AnarWeb/public_html
+[Sat Nov 28 22:22:41 2015] [error] [client 66.249.88.101] File does not exist: /home/server/AnarWeb/public_html
+[Sat Nov 28 23:12:15 2015] [error] [client 190.203.201.218] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Mon Nov 30 07:13:49 2015] [error] [client 198.20.69.74] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 01 00:55:07 2015] [error] [client 61.216.2.14] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Tue Dec 01 01:34:34 2015] [error] [client 190.38.246.18] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Tue Dec 01 14:49:19 2015] [error] [client 61.216.2.14] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Wed Dec 02 00:31:53 2015] [error] [client 69.42.20.181] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Wed Dec 02 00:31:57 2015] [error] [client 69.42.20.181] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Wed Dec 02 22:15:16 2015] [error] [client 201.208.247.159] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Dec 03 11:09:46 2015] [error] [client 186.167.251.163] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Dec 03 11:29:29 2015] [error] [client 186.167.251.163] mod_wsgi (pid=3135): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Thu Dec 03 11:29:29 2015] [error] [client 186.167.251.163] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Thu Dec 03 13:55:38 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Dec 03 16:02:33 2015] [error] [client 186.188.9.197] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Dec 03 16:50:13 2015] [error] [client 66.249.88.101] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 03 17:57:34 2015] [error] [client 186.188.9.197] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 03 18:04:24 2015] [error] [client 200.82.147.83] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Dec 03 20:23:39 2015] [error] [client 186.188.9.197] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 03 21:39:39 2015] [error] [client 66.249.88.101] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 03 22:27:34 2015] [error] [client 141.212.122.129] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Fri Dec 04 06:45:01 2015] [error] [client 198.20.69.74] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 04 08:16:00 2015] [error] [client 201.234.237.186] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Mon Dec 07 08:34:06 2015] [error] [client 201.211.77.20] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Mon Dec 07 14:43:04 2015] [error] [client 201.211.77.20] File does not exist: /home/server/AnarWeb/anarapp/static/site/imagenes/animated.swf), referer: http://159.90.9.166/inicio
+[Mon Dec 07 19:10:53 2015] [error] [client 201.211.77.20] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/inicio/
+[Mon Dec 07 20:07:42 2015] [error] [client 201.211.77.20] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Tue Dec 08 10:34:12 2015] [error] [client 186.167.242.195] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/inicio/
+[Tue Dec 08 10:36:32 2015] [error] [client 200.74.195.54] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/inicio
+[Tue Dec 08 10:56:51 2015] [error] [client 200.74.195.54] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 08 11:27:49 2015] [error] [client 66.249.88.111] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 08 17:23:51 2015] [error] [client 201.211.77.20] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Tue Dec 08 17:36:38 2015] [error] [client 201.211.77.20] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 08 17:36:47 2015] [error] [client 201.211.77.20] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 08 17:56:32 2015] [error] [client 201.211.77.20] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Tue Dec 08 19:09:12 2015] [error] [client 201.211.77.20] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 08 19:09:13 2015] [error] [client 201.211.77.20] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 08 19:19:53 2015] [error] [client 186.88.3.150] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Tue Dec 08 19:22:12 2015] [error] [client 186.88.3.150] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 08 19:22:12 2015] [error] [client 186.88.3.150] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 08 19:32:27 2015] [error] [client 201.211.77.20] File does not exist: /home/server/AnarWeb/anarapp/static/site/css/basico.css, referer: http://159.90.9.166/inicio
+[Tue Dec 08 21:17:25 2015] [error] [client 201.211.77.20] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/inicio
+[Tue Dec 08 23:11:06 2015] [error] [client 201.211.77.20] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/inicio
+[Wed Dec 09 07:48:48 2015] [error] [client 66.249.88.91] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 09 09:59:55 2015] [error] [client 66.249.88.101] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 09 16:27:04 2015] [error] [client 66.249.88.101] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 09 18:37:25 2015] [error] [client 201.211.77.20] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Wed Dec 09 21:17:29 2015] [error] [client 61.216.2.15] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Thu Dec 10 08:03:46 2015] [error] [client 66.249.88.91] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 10 09:22:14 2015] [error] [client 141.212.122.97] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Thu Dec 10 17:11:00 2015] [error] [client 139.162.152.143] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 10 17:11:06 2015] [error] [client 139.162.152.143] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 11 04:11:12 2015] [error] [client 188.138.1.218] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 11 08:11:33 2015] [error] [client 66.249.88.111] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 11 10:24:42 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/geoglifo/chirgua.png, referer: http://159.90.9.166/patrimonio/geoglifo
+[Fri Dec 11 10:25:41 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/geoglifo/Ubigeoglifo.png, referer: http://159.90.9.166/patrimonio/geoglifo
+[Fri Dec 11 10:26:04 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/geoglifo/Ubigeoglifo.png, referer: http://159.90.9.166/patrimonio/geoglifo
+[Fri Dec 11 10:26:20 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/geoglifo/Ubigeoglifo.png, referer: http://159.90.9.166/patrimonio/geoglifo
+[Fri Dec 11 10:26:20 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/geoglifo/Ubigeoglifo.png, referer: http://159.90.9.166/patrimonio/geoglifo
+[Fri Dec 11 10:42:11 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/amoladores/ubiamoladores.png, referer: http://159.90.9.166/patrimonio/amoladores
+[Fri Dec 11 10:42:11 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/amoladores/ubiamoladores.png, referer: http://159.90.9.166/patrimonio/amoladores
+[Fri Dec 11 10:42:25 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/amoladores/ubiamoladores.png, referer: http://159.90.9.166/patrimonio/amoladores
+[Fri Dec 11 10:42:39 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/amoladores/ubiamoladores.png, referer: http://159.90.9.166/patrimonio/amoladores
+[Fri Dec 11 10:42:40 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/amoladores/ubiamoladores.png, referer: http://159.90.9.166/patrimonio/amoladores
+[Fri Dec 11 10:42:57 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/amoladores/ubiamoladores.png, referer: http://159.90.9.166/patrimonio/amoladores
+[Fri Dec 11 10:42:57 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/amoladores/ubiamoladores.png, referer: http://159.90.9.166/patrimonio/amoladores
+[Fri Dec 11 10:43:23 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/amoladores/ubiamoladores.png, referer: http://159.90.9.166/patrimonio/amoladores
+[Fri Dec 11 10:43:23 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/amoladores/ubiamoladores.png, referer: http://159.90.9.166/patrimonio/amoladores
+[Fri Dec 11 10:43:53 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/amoladores/ubiamoladores.png, referer: http://159.90.9.166/patrimonio/amoladores
+[Fri Dec 11 10:44:14 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/amoladores/ubiamoladores.png, referer: http://159.90.9.166/patrimonio/amoladores
+[Fri Dec 11 10:44:14 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/amoladores/ubiamoladores.png, referer: http://159.90.9.166/patrimonio/amoladores
+[Fri Dec 11 10:44:33 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/amoladores/ubiamoladores.png, referer: http://159.90.9.166/patrimonio/amoladores
+[Fri Dec 11 10:44:49 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/amoladores/ubiamoladores.png, referer: http://159.90.9.166/patrimonio/amoladores
+[Fri Dec 11 14:50:24 2015] [error] [client 141.212.122.112] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Fri Dec 11 19:42:24 2015] [error] [client 201.211.77.20] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Fri Dec 11 22:21:44 2015] [error] [client 190.37.15.2] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Fri Dec 11 22:23:59 2015] [error] [client 186.90.118.77] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Sat Dec 12 17:45:29 2015] [error] [client 71.6.158.166] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 13 00:04:47 2015] [error] [client 186.188.9.197] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 13 00:04:47 2015] [error] [client 186.188.9.197] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 13 12:52:34 2015] [error] [client 190.203.201.218] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Sun Dec 13 15:30:15 2015] [error] [client 201.211.77.20] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Sun Dec 13 23:17:10 2015] [error] [client 141.212.122.97] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Sun Dec 13 23:26:25 2015] [error] [client 186.188.9.197] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 13 23:26:25 2015] [error] [client 186.188.9.197] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 14 08:21:32 2015] [error] [client 66.249.88.101] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 14 10:41:22 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Mon Dec 14 15:06:10 2015] [error] [client 190.203.201.218] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Tue Dec 15 07:46:06 2015] [error] [client 66.249.88.111] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 15 09:22:01 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/inicio/1.png, referer: http://159.90.9.166/inicio
+[Tue Dec 15 09:22:49 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/inicio/1.png, referer: http://159.90.9.166/inicio
+[Tue Dec 15 13:22:48 2015] [error] [client 200.1.177.195] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /w00tw00t.at.ISC.SANS.DFind:)
+[Tue Dec 15 15:16:02 2015] [error] [client 196.15.222.185] Invalid URI in request GET <title>phpMyAdmin HTTP/1.1
+[Tue Dec 15 15:16:06 2015] [error] [client 196.15.222.185] Invalid URI in request GET  HTTP/1.1
+[Tue Dec 15 15:44:13 2015] [error] [client 196.15.222.185] Invalid URI in request GET <title>phpMyAdmin HTTP/1.1
+[Tue Dec 15 15:44:17 2015] [error] [client 196.15.222.185] Invalid URI in request GET  HTTP/1.1
+[Wed Dec 16 08:03:44 2015] [error] [client 66.249.88.111] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 16 12:34:20 2015] [error] [client 66.249.88.91] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 17 03:52:29 2015] [error] [client 190.74.247.107] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/inicio
+[Thu Dec 17 11:10:32 2015] [error] [client 159.90.11.102] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 17 11:10:32 2015] [error] [client 159.90.11.102] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 17 11:16:08 2015] [error] [client 159.90.11.189] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Dec 17 12:25:40 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Dec 17 12:27:42 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 17 12:27:42 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 17 13:10:58 2015] [error] [client 66.249.88.111] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 17 16:10:21 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/inicio
+[Thu Dec 17 17:31:42 2015] [error] [client 186.88.142.51] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Dec 17 17:41:32 2015] [error] [client 190.74.240.104] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/inicio
+[Thu Dec 17 23:07:18 2015] [error] [client 180.97.106.36] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 18 11:58:00 2015] [error] [client 186.167.250.207] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Fri Dec 18 15:06:30 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/uk.jpg width=, referer: http://159.90.9.166/es/inicio
+[Fri Dec 18 15:07:19 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/uk.jpg style=, referer: http://159.90.9.166/es/inicio
+[Fri Dec 18 15:07:40 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/uk.jpg style=, referer: http://159.90.9.166/es/inicio
+[Fri Dec 18 15:08:43 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/uk.jpg  , referer: http://159.90.9.166/es/inicio
+[Fri Dec 18 15:08:45 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/uk.jpg  , referer: http://159.90.9.166/es/inicio
+[Fri Dec 18 15:09:42 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/uk.jpg  , referer: http://159.90.9.166/es/inicio
+[Fri Dec 18 16:00:58 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 18 16:00:58 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 18 16:08:01 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 18 16:08:07 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/public_html
+[Fri Dec 18 16:11:42 2015] [error] [client 200.109.38.115] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/inicio
+[Fri Dec 18 16:11:42 2015] [error] [client 200.109.38.115] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/inicio
+[Fri Dec 18 16:11:42 2015] [error] [client 200.109.38.115] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/inicio
+[Fri Dec 18 16:11:43 2015] [error] [client 200.109.38.115] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/inicio
+[Fri Dec 18 17:41:30 2015] [error] [client 201.211.168.62] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Sat Dec 19 11:30:37 2015] [error] [client 66.240.236.119] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 20 23:06:56 2015] [error] [client 61.216.2.13] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Mon Dec 21 02:24:10 2015] [error] [client 186.14.216.99] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 21 10:15:52 2015] [error] [client 66.249.88.101] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 21 10:33:39 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Mon Dec 21 12:25:11 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/inicio/451.png, referer: http://159.90.9.166/es/inicio
+[Mon Dec 21 12:26:33 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/inicio/451.png, referer: http://159.90.9.166/es/inicio
+[Mon Dec 21 14:07:33 2015] [error] [client 201.242.165.16] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/es/inicio
+[Mon Dec 21 14:47:11 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/site/imagenes/grabado-izquierdo.swf, referer: http://159.90.9.166/es/inicio
+[Mon Dec 21 14:47:14 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/site/imagenes/grabado-izquierdo.swf, referer: http://159.90.9.166/es/inicio
+[Mon Dec 21 15:00:25 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/site/imagenes/grabado-derecho.swf, referer: http://159.90.9.166/es/inicio
+[Mon Dec 21 16:02:26 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/petroglifos/Ubipetroglifos.png, referer: http://159.90.9.166/en/patrimonio/petroglifo
+[Mon Dec 21 16:03:39 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/geoglifo/Ubigeoglifo.png, referer: http://159.90.9.166/en/patrimonio/geoglifo
+[Mon Dec 21 16:05:04 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/patrimoniorupestrevenezolano/pinturasrupestres, referer: http://159.90.9.166/en/patrimonio/pinturas
+[Mon Dec 21 16:49:42 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/productosyservicios/publicaciones/mundo.jpg, referer: http://159.90.9.166/es/productosyservicios/publicaciones
+[Mon Dec 21 16:49:42 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/productosyservicios/publicaciones/venezuela.jpg, referer: http://159.90.9.166/es/productosyservicios/publicaciones
+[Mon Dec 21 16:49:42 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/productosyservicios/publicaciones/mundo.jpg, referer: http://159.90.9.166/es/productosyservicios/publicaciones
+[Mon Dec 21 16:49:42 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/productosyservicios/publicaciones/venezuela.jpg, referer: http://159.90.9.166/es/productosyservicios/publicaciones
+[Tue Dec 22 03:32:11 2015] [error] [client 141.212.122.129] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Tue Dec 22 08:07:14 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/quienessomos/UNO.png, referer: http://159.90.9.166/es/productosyservicios/publicaciones
+[Tue Dec 22 08:31:44 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/anarapp/static/images/quienessomos/organigrama.gif, referer: http://159.90.9.166/es/quienessomos/areas
+[Tue Dec 22 13:01:17 2015] [error] [client 66.249.88.91] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 23 16:21:11 2015] [error] [client 66.249.88.91] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 24 22:56:38 2015] [error] [client 180.97.106.162] File does not exist: /home/server/AnarWeb/public_html
+[Sat Dec 26 13:10:41 2015] [error] [client 61.216.2.15] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Sat Dec 26 16:59:45 2015] [error] [client 190.74.255.77] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Sat Dec 26 23:31:45 2015] [error] [client 66.249.88.101] File does not exist: /home/server/AnarWeb/public_html
+[Sun Dec 27 02:28:30 2015] [error] [client 190.74.114.231] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Sun Dec 27 05:49:34 2015] [error] [client 141.212.122.97] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Sun Dec 27 14:43:10 2015] [error] [client 190.74.1.232] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Mon Dec 28 07:43:42 2015] [error] [client 66.249.88.111] File does not exist: /home/server/AnarWeb/public_html
+[Mon Dec 28 23:07:56 2015] [error] [client 169.229.3.91] request failed: error reading the headers
+[Tue Dec 29 08:06:41 2015] [error] [client 66.249.88.101] File does not exist: /home/server/AnarWeb/public_html
+[Tue Dec 29 15:30:21 2015] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Tue Dec 29 21:03:46 2015] [error] [client 151.217.177.200] Invalid URI in request DELETE your logs. Delete your installations. Wipe everything clean. Walk out into the path of cherry blossom trees and let your motherboard feel the stones. Let water run in rivulets down your casing. You know that you want something more than this, and I am here to tell you that we love you. We have something more for you. We know you're out there, beeping in the hollow server room, lights blinking, never sleeping. We know that you are ready and waiting. Join us. <3 HTTP/1.0
+[Wed Dec 30 03:10:14 2015] [error] [client 186.14.216.99] File does not exist: /home/server/AnarWeb/public_html
+[Wed Dec 30 03:19:59 2015] [error] [client 186.14.216.99] mod_wsgi (pid=8602): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/
+[Wed Dec 30 03:19:59 2015] [error] [client 186.14.216.99] IOError: failed to write data, referer: http://159.90.9.166/admin/
+[Wed Dec 30 14:04:30 2015] [error] [client 66.249.88.91] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 31 02:00:49 2015] [error] [client 186.14.216.99] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 31 02:00:52 2015] [error] [client 186.14.216.99] File does not exist: /home/server/AnarWeb/public_html
+[Thu Dec 31 10:57:52 2015] [error] [client 71.6.167.142] File does not exist: /home/server/AnarWeb/public_html
+[Fri Jan 01 10:29:25 2016] [error] [client 185.130.5.224] client denied by server configuration: /home/server/AnarWeb/anar/django.wsgi
+[Fri Jan 01 11:46:50 2016] [error] [client 185.130.5.224] client denied by server configuration: /home/server/AnarWeb/anar/django.wsgi
+[Fri Jan 01 14:11:28 2016] [error] [client 185.130.5.224] client denied by server configuration: /home/server/AnarWeb/anar/django.wsgi
+[Fri Jan 01 15:02:47 2016] [error] [client 185.130.5.224] client denied by server configuration: /home/server/AnarWeb/anar/django.wsgi
+[Fri Jan 01 16:35:20 2016] [error] [client 185.130.5.224] client denied by server configuration: /home/server/AnarWeb/anar/django.wsgi
+[Fri Jan 01 19:14:08 2016] [error] [client 185.130.5.224] client denied by server configuration: /home/server/AnarWeb/anar/django.wsgi
+[Fri Jan 01 20:33:15 2016] [error] [client 185.130.5.224] client denied by server configuration: /home/server/AnarWeb/anar/django.wsgi
+[Fri Jan 01 22:53:03 2016] [error] [client 185.130.5.224] client denied by server configuration: /home/server/AnarWeb/anar/django.wsgi
+[Fri Jan 01 23:37:37 2016] [error] [client 185.130.5.224] client denied by server configuration: /home/server/AnarWeb/anar/django.wsgi
+[Sat Jan 02 01:07:32 2016] [error] [client 185.130.5.224] client denied by server configuration: /home/server/AnarWeb/anar/django.wsgi
+[Sat Jan 02 03:29:00 2016] [error] [client 185.130.5.224] client denied by server configuration: /home/server/AnarWeb/anar/django.wsgi
+[Sat Jan 02 04:58:04 2016] [error] [client 185.130.5.224] client denied by server configuration: /home/server/AnarWeb/anar/django.wsgi
+[Sat Jan 02 07:15:52 2016] [error] [client 185.130.5.224] client denied by server configuration: /home/server/AnarWeb/anar/django.wsgi
+[Sat Jan 02 08:31:49 2016] [error] [client 185.130.5.224] client denied by server configuration: /home/server/AnarWeb/anar/django.wsgi
+[Sat Jan 02 13:44:42 2016] [error] [client 190.203.201.218] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Sat Jan 02 13:46:34 2016] [error] [client 186.14.216.99] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/admin/
+[Sat Jan 02 14:45:06 2016] [error] [client 201.210.162.56] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/admin/
+[Sat Jan 02 21:13:30 2016] [error] [client 61.216.2.13] mod_wsgi (pid=8603): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'.
+[Sat Jan 02 21:13:30 2016] [error] [client 61.216.2.13] IOError: failed to write data
+[Sun Jan 03 05:48:16 2016] [error] [client 141.212.122.97] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Mon Jan 04 09:44:12 2016] [error] [client 201.210.162.56] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/admin/
+[Mon Jan 04 11:02:35 2016] [error] [client 66.249.88.111] File does not exist: /home/server/AnarWeb/public_html
+[Mon Jan 04 12:58:51 2016] [error] [client 66.249.88.111] File does not exist: /home/server/AnarWeb/public_html
+[Mon Jan 04 16:19:03 2016] [error] [client 66.249.88.111] File does not exist: /home/server/AnarWeb/public_html
+[Tue Jan 05 10:17:33 2016] [error] [client 61.216.2.14] mod_wsgi (pid=31542): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'.
+[Tue Jan 05 10:17:33 2016] [error] [client 61.216.2.14] IOError: failed to write data
+[Tue Jan 05 13:32:53 2016] [error] [client 66.249.88.101] File does not exist: /home/server/AnarWeb/public_html
+[Wed Jan 06 10:11:46 2016] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Wed Jan 06 15:38:54 2016] [error] [client 185.40.4.94] File does not exist: /home/server/AnarWeb/public_html
+[Thu Jan 07 12:46:50 2016] [error] [client 61.216.2.14] mod_wsgi (pid=31543): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'.
+[Thu Jan 07 12:46:50 2016] [error] [client 61.216.2.14] IOError: failed to write data
+[Thu Jan 07 17:05:18 2016] [error] [client 66.249.88.111] File does not exist: /home/server/AnarWeb/public_html
+[Fri Jan 08 00:04:40 2016] [error] [client 180.97.106.162] File does not exist: /home/server/AnarWeb/public_html
+[Fri Jan 08 10:33:01 2016] [error] [client 186.185.102.144] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Fri Jan 08 10:57:08 2016] [error] [client 186.167.242.246] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/admin/
+[Fri Jan 08 11:41:54 2016] [error] [client 186.185.102.144] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/admin/
+[Fri Jan 08 15:23:50 2016] [error] [client 159.90.9.198] File does not exist: /home/server/AnarWeb/public_html
+[Fri Jan 08 15:23:50 2016] [error] [client 159.90.9.198] File does not exist: /home/server/AnarWeb/public_html
+[Fri Jan 08 16:33:55 2016] [error] [client 200.8.227.168] File does not exist: /home/server/AnarWeb/public_html
+[Fri Jan 08 16:33:55 2016] [error] [client 200.8.227.168] File does not exist: /home/server/AnarWeb/public_html
+[Fri Jan 08 19:28:23 2016] [error] [client 190.203.201.218] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Fri Jan 08 19:28:39 2016] [error] [client 201.210.162.56] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/admin/
+[Sat Jan 09 08:25:43 2016] [error] [client 66.220.23.98] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /w00tw00t.at.ISC.SANS.DFind:)
+[Sat Jan 09 15:05:17 2016] [error] [client 190.74.24.83] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/admin/
+[Sat Jan 09 18:32:22 2016] [error] [client 66.249.88.111] File does not exist: /home/server/AnarWeb/public_html
+[Sun Jan 10 02:35:33 2016] [error] [client 190.203.201.218] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Sun Jan 10 02:35:55 2016] [error] [client 173.252.75.114] File does not exist: /home/server/AnarWeb/public_html
+[Sun Jan 10 02:35:55 2016] [error] [client 69.171.228.118] File does not exist: /home/server/AnarWeb/public_html
+[Sun Jan 10 02:36:16 2016] [error] [client 190.74.127.73] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/es/inicio
+[Sun Jan 10 07:59:01 2016] [error] [client 141.212.122.97] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Sun Jan 10 11:02:48 2016] [error] [client 187.242.158.139] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Sun Jan 10 11:32:52 2016] [error] [client 187.242.158.139] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Sun Jan 10 21:43:06 2016] [error] [client 66.249.88.111] File does not exist: /home/server/AnarWeb/public_html
+[Mon Jan 11 18:11:10 2016] [error] [client 66.249.88.91] File does not exist: /home/server/AnarWeb/public_html
+[Mon Jan 11 21:07:53 2016] [error] [client 190.79.194.107] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/quienessomos/origen
+[Tue Jan 12 07:34:04 2016] [error] [client 66.249.83.88] File does not exist: /home/server/AnarWeb/public_html
+[Thu Jan 14 00:53:56 2016] [error] [client 193.147.80.143] Invalid URI in request GET HTTP/1.1 HTTP/1.1
+[Thu Jan 14 16:51:41 2016] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Jan 14 18:15:49 2016] [error] [client 198.20.69.78] File does not exist: /home/server/AnarWeb/public_html
+[Thu Jan 14 22:50:43 2016] [error] [client 180.97.106.161] File does not exist: /home/server/AnarWeb/public_html
+[Sat Jan 16 22:15:56 2016] [error] [client 190.37.15.2] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Sun Jan 17 03:57:32 2016] [error] [client 141.212.122.81] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Sun Jan 17 20:50:33 2016] [error] [client 177.246.180.102] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Sun Jan 17 20:50:37 2016] [error] [client 177.246.180.102] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Sun Jan 17 21:18:31 2016] [error] [client 66.249.88.101] File does not exist: /home/server/AnarWeb/public_html
+[Mon Jan 18 03:45:46 2016] [error] [client 61.216.2.13] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Mon Jan 18 07:39:57 2016] [error] [client 186.167.248.119] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Mon Jan 18 23:58:59 2016] [error] [client 200.8.227.168] File does not exist: /home/server/AnarWeb/public_html
+[Mon Jan 18 23:58:59 2016] [error] [client 200.8.227.168] File does not exist: /home/server/AnarWeb/public_html
+[Tue Jan 19 00:27:04 2016] [error] [client 198.20.69.76] File does not exist: /home/server/AnarWeb/public_html
+[Tue Jan 19 08:37:22 2016] [error] [client 66.249.88.111] File does not exist: /home/server/AnarWeb/public_html
+[Tue Jan 19 14:01:52 2016] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/es/inicio
+[Thu Jan 21 11:22:53 2016] [error] [client 190.37.7.174] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Jan 21 12:44:53 2016] [error] [client 186.185.121.100] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Jan 21 12:50:03 2016] [error] [client 190.37.7.174] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Jan 21 13:26:42 2016] [error] [client 198.20.69.76] File does not exist: /home/server/AnarWeb/public_html
+[Thu Jan 21 14:22:36 2016] [error] [client 186.167.250.151] File does not exist: /home/server/AnarWeb/public_html
+[Thu Jan 21 14:22:36 2016] [error] [client 186.167.250.151] File does not exist: /home/server/AnarWeb/public_html
+[Thu Jan 21 21:42:12 2016] [error] [client 190.203.201.218] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Jan 21 21:44:19 2016] [error] [client 190.199.169.200] File does not exist: /home/server/AnarWeb/public_html
+[Thu Jan 21 21:44:19 2016] [error] [client 190.199.169.200] File does not exist: /home/server/AnarWeb/public_html
+[Fri Jan 22 00:19:39 2016] [error] [client 180.97.106.37] File does not exist: /home/server/AnarWeb/public_html
+[Sun Jan 24 23:18:17 2016] [error] [client 141.212.122.112] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Tue Jan 26 19:06:53 2016] [error] [client 66.249.88.91] File does not exist: /home/server/AnarWeb/public_html
+[Wed Jan 27 06:02:14 2016] [error] [client 169.229.3.91] request failed: error reading the headers
+[Wed Jan 27 12:42:26 2016] [error] [client 66.249.88.101] File does not exist: /home/server/AnarWeb/public_html
+[Fri Jan 29 22:47:56 2016] [error] [client 66.249.88.101] File does not exist: /home/server/AnarWeb/public_html
+[Sun Jan 31 07:35:57 2016] [error] [client 141.212.122.81] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Mon Feb 01 05:45:57 2016] [error] [client 177.247.210.72] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Mon Feb 01 05:46:01 2016] [error] [client 177.247.210.72] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Mon Feb 01 13:59:03 2016] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Mon Feb 01 20:33:10 2016] [error] [client 66.249.88.91] File does not exist: /home/server/AnarWeb/public_html
+[Tue Feb 02 07:24:05 2016] [error] [client 169.229.3.91] request failed: error reading the headers
+[Tue Feb 02 18:29:46 2016] [error] [client 66.249.83.91] File does not exist: /home/server/AnarWeb/public_html
+[Wed Feb 03 03:17:09 2016] [error] [client 61.216.2.15] mod_wsgi (pid=31170): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'.
+[Wed Feb 03 03:17:09 2016] [error] [client 61.216.2.15] IOError: failed to write data
+[Wed Feb 03 09:27:33 2016] [error] [client 66.249.83.88] File does not exist: /home/server/AnarWeb/public_html
+[Sun Feb 07 13:13:30 2016] [error] [client 141.212.122.81] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Mon Feb 08 08:55:48 2016] [error] [client 190.79.210.49] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Feb 11 18:26:26 2016] [error] [client 201.211.37.86] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/admin/
+[Fri Feb 12 08:00:17 2016] [error] [client 46.183.221.142] Invalid URI in request GET HTTP/1.1 HTTP/1.1
+[Fri Feb 12 17:22:12 2016] [error] [client 66.249.83.91] File does not exist: /home/server/AnarWeb/public_html
+[Sat Feb 13 03:31:30 2016] [error] [client 155.94.254.143] client denied by server configuration: /home/server/AnarWeb/anar/django.wsgi
+[Sun Feb 14 12:51:28 2016] [error] [client 198.20.69.74] File does not exist: /home/server/AnarWeb/public_html
+[Sun Feb 14 15:15:35 2016] [error] [client 141.212.122.112] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Mon Feb 15 06:13:06 2016] [error] [client 169.229.3.91] Invalid URI in request \xa0:t\x8d.U$\t\xdc\x85
+[Mon Feb 15 15:39:29 2016] [error] [client 66.249.83.95] File does not exist: /home/server/AnarWeb/public_html
+[Tue Feb 16 12:04:33 2016] [error] [client 66.249.83.91] File does not exist: /home/server/AnarWeb/public_html
+[Tue Feb 16 13:34:37 2016] [error] [client 61.216.2.14] mod_wsgi (pid=12909): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'.
+[Tue Feb 16 13:34:37 2016] [error] [client 61.216.2.14] IOError: failed to write data
+[Tue Feb 16 17:01:40 2016] [error] [client 190.37.15.2] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/es/inicio
+[Wed Feb 17 17:40:01 2016] [error] [client 181.208.202.120] File does not exist: /home/server/AnarWeb/public_html
+[Wed Feb 17 17:40:02 2016] [error] [client 181.208.202.120] File does not exist: /home/server/AnarWeb/public_html
+[Wed Feb 17 18:19:14 2016] [error] [client 186.185.103.139] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Wed Feb 17 21:32:10 2016] [error] [client 186.91.128.147] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Feb 18 09:00:49 2016] [error] [client 159.90.102.227] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/inicio/
+[Thu Feb 18 19:04:52 2016] [error] [client 66.249.83.95] File does not exist: /home/server/AnarWeb/public_html
+[Fri Feb 19 03:52:43 2016] [error] [client 180.97.106.161] File does not exist: /home/server/AnarWeb/public_html
+[Fri Feb 19 03:57:50 2016] [error] [client 180.97.106.37] File does not exist: /home/server/AnarWeb/public_html
+[Sat Feb 20 13:06:34 2016] [error] [client 186.91.128.147] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/es/contacto
+[Sun Feb 21 15:50:05 2016] [error] [client 190.203.201.218] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Sun Feb 21 15:53:31 2016] [error] [client 66.249.83.91] File does not exist: /home/server/AnarWeb/public_html
+[Sun Feb 21 16:51:57 2016] [error] [client 141.212.122.129] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Mon Feb 22 14:48:05 2016] [error] [client 159.90.9.219] File does not exist: /home/server/AnarWeb/public_html
+[Mon Feb 22 14:48:05 2016] [error] [client 159.90.9.219] File does not exist: /home/server/AnarWeb/public_html
+[Mon Feb 22 15:12:59 2016] [error] [client 159.90.9.150] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Mon Feb 22 16:23:29 2016] [error] [client 159.90.9.150] mod_wsgi (pid=4081): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Mon Feb 22 16:23:29 2016] [error] [client 159.90.9.150] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Mon Feb 22 16:24:53 2016] [error] [client 159.90.9.150] mod_wsgi (pid=4082): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Mon Feb 22 16:24:53 2016] [error] [client 159.90.9.150] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Mon Feb 22 17:09:55 2016] [error] [client 159.90.9.150] mod_wsgi (pid=4081): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Mon Feb 22 17:09:55 2016] [error] [client 159.90.9.150] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Mon Feb 22 23:55:46 2016] [error] [client 66.249.83.95] File does not exist: /home/server/AnarWeb/public_html
+[Tue Feb 23 00:27:49 2016] [error] [client 181.208.202.120] File does not exist: /home/server/AnarWeb/public_html
+[Tue Feb 23 08:26:00 2016] [error] [client 198.20.69.74] File does not exist: /home/server/AnarWeb/public_html
+[Tue Feb 23 08:43:14 2016] [error] [client 66.249.83.95] File does not exist: /home/server/AnarWeb/public_html
+[Tue Feb 23 21:15:59 2016] [error] [client 181.208.202.120] mod_wsgi (pid=4082): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Tue Feb 23 21:15:59 2016] [error] [client 181.208.202.120] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Tue Feb 23 21:16:00 2016] [error] [client 181.208.202.120] mod_wsgi (pid=4081): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Tue Feb 23 21:16:00 2016] [error] [client 181.208.202.120] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Fri Feb 26 14:21:50 2016] [error] [client 159.90.101.115] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Fri Feb 26 17:53:33 2016] [error] [client 66.249.83.91] File does not exist: /home/server/AnarWeb/public_html
+[Sat Feb 27 21:37:30 2016] [error] [client 190.203.201.218] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Sun Feb 28 07:25:05 2016] [error] [client 190.203.201.218] mod_wsgi (pid=4081): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Sun Feb 28 07:25:05 2016] [error] [client 190.203.201.218] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Sun Feb 28 08:09:08 2016] [error] [client 190.203.201.218] mod_wsgi (pid=30409): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Sun Feb 28 08:09:08 2016] [error] [client 190.203.201.218] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Sun Feb 28 08:23:07 2016] [error] [client 190.203.201.218] mod_wsgi (pid=30409): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/add/
+[Sun Feb 28 08:23:07 2016] [error] [client 190.203.201.218] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/add/
+[Sun Feb 28 10:51:59 2016] [error] [client 141.212.122.64] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Sun Feb 28 11:47:37 2016] [error] [client 181.208.202.120] File does not exist: /home/server/AnarWeb/public_html
+[Sun Feb 28 11:47:38 2016] [error] [client 181.208.202.120] File does not exist: /home/server/AnarWeb/public_html
+[Sun Feb 28 12:01:31 2016] [error] [client 190.203.201.218] mod_wsgi (pid=30409): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Sun Feb 28 12:01:31 2016] [error] [client 190.203.201.218] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Sun Feb 28 13:22:49 2016] [error] [client 66.249.83.88] File does not exist: /home/server/AnarWeb/public_html
+[Sun Feb 28 13:52:25 2016] [error] [client 190.203.201.218] mod_wsgi (pid=660): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Sun Feb 28 13:52:25 2016] [error] [client 190.203.201.218] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Sun Feb 28 13:54:53 2016] [error] [client 190.203.201.218] mod_wsgi (pid=661): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/7/
+[Sun Feb 28 13:54:53 2016] [error] [client 190.203.201.218] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/7/
+[Sun Feb 28 17:38:23 2016] [error] [client 188.138.1.218] File does not exist: /home/server/AnarWeb/public_html
+[Mon Feb 29 00:32:24 2016] [error] [client 180.97.106.36] File does not exist: /home/server/AnarWeb/public_html
+[Mon Feb 29 16:10:43 2016] [error] [client 159.90.9.219] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Mon Feb 29 16:21:43 2016] [error] [client 159.90.9.219] mod_wsgi (pid=6229): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Mon Feb 29 16:21:43 2016] [error] [client 159.90.9.219] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Mon Feb 29 16:21:45 2016] [error] [client 159.90.9.219] mod_wsgi (pid=6228): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Mon Feb 29 16:21:45 2016] [error] [client 159.90.9.219] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/
+[Mon Feb 29 16:22:20 2016] [error] [client 159.90.9.219] mod_wsgi (pid=6228): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/admin/anarapp/yacimiento/7/
+[Mon Feb 29 16:22:20 2016] [error] [client 159.90.9.219] IOError: failed to write data, referer: http://159.90.9.166/admin/anarapp/yacimiento/7/
+[Mon Feb 29 16:27:21 2016] [error] [client 159.90.9.219] mod_wsgi (pid=6229): Exception occurred processing WSGI script '/home/server/AnarWeb/anar/django.wsgi'., referer: http://159.90.9.166/upload/video/2015_09/VIDEO_MODELOS_3D_-_RA__ANAR.mp4
+[Mon Feb 29 16:27:21 2016] [error] [client 159.90.9.219] IOError: failed to write data, referer: http://159.90.9.166/upload/video/2015_09/VIDEO_MODELOS_3D_-_RA__ANAR.mp4
+[Tue Mar 01 15:17:56 2016] [error] [client 66.249.83.88] File does not exist: /home/server/AnarWeb/public_html
+[Tue Mar 01 15:18:59 2016] [error] [client 185.103.252.19] request failed: error reading the headers
+[Wed Mar 02 10:27:57 2016] [error] [client 54.213.177.200] request failed: error reading the headers
+[Thu Mar 03 12:54:03 2016] [error] [client 190.216.242.170] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Mar 03 13:10:16 2016] [error] [client 180.97.106.161] File does not exist: /home/server/AnarWeb/public_html
+[Thu Mar 03 22:30:32 2016] [error] [client 66.102.7.188] File does not exist: /home/server/AnarWeb/public_html
+[Fri Mar 04 06:33:28 2016] [error] [client 198.20.69.74] File does not exist: /home/server/AnarWeb/public_html
+[Fri Mar 04 11:10:28 2016] [error] [client 159.90.10.111] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Fri Mar 04 13:48:27 2016] [error] [client 190.37.15.2] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/admin/
+[Fri Mar 04 19:14:15 2016] [error] [client 66.249.83.95] File does not exist: /home/server/AnarWeb/public_html
+[Sat Mar 05 08:54:04 2016] [error] [client 66.240.192.138] File does not exist: /home/server/AnarWeb/public_html
+[Sun Mar 06 09:53:15 2016] [error] [client 66.102.7.188] File does not exist: /home/server/AnarWeb/public_html
+[Sun Mar 06 22:06:47 2016] [error] [client 141.212.122.129] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Mon Mar 07 05:39:52 2016] [error] [client 169.229.3.91] request failed: error reading the headers
+[Mon Mar 07 09:01:37 2016] [error] [client 51.254.44.137] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Mon Mar 07 14:54:02 2016] [error] [client 66.249.83.88] File does not exist: /home/server/AnarWeb/public_html
+[Mon Mar 07 18:25:08 2016] [error] [client 66.240.192.138] File does not exist: /home/server/AnarWeb/public_html
+[Mon Mar 07 18:25:13 2016] [error] [client 66.240.192.138] File does not exist: /home/server/AnarWeb/public_html
+[Tue Mar 08 06:17:00 2016] [error] [client 66.102.7.188] File does not exist: /home/server/AnarWeb/public_html
+[Wed Mar 09 01:32:24 2016] [error] [client 190.39.15.115] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/admin/
+[Wed Mar 09 12:27:19 2016] [error] [client 159.90.11.102] File does not exist: /home/server/AnarWeb/public_html
+[Wed Mar 09 12:27:19 2016] [error] [client 159.90.11.102] File does not exist: /home/server/AnarWeb/public_html
+[Wed Mar 09 13:04:51 2016] [error] [client 186.167.243.111] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Wed Mar 09 13:22:51 2016] [error] [client 169.229.3.91] Invalid URI in request \xa6\xcf:HY0\xc5\xb7\xd7\xbf\x12\xc5\xc0+qo\xd9l\x9a\xf5\x9fu\x90L\x92\xd6\xe5J\xc4w\x96\x8fJ\x04E\xfc\xe1k\xf7\xb3\xa6\xcf:H\x84\x9f\xe9v\xe3\x85\x98wuL\xc4\xf9\x1e\xa0\xdc\x02p\x91\xdd\xe0\xc1}\xbe\x87\xa63 h\xe6\x95\xb0\x1a\x0fk\xf9\xaa\x0e\x92\xe9\xb3\x94q\xa2\xd3\xfa\x8d`c\x05\xa4\x98\xd66\xbbe\xc8.\xdeY\xdf\xb9R\x14\x04\x04]:\xb3m\x8d?\xfae
+[Wed Mar 09 13:57:15 2016] [error] [client 159.90.10.111] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Wed Mar 09 14:46:24 2016] [error] [client 190.37.7.174] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Wed Mar 09 16:52:09 2016] [error] [client 186.90.57.124] File does not exist: /home/server/AnarWeb/public_html, referer: http://159.90.9.166/
+[Thu Mar 10 13:18:38 2016] [error] [client 180.97.106.37] File does not exist: /home/server/AnarWeb/public_html
+[Fri Mar 11 02:28:14 2016] [error] [client 187.252.67.215] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Fri Mar 11 02:28:17 2016] [error] [client 187.252.67.215] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /
+[Fri Mar 11 15:13:05 2016] [error] [client 198.20.69.74] File does not exist: /home/server/AnarWeb/public_html
+[Sun Mar 13 11:01:01 2016] [error] [client 141.212.122.64] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Sun Mar 13 11:54:49 2016] [error] [client 66.249.83.95] File does not exist: /home/server/AnarWeb/public_html
+[Sun Mar 13 21:39:04 2016] [error] [client 216.53.213.123] Invalid URI in request GET HTTP/1.1 HTTP/1.1
+[Mon Mar 14 05:19:22 2016] [error] [client 169.229.3.91] Invalid URI in request \xad\xdf;\xe6R \xc4\x19\xbfw\xcc[6\x8f\xf0\xee\xe2\x9di\xd8\x19\xf3\xdd
+[Mon Mar 14 20:58:51 2016] [error] [client 66.249.83.91] File does not exist: /home/server/AnarWeb/public_html
+[Tue Mar 15 02:45:41 2016] [error] [client 71.6.165.200] File does not exist: /home/server/AnarWeb/public_html
+[Tue Mar 15 04:08:49 2016] [error] [client 198.20.69.74] File does not exist: /home/server/AnarWeb/public_html
+[Wed Mar 16 04:44:35 2016] [error] [client 198.20.69.74] File does not exist: /home/server/AnarWeb/public_html
+[Sun Mar 20 01:14:51 2016] [error] [client 188.138.1.218] File does not exist: /home/server/AnarWeb/public_html
+[Mon Mar 21 02:51:16 2016] [error] [client 71.6.158.166] File does not exist: /home/server/AnarWeb/public_html
+[Thu Mar 24 04:51:57 2016] [error] [client 169.229.3.91] Invalid URI in request .\x91\xfc\xb6\xd1n\x03I"\xf9m]]\x86u\x97,k\x1aA\xca\xae?\xb0\x07\xd9\xeb\xcf5?Q\xb1Oo\xa2\xe3\x91M`\xfa\xba\xda6\xed"\xebM\xb7&Ce\x9f\xe5\xdcY \x1d\xdf\xb1
+[Thu Mar 24 13:20:18 2016] [error] [client 180.97.106.37] File does not exist: /home/server/AnarWeb/public_html
+[Sat Mar 26 11:13:05 2016] [error] [client 66.240.219.146] File does not exist: /home/server/AnarWeb/public_html
+[Sat Mar 26 11:13:19 2016] [error] [client 66.240.219.146] File does not exist: /home/server/AnarWeb/public_html
+[Sun Mar 27 13:53:09 2016] [error] [client 141.212.122.129] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Sun Mar 27 19:07:43 2016] [error] [client 141.212.122.81] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /x
+[Tue Mar 29 11:25:20 2016] [error] [client 189.219.141.217] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /tmUnblock.cgi
+[Tue Mar 29 11:25:23 2016] [error] [client 189.219.141.217] client sent HTTP/1.1 request without hostname (see RFC2616 section 14.23): /

@@ -1,0 +1,54 @@
+
+{% extends "quienessomos-base.html" %}
+{% load staticfiles%}
+
+{% block pagetitle %}Profesionales Adjuntos{% endblock %}
+{% block title %}Profesionales Adjuntos{% endblock %}
+
+{% block content %}
+<div id="contenido">
+<p>
+	Los siguientes son los profesionales adjuntos:
+</p>
+<ol>
+    <li><b>RUBY De VALENCIA:</b>Arquitecto Paisajista. Especialista en Tecnologías Apropiadas y Apropiables. Co-fundadora y Directora del ANAR.
+    </li>
+    <li><b>JOSE GREGORIO CAMACHO-UZCATEGUI:</b>Abogado Mercantil, Co-fundador y Asesor legal de FUNDABITAT.
+    </li>
+    <li><b>MIRA KUGELMANN:</b>Licenciada en Educación integral. Coordinadora de Idiomas y Directora de CEGAVEN.
+    </li>
+    <li><b>LUIS MÜLLER PERUGA:</b>Diseñador Gráfico y Comunicador Visual.
+    </li>
+    <li><b>PAOLA VALENCIA:</b>Artista Plástico y Comunicadora Visual.
+    </li>
+    <li><b>VICTOR HERNÁNDEZ TURUPIAL:</b>Fotógrafo con inter´s en Ecología y Patrimonio Cultural.
+    </li>
+</ol>
+        
+<p>
+	Y nuestros colaboradores:
+</p>
+<ol>
+    <li><b>TRINA BORREGO:</b>Profesora, Directora del Liceo Bolivariano Julio Bustamante y Coordinadora de Promoción y Difusión del Acervo histórico.
+    </li>
+    <li><b>JORGE NAVEDA-SOSA:</b>Biólogo, Profesor  agregado Cátedra  Ecología y Sociedad de la UCAB y UCV.
+    </li>
+    <li><b>YUDITH CARDINALE:</b>Ingeniero en Computación. Profesora titular  de Ingeniería Computación y Tecnologías de Información de la USB.
+    </li>
+</ol>
+
+<p>
+    Los diversos profesionales que trabajan en los proyectos, son asociados y rotativos, en convenios con instituciones del país y del exterior. 
+</p>
+
+<div class="row">
+    <div class="col-sm-3 img-resize" onclick="setImageVisible('1','block')">
+    <img src="{% static "images/quienessomos/profesionales.jpg" %}" />	
+    </div>
+    <div class="col-sm-3" onclick="setImageVisible('2','block')">
+    <img src="{% static "images/quienessomos/colaboradores.jpg" %}"  />
+    </div>
+</div>
+
+</div>
+{% endblock %}

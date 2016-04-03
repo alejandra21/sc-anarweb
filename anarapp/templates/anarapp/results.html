@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load staticfiles %}
+		{% load url from future %}
+		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/formstyle.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/anar.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/chosen.css' %}">
+		<link rel="stylesheet" href="jquery-ui-1.10.1.custom/css/smoothness/jquery-ui-1.10.1.custom.css" />
+		
+		<script src="{% static 'anarapp/jquery-1.10.1.min.js' %}"></script>
+		<script src="{% static 'anarapp/chosen.jquery.js' %}"></script>
+		<script>
+			$(document).ready(function(){$(".chzn-select").chosen()})
+		</script>		
+		<style type="text/css">
+			.chzn-container { width: 80% !important }
+			input[type="text"] { border: 1px solid #AAA; padding: 5px }
+			input[type="checkbox"] { margin-left: 100px !important }
+			.chzn-search input { height: 25px !important }
+		</style>
+
+		<title>Archivo Nacional de Arte Rupestre</title>
+	</head>
+<body>
+
+	<ul id="nav">
+		<li><a href="/">Inicio</a></li>
+		<li><a href="#quienes">Quienes Somos</a></li>
+		<li><a href="#patrimonio">Patrimonio Cultural Arqueológico</a></li>
+		<li><a href="#programa">Programa de Educacion</a></li>
+		<li><a href="#otros">Otros Servicios</a></li>
+		<li><a href="#contacto">Contacto</a></li>
+	</ul>
+
+	<div id="contenedor">
+
+		<div id="filtro">
+			<p><label id="titulo">Filtrar</label></p><br>
+	    	<form method="get" action="{% url 'results' %}">
+			<div id="selecciones">
+				<input type="hidden" value="{{ form.q.value }}" name="q" />
+				<p style="color: #505050; font-size: 12pt">Nombre:</p> {{ form.nombre }}
+				<p style="color: #505050; font-size: 12pt">Municipio/Distrito:</p> {{ form.municipio }}
+				<p style="color: #505050; font-size: 12pt">Estado:</p> {{ form.estado }} 
+				<p style="color: #505050; font-size: 12pt">Fotografia: {{ form.fotografia }}</p>
+				<p style="color: #505050; font-size: 12pt">Ubicaci&oacute;n:</p> {{ form.ubicacion }}
+				
+				<div style="display: none">
+					{% if form.localidad.value %}{{ form.localidad }}{% endif %}
+					{% if form.tipo.value %}{{ form.tipo }}{% endif %}
+					{% if form.exposicion.value %}{{ form.exposicion }}{% endif %}
+					{% if form.manifestacion.value %}{{ form.manifestacion }}{% endif %}
+					{% if form.material.value %}{{ form.material }}{% endif %}
+					{% if form.conservacion.value %}{{ form.conservacion }}{% endif %}
+					{% if form.manifestasociadas.value %}{{ form.manifestasociadas }}{% endif %}
+				</div>
+			  </div>
+			<br/>
+			<input type="submit" class="button" value="Filtrar">
+			</form>
+		</div>
+
+		<div id="res">
+        {% if query %}
+		
+			<p><label id="titulo">Resultados</label></p><br>
+				<div class="resultados">
+
+	            {% for result in page.object_list %}
+				<div class="resultado" style="width:100%">
+					<div id="resImagen">
+						<img src="images/piedra.jpg" height="100">
+					</div>
+					<div id="resTexto">
+                		<p>C&oacute;digo: {{ result.object.codigo }}</p>
+						<table>
+							<tr><td >Nombre: {{ result.object.nombre }}</td></tr>
+							<tr><td >Municipio: {{ result.object.municipio }}</td></tr>
+							<tr><td >Estado: {{ result.object.estado }}</td></tr>
+							<tr><td ><a href='/yacimiento/{{ result.object.codigo }}'</td>Ver m&aacute;s detalles >></tr>
+						</table>
+					</div>
+					<br/>
+					<hr>
+				</div>
+				
+				{% empty %}
+                <p>No se ha encontrado ning&uacute;n resultado.</p>
+            	{% endfor %}
+
+				 {% if page.has_previous or page.has_next %}
+					<div>
+						{% if page.has_previous %}
+						<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">
+						{% endif %}&laquo; Anterior 
+						{% if page.has_previous %}</a>{% endif %}
+						|
+						{% if page.has_next %}
+						<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">
+						{% endif %}Siguiente &raquo;{% if page.has_next %}</a>{% endif %}
+                	</div>
+           	 	{% endif %}
+				<p>Mostrando {{ page.start_index }} - {{ page.end_index }} de {{ page.paginator.count }} resultados.</p>
+
+        {% else %}
+            <p>No ha realizado ninguna b&uacute;squeda.</p>
+        {% endif %}
+		</div>
+	</div>
+
+</body>
+</html>

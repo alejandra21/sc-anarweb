@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load staticfiles %}
+		{% load url from future %}
+		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/formstyle.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/anar.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/chosen.css' %}">
+		<link rel="stylesheet" href="jquery-ui-1.10.1.custom/css/smoothness/jquery-ui-1.10.1.custom.css" />
+		
+		<script src="{% static 'anarapp/jquery-1.10.1.min.js' %}"></script>
+		<script src="{% static 'anarapp/chosen.jquery.js' %}"></script>
+		<script>
+			$(document).ready(function(){$(".chzn-select").chosen()})
+		</script>		
+		<style type="text/css">
+			.chzn-container { width: 80% !important }
+			input[type="text"] { border: 1px solid #AAA; padding: 5px }
+			input[type="checkbox"] { margin-left: 100px !important }
+			.chzn-search input { height: 25px !important }
+		</style>
+
+		<title>Archivo Nacional de Arte Rupestre</title>
+	</head>
+<body>
+
+	<ul id="nav">
+		<li><a href="/">Inicio</a></li>
+		<li><a href="#quienes">Quienes Somos</a></li>
+		<li><a href="#patrimonio">Patrimonio Cultural Arqueológico</a></li>
+		<li><a href="#programa">Programa de Educacion</a></li>
+		<li><a href="#otros">Otros Servicios</a></li>
+		<li><a href="#contacto">Contacto</a></li>
+	</ul>
+
+	<div id="contenedor">
+
+		<div id="filtro">
+			<p><label id="titulo">Buscar Piedras</label></p>
+	    	<form method="get" action="{% url 'piedras' %}">
+			<div id="selecciones">
+			   <label id="titulo" style="font-size: 12pt">Yacimiento {{ yacimiento.codigo }}</label><br>
+				<input type="hidden" value="Piedra" name="q" />
+				{% if yacimiento.id %}
+			    <input type="hidden" value="{{ yacimiento.id }}" name="yacimiento" />
+			    {% else %}
+			    <input type="hidden" value="{{ form.yacimiento.value }}" name="yacimiento" />
+			    {% endif %}
+				<p style="color: #505050; font-size: 12pt">C&oacute;digo:</p> {{ form.codigo }}
+				<p style="color: #505050; font-size: 12pt">Nombre:</p> {{ form.nombre }}
+				<p style="color: #505050; font-size: 12pt">Estado:</p> {{ form.estado }} 
+				<p style="color: #505050; font-size: 12pt">Nombre de las Figuras:</p> {{ form.figuras }}
+			  </div>
+			<br/>
+			<input type="submit" class="button" value="Buscar">
+			</form>
+		</div>
+
+		<div id="res">
+		
+			<p><label id="titulo">{{ yacimiento.nombre }}</label></p><br/>
+			   <p>
+			       <strong>Código:</strong> {{ yacimiento.codigo }}<br/>
+			       <strong>País:</strong> {{ yacimiento.pais }}<br/>
+			       <strong>Estado:</strong> {{ yacimiento.estado }}<br/>
+			       <strong>Municipio:</strong> {{ yacimiento.municipio }}
+			   </p>
+			   
+			   <p>
+			        <ul>
+			            {% for piedra in piedras %}
+			            <li>{{ piedra.nombre }}</li>
+			            {% endfor %}
+		            </ul>
+			   </p>
+			   
+		</div>
+
+</body>
+</html>

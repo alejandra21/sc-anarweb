@@ -1,0 +1,14 @@
+#barralateral {
+    float:left;
+    width: 250px;
+    border-right: 1px solid;
+    border-color: #C0C0C0;
+}
+
+#contenido {
+    margin: 100px 250px 0 250px;
+    overflow: hidden;
+    padding-left: 30px;
+
+}
+
