@@ -9,9 +9,9 @@ Las instrucciones de instalación están disponibles [aquí](INSTALL.md).
 
 ## Configuración con Web Server Apache2
 Los archivos de configuración para que el servidor web funcione correctamente son:
-- `django.wsgi` (nexo entre apache y django-Python): "/home/server/AnarWeb/anar/django.wsgi"
-- `apache2.conf` (archivo de configuración general del apache): "/etc/apache2/apache2.conf"
-- `default` (archivo del virtualhost por default usado por apache actualmente configurado para sistema ANAR) "/etc/apache2/sites-available/default"
+- `django.wsgi` (nexo entre apache y django-Python): `/home/server/AnarWeb/anar/django.wsgi`
+- `apache2.conf` (archivo de configuración general del apache): `/etc/apache2/apache2.conf`
+- `default` (archivo del virtualhost por default usado por apache actualmente configurado para sistema ANAR) `/etc/apache2/sites-available/default`
 
 ## Realización de respaldos
 Primeramente, debe ingresar como usuario postgres y ejecutar `pg_dump anardb`. 
@@ -20,4 +20,4 @@ Primeramente, debe ingresar como usuario postgres y ejecutar `pg_dump anardb`.
 NOTA: Las imágenes no son respaldadas por el compando `pg_dump`, éste solo guarda las rutas a éstas en la carpeta `upload`.
 
 ## Servidor
-La carpeta de proyecto del sistema ANAR se encuentra en "/home/server/AnarWeb"
+La carpeta de proyecto del sistema ANAR se encuentra en `/home/server/AnarWeb`
