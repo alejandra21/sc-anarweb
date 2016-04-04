@@ -1,5 +1,4 @@
-Pil==1.1.7
-psycopg2==2.4.5
+Pillow
 South
 Django==1.4.2
 django-ses==0.4.1
