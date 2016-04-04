@@ -8,9 +8,9 @@ Estudiantes de la Universidad Simón Bolívar que cursan el servicio comunitario
 Las instrucciones de instalación están disponibles [aquí](INSTALL.md).
 
 ## Configuración con Web Server Apache2
-Los archivos de configuracion para que el servidor web funcione correctamente son:
+Los archivos de configuración para que el servidor web funcione correctamente son:
 - `django.wsgi` (nexo entre apache y django-Python): "/home/server/AnarWeb/anar/django.wsgi"
-- `apache2.conf` (archivo de configuracion general del apache): "/etc/apache2/apache2.conf"
+- `apache2.conf` (archivo de configuración general del apache): "/etc/apache2/apache2.conf"
 - `default` (archivo del virtualhost por default usado por apache actualmente configurado para sistema ANAR) "/etc/apache2/sites-available/default"
 
 ## Realización de respaldos
