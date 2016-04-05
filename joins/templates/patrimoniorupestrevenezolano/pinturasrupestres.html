@@ -30,36 +30,33 @@
 </ul>
 
 <div id="contenido">
-<p>
-Las <span style="color:purple"><b>Pinturas Rupestres</b></span>, también llamadas <span style="color:purple"><b>Pictografías</b></span>, aparecen realizadas en cuevas y abrigos protegidas del clima, y de la visibilidad fácil.<br> Son mundialmente reconocidas las <b>cuevas de Altamira y de Lascaux</b> por sus pinturas rupestres, pero muy pocas personas saben que en <b>Venezuela existen más de 20 abrigos y cuevas con <span style="color:purple">Pinturas Rupestres</span> de época prehispánica</b>, y más aún, que estas manifestaciones se extienden hasta el presente, en las pinturas que acompañan los restos mortuorios de etnias indígenas contemporáneas, los rituales de la tradición espiritista o santera, y que aparecen incluso en grandes murales al aire libre (estado Aragua) de manufactura prehispánica. 
-</p>
-<!-- <p onclick="setImageVisible('1','block')">
-<img src="{% static "images/patrimoniorupestrevenezolano/pinturarupestre/UbiPinturasRupestres.png"  %}" style="width:50%;align:center;border:solid 2px purple"/></p> -->
-<p>El <b>ANAR</b> contiene estos registros en documentos bibliográficos y fotográficos.</p>
-<table width="50%" align="left">
-	<tbody>
-        <tr>
-            <td align="center" width="20%" onclick="setImageVisible('2','block')">
-			<img src="{% static "images/patrimoniorupestrevenezolano/pinturarupestre/434.png"  %}" style="width:50%" />
-			</td>
-        </tr>
-		<tr>
-			<td align="center" width="30%" onclick="setImageVisible('3','block')">
-			<img src="{% static "images/patrimoniorupestrevenezolano/pinturarupestre/Pintura.png"  %}" style="width:50%" />
-			</td>
-		</tr>	
-    </tbody>
-</table>
-
-<table width="50%" align="right">
-	<tbody>
-        <tr>
-            <td align="center" width="20%" onclick="setImageVisible('1','block')">
-			<img img src="{% static "images/patrimoniorupestrevenezolano/pinturarupestre/UbiPinturasRupestres.png"  %}" style="width:50%;align:center;border:solid 2px purple" />
-			</td>
-        </tr>
-    </tbody>
-</table>
+	<div class="row">
+	  <div class="col-md-4 col-xs-8">
+	  	<img src="{% static "images/patrimoniorupestrevenezolano/pinturarupestre/434.png"  %}" style="width:100%" onclick="setImageVisible('2','block')"/>
+	  </div>
+	  <div class="col-md-8 col-xs-12">
+	  	<p class="text-left" style="text-align:left">
+			Las <span style="color:purple"><b>Pinturas Rupestres</b></span>, también llamadas 
+			<span style="color:purple"><b>Pictografías</b></span>, aparecen realizadas en cuevas 
+			y abrigos protegidas del clima, y de la visibilidad fácil.<br> 
+			Son mundialmente reconocidas las <b>cuevas de Altamira y de Lascaux</b> 
+			por sus pinturas rupestres, pero muy pocas personas saben que en 
+			<b>Venezuela existen más de 20 abrigos y cuevas con <span style="color:purple">Pinturas Rupestres</span> 
+			de época prehispánica</b>, y más aún, que estas manifestaciones se extienden hasta el presente, 
+			en las pinturas que acompañan los restos mortuorios de etnias indígenas contemporáneas, 
+			los rituales de la tradición espiritista o santera, y que aparecen incluso en grandes murales al aire libre (estado Aragua) de manufactura prehispánica. 
+		</p>
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="col-md-4 col-xs-8">
+	  	<img src="{% static "images/patrimoniorupestrevenezolano/pinturarupestre/Pintura.png"  %}" style="width:100%" onclick="setImageVisible('3','block')" />
+	  </div>
+	  <div class="col-md-8 col-xs-12">
+	  	<button type="button" class="btn btn-link pull-right" onclick="setImageVisible('1','block')">Ubicación</button>
+	  </div>
+	</div>
+	
 </div>
 
 {% endblock %}
