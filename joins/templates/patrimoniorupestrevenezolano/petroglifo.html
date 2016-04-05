@@ -6,39 +6,69 @@
 {% block title %}<span style="color:red">Petroglifo</span>{% endblock %}
 
 {% block content %}
+<ul id="fondo" style="width:100%;height:800px;z-index=1;display:none;"></ul>
+<ul id="1" class="dropdown-image " role="menu">
+	<div class ="row " >
+			<img src="{% static "images/patrimoniorupestrevenezolano/petroglifos/Ubi.png" %}" style="width:100%;border:solid 2px red"/>
+			<div class="description" style="align:left"><b><span style="color:red;">Ubicación de los petroglifos en Venezuela</span></b></p>
+			<div onclick="setImageVisible('1','none')" style="width:100%;font-size:26px;text-align:right">&#x25C4;</a>
+	</div>
+</ul>
+<ul id="2" class="dropdown-image " role="menu">
+	<div class ="row " >
+			<img src="{% static "images/patrimoniorupestrevenezolano/petroglifos/38.png" %}" style="width:100%"/>
+			<div class="description" style="align:left"><p><b><span style="color:red;">Código ANAR: 183/0/1</span><br><u>Isla de los Arrendajos</u><br></b>Estado Bolívar<br>Fotog: Ruby De Valencia<br></p>
+			<div onclick="setImageVisible('2','none')" style="width:100%;font-size:26px;text-align:right">&#x25C4;</a>
+	</div>
+</ul>
+<ul id="3" class="dropdown-image " role="menu">
+	<div class ="row " >
+			<img src="{% static "images/patrimoniorupestrevenezolano/petroglifos/98.png" %}" style="width:100%"/>
+			<div class="description" style="align:left"><p><b><span style="color:red;">Código ANAR: 38</span><br><u>Piedra del Sol y la Luna</u><br></b>Estado Bolívar<br>Fotog: Ruby De Valencia<br></p>
+			<div onclick="setImageVisible('3','none')" style="width:100%;font-size:26px;text-align:right">&#x25C4;</a>
+	</div>
+</ul>
 
-<p>El grabado sobre la piedra es lo que hoy conocemos con el nombre de <span style="color:red"><b>Petroglifo</b></span>.
-</p>
-<p>En Venezuela los encontramos diseminados pr&aacute;cticamente por todo el territorio: en las sabanas, en las altas monta&ntilde;as, en las orillas y en medio de los r&iacute;os,  tambi&eacute;n en las selvas.  Hay autores que indican  que los petroglifos orientados  o visibles a grandes distancias serv&iacute;an de gu&iacute;a a las tribus inmigrantes.  Para otros  estas piedras pudieron ser  l&iacute;mites territoriales prehist&oacute;ricos, indicadores de sitios  de reuni&oacute;n, representaciones cartogr&aacute;ficas de primitivas rutas o indicadores de sitios funerarios.
-</p>
-<p>Se destacan en Venezuela, <span style="color:red"><b>Petroglifos</b></span> de inusitados grosor y profundidad de surcos (hasta 10 cms.) los cuales se encuentran bordeando el pie de monte andino en el <b>estado Barinas</b> en un &aacute;rea de 40 kms. de largo.  En Barinas adem&aacute;s de los <b>estados Falc&oacute;n</b> y <b>Bol&iacute;var</b> aparecen ejemplares en los que el dibujo resalta en alto relieve lineal en lugar del m&aacute;s com&uacute;n bajorrelieve de la mayor&iacute;a de los <span style="color:red"><b>Petroglifos</b></span>.  En el <b>estado Amazonas</b> se encuentran murales de hasta 30 mts. de largo grabados a m&aacute;s de 50 mts de altura sobre inaccesibles laderas de piedra pulida. 
-</p>
-<p>La literatura antropol&oacute;gica posee pocos casos en los que el significado de los Petroglifos, signos anteriores a la escritura, hayan sido cient&iacute;ficamente interpretados y confirmados.
-</p>
-<p>Venezuela posee la suerte de tener a&uacute;n viva  esta manifestaci&oacute;n, al sur del R&iacute;o Negro donde chamanes de antiguas etnias de origen Arawako a&uacute;n la utilizan y la interpretan en ceremonias de iniciaci&oacute;n  masculinas y femeninas.
-</p>
 
-<p><img src="{% static "images/patrimoniorupestrevenezolano/petroglifos/Ubi.png"  %}" style="width:70%;border:solid 2px red"/></p>
+<div id="contenido">
+	<div class="row">
+	  <div class="col-md-4 col-xs-8">
+	  	<img src="{% static "images/patrimoniorupestrevenezolano/petroglifos/38.png"  %}" class="img-responsive" style="width:100%" onclick="setImageVisible('2','block')"/>
+	  	<br>
+	  	<img src="{% static "images/patrimoniorupestrevenezolano/petroglifos/98.png"  %}" class="img-responsive center-block" style="width:50%" onclick="setImageVisible('3','block')" />
+	  </div>
+	  <div class="col-md-8 col-xs-12">
+	  	<p class="text-left" style="text-align:left">
+			El grabado sobre la piedra es lo que hoy conocemos con el nombre de 
+			<span style="color:red"><b>Petroglifo</b></span>.<br>
+			En Venezuela los encontramos diseminados prácticamente por todo 
+			el territorio: en las sabanas, en las altas montañas, en las orillas 
+			y en medio de los ríos,  también en las selvas.  Hay autores que indican  
+			que los petroglifos orientados  o visibles a grandes distancias servían de
+			guía a las tribus inmigrantes.  Para otros estas piedras pudieron ser  
+			límites territoriales prehistóricos, indicadores de sitios  de reunión, 
+			representaciones cartográficas de primitivas rutas o indicadores de sitios funerarios.<br>
+			Se destacan en Venezuela, <span style="color:red"><b>Petroglifos</b></span> 
+			de inusitados grosor y profundidad de surcos (hasta 10 cms.) los cuales 
+			se encuentran bordeando el pie de monte andino en el <b>estado Barinas</b> 
+			en un área de 40 kms. de largo.  En Barinas además de los <b>estados Falcón</b> y 
+			<b>Bolívar</b> aparecen ejemplares en los que el dibujo resalta en alto 
+			relieve lineal en lugar del más común bajorrelieve de la 
+			mayoría de los <span style="color:red"><b>Petroglifos</b></span>.  
+			En el <b>estado Amazonas</b> se encuentran murales de hasta 30 mts. de 
+			largo grabados a más de 50 mts de altura sobre inaccesibles laderas de piedra pulida. <br>
+			La literatura antropológica posee pocos casos en los que el significado de 
+			los Petroglifos, signos anteriores a la escritura, hayan sido 
+			científicamente interpretados y confirmados.<br>
+			Venezuela posee la suerte de tener aún viva  esta manifestación, 
+			al sur del Río Negro donde chamanes de antiguas etnias de 
+			origen Arawako aún la utilizan y la interpretan en ceremonias 
+			de iniciación  masculinas y femeninas.
+		</p>	
+		<button type="button" class="btn btn-link pull-right" onclick="setImageVisible('1','block')">Ubicación</button>
+	  </div>
+	</div>
 
-<table width="80%" align="center">
-	<tbody>
-		<tr>
-			<td align="center" width="50%">
-			<img src="{% static "images/patrimoniorupestrevenezolano/petroglifos/38.png"  %}" width="40%" />
-			</td>
-			<td align="center" width="30%">
-			<img src="{% static "images/patrimoniorupestrevenezolano/petroglifos/98.png"  %}" width="20%" />
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p style="font-size:12px"><b><span style="color:red;">183/0/1 - PETROGLIFO</span><br><u>Isla de los Arrendajos</u><br></b>Estado Bol&iacute;var<br>Fotog: Ruby De Valencia<br></p>
-			</td>			<td>
-			<p style="font-size:12px"><b><span style="color:red;">38 - PETROGLIFO</span><br><u>Piedra del Sol y la Luna</u><br></b>Estado Bol&iacute;var<br>Fotog: Ruby De Valencia<br></p>
-			</td>
-		</tr>
-	</tbody>
-</table>
-
+</div>
 
 {% endblock %}
