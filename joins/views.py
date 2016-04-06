@@ -10,9 +10,12 @@ def index(request):
 	forma = CrucesYYForm
 	return render(request, 'sistema.html',{'forma':forma})
 
-# def cruces(request,cruce_id):
-# 	entrada = "joins/cruce"+str(cruce_id)+".html"
-# 	return render(request,entrada)
+def cruceAdmin(request):
+	return render(request,'joins/index.html')
+
+def cruces(request,cruce_id):
+	entrada = "joins/cruce"+str(cruce_id)+".html"
+	return render(request,entrada)
 
 def consulta(request):
 	# Se realiza la consula:

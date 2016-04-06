@@ -8,7 +8,8 @@ import os
 
 urlpatterns = patterns('',    
     url(r'^$', views.index, name='inicio'),
-    #url(r'^(?P<cruce_id>[0-9]+)/$', views.cruces, name='cruces'),
+    url(r'cruceAdmin', views.cruceAdmin, name='cruceAdmin'),
+    url(r'^(?P<cruce_id>[0-9]+)/$', views.cruces, name='cruces'),
     url(r'consulta', views.consulta, name='consulta'),
     url(r'^static/(.*)$', 'django.views.static.serve', {'document_root':os.path.join(os.path.dirname(__file__), 'static')}),
 
