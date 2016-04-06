@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from django.db.models import Q
 from anarapp.models import Estado, Piedra, Yacimiento, ManifestacionYacimiento,FotografiaYac
-from joins.forms import CrucesYYForm
+from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
 def index(request):
@@ -11,7 +11,8 @@ def index(request):
 	return render(request, 'sistema.html',{'forma':forma})
 
 def cruceAdmin(request):
-	return render(request,'joins/index.html')
+	form = CrucesYYFormAdmin
+	return render(request,'joins/index.html',{'form':form})
 
 def cruces(request,cruce_id):
 	entrada = "joins/cruce"+str(cruce_id)+".html"
