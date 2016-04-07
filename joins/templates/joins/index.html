@@ -283,7 +283,7 @@ Ruby de Valencia
             <p>
                 Para un mismo Ancho y/o Profundidad de surco, cuántos Petroglifos tienen:<br/>
                 <form action="/cruces/13/">
-                    <label>Ubicación: <input type="text"/></label></br></br>
+                    <label>Caracteristica surco: {{ form.caracteristicaSurco }} </br></br>
                     <input type="submit" class="button" value="Consultar"/>
                 </form>
             </p>
@@ -298,6 +298,7 @@ Ruby de Valencia
             <p>
                 Lísteme por estado cuántos y cuáles Petroglifos tienen :<br/>
                 <form action="/cruces/14/">
+                    <label>Estado: {{ form.estado }} </label></br></br>
                     <label>Caracteristica: {{form.carasurcopetrotipo}}</label></br></br>
                     <input type="submit" class="button" value="Consultar"/>
                 </form>
@@ -315,7 +316,8 @@ Ruby de Valencia
                 Lísteme por estado, cuántas y cuáles Pinturas 
                 Rupestres de todos los yacimientos tienen: <br/>
                 <form action="/cruces/15/">
-                    <label><input type="text"></br></br>
+                    <label>Estado: {{ form.estado }} </label></br>
+                    <label>Tipo de pintura: {{ form.tipoPintura }}</label></br></br>
                     <input type="submit" class="button" value="Consultar"/>
                 </form>
             </p>
@@ -347,6 +349,7 @@ Ruby de Valencia
             <p>
                 Lísteme por estado, los petroglifos con:<br/>
                 <form action="/cruces/17/">
+                    <label>Estado: {{ form.estado }} </label></br>
                     <label>piedra/erosión: {{form.material}}</label></br></br>
                     <input type="submit" class="button" value="Consultar"/>
                 </form>
@@ -362,7 +365,7 @@ Ruby de Valencia
             <p>
                 Cuales pinturas rupestres por estado, con la siguiente combinacion tiene:<br/>
                 <form action="/cruces/18/">
-                    <label>piedra/erosión: {{form.material}}</label></br></br>
+                    <label>piedra/erosión: {{form.piedraErosion}}</label></br></br>
                     <input type="submit" class="button" value="Consultar"/>
                 </form>
             </p>
@@ -384,21 +387,6 @@ Ruby de Valencia
           </div>
         </div>
 
-
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 20</strong></h3>
-          </div>
-          <div class="panel-body">
-           
-            <p>
-                Lísteme por estado y yacimientos la proporcion de numero de piedras trabajadas a numero de piedras en el yacimientos original ubicadas en:<br/>
-                <form action="/cruces/20/">
-                    <label>Ubicacion: {{form.ubicacion}}</label></br></br>
-                </form>
-            </p>
-          </div>
-        </div>
         
         </div>
 </body>

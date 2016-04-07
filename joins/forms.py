@@ -65,14 +65,72 @@ OPCIONES_UBICACION = (
 	('Costa','Costa'),
 )
 
+OPCIONES_SURCO_GRABADO = (
+	('---', '---'),
+	('Bajo relieve lineal','Bajo relieve lineal'),
+	('Bajo relieve planar','Bajo relieve planar'),
+	('Alto relieve lineal','Alto relieve lineal'),
+	('Alto relieve planar','Alto relieve planar'),
+	('Áreas interlineales pulidas','Áreas interlineales pulidas'),
+	('Áreas interlineales rebajadas','Áreas interlineales rebajadas'),
+	('Grabados superpuestos','Grabados superpuestos'),
+	('Grabados rebajados','Grabados rebajados'),
+	('Re-grabados','Re-grabados'),
+)
+
+OPCIONES_TIPO_PINTURA = (
+
+	('---', '---'),
+	('Pintura positiva negra','Pintura positiva negra'),
+	('Pintura positiva blanca','Pintura positiva blanca'),
+	('Pintura positiva amarilla','Pintura positiva amarilla'),
+	('Pintura positiva roja','Pintura positiva roja'),
+	('Pintura positiva dos rojos','Pintura positiva dos rojos'),
+	('Pintura positiva tres rojos','Pintura positiva tres rojos'),
+	('Pintura negativa negra','Pintura negativa negra'),
+	('Pintura negativa blanca','Pintura negativa blanca'),
+	('Pintura negativa amarilla','Pintura negativa amarilla'),
+	('Pintura negativa roja','Pintura negativa roja'),
+	('Pintura negativa dos rojos','Pintura negativa dos rojos'),
+	('Pintura negativa tres rojos','Pintura negativa tres rojos'),
+)
+
+OPCIONES_MATERIAL = (
+
+	('---', '---'),
+	('Roca ígnea','Roca ígnea'),
+	('Roca metamórfica','Roca metamórfica'),
+	('Roca sedimentaria','Roca sedimentaria'),
+	('Erosión','Erosión'),
+)
+
+OPCIONES_CARACTERISTICA_SURCO = (
+	('---', '---'),
+	('Base redonda','Base redonda'),
+	('Información de abrasión','Información de abrasión'),
+	('Base aguda','Base aguda'),
+	('Información de persusión','Información de persusión'),
+)
+
+OPCIONES_PIEDRA_EROSION = (
+	('---', '---'),
+	('Tipo de línea sencilla','Tipo de línea sencilla'),
+	('Tipo de línea compuesta','Tipo de línea compuesta'),
+	('Color base','Color base'),
+)
+
+
 
 
 class CrucesYYFormAdmin(forms.Form):
     codigo 	= forms.CharField(required=False, max_length=20)
     estado = forms.ChoiceField(required=False, choices=OPCIONES_ESTADO)
     ubicacion = forms.ChoiceField(required=False, choices=OPCIONES_UBICACION)
-    carasurcopetrotipo = forms.CharField(required=False, max_length=50)
-    material = forms.CharField(required=False, max_length=50)
+    carasurcopetrotipo = forms.ChoiceField(required=False, choices=OPCIONES_SURCO_GRABADO)
+    tipoPintura = forms.ChoiceField(required=False, choices=OPCIONES_TIPO_PINTURA)
+    caracteristicaSurco = forms.ChoiceField(required=False, choices=OPCIONES_CARACTERISTICA_SURCO)
+    piedraErosion = forms.ChoiceField(required=False, choices=OPCIONES_PIEDRA_EROSION)
+    material = forms.ChoiceField(required=False, choices=OPCIONES_MATERIAL)
     manifasociadas = forms.ChoiceField(required=False,widget=forms.Select,choices=OPCIONES_MANIFESTACIONES)
     estado.widget.attrs 	= {'class':'chzn-select', 'data-placeholder':'Seleccione el estado'}
 
