@@ -1,0 +1,46 @@
+{% extends "website-base.html" %}
+
+{% load staticfiles %}
+
+{% block pagetitle %}
+	Cruces - Yacimiento
+{% endblock %}
+
+{% block title %}
+	Para un mismo Ancho y/o Profundidad de surco, el numero de Petroglifos que tienen <u>base redonda</u> son:
+{% endblock %}
+
+{% block content %}
+	<!--- Este template es nuevo -->
+
+  <br>
+  <h4 style="margin-left:1em;">
+    <strong> Total de Petroglifos :</strong> {{ total }} 2
+  </h4>
+
+  <h4><strong>Carabobo</strong></h4>
+    <li>
+      <strong>Código:</strong> PB1-51, 
+    <i> 
+      LA RUEDA DEL INDIO 
+    </i>
+  </li>
+
+    <h4><strong>Bolívar</strong></h4>
+  <li>
+    <strong>Código:</strong> PB1-444, 
+    <i> 
+      CUEVA CAÑO ORE, Cueva del Chamán, White Shaman Cave 
+    </i>
+
+  </li>
+
+
+
+{% endblock %}
+
+{% block user %}
+	Ruby de Valencia
+{% endblock %}
+
+
