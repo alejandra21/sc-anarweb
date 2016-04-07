@@ -45,11 +45,32 @@ OPCIONES_MANIFESTACIONES = (
 	('Petroglifos','Petroglifos'),
 )
 
+OPCIONES_UBICACION = (
+	('---', '---'),
+	('Cerro','Cerro'),
+	('Cima','Cima'),
+	('Ladera','Ladera'),
+	('Fila','Fila'),
+	('Pie de montaña','Pie de montaña'),
+	('Barranco','Barranco'),
+	('Acantilado','Acantilado'),
+	('Cerro','Cerro'),
+	('Valle','Valle'),
+	('Río','Río'),
+	('Lecho','Lecho'),
+	('Margen izquierdo','Margen izquierdo'),
+	('Margen derecho','Margen derecho'),
+	('Isla','Isla'),
+	('Raudal','Raudal'),
+	('Costa','Costa'),
+)
+
+
 
 class CrucesYYFormAdmin(forms.Form):
     codigo 	= forms.CharField(required=False, max_length=20)
     estado = forms.ChoiceField(required=False, choices=OPCIONES_ESTADO)
-    ubicacion = forms.CharField(required=False, max_length=20)
+    ubicacion = forms.ChoiceField(required=False, choices=OPCIONES_UBICACION)
     carasurcopetrotipo = forms.CharField(required=False, max_length=50)
     material = forms.CharField(required=False, max_length=50)
     manifasociadas = forms.ChoiceField(required=False,widget=forms.Select,choices=OPCIONES_MANIFESTACIONES)
