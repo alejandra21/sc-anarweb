@@ -12,24 +12,23 @@
 
 {% block content %}
 	<h4 style="margin-left:1em;">
-		<strong> Total de yacimientos: {{ total }} 2 </strong>
+		<strong> Total de yacimientos:</strong> {{ total }} 2 
 	</h4>
 
 	<!--- Cuando se implemente la búsqueda, utilizar sólo este código -->
 	<ul>
-        {% for result in results %}
-          <li>
-						<a href="" style="color:black"> 
-							<strong>Código:</strong> {{ result.codigo }}, 
-							<i> {{ result.nombre }} </i>
-						</a>
-					</li>
-        {% endfor %}
-  </ul>
+	{% for result in results %}
+	  <li>
+				<a href="" style="color:black"> 
+					<strong>Código:</strong> {{ result.codigo }}, 
+					<i> {{ result.nombre }} </i>
+				</a>
+			</li>
+	{% endfor %}
+	 </ul>
 
   <!--- Datos de Ejemplo para muestra del Diseño inicial -->
 	<ul>
-
 		<li>
 			<a href="" style="color:black">
 				<strong>Código:</strong> PB1-51, 

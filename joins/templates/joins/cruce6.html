@@ -1,54 +1,40 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		{% load staticfiles %}
-		{% load url from future %}
-		<title>Archivo Nacional de Arte Rupestre</title>
-	
-		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/formstyle.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/avanzada.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/chosen.css' %}">
-		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-		
-		<script src="{% static 'anarapp/jquery-1.10.1.min.js' %}"></script>
-		<script src="{% static 'anarapp/chosen.jquery.js' %}"></script>
-		<script>
-			$(document).ready(function(){$(".chzn-select").chosen({no_results_text: "Ningún resultado encontrado"})})
-		</script>
-		<style type="text/css">
-			.chzn-container { width: 15em !important }
-			input[type="text"] { border: 1px solid #AAA; padding: 5px }
-			input[type="checkbox"] { margin-left: 100px !important }
-			.chzn-search input { height: 25px !important }
-		</style>
-	</head>
-<body>
+{% extends "website-base.html" %}
 
-	<ul id="nav">
-		<li><a href="/">Inicio</a></li>
-		<li><a href="#quienes">Quienes Somos</a></li>
-		<li><a href="#patrimonio">Patrimonio Cultural Arqueológico</a></li>
-		<li><a href="#programa">Programa de Educacion</a></li>
-		<li><a href="#otros">Otros Servicios</a></li>
-		<li><a href="#contacto">Contacto</a></li>
-	</ul>
+{% load staticfiles %}
 
-	<div id="banner">
-		<div id="logo">
-			<img src="{% static 'anarapp/logo.png' %}" height="75" width="200">
-		</div>
-	</div>
+{% block pagetitle %}
+	Cruces - Yacimiento
+{% endblock %}
 
-		
-    <div style="width: 70%; margin: auto">
+{% block title %}
+	¿Qué material audiovisual tiene el yacimiento de código {{ codigo }} PB1-444?
+{% endblock %}
 
-    <h1  id="titulo" style="font-size: 16pt">¿Qué material audiovisual tiene el yacimiento de código {{ codigo }}?</h1>
-    <h2>{{ yacimiento.nombre }}</h2>
-    <h3>Material Multimedia</h3>
-        {% for mv in yacimiento.MultimediaYac.all %}
-        <ul>
-            <li><strong>Técnica:</strong> {{ mv.tecnica }}</li>
-        </ul>
-        {% endfor %}    
-</body>
-</html>
+{% block content %}
+	<h4 style="margin-left:1em;">
+		<a href="" style="color:black">
+			CUEVA CAÑO ORE, Cueva del Chamán, White Shaman Cave {{ yacimiento.nombre }}
+		</a>
+	</h4>
+
+	<br>
+
+	<h4><strong>Material Multimedia:</strong></h4>
+		<!--- Cuando se implemente la búsqueda, utilizar sólo este código -->
+   <ul>
+   	{% for mv in yacimiento.MultimediaYac.all %}
+			<li><strong>Técnica:</strong> {{ mv.tecnica }}</li>
+			<li><strong>Archivo:</strong><a href=""> {{ mv.tecnica }}</a></li>
+    {% endfor %}
+   </ul>
+
+    <!--- Datos de Ejemplo para muestra del Diseño inicial -->
+    <ul>
+    	<li><strong>Técnica:</strong> Técnica del Material Multimedia</li>
+    	<li><strong>Archivo:</strong><a href=""> archivomultimedia.extension</a></li>
+    </ul>
+{% endblock %}
+
+{% block user %}
+	Ruby de Valencia
+{% endblock %}

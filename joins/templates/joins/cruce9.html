@@ -1,60 +1,69 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		{% load staticfiles %}
-		{% load url from future %}
-		<title>Archivo Nacional de Arte Rupestre</title>
+{% extends "website-base.html" %}
+
+{% load staticfiles %}
+
+{% block pagetitle %}
+	Cruces - Yacimiento
+{% endblock %}
+
+{% block title %}
+	Listar la proporción de número de piedras trabajadas a número de piedras en el yacimiento original en el estado Amazonas 
+	{{ estado }}
+{% endblock %}
+
+{% block content %}
 	
-		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/formstyle.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/avanzada.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/chosen.css' %}">
-		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-		
-		<script src="{% static 'anarapp/jquery-1.10.1.min.js' %}"></script>
-		<script src="{% static 'anarapp/chosen.jquery.js' %}"></script>
-		<script>
-			$(document).ready(function(){$(".chzn-select").chosen({no_results_text: "Ningún resultado encontrado"})})
-		</script>
-		<style type="text/css">
-			.chzn-container { width: 15em !important }
-			input[type="text"] { border: 1px solid #AAA; padding: 5px }
-			input[type="checkbox"] { margin-left: 100px !important }
-			.chzn-search input { height: 25px !important }
-		</style>
-	</head>
-<body>
+	<br>
 
-	<ul id="nav">
-		<li><a href="/">Inicio</a></li>
-		<li><a href="#quienes">Quienes Somos</a></li>
-		<li><a href="#patrimonio">Patrimonio Cultural Arqueológico</a></li>
-		<li><a href="#programa">Programa de Educacion</a></li>
-		<li><a href="#otros">Otros Servicios</a></li>
-		<li><a href="#contacto">Contacto</a></li>
-	</ul>
+  <!--- Cuando se implemente la búsqueda, utilizar sólo este código -->
+  <ul>
+  	{% for result in results %}
+  	<li>  		
+  		<h4 style="margin-left:1em;">
+				<a href="" style="color:black"> {{ yacimiento.nombre }} </a>
+			</h4>
+  	</li>
 
-	<div id="banner">
-		<div id="logo">
-			<img src="{% static 'anarapp/logo.png' %}" height="75" width="200">
-		</div>
-	</div>
+  	<ul>
+  			<li><strong>Grabadas:</strong> {{ grabadas }} / {{piedras}} </li>
+   			<li><strong>Pintadas:</strong> {{ pintadas }} / {{piedras}} </li>
+    		<li><strong>Colocadas:</strong> {{ colcadas }} / {{piedras}} </li>
+  	</ul>
 
-		
-    <div style="width: 70%; margin: auto">
+  	{% endfor %}
+  </ul>
 
-    <h1  id="titulo" style="font-size: 16pt"> Listar la proporción de número de piedras trabajadas a número de piedras en el yacimiento original en el estado {{ estado }}</h1>
-    <ul>
-        <li>Grabadas: {{ grabadas }}/{{piedras}} </li>
-        <li>Pintadas: {{ pintadas }}/{{piedras}} </li>
-        <li>Colcadas: {{ colcadas }}/{{piedras}} </li>
-    </ul>
-    <h2>De los yacimientos</h2>
-    <ul>
-    {% for yac in yacimientos%}
-    	<li>{{yac.nombre}}</li>
-    {%endfor%}
-	</ul>
+  <!--- Datos de Ejemplo para muestra del Diseño inicial -->
+
+	<h4 style="margin-left:1em;">
+		<a href="" style="color:black">
+			CUEVA CAÑO ORE, Cueva del Chamán, White Shaman Cave {{ yacimiento.nombre }}
+		</a>
+	</h4>
+
+  <ul>
+    <li><strong>Grabadas:</strong> 10 / 20 {{ grabadas }}{{piedras}} </li>
+    <li><strong>Pintadas:</strong> 5 / 20{{ pintadas }} {{piedras}} </li>
+    <li><strong>Colocadas:</strong> 1 / 20 {{ colcadas }} {{piedras}} </li>
+  </ul>
+
+	<h4 style="margin-left:1em;">
+		<a href="" style="color:black">
+			LA RUEDA DEL INDIO {{ yacimiento.nombre }}
+		</a>
+	</h4>
+
+  <ul>
+    <li><strong>Grabadas:</strong> 10 / 20 {{ grabadas }}{{piedras}} </li>
+    <li><strong>Pintadas:</strong> 5 / 20{{ pintadas }} {{piedras}} </li>
+    <li><strong>Colcadas:</strong> 1 / 20 {{ colcadas }} {{piedras}} </li>
+  </ul>
+
+{% endblock %}
+
+{% block user %}
+	Ruby de Valencia
+{% endblock %}
 
 
-</body>
-</html>
+
