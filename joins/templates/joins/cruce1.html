@@ -1,53 +1,57 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		{% load staticfiles %}
-		{% load url from future %}
-		<title>Archivo Nacional de Arte Rupestre</title>
-	
-		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/formstyle.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/avanzada.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'anarapp/chosen.css' %}">
-		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-		
-		<script src="{% static 'anarapp/jquery-1.10.1.min.js' %}"></script>
-		<script src="{% static 'anarapp/chosen.jquery.js' %}"></script>
-		<script>
-			$(document).ready(function(){$(".chzn-select").chosen({no_results_text: "Ningún resultado encontrado"})})
-		</script>
-		<style type="text/css">
-			.chzn-container { width: 15em !important }
-			input[type="text"] { border: 1px solid #AAA; padding: 5px }
-			input[type="checkbox"] { margin-left: 100px !important }
-			.chzn-search input { height: 25px !important }
-		</style>
-	</head>
-<body>
+{% extends "website-base.html" %}
 
-	<ul id="nav">
-		<li><a href="/">Inicio</a></li>
-		<li><a href="#quienes">Quienes Somos</a></li>
-		<li><a href="#patrimonio">Patrimonio Cultural Arqueológico</a></li>
-		<li><a href="#programa">Programa de Educacion</a></li>
-		<li><a href="#otros">Otros Servicios</a></li>
-		<li><a href="#contacto">Contacto</a></li>
-	</ul>
+{% load staticfiles %}
 
-	<div id="banner">
-		<div id="logo">
-			<img src="{% static 'anarapp/logo.png' %}" height="75" width="200">
-		</div>
-	</div>
+{% block pagetitle %}
+	Cruces - Yacimiento
+{% endblock %}
 
-		
-    <div style="width: 70%; margin: auto">
+{% block title %}
+	¿Cuántos y cuáles yacimientos hay en el estado {{ estado }} Amazonas?
+{% endblock %}
 
-    <h1  id="titulo" style="font-size: 16pt"> ¿Cuántos y cuáles yacimientos hay en el estado {{ estado }}?</h1>
-    <h2>Total de yacimientos: {{ total }}</h2>
-    <ul>
+{% block content %}
+	<h4 style="margin-left:1em;">
+		<strong> Total de yacimientos: {{ total }} 2 </strong>
+	</h4>
+
+	<!--- Cuando se implemente la búsqueda, utilizar sólo este código -->
+	<ul>
         {% for result in results %}
-            <li>Código: {{ result.codigo }},  <i>{{ result.nombre }}</i></li>
+          <li>
+						<a href="" style="color:black"> 
+							<strong>Código:</strong> {{ result.codigo }}, 
+							<i> {{ result.nombre }} </i>
+						</a>
+					</li>
         {% endfor %}
-    </ul>
-</body>
-</html>
+  </ul>
+
+  <!--- Datos de Ejemplo para muestra del Diseño inicial -->
+	<ul>
+
+		<li>
+			<a href="" style="color:black">
+				<strong>Código:</strong> PB1-51, 
+				<i> 
+					LA RUEDA DEL INDIO 
+				</i>
+			</a>
+		</li>
+
+		<li>
+			<a href="" style="color:black">
+				<strong>Código:</strong> PB1-444,	
+				<i> 
+					CUEVA CAÑO ORE, Cueva del Chamán, White Shaman Cave 
+				</i>
+			</a>
+		</li>
+	</ul>
+{% endblock %}
+
+{% block user %}
+	Ruby de Valencia
+{% endblock %}
+
+
