@@ -14,41 +14,16 @@
 
 	<!--- Cuando se implemente la búsqueda, utilizar sólo este código -->
 	<ul>
-    {% for yac in yacimientos%}
-		<li>{{yac.nombre}}</li>
-		<li>{{yac.manifestacion}}</li>
+    {% for yac in yacimiento%}
+
+	    <h3><a style="color:black;" href ="">{{yac}}</a></h3>
+	    <ul>
+
+
     {%endfor%}
-	</ul>
+	
   
-  <!--- Datos de Ejemplo para muestra del Diseño inicial -->
-    <h3><a style="color:black;" href ="">CUEVA SUSUDE INAVA</a></h3>
-    <ul>
-    	<li>Manifestaciones:</li>
-    <ul>
-			<li>Petroglifos Pintados</li>
-			<li>Bateas</li>
-    </ul>
-  </ul>
-
-	<h3>Amazonas</h3>
-		<ul>
-			<li><a href="" style="color:black;">La Rueda del Indio</a></li>
-			<ul>
-				<li>Geoglifos</li>
-				<li>Pinturas Rupestres</li>
-			</ul>
-		</ul>
-
-	<h3>Bolívar</h3>
-		<ul>
-			<li><a href="" style="color:black;">Cueva Caño Ore</a></li>
-			<ul>
-				<li>Micropetroglifos</li>
-				<li>Cerros Míticos Naturales</li>
-			</ul>
-		</ul>
-
-
+ 
 
 
 {% endblock %}

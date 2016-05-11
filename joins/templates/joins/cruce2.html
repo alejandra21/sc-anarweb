@@ -7,16 +7,26 @@
 {% endblock %}
 
 {% block title %}
-	¿Qué nombre tiene el yacimiento de código {{ codigo }} PB1-444?
+	¿Qué nombre tiene el yacimiento de código {{ codigo }}?
 {% endblock %}
 
 {% block content %}
 	<!--- Cuando se implemente la búsqueda, borrar el nombre de ejemplo -->
-	<h4 style="margin-left:3em;">
-		<a href="" style="color:black">
-			CUEVA CAÑO ORE, Cueva del Chamán, White Shaman Cave {{ yacimiento.nombre }}
-		</a>
-	</h4>
+	{% if yacimiento %}
+		{% for y in yacimiento %}
+			<h4 style="margin-left:3em;">
+				<a href="" style="color:black">
+					{{ y.nombre }}
+				</a>
+			</h4>
+		{% endfor %}
+
+	{% else %}
+		<h4>Sin resultado.</h4>
+
+
+	{% endif %}
+
 {% endblock %}
 
 {% block user %}
