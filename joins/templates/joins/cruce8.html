@@ -7,39 +7,26 @@
 {% endblock %}
 
 {% block title %}
-	Listar todos los Dólmenes y Menhires en el estado: Amazonas {{estado}}
+	Listar todos los Dólmenes y Menhires en el estado:{{estado}}
 {% endblock %}
 
 {% block content %}
 
-  <!--- Cuando se implemente la búsqueda, utilizar sólo este código -->
-  {% for estado, lista in yacimientos.items %}
-  	{%if lista|length > 0%}
-      <h3>{{ estado }}</h3>
+  {% if yacimiento %}
+  {% for lista in yacimientos %}
+  	{%if lista%}
       <ul>
-      {% for yacimiento in lista %}
-          <li>{{ yacimiento.nombre }}</li>
-      {% endfor %}
+        <li>{{ lista.nombre }}</li>
       </ul>
+
     {%endif%}
   {% endfor %}
 
-  <!--- Datos de Ejemplo para muestra del Diseño inicial -->
-  <ul>
-    <li><h3><a style="color:black;" href ="">La Rueda del Indio</a></h3></li>
-    <ul>
-      <li><strong>Tipo de Manifestación:</strong> Dolmen y Menhir</li>
-      <li><strong>Ubicación:</strong> Terreno superficial</li>
-    </ul>
-  </ul>
+  {% else %}
 
-  <ul>
-    <li><h3><a style="color:black;" href ="">Cueva Caño Ore</a></h3></li>
-    <ul>
-      <li><strong>Tipo de Manifestación:</strong> Dolmen</li>
-      <li><strong>Ubicación:</strong> Cueva</li>
-    </ul>
-  </ul>
+    <h4>Sin resultado.</h4>
+
+  {% endif %}
 
 {% endblock %}
 

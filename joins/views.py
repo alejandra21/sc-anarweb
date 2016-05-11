@@ -1,7 +1,7 @@
 # Create your views here.
 from django.shortcuts import render
 from django.db.models import Q
-from anarapp.models import Estado, Piedra, Yacimiento, ManifestacionYacimiento,FotografiaYac
+from anarapp.models import Estado, Piedra, Yacimiento, ManifestacionYacimiento,FotografiaYac, Coordenadas
 from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
@@ -16,7 +16,53 @@ def cruceAdmin(request):
 
 def cruces(request,cruce_id):
 	entrada = "joins/cruce"+str(cruce_id)+".html"
-	return render(request,entrada)
+
+	# print(cruce_id == "1")
+	if (cruce_id == "1"):
+		estadoElegido = request.GET['estado']
+		results=Yacimiento.objects.filter(estado__nombre__exact=estadoElegido)
+		print(results)
+		total = len(results)
+		return render(request,entrada,{'total':total,'results':results})
+
+	elif (cruce_id in {"2","3","4","5","6","7"} ):
+
+		codigo = request.GET['codigo']
+		yacimiento=Yacimiento.objects.filter(codigo=codigo)
+		return render(request,entrada,{'yacimiento':yacimiento,'codigo':codigo})
+
+	elif (cruce_id == "8"):
+		estado = request.GET['estado']
+		results = ManifestacionYacimiento.objects.filter(yacimiento__estado__nombre=estado)
+
+		if (results):
+			yacimiento = results.filter(Q(esMenhires=True)|Q(esCerroConDolmen=True))
+		else:
+			yacimiento = ""
+
+		return render(request,entrada,{'yacimiento':yacimiento,'estado':estado})
+
+	elif (cruce_id == "9"):
+		# Falta implementar
+		estado = request.GET['estado']
+		results=Yacimiento.objects.filter(estado__nombre__exact=estado)
+		print(len(results.Yacimiento))
+		return render(request,entrada,{'results':results,'estado':estado})
+
+	elif (cruce_id == "10"):
+		# Falta implementar
+		estado = request.GET['estado']
+		codigo = request.GET['codigo']
+		results = ManifestacionYacimiento.objects.filter(Q(yacimiento__estado__nombre=estado)|Q(yacimiento__codigo=codigo))
+		yacimiento=Yacimiento.objects.filter(Q(estado__nombre__exact=estado)|Q(codigo=codigo))
+		yacimiento = [1,2,3]
+		return render(request,entrada,{'yacimiento':yacimiento})
+
+
+
+
+
+	return render(request,entrada,{'total':total,'results':results})
 
 def consulta(request):
 	# Se realiza la consula:

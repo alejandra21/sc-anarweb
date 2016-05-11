@@ -11,27 +11,30 @@
 {% endblock %}
 
 {% block content %}
-	<h4 style="margin-left:1em;">
-		<a href="" style="color:black">
-			CUEVA CAÑO ORE, Cueva del Chamán, White Shaman Cave {{ yacimiento.nombre }}
-		</a>
-	</h4>
 
-	<br>
+	{% if yacimiento %}
+		<h4 style="margin-left:1em;">
+			<a href="" style="color:black">
+				{{ yacimiento.nombre }}
+			</a>
+		</h4>
 
-	<h4><strong>Páginas Web:</strong></h4>
-		<!--- Cuando se implemente la búsqueda, utilizar sólo este código -->
-    <ul>
-	    {% for pw in yacimiento.PaginaWebYac.all %}
-        <li>><a href="">{{ pw.direccionURL }}</a></li>
-  	  {% endfor %}
-    </ul>
-    
-   	<!--- Datos de Ejemplo para muestra del Diseño inicial -->
-    <ul>
-    	<li><a href="">www.lacuevadelindio.org.ve</a></li>
-    	<li><a href="">www.whiteshamancave.com</a></li>
-    </ul>
+		<br>
+
+		<h4><strong>Páginas Web:</strong></h4>
+			<!--- Cuando se implemente la búsqueda, utilizar sólo este código -->
+	    <ul>
+		    {% for pw in yacimiento.PaginaWebYac.all %}
+	        <li>><a href="">{{ pw.direccionURLy }}</a></li>
+	  	  {% endfor %}
+	    </ul>
+
+    {% else %}
+
+    	<h4>Sin resultado.</h4>
+
+    {% endif %}
+
 {% endblock %}
 
 {% block user %}

@@ -7,31 +7,37 @@
 {% endblock %}
 
 {% block title %}
-	¿Qué coordenadas tiene el yacimiento de código {{ codigo }} PB1-444?
+	¿Qué coordenadas tiene el yacimiento de código {{ codigo }}?
 {% endblock %}
 
 {% block content %}
 	<!--- Cuando se implemente la búsqueda, borrar los datos de ejemplo -->
-	<h4 style="margin-left:1em;">
-		<a href="" style="color:black">
-			CUEVA CAÑO ORE, Cueva del Chamán, White Shaman Cave {{ yacimiento.nombre }}
-		</a>
-	</h4>
 
-  <ul>
-    <li>
-    	<strong>Longitud O(W):</strong> {{ yacimiento.Coordenadas.longitud }} 67º06'25'' Long W
-    </li>
+	{% if yacimiento %}
+		{% for y in yacimiento %}
+			<h4 style="margin-left:1em;">
+				<a href="" style="color:black">
+					<strong>Nombre:</strong> {{ y.nombre }}
+				</a>
+			</h4>
+		  <ul>
+		    <li>
+		    	<strong>Longitud O(W):</strong> {{ y.Coordenadas.longitud }} 
+		    </li>
 
-    <li>
-    	<strong>Latitud N:</strong> {{ yacimiento.Coordenadas.latitud }} 6º17'57'' Lat N
-    </li>
+		    <li>
+		    	<strong>Latitud N:</strong> {{ y.Coordenadas.latitud }} 
+		    </li>
 
-    <li>
-    	<strong>Utm Adicional:</strong> {{ yacimiento.Coordenadas.latitud }} N 697.770,  
-    	E 710.130 (John Greer), N 696.700, E 709.400 (F. Scaramelli)
-    </li>
-	</ul>
+		    <li>
+		    	<strong>Utm Adicional:</strong> {{ y.Coordenadas.latitud }} 
+		    </li>
+			</ul>
+		{% endfor %}
+
+	{% else %}
+		<h4>Sin resultado.</h4>
+	{% endif %}
 	
 {% endblock %}
 
