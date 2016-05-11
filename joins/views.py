@@ -1,7 +1,7 @@
 # Create your views here.
 from django.shortcuts import render
 from django.db.models import Q
-from anarapp.models import Estado, Piedra, Yacimiento, ManifestacionYacimiento,FotografiaYac, Coordenadas
+from anarapp.models import Estado, Piedra, Yacimiento, ManifestacionYacimiento,FotografiaYac, Coordenadas,ConstitucionYacimiento
 from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
@@ -43,19 +43,47 @@ def cruces(request,cruce_id):
 
 	elif (cruce_id == "9"):
 		# Falta implementar
+		listaYacimientos = []
 		estado = request.GET['estado']
-		results=Yacimiento.objects.filter(estado__nombre__exact=estado)
-		print(len(results.Yacimiento))
-		return render(request,entrada,{'results':results,'estado':estado})
+		yacimiento = Yacimiento.objects.filter(estado__nombre__exact=estado)
+
+		for y in yacimiento:
+
+			nroPiedras = ConstitucionYacimiento.objects.filter(yacimiento__id = y.id)
+			piedras = Piedra.objects.filter(yacimiento__id = y.id)
+			listaYacimientos += [{'yacimiento':y,'nroPiedrasTrabajadas':nroPiedras,
+								'nroPiedras': len(piedras)}]
+			
+		return render(request,entrada,{'listaYacimientos':listaYacimientos,'estado':estado})
 
 	elif (cruce_id == "10"):
 		# Falta implementar
 		estado = request.GET['estado']
 		codigo = request.GET['codigo']
-		results = ManifestacionYacimiento.objects.filter(Q(yacimiento__estado__nombre=estado)|Q(yacimiento__codigo=codigo))
-		yacimiento=Yacimiento.objects.filter(Q(estado__nombre__exact=estado)|Q(codigo=codigo))
-		yacimiento = [1,2,3]
-		return render(request,entrada,{'yacimiento':yacimiento})
+
+		manifestacion = \
+		ManifestacionYacimiento.objects.filter(Q(yacimiento__estado__nombre=estado)|
+			Q(yacimiento__codigo=codigo))
+		geoglifo = manifestacion.filter(esGeoglifo=True)
+		pinturasRupestres = manifestacion.filter(esPintura=True)
+		micropetroglifos = manifestacion.filter(esMicroPetroglifo=True)
+		petroglifo = manifestacion.filter(esPetroglifo = True)
+		petroglifoPintado = manifestacion.filter(esPetroglifoPintado = True)
+		PiedraMiticaNatural = manifestacion.filter(esPiedraMiticaNatural=True)
+		CerroMiticoNatural = manifestacion.filter(esCerroMiticoNatural=True)
+		Batea = manifestacion.filter(esBatea=True)
+		Menhires = manifestacion.filter(esMenhires=True)
+		Amoladores = manifestacion.filter(esAmolador=True)
+		PuntosAcoplados = manifestacion.filter(esPuntosAcoplados=True)
+		Cupula = manifestacion.filter(esCupulas = True)
+
+
+		return render(request,entrada,{'estado':estado,'codigo':codigo,
+			'geoglifo':geoglifo,'pinturasRupestres':pinturasRupestres,
+			'micropetroglifos':micropetroglifos,'petroglifo':petroglifo,
+			'petroglifoPintado': petroglifoPintado,'PiedraMiticaNatural':PiedraMiticaNatural,
+			'CerroMiticoNatural':CerroMiticoNatural,'Batea':Batea,'Menhires':Menhires,
+			'Amoladores':Amoladores,'PuntosAcoplados':PuntosAcoplados,'Cupula':Cupula})
 
 
 
