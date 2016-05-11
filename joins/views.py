@@ -19,11 +19,10 @@ def cruces(request,cruce_id):
 
 	# print(cruce_id == "1")
 	if (cruce_id == "1"):
-		estadoElegido = request.GET['estado']
-		results=Yacimiento.objects.filter(estado__nombre__exact=estadoElegido)
-		print(results)
+		estado = request.GET['estado']
+		results=Yacimiento.objects.filter(estado__nombre__exact=estado)
 		total = len(results)
-		return render(request,entrada,{'total':total,'results':results})
+		return render(request,entrada,{'total':total,'results':results,'estado':estado})
 
 	elif (cruce_id in {"2","3","4","5","6","7"} ):
 
