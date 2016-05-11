@@ -47,30 +47,31 @@ OPCIONES_MANIFESTACIONES = (
 
 OPCIONES_UBICACION = (
 	('---', '---'),
-	('Cerro','Cerro'),
-	('Cima','Cima'),
-	('Ladera','Ladera'),
-	('Fila','Fila'),
-	('Pie de montaña','Pie de montaña'),
-	('Barranco','Barranco'),
-	('Acantilado','Acantilado'),
-	('Cerro','Cerro'),
-	('Valle','Valle'),
-	('Río','Río'),
-	('Lecho','Lecho'),
-	('Margen izquierdo','Margen izquierdo'),
-	('Margen derecho','Margen derecho'),
-	('Isla','Isla'),
-	('Raudal','Raudal'),
-	('Costa','Costa'),
+	('(14.1) Cerro','(14.1) Cerro'),
+	('(14.1.1) Cima','(14.1.1) Cima'),
+	('(14.1.2) Ladera','(14.1.2) Ladera'),
+	('(14.1.4) Fila','(14.1.4) Fila'),
+	('(14.1.5) Pie de montaña','(14.1.5) Pie de montaña'),
+	('(14.1.6) Barranco','(14.1.6) Barranco'),
+	('(14.1.7) Acantilado','(14.1.7) Acantilado'),
+	('(14.2) Valle','(14.2) Valle'),
+	('(14.3) Río','(14.3) Río'),
+	('(14.3.1) Lecho','(14.3.1) Lecho'),
+	('(14.3.2) Margen derecha','(14.3.2) Margen derecha'),
+	('(14.3.3) Margen izquierda','(14.3.3) Margen izquierda'),
+	('(14.3.4) Isla','(14.3.4) Isla'),
+	('(14.3.5) Raudal','(14.3.5) Raudal'),
+	('(14.4) Costa','(14.4) Costa'),
+	('(14.5) En el mar','(14.5) En el mar'),
 )
 
 OPCIONES_SURCO_GRABADO = (
 	('---', '---'),
-	('Bajo relieve lineal','Bajo relieve lineal'),
-	('Bajo relieve planar','Bajo relieve planar'),
-	('Alto relieve lineal','Alto relieve lineal'),
-	('Alto relieve planar','Alto relieve planar'),
+	('(24.1.2.1) Bajo relieve lineal','(24.1.2.1) Bajo relieve lineal'),
+	('(24.1.2.2) Bajo relieve planar','(24.1.2.2) Bajo relieve planar'),
+	('(24.1.2.1 y 24.1.2.2) Bajo relieve planar y lineal','(24.1.2.1 y 24.1.2.2) Bajo relieve planar y lineal'),
+	('(24.1.3.1) Alto relieve lineal ','(24.1.3.1) Alto relieve lineal'),
+	('(24.1.3.2) Alto relieve planar','(24.1.3.2) Alto relieve planar'),
 	('Áreas interlineales pulidas','Áreas interlineales pulidas'),
 	('Áreas interlineales rebajadas','Áreas interlineales rebajadas'),
 	('Grabados superpuestos','Grabados superpuestos'),
@@ -81,18 +82,18 @@ OPCIONES_SURCO_GRABADO = (
 OPCIONES_TIPO_PINTURA = (
 
 	('---', '---'),
-	('Pintura positiva negra','Pintura positiva negra'),
-	('Pintura positiva blanca','Pintura positiva blanca'),
-	('Pintura positiva amarilla','Pintura positiva amarilla'),
-	('Pintura positiva roja','Pintura positiva roja'),
-	('Pintura positiva dos rojos','Pintura positiva dos rojos'),
-	('Pintura positiva tres rojos','Pintura positiva tres rojos'),
-	('Pintura negativa negra','Pintura negativa negra'),
-	('Pintura negativa blanca','Pintura negativa blanca'),
-	('Pintura negativa amarilla','Pintura negativa amarilla'),
-	('Pintura negativa roja','Pintura negativa roja'),
-	('Pintura negativa dos rojos','Pintura negativa dos rojos'),
-	('Pintura negativa tres rojos','Pintura negativa tres rojos'),
+	('(25.6.1.1) Pintura positiva negra','(25.6.1.1) Pintura positiva negra'),
+	('(25.6.1.2) Pintura positiva blanca','(25.6.1.2) Pintura positiva blanca'),
+	('(25.6.1.3) Pintura positiva amarilla','(25.6.1.3) Pintura positiva amarilla'),
+	('(25.6.1.4) Pintura positiva roja','(25.6.1.4) Pintura positiva roja'),
+	('(25.6.1.5) Pintura positiva dos rojos','(25.6.1.5) Pintura positiva dos rojos'),
+	('(25.6.1.6) Pintura positiva tres rojos','(25.6.1.6) Pintura positiva tres rojos'),
+	('(25.6.2.1) Pintura negativa negra','(25.6.2.1) Pintura negativa negra'),
+	('(25.6.2.2) Pintura negativa blanca','(25.6.2.2) Pintura negativa blanca'),
+	('(25.6.2.3) Pintura negativa amarilla','(25.6.2.3) Pintura negativa amarilla'),
+	('(25.6.2.4) Pintura negativa roja','(25.6.2.4) Pintura negativa roja'),
+	('(25.6.2.5) Pintura negativa dos rojos','(25.6.2.5) Pintura negativa dos rojos'),
+	('(25.6.2.6) Pintura negativa tres rojos','(25.6.2.6) Pintura negativa tres rojos'),
 )
 
 OPCIONES_MATERIAL = (
@@ -106,10 +107,10 @@ OPCIONES_MATERIAL = (
 
 OPCIONES_CARACTERISTICA_SURCO = (
 	('---', '---'),
-	('Base redonda','Base redonda'),
-	('Información de abrasión','Información de abrasión'),
-	('Base aguda','Base aguda'),
-	('Información de persusión','Información de persusión'),
+	('(24.1.3.1) Base redonda','(24.1.3.1) Base redonda'),
+	('(23.2, 23.2.1, 23.2.2, 23.2.3, 23.2.4) Información de abrasión','(23.2, 23.2.1, 23.2.2, 23.2.3, 23.2.4) Información de abrasión'),
+	('(24.1.3.2) Base aguda','(24.1.3.2) Base aguda'),
+	('(23.1.1, 23.1.1.1, 23.1.1.2) Información de percusión','(23.1.1, 23.1.1.1, 23.1.1.2) Información de percusión'),
 )
 
 OPCIONES_PIEDRA_EROSION = (
@@ -118,9 +119,6 @@ OPCIONES_PIEDRA_EROSION = (
 	('Tipo de línea compuesta','Tipo de línea compuesta'),
 	('Color base','Color base'),
 )
-
-
-
 
 class CrucesYYFormAdmin(forms.Form):
     codigo 	= forms.CharField(required=False, max_length=20)
