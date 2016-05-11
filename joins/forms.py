@@ -72,11 +72,27 @@ OPCIONES_SURCO_GRABADO = (
 	('(24.1.2.1 y 24.1.2.2) Bajo relieve planar y lineal','(24.1.2.1 y 24.1.2.2) Bajo relieve planar y lineal'),
 	('(24.1.3.1) Alto relieve lineal ','(24.1.3.1) Alto relieve lineal'),
 	('(24.1.3.2) Alto relieve planar','(24.1.3.2) Alto relieve planar'),
-	('Áreas interlineales pulidas','Áreas interlineales pulidas'),
-	('Áreas interlineales rebajadas','Áreas interlineales rebajadas'),
-	('Grabados superpuestos','Grabados superpuestos'),
-	('Grabados rebajados','Grabados rebajados'),
-	('Re-grabados','Re-grabados'),
+)
+
+OPCIONES_SURCO_GRABADO2 = (
+	('---', '---'),
+	('(24.1.12.1) Áreas interlineales pulidas','(24.1.12.1) Áreas interlineales pulidas'),
+	('(24.1.12.2) Áreas interlineales rebajadas','(24.1.12.2) Áreas interlineales rebajadas'),
+	('(24.1.12.3) Grabados superpuestos','(24.1.12.3) Grabados superpuestos'),
+	('(24.1.12.4) Grabados rebajados','(24.1.12.4) Grabados rebajados'),
+	('(24.1.12.5) Re-grabados','(24.1.12.5) Re-grabados'),
+)
+
+OPCIONES_SURCO_GRABADO3 = (
+	('---','---'),
+	('(24.1.1) Ancho de surco','(24.1.1) Ancho de surco'),
+	('(24.1.2) Profundidad de surco','(24.1.2) Profundidad de surco'),
+	('(24.1.3.1) Base redonda','(24.1.3.1) Base redonda'),
+	('(24.1.3.2) Base aguda','(24.1.3.2) Base aguda'),
+	('(24.1.2.1) Bajo relieve lineal','(24.1.2.1) Bajo relieve lineal'),
+	('(24.1.2.2) Bajo relieve planar','(24.1.2.2) Bajo relieve planar'),
+	('(24.1.3.1) Alto relieve lineal','(24.1.3.1) Alto relieve lineal'),
+	('(24.1.3.2) Alto relieve planar','(24.1.3.2) Alto relieve planar'),
 )
 
 OPCIONES_TIPO_PINTURA = (
@@ -99,10 +115,10 @@ OPCIONES_TIPO_PINTURA = (
 OPCIONES_MATERIAL = (
 
 	('---', '---'),
-	('Roca ígnea','Roca ígnea'),
-	('Roca metamórfica','Roca metamórfica'),
-	('Roca sedimentaria','Roca sedimentaria'),
-	('Erosión','Erosión'),
+	('(22.1.1) Roca ígnea','(22.1.1) Roca ígnea'),
+	('(22.1.2) Roca metamórfica','(22.1.2) Roca metamórfica'),
+	('(22.1.3) Roca sedimentaria','(22.1.3) Roca sedimentaria'),
+	('(27.4.9, 27.4.9.1, 27.4.9.2, 27.4.9.3, 27.4.9.4) Erosión','(27.4.9, 27.4.9.1, 27.4.9.2, 27.4.9.3, 27.4.9.4) Erosión'),
 )
 
 OPCIONES_CARACTERISTICA_SURCO = (
@@ -120,17 +136,34 @@ OPCIONES_PIEDRA_EROSION = (
 	('Color base','Color base'),
 )
 
+OPCIONES_MANIFESTACIONES_ASOCIADAS = (
+	('---','---'),
+	('(30.1) Lítica','(30.1) Lítica'),
+	('(30.2) Cerámica','(30.2) Cerámica'),
+	('(30.3) Oseo','(30.3) Oseo'),
+	('(30.4) Concha','(30.4) Concha'),
+	('(30.5) Carbón no superficial','(30.5) Carbón no superficial'),
+	('(30.6) Mitos','(30.6) Mitos'),
+	('(30.7) Cementerios','(30.7) Cementerios'),
+	('(30.8) Montículos','(30.8) Montículos'),
+	('(30.9) Otros','(30.9) Otros'),
+)
+ 
+
 class CrucesYYFormAdmin(forms.Form):
     codigo 	= forms.CharField(required=False, max_length=20)
     estado = forms.ChoiceField(required=False, choices=OPCIONES_ESTADO)
     ubicacion = forms.ChoiceField(required=False, choices=OPCIONES_UBICACION)
     carasurcopetrotipo = forms.ChoiceField(required=False, choices=OPCIONES_SURCO_GRABADO)
+    carasurcopetrotipo2 = forms.ChoiceField(required=False, choices=OPCIONES_SURCO_GRABADO2)
+    carasurcopetrotipo3 = forms.ChoiceField(required=False, choices=OPCIONES_SURCO_GRABADO3)
     tipoPintura = forms.ChoiceField(required=False, choices=OPCIONES_TIPO_PINTURA)
     caracteristicaSurco = forms.ChoiceField(required=False, choices=OPCIONES_CARACTERISTICA_SURCO)
     piedraErosion = forms.ChoiceField(required=False, choices=OPCIONES_PIEDRA_EROSION)
     material = forms.ChoiceField(required=False, choices=OPCIONES_MATERIAL)
     manifasociadas = forms.ChoiceField(required=False,widget=forms.Select,choices=OPCIONES_MANIFESTACIONES)
     estado.widget.attrs 	= {'class':'chzn-select', 'data-placeholder':'Seleccione el estado'}
+    manifAsociadas = forms.ChoiceField(required=False,choices=OPCIONES_MANIFESTACIONES_ASOCIADAS)
 
 class CrucesYYForm(forms.Form):
 	nombre 	= forms.CharField(required=False, max_length=100)
