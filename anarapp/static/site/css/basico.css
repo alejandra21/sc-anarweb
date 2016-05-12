@@ -161,9 +161,8 @@
 				padding-left:0px;
 			}
 			.content p {
-				text-align: center;
-				padding: 1%
-                text-align=justify;
+				text-align: left;
+				
 			}
 
 			.content >ul> table> tbody> tr> td{
@@ -329,12 +328,14 @@ border:0px;
 }
 
 /* Botones del nav lateral redondeados. */
-.navLatSuperior {
-	border-top-left-radius: 160px;
-	border-top-right-radius: 160px;
+.navLat {
+	padding-bottom: 100px;
 }
 
-.navLatInferior {
-	border-bottom-left-radius: 160px;
-	border-bottom-right-radius: 160px;
+.navLatTD {
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+
 }
