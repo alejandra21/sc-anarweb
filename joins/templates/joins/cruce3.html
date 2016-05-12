@@ -7,36 +7,35 @@
 {% endblock %}
 
 {% block title %}
-	¿Qué coordenadas tiene el yacimiento de código {{ codigo }}?
+	<center>Cruce 3 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></center></br>
+	¿Qué <i>(8) Coordenadas</i> tiene el <i>(00 - Código) Yacimiento de código: {{ codigo }}</i>?
 {% endblock %}
 
 {% block content %}
-	<!--- Cuando se implemente la búsqueda, borrar los datos de ejemplo -->
-
 	{% if yacimiento %}
 		{% for y in yacimiento %}
 			<h4 style="margin-left:1em;">
 				<a href="" style="color:black">
-					<strong>Nombre:</strong> {{ y.nombre }}
+					<strong>(1) Nombre:</strong> {{ y.nombre }}
 				</a>
 			</h4>
 		  <ul>
 		    <li>
-		    	<strong>Longitud O(W):</strong> {{ y.Coordenadas.longitud }} 
+		    	<strong>(8) Longitud O(W):</strong> {{ y.Coordenadas.longitud }} 
 		    </li>
 
 		    <li>
-		    	<strong>Latitud N:</strong> {{ y.Coordenadas.latitud }} 
+		    	<strong>(8) Latitud N:</strong> {{ y.Coordenadas.latitud }} 
 		    </li>
 
 		    <li>
-		    	<strong>Utm Adicional:</strong> {{ y.Coordenadas.latitud }} 
+		    	<strong>(8) Utm Adicional:</strong> {{ y.Coordenadas.latitud }} 
 		    </li>
 			</ul>
 		{% endfor %}
 
 	{% else %}
-		<h4>Sin resultado.</h4>
+		<h4>Sin resultados.</h4>
 	{% endif %}
 	
 {% endblock %}

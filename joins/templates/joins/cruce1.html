@@ -7,17 +7,15 @@
 {% endblock %}
 
 {% block title %}
-	¿Cuántos y cuáles yacimientos hay en el estado {{ estado }}?
+	<center>Cruce 1 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></center></br>
+	¿Cuántos y cuáles <i>(00 - Código) Yacimientos </i> hay en el <i>(3) Estado: {{ estado }}</i>?
 {% endblock %}
 
 {% block content %}
-
 	{% if results %}
 		<h4 style="margin-left:1em;">
 			<strong> Total de yacimientos:</strong> {{ total }}
 		</h4>
-
-		<!--- Cuando se implemente la búsqueda, utilizar sólo este código -->
 		<ul>
 		{% for result in results %}
 		  <li>
@@ -30,7 +28,7 @@
 		 </ul>
 
 	{% else %}
-		<h4>Sin resultado.</h4>
+		<h4>Sin resultados.</h4>
 
 	{% endif %}
 

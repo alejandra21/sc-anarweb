@@ -7,7 +7,8 @@
 {% endblock %}
 
 {% block title %}
-	¿Qué apoyo bibliográfico tiene el yacimiento de código {{ codigo }} ?
+  <center>Cruce 4 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></center></br>
+	¿Qué <i>(31.1) Apoyo Bibliográfico</i> tiene el <i>(00 - Código) Yacimiento de código: {{codigo}}?</i> 
 {% endblock %}
 
 {% block content %}
@@ -17,24 +18,24 @@
   	<!--- Cuando se implemente la búsqueda, borrar los datos de ejemplo -->
   	<h4 style="margin-left:1em;">
   		<a href="" style="color:black">
-  			<strong>Nombre del yacimiento:</strong> {{ y.nombre }}
+  			<strong>(1) Nombre:</strong> {{ y.nombre }}
   		</a>
   	</h4>
   	<!--- Cuando se implemente la búsqueda, utilizar sólo este código -->
 
-    <h4 style="margin-left:1em;"><strong>Apoyo bibliografico: </strong></h4>
+    <h4 style="margin-left:1em;"><strong>(31.1) Apoyo Bibliográfico: </strong></h4>
       {% for bib in y.BibYacimiento.all %}      
         <div class="panel panel-default">
           <div class="panel-body">
             {% if bib.codigo %}
-              <li> <strong>Código:</strong> {{ bib.codigo }} </li>
+              <ul> <strong>(31.1.1) Código:</strong> {{ bib.codigo }} </ul>
             {% else %}
-              <li> <strong>Código:</strong> -- </li>
+              <ul> <strong>(31.1.1) Código:</strong> -- </ul>
             {% endif %}
-            <li> <strong>Título:</strong> {{ bib.titulo }} </li>
-            <li> <strong>Autor:</strong> {{ bib.autor }} </li>
-            <li> <strong>Año:</strong> {{ bib.ano }} </li>
-            <li> <strong>Institución:</strong> {{ bib.institucion }} </li>
+            <ul> <strong>(31.1.2) Título:</strong> {{ bib.titulo }} </ul>
+            <ul> <strong>(31.1.3) Autor:</strong> {{ bib.autor }} </ul>
+            <ul> <strong>(31.1.4) Año:</strong> {{ bib.ano }} </ul>
+            <ul> <strong>(31.1.5) Institución:</strong> {{ bib.institucion }} </ul>
           </div>
         </div>
       {% endfor %}
@@ -43,7 +44,7 @@
 
   {% else %}
 
-    <h4>Sin resultado.</h4>
+    <h4>Sin resultados.</h4>
 
   {% endif %}
 {% endblock %}

@@ -7,11 +7,11 @@
 {% endblock %}
 
 {% block title %}
-	¿Qué nombre tiene el yacimiento de código {{ codigo }}?
+	<center>Cruce 2 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></center></br>
+	¿Qué <i>(1) Nombre</i> tiene el <i>(00 - Código) Yacimiento de código: {{ codigo }}</i>?
 {% endblock %}
 
 {% block content %}
-	<!--- Cuando se implemente la búsqueda, borrar el nombre de ejemplo -->
 	{% if yacimiento %}
 		{% for y in yacimiento %}
 			<h4 style="margin-left:3em;">
@@ -22,7 +22,7 @@
 		{% endfor %}
 
 	{% else %}
-		<h4>Sin resultado.</h4>
+		<h4>Sin resultados.</h4>
 
 
 	{% endif %}
