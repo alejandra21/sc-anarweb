@@ -184,8 +184,25 @@ Ruby de Valencia
           </div>
         </div>
         <br/>
-      
-  
+
+        <!---
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 8 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                ¿Qué <i>(31.6.4) Material Multimedia</i> aparece en el <i>(00 - Código) Yacimiento</i>?<br/>
+                <form action="/cruces/8/">
+                    <label>(00) Código: {{ form.codigo }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+        <br/>
+        -->
+
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title"><strong>Cruce 8 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
@@ -400,6 +417,8 @@ Ruby de Valencia
           </div>
         </div>
    
+        <!--
+
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title"><strong>Cruce 19 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
@@ -430,9 +449,11 @@ Ruby de Valencia
           </div>
         </div>
 
+        -->
+
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 22 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+            <h3 class="panel-title"><strong>Cruce 19 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
           </div>
           <div class="panel-body">
             <p>
@@ -440,7 +461,7 @@ Ruby de Valencia
                 los yacimientos que contengan </br>
                 <i>(30) Manifestaciones Asociadas</i> de:
                 <br/>
-                <form action="/cruces/22/">
+                <form action="/cruces/19/">
                     <label>{{form.manifAsociadas}}</label></br></br>
                     <input type="submit" class="button" value="Consultar"/>
                 </form>
@@ -450,7 +471,7 @@ Ruby de Valencia
 
                 <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 23 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+            <h3 class="panel-title"><strong>Cruce 20 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
           </div>
           <div class="panel-body">
             <p>
@@ -458,7 +479,7 @@ Ruby de Valencia
               Petroglifos</i></b>, la proporción de número de piedras 
               trabajadas (21.1.1) (21.1.2) / número de piedras en el 
               yacimiento original (21.1), ubicadas en:<br/>
-                <form action="/cruces/23/">
+                <form action="/cruces/20/">
                     <label>(14) Ubicación: {{form.ubicacion}}</label>
                      y su clasificación por:</br>
                     <label>(24) Características del surco grabado: {{form.carasurcopetrotipo3}}</label></br>
@@ -468,30 +489,77 @@ Ruby de Valencia
           </div>
         </div>
 
-                <div class="panel panel-default">
+        <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 24 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+            <h3 class="panel-title"><strong>Cruce 21 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
           </div>
           <div class="panel-body">
             <p>
                 Listar por <i>(3) Estado</i> y <i>(00) Yacimiento</i> con 
                 <i><b>(13.2) Pinturas Rupestres</b></i> ubicadas en:<br/>
-                <form action="/cruces/24/">
+                <form action="/cruces/21/">
                     <label>(14) Ubicación: {{form.ubicacion}}</label></br></br>
+                    <label>(25) Características de la Pintura: {{form.caracPintura}}</label></br></br>
                     <input type="submit" class="button" value="Consultar"/>
                 </form>
             </p>
           </div>
         </div>
 
-                <div class="panel panel-default">
+        <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 25 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+            <h3 class="panel-title"><strong>Cruce 22 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
           </div>
           <div class="panel-body">
             <p>
                 Listar por tipo de material (22.1), (22.1.1), (22.1.2),
                 (22.1.3), (22.3), (22.4), (22.6)
+                <form action="/cruces/22/">
+                    <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 23 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Lísteme por estado (3) y yacimiento (00), y para cada tipo
+                de ubicación (14) ,(14.1), (14.2) (14.3), (14.4), (14.5)<br/>
+                <form action="/cruces/23/">
+                    <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 24 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Listar por Estado (3), Yacimiento (00) y Tipo de Material (22)<br/>
+                <form action="/cruces/24/">
+                    <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 25 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Listar por Estado (3), Yacimiento (00) y Tipo de Material (22)<br/>
                 <form action="/cruces/25/">
                     <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
                     <input type="submit" class="button" value="Consultar"/>
@@ -500,14 +568,13 @@ Ruby de Valencia
           </div>
         </div>
 
-                <div class="panel panel-default">
+        <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 26 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+            <h3 class="panel-title"><strong>Cruce 26 - <i>(PB1) Yacimiento</i> con <i>(Pa) Roca</i></strong></h3>
           </div>
           <div class="panel-body">
             <p>
-                Lísteme por estado (3) y yacimiento (00), y para cada tipo
-                de ubicación (14) ,(14.1), (14.2) (14.3), (14.4), (14.5)<br/>
+                Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
                 <form action="/cruces/26/">
                     <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
                     <input type="submit" class="button" value="Consultar"/>
@@ -516,13 +583,13 @@ Ruby de Valencia
           </div>
         </div>
 
-                <div class="panel panel-default">
+        <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 27 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+            <h3 class="panel-title"><strong>Cruce 27 - <i>(PB1) Yacimiento</i> con <i>(Pa) Roca</i></strong></h3>
           </div>
           <div class="panel-body">
             <p>
-                Listar por Estado (3), Yacimiento (00) y Tipo de Material (22)<br/>
+                Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
                 <form action="/cruces/27/">
                     <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
                     <input type="submit" class="button" value="Consultar"/>
@@ -533,11 +600,11 @@ Ruby de Valencia
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 28 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+            <h3 class="panel-title"><strong>Cruce 28 - <i>(PB1) Yacimiento</i> con <i>(Pa) Roca</i></strong></h3>
           </div>
           <div class="panel-body">
             <p>
-                Listar por Estado (3), Yacimiento (00) y Tipo de Material (22)<br/>
+                Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
                 <form action="/cruces/28/">
                     <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
                     <input type="submit" class="button" value="Consultar"/>
@@ -548,7 +615,7 @@ Ruby de Valencia
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 29 - <i>(PB1) Yacimiento</i> con <i>(Pa) Roca</i></strong></h3>
+            <h3 class="panel-title"><strong>Cruce 29 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
           </div>
           <div class="panel-body">
             <p>
@@ -563,7 +630,7 @@ Ruby de Valencia
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 30 - <i>(PB1) Yacimiento</i> con <i>(Pa) Roca</i></strong></h3>
+            <h3 class="panel-title"><strong>Cruce 30 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
           </div>
           <div class="panel-body">
             <p>
@@ -578,7 +645,7 @@ Ruby de Valencia
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 31 - <i>(PB1) Yacimiento</i> con <i>(Pa) Roca</i></strong></h3>
+            <h3 class="panel-title"><strong>Cruce 31 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
           </div>
           <div class="panel-body">
             <p>
@@ -593,7 +660,7 @@ Ruby de Valencia
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 32 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
+            <h3 class="panel-title"><strong>Cruce 32 - Roca (Pa) con Roca (Pa)</strong></h3>
           </div>
           <div class="panel-body">
             <p>
@@ -608,7 +675,7 @@ Ruby de Valencia
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 33 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
+            <h3 class="panel-title"><strong>Cruce 33 - Roca (Pa) con Roca (Pa)</strong></h3>
           </div>
           <div class="panel-body">
             <p>
@@ -623,7 +690,7 @@ Ruby de Valencia
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 34 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
+            <h3 class="panel-title"><strong>Cruce 34 - Roca (Pa) con Roca (Pa)</strong> </h3>
           </div>
           <div class="panel-body">
             <p>
@@ -636,7 +703,7 @@ Ruby de Valencia
           </div>
         </div>
 
-                <div class="panel panel-default">
+        <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title"><strong>Cruce 35 - Roca (Pa) con Roca (Pa)</strong></h3>
           </div>
@@ -644,51 +711,6 @@ Ruby de Valencia
             <p>
                 Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
                 <form action="/cruces/35/">
-                    <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
-                    <input type="submit" class="button" value="Consultar"/>
-                </form>
-            </p>
-          </div>
-        </div>
-
-                <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 36 - Roca (Pa) con Roca (Pa)</strong></h3>
-          </div>
-          <div class="panel-body">
-            <p>
-                Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
-                <form action="/cruces/36/">
-                    <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
-                    <input type="submit" class="button" value="Consultar"/>
-                </form>
-            </p>
-          </div>
-        </div>
-
-                <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 37 - Roca (Pa) con Roca (Pa)</strong> </h3>
-          </div>
-          <div class="panel-body">
-            <p>
-                Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
-                <form action="/cruces/37/">
-                    <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
-                    <input type="submit" class="button" value="Consultar"/>
-                </form>
-            </p>
-          </div>
-        </div>
-
-                <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 38 - Roca (Pa) con Roca (Pa)</strong></h3>
-          </div>
-          <div class="panel-body">
-            <p>
-                Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
-                <form action="/cruces/38/">
                     <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
                     <input type="submit" class="button" value="Consultar"/>
                 </form>
