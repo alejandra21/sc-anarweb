@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block title %}
-	¿En qué páginas web aparece el yacimiento de código {{ codigo }} PB1-444?
+	¿En qué páginas web aparece el yacimiento de código {{ codigo }}?
 {% endblock %}
 
 {% block content %}
@@ -23,11 +23,15 @@
 
 		<h4><strong>Páginas Web:</strong></h4>
 			<!--- Cuando se implemente la búsqueda, utilizar sólo este código -->
-	    <ul>
-		    {% for pw in yacimiento.PaginaWebYac.all %}
-	        <li>><a href="">{{ pw.direccionURLy }}</a></li>
-	  	  {% endfor %}
-	    </ul>
+		{% if yacimiento.PaginaWebYac.all %}
+		    <ul>
+			    {% for pw in yacimiento.PaginaWebYac.all %}
+		        <li>><a href="">{{ pw.direccionURLy }}</a></li>
+		  	  {% endfor %}
+		    </ul>
+		{% else %}
+			<h4>Sin resultado.</h4>
+	    {% endif %}
 
     {% else %}
 
