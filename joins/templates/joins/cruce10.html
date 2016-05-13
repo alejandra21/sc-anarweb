@@ -7,77 +7,31 @@
 {% endblock %}
 
 {% block title %}
-	Manifestaciones:
+	Listar la proporción de número de piedras trabajadas a número de piedras en el yacimiento original en el estado Amazonas 
+	{{ estado }}
 {% endblock %}
 
 {% block content %}
-
-	<!--- Cuando se implemente la búsqueda, utilizar sólo este código -->
+	
 	<br>
-	<li><h4>Geoglifos:</h4></li>
-    {% for g in geoglifo %}
-		<ul>{{g.yacimiento.nombre}}</ul>
-    {%endfor%}
 
-    <li><h4>Pinturas rupestres:</h4></li>
-    {% for p in pinturasRupestres %}
-		<ul>{{p.yacimiento.nombre}}</ul>
-    {%endfor%}
+  <!--- Cuando se implemente la búsqueda, utilizar sólo este código -->
+  <ul>
+  	{% for result in listaYacimientos %}
+  	<li>  		
+  		<h4 style="margin-left:1em;">
+				<a href="" style="color:black"> {{ result.yacimiento.nombre }} </a>
+			</h4>
+  	</li>
 
-   	<li><h4>Micropetroglifos:</h4></li>
-    {% for m in micropetroglifos %}
-		<ul>{{m.yacimiento.nombre}}</ul>
-    {%endfor%}
+  	<ul>
+  			<li><strong>Grabadas:</strong> {{ result.nroPiedrasTrabajadas.nroPiedrasGrabadas }} / {{result.nroPiedras}} </li>
+   			<li><strong>Pintadas:</strong> {{ result.nroPiedrasTrabajadas.nroPiedrasPintadas}} / {{result.nroPiedras}} </li>
+    		<li><strong>Colocadas:</strong> {{ result.nroPiedrasTrabajadas.nroPiedrasColocadas}} / {{result.nroPiedras}} </li>
+  	</ul>
 
-    <li><h4>Petroglifos:</h4></li>
-    {% for p in petroglifo %}
-		<ul>{{p.yacimiento.nombre}}</ul>
-    {%endfor%}
-
-    <li><h4>Petroglifos pintados:</h4></li>
-    {% for p in petroglifoPintado %}
-		<ul>{{p.yacimiento.nombre}}</ul>
-    {%endfor%}
-
-    <li><h4>Piedra mitica natural:</h4></li>
-    {% for p in PiedraMiticaNatural %}
-		<ul>{{p.yacimiento.nombre}}</ul>
-    {%endfor%}
-
-    <li><h4>Cerro mitico natural:</h4></li>
-    {% for c in CerroMiticoNatural %}
-		<ul>{{c.yacimiento.nombre}}</ul>
-    {%endfor%}
-
-    <li><h4>Batea:</h4></li>
-    {% for b in Batea %}
-		<ul>{{b.yacimiento.nombre}}</ul>
-    {%endfor%}
-
-    <li><h4>Menhires:</h4></li>
-    {% for m in Menhires %}
-		<ul>{{m.yacimiento.nombre}}</ul>
-    {%endfor%}
-
-    <li><h4>Amoladores:</h4></li>
-    {% for a in Amoladores %}
-		<ul>{{a.yacimiento.nombre}}</ul>
-    {%endfor%}
-
-    <li><h4>Puntos acoplados:</h4></li>
-    {% for p in PuntosAcoplados %}
-		<ul>{{p.yacimiento.nombre}}</ul>
-    {%endfor%}
-
-    <li><h4>Cupula :</h4></li>
-    {% for c in Cupula  %}
-		<ul>{{c.yacimiento.nombre}}</ul>
-    {%endfor%}
-
-	
-	
-  
- 
+  	{% endfor %}
+  </ul>
 
 
 {% endblock %}
@@ -85,4 +39,6 @@
 {% block user %}
 	Ruby de Valencia
 {% endblock %}
+
+
 

@@ -84,12 +84,8 @@ def cruces(request,cruce_id):
 			'petroglifoPintado': petroglifoPintado,'PiedraMiticaNatural':PiedraMiticaNatural,
 			'CerroMiticoNatural':CerroMiticoNatural,'Batea':Batea,'Menhires':Menhires,
 			'Amoladores':Amoladores,'PuntosAcoplados':PuntosAcoplados,'Cupula':Cupula})
-
-
-
-
-
-	return render(request,entrada,{'total':total,'results':results})
+		
+	return render(request,entrada)
 
 def consulta(request):
 	# Se realiza la consula:
