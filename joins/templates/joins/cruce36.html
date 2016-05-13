@@ -13,8 +13,24 @@
 {% endblock %}
 
 {% block content %}
-{% endblock %}
+	<!-- Data de ejemplo (a utilizar cuando se implemente la busqueda)-->
+	<h4 style="margin-left:1em;">
+      <a href="" style="color:black">
+        (1) Nombre: 'Nombre yacimiento'
+      </a>
+    </h4>
 
+    <ul>
+    	<li>(Pa 1) Nombre de la roca: 'Nombre'</li>
+    	<ul>
+    		<li>(Pa 15.1) Otros valores de la roca: 'valores de la roca'</li>
+    	</ul>
+    </ul>
+
+
+	<h4>Sin resultados.</h4>
+
+{% endblock %}
 {% block user %}
 	Ruby de Valencia
 {% endblock %}
