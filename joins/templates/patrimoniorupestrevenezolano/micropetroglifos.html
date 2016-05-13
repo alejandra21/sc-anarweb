@@ -6,32 +6,50 @@
 {% block title %}<span style="color:#DBA901">Micropetroglifos</span>{% endblock %}
 
 {% block content %}
-<p>
-Los <span style="color:#DBA901"><b>Micropetroglifos</b></span> son pequeños guijarros o lajas líticas con grabados. 
-</p>
-<p>
-De los estados centrales y andinos se conocen ejemplares de <span style="color:#DBA901"><b>Micropetroglifos</b></span>, que aparecen en la literatura antropológica reseñados en relatos sobre conjuros mágicos, su uso como calendarios o monedas y entre los informantes indígenas su uso por chamanes para atraer la lluvia.
-</p>
-<p><img src="{% static "images/patrimoniorupestrevenezolano/micropetroglifos/Ubimicropetroglifos.png"  %}" style="width:70%;border:solid 2px #DBA901"/></p>
+<ul id="fondo" style="width:100%;height:800px;z-index=1;display:none;"></ul>
+<ul id="1" class="dropdown-image " role="menu">
+	<div class ="row " >
+			<img src="{% static "images/patrimoniorupestrevenezolano/micropetroglifos/Ubimicropetroglifos.png" %}" style="width:100%;border:solid 2px #DBA901"/>
+			<div class="description" style="align:left"><b><span style="color:#DBA901">Ubicación de los micropetroglifos en Venezuela</span></b></p>
+			<div onclick="setImageVisible('1','none')" style="width:100%;font-size:26px;text-align:right">&#x25C4;</a>
+	</div>
+</ul>
+<ul id="2" class="dropdown-image " role="menu">
+	<div class ="row " >
+			<img src="{% static "images/patrimoniorupestrevenezolano/micropetroglifos/100.png" %}" style="width:100%"/>
+			<div class="description" style="align:left"><p><b><span style="color:#DBA901;">100/0/3 - MICROPETROGLIFO</span><br><u>Lago de Valencia</u><br></b>Estado de Carabobo<br>Fotog: Alfredo Weber<br></p>
+			<div onclick="setImageVisible('2','none')" style="width:100%;font-size:26px;text-align:right">&#x25C4;</a>
+	</div>
+</ul>
+<ul id="3" class="dropdown-image " role="menu">
+	<div class ="row " >
+			<img src="{% static "images/patrimoniorupestrevenezolano/micropetroglifos/359.png" %}" style="width:100%"/>
+			<div class="description" style="align:left"><p><b><span style="color:#DBA901;">359/0/1 - MICROPETROGLIFO</span><br><u>QUIBARIO - Piedra para medir el tiempo</u><br></b>Sta Anita, Estado Merida<br>Fotog: A. M&aacute;rquez C.<br></p>
+			<div onclick="setImageVisible('3','none')" style="width:100%;font-size:26px;text-align:right">&#x25C4;</a>
+	</div>
+</ul>
 
-<table width="80%" align="center">
-	<tbody>
-		<tr>
-			<td align="center" width="60%">
-			<img src="{% static "images/patrimoniorupestrevenezolano/micropetroglifos/100.png"  %}" width="50%" />
-			</td>
-			<td align="center" width="40%">
-			<img src="{% static "images/patrimoniorupestrevenezolano/micropetroglifos/359.png"  %}" width="50%" />
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p style="font-size:12px"><b><span style="color:#DBA901;">100/0/3 - MICROPETROGLIFO</span><br><u>Lago de Valencia</u><br></b>Estado de Carabobo<br>Fotog: Alfredo Weber<br></p>
-			</td>			<td>
-			<p style="font-size:12px"><b><span style="color:#DBA901;">359/0/1 - MICROPETROGLIFO</span><br><u>QUIBARIO - Piedra para medir el tiempo</u><br></b>Sta Anita, Estado Merida<br>Fotog: A. M&aacute;rquez C.<br></p>
-			</td>
-		</tr>
-	</tbody>
-</table>
+<div id="contenido">
+	<div class="row">
+	  <div class="col-md-4 col-xs-8">
+	  	<img src="{% static "images/patrimoniorupestrevenezolano/micropetroglifos/100.png"  %}" class="img-responsive" style="width:100%" onclick="setImageVisible('2','block')"/>
+	  	<br>
+	  	<img src="{% static "images/patrimoniorupestrevenezolano/micropetroglifos/359.png"  %}" class="img-responsive center-block" style="width:50%" onclick="setImageVisible('3','block')" />
+	  </div>
+	  <div class="col-md-8 col-xs-12">
+	  	<p class="text-left" style="text-align:left">
+	  		Los <span style="color:#DBA901"><b>Micropetroglifos</b></span> son 
+	  		pequeños guijarros o lajas líticas con grabados.<br>
+	  		De los estados centrales y andinos se conocen ejemplares de 
+	  		<span style="color:#DBA901"><b>Micropetroglifos</b></span>, que 
+	  		aparecen en la literatura antropológica reseñados en relatos sobre
+	  		conjuros mágicos, su uso como calendarios o monedas y entre los 
+	  		informantes indígenas su uso por chamanes para atraer la lluvia.
+		</p>	
+		<button type="button" class="btn btn-link pull-right" onclick="setImageVisible('1','block')">Ubicación</button>
+	  </div>
+	</div>
+
+</div>
 
 {% endblock %}

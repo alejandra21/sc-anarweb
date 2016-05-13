@@ -38,19 +38,21 @@
 .main {
 	background-color: yellow;
 }
-
+	
+	/* Barra lateral izquierda. */
 	table.main-menu {
 		margin-top:110px;
 		margin-left:20%;
 		}
-
+		
+		/* Cada fila de la tabla. */
 		table.main-menu >tbody> tr> td {
 			margin-bottom: 20px;
 			padding: 0px;
 			font-size: 17px;
 			background-color: orange;
 			height: 80px;
-			border: 10px black solid;
+			border: 0px black solid;
 			text-align: center;
 			display:table-cell;
 		}
@@ -159,9 +161,8 @@
 				padding-left:0px;
 			}
 			.content p {
-				text-align: center;
-				padding: 1%
-                text-align=justify;
+				text-align: left;
+				
 			}
 
 			.content >ul> table> tbody> tr> td{
@@ -314,6 +315,7 @@ body {
 
 }
 
+/* Botones del nav central redondeados. */
 .inicial {
 border-top-left-radius: 20px;
 border-bottom-left-radius:20px;
@@ -323,4 +325,17 @@ border-bottom-left-radius:20px;
 border-top-right-radius: 20px;
 border-bottom-right-radius:20px;
 border:0px;
+}
+
+/* Botones del nav lateral redondeados. */
+.navLat {
+	padding-bottom: 100px;
+}
+
+.navLatTD {
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+
 }
