@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 {% extends "website-base.html" %}
 
 {% load staticfiles %}
@@ -7,30 +8,14 @@
 {% endblock %}
 
 {% block title %}
-	 Lísteme por estado y yacimientos la proporción de número de piedras 
-	 trabajadas a número de piedras en el yacimiento original ubicadas en:
+	Yacimientos que contengan como manifestaciones asociadas <u>pintura rupestre</u>
 {% endblock %}
 
+
 {% block content %}
-  
-  {% for esta, lista in yacimientos.items%}
-		{%if lista|length > 0%}
-		  <h3>{{esta}}</h3>
-		  <ul>
-		  {% for yacimiento in lista %}
-        <li>{{ yacimiento.nombre }}</li>
-        <li>{{ yacimiento.ConstitucionYacimiento.nroPiedras }}</li>
-      {% endfor %}
-		  </ul>
-		{%endif%}
-  {%endfor%}
 
 {% endblock %}
 
 {% block user %}
 	Ruby de Valencia
 {% endblock %}
-
-
-
-

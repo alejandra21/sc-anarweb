@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 {% extends "website-base.html" %}
 
 {% load staticfiles %}
@@ -8,41 +7,34 @@
 {% endblock %}
 
 {% block title %}
-	Petroglifos que tienen <u>bajo relieve planar</u>:{{tipo}}
+	Para un mismo Ancho y/o Profundidad de surco, el numero de Petroglifos que tienen <u>base redonda</u> son:
 {% endblock %}
 
 {% block content %}
+	<!--- Este template es nuevo -->
 
-	<br>
-	<h3>Hay un total de 2{{total}} petroglifos</h3>
-		<h4><strong>Carabobo</strong></h4>
-    	<li>
-    		<strong>Código:</strong> PB1-51, 
-			<i> 
-				LA RUEDA DEL INDIO 
-			</i>
-		</li>
+  <br>
+  <h4 style="margin-left:1em;">
+    <strong> Total de Petroglifos :</strong> {{ total }} 2
+  </h4>
 
-    	<h4><strong>Bolívar</strong></h4>
-		<li>
-			<strong>Código:</strong> PB1-444,	
-			<i> 
-				CUEVA CAÑO ORE, Cueva del Chamán, White Shaman Cave 
-			</i>
+  <h4><strong>Carabobo</strong></h4>
+    <li>
+      <strong>Código:</strong> PB1-51, 
+    <i> 
+      LA RUEDA DEL INDIO 
+    </i>
+  </li>
 
-		</li>
+    <h4><strong>Bolívar</strong></h4>
+  <li>
+    <strong>Código:</strong> PB1-444, 
+    <i> 
+      CUEVA CAÑO ORE, Cueva del Chamán, White Shaman Cave 
+    </i>
 
-    {% for esta, lista in yacimientos.items%}
-		{%if lista|length > 0%}
-		<h3>{{esta}}</h3>
+  </li>
 
-		<ul>
-		{% for yacimiento in lista %}
-            <li>{{ yacimiento.nombre }}</li>
-        {% endfor %}
-		</ul>
-		{%endif%}
-    {%endfor%}
 
 
 {% endblock %}
@@ -50,3 +42,5 @@
 {% block user %}
 	Ruby de Valencia
 {% endblock %}
+
+

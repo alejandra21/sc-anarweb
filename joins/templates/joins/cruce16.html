@@ -8,26 +8,44 @@
 {% endblock %}
 
 {% block title %}
-	Cuáles petroglifos tienen <u>bajo relieve planar</u>:{{tipo}}
+	Lísteme por estado, cuántas y cuáles Pinturas Rupestres de todos los yacimientos tienen <u>pintura positiva negra</u>:{{tipo}}
 {% endblock %}
 
 {% block content %}
+
+	<!--- Este template es nuevo -->
 	<br>
-	<li>
-		<strong>Código:</strong> PB1-51, 
-		<i> 
-			<ul>LA RUEDA DEL INDIO </ul>
-			<ul>Estado: Carabobo.</ul>
-		</i>
-	</li>
+	<h3>Hay un total de 2{{total}} Pinturas Rupestres que tienen <u>pintura positiva negra</u> </h3>
+    	
+    	<h4><strong>Carabobo</strong></h4>
+    	<li>
+    		<strong>Código:</strong> PB1-51, 
+			<i> 
+				LA RUEDA DEL INDIO 
+			</i>
+		</li>
 
+		<h4><strong>Bolívar</strong></h4>
+		<li>
+			<strong>Código:</strong> PB1-444,	
+			<i> 
+				CUEVA CAÑO ORE, Cueva del Chamán, White Shaman Cave 
+			</i>
 
-	<h3>{{cruce}}</h3>
-	<ul>
-	    {% for yac in yacimientos%}
-			<li>{{yac.nombre}}</li>
-    	{%endfor%}
-	</ul>
+		</li>
+
+    {% for esta, lista in yacimientos.items%}
+		{%if lista|length > 0%}
+		<h3>{{esta}}</h3>
+
+		<ul>
+		{% for yacimiento in lista %}
+            <li>{{ yacimiento.nombre }}</li>
+        {% endfor %}
+		</ul>
+		{%endif%}
+    {%endfor%}
+
 
 {% endblock %}
 
