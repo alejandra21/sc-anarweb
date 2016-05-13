@@ -24,13 +24,13 @@ def cruces(request,cruce_id):
 		total = len(results)
 		return render(request,entrada,{'total':total,'results':results,'estado':estado})
 
-	elif (cruce_id in {"2","3","4","5","6","7"} ):
+	elif (cruce_id in {"2","3","4","5","6","7","8"} ):
 
 		codigo = request.GET['codigo']
 		yacimiento=Yacimiento.objects.filter(codigo=codigo)
 		return render(request,entrada,{'yacimiento':yacimiento,'codigo':codigo})
 
-	elif (cruce_id == "8"):
+	elif (cruce_id == "9"):
 		estado = request.GET['estado']
 		results = ManifestacionYacimiento.objects.filter(yacimiento__estado__nombre=estado)
 
@@ -41,7 +41,7 @@ def cruces(request,cruce_id):
 
 		return render(request,entrada,{'yacimiento':yacimiento,'estado':estado})
 
-	elif (cruce_id == "9"):
+	elif (cruce_id == "10"):
 		# Falta implementar
 		listaYacimientos = []
 		estado = request.GET['estado']
@@ -56,7 +56,7 @@ def cruces(request,cruce_id):
 			
 		return render(request,entrada,{'listaYacimientos':listaYacimientos,'estado':estado})
 
-	elif (cruce_id == "10"):
+	elif (cruce_id == "11"):
 		# Falta implementar
 		estado = request.GET['estado']
 		codigo = request.GET['codigo']
