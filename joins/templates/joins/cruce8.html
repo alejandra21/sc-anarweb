@@ -8,41 +8,43 @@
 
 {% block title %}
   <center>Cruce 8 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></center></br>
-  ¿Qué <i>(31.6, 31.6.1, 31.6.2) Material Audiovisual</i> aparece en el <i>(00 - Código) Yacimiento</i> {{ codigo }}?
+  ¿Qué <i>(31.6) Material Multimedia</i> tiene el <i>(00 - Código) Yacimiento de código: {{ codigo }}?
 {% endblock %}
 
 {% block content %}
 
-  {% if yacimiento %}
+{% if yacimiento %}
+  {% for y in yacimiento%}
     <h4 style="margin-left:1em;">
       <a href="" style="color:black">
-        {{ yacimiento.nombre }}
+        (1) Nombre: {{ y.nombre }}
       </a>
     </h4>
 
     <br>
 
-    <h4><strong>Material audiovisual:</strong></h4>
-    {% if yacimiento.MatAVYacimiento.all %}
-        <ul>
-          {% for pw in yacimiento.MatAVYacimiento.all %}
-            <li><a href="">{{ pw.direccionURLy }}</a></li>
-          {% endfor %}
-        </ul>
-    {% else %}
-      <h4>Sin resultados.</h4>
-      {% endif %}
+    <h4><strong>(31.6) Material Multimedia:</strong></h4>
 
-    {% else %}
+    {% if y.MultimediaYac.all %}
+     <ul>
+      {% for mv in y.MultimediaYac.all %}
+        <li><strong>(31.6.1) Técnica:</strong> {{ mv.tecnicaY }}</li>
+        <li><strong>(31.6.2) Archivo:</strong><a href=""> {{ mv.archivoY }}</a></li>
+      {% endfor %}
+     </ul>
+     {% else %}
+        <h4>Sin resultados.</h4>
+     {% endif %}
+   {% endfor %}
 
-      <h4>Sin resultados.</h4>
+{% else %}
 
-    {% endif %}
+  <h4>Sin resultados.</h4>
+  
+{% endif %}
 
 {% endblock %}
 
 {% block user %}
   Ruby de Valencia
 {% endblock %}
-
-
