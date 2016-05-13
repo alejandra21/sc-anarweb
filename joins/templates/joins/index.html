@@ -624,7 +624,7 @@ Ruby de Valencia
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 33 - Roca (Pa) con Roca (Pa)</strong></h3>
+            <h3 class="panel-title"><strong>Cruce 33 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
           </div>
           <div class="panel-body">
             <p>
@@ -639,7 +639,7 @@ Ruby de Valencia
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 34 - Roca (Pa) con Roca (Pa)</strong></h3>
+            <h3 class="panel-title"><strong>Cruce 34 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
           </div>
           <div class="panel-body">
             <p>
@@ -654,7 +654,7 @@ Ruby de Valencia
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 35 - Roca (Pa) con Roca (Pa)</strong> </h3>
+            <h3 class="panel-title"><strong>Cruce 35 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong> </h3>
           </div>
           <div class="panel-body">
             <p>
@@ -669,13 +669,17 @@ Ruby de Valencia
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 36 - Roca (Pa) con Roca (Pa)</strong></h3>
+            <h3 class="panel-title"><strong>Cruce 36 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
           </div>
           <div class="panel-body">
             <p>
-                Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
+
+                Listar por <i>(Pa 00) Rocas</i>  del 
+                <i>(00 - Código) Yacimiento</i>, por <i>(Pa 3) Estado</i>, 
+                <i>(Pa 15) Otros Valores de la Roca</i> <br/>
                 <form action="/cruces/36/">
-                    <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                    <label>(00) Código: {{ form.codigo }} </label></br>
+                    <label>(3) Estado: {{ form.estado }} </label></br></br>
                     <input type="submit" class="button" value="Consultar"/>
                 </form>
             </p>
