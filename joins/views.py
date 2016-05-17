@@ -1,8 +1,8 @@
 # Create your views here.
 from django.shortcuts import render
 from django.db.models import Q
-from anarapp.models import Estado, Piedra, Yacimiento, ManifestacionYacimiento,FotografiaYac
-from joins.forms import CrucesYYForm
+from anarapp.models import Estado, Piedra, Yacimiento, ManifestacionYacimiento,FotografiaYac, Coordenadas,ConstitucionYacimiento
+from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
 def index(request):
@@ -10,9 +10,82 @@ def index(request):
 	forma = CrucesYYForm
 	return render(request, 'sistema.html',{'forma':forma})
 
-# def cruces(request,cruce_id):
-# 	entrada = "joins/cruce"+str(cruce_id)+".html"
-# 	return render(request,entrada)
+def cruceAdmin(request):
+	form = CrucesYYFormAdmin
+	return render(request,'joins/index.html',{'form':form})
+
+def cruces(request,cruce_id):
+	entrada = "joins/cruce"+str(cruce_id)+".html"
+
+	# print(cruce_id == "1")
+	if (cruce_id == "1"):
+		estado = request.GET['estado']
+		results=Yacimiento.objects.filter(estado__nombre__exact=estado)
+		total = len(results)
+		return render(request,entrada,{'total':total,'results':results,'estado':estado})
+
+	elif (cruce_id in {"2","3","4","5","6","7","8"} ):
+
+		codigo = request.GET['codigo']
+		yacimiento=Yacimiento.objects.filter(codigo=codigo)
+		return render(request,entrada,{'yacimiento':yacimiento,'codigo':codigo})
+
+	elif (cruce_id == "9"):
+		estado = request.GET['estado']
+		results = ManifestacionYacimiento.objects.filter(yacimiento__estado__nombre=estado)
+
+		if (results):
+			yacimiento = results.filter(Q(esMenhires=True)|Q(esCerroConDolmen=True))
+		else:
+			yacimiento = ""
+
+		return render(request,entrada,{'yacimiento':yacimiento,'estado':estado})
+
+	elif (cruce_id == "10"):
+		# Falta implementar
+		listaYacimientos = []
+		estado = request.GET['estado']
+		yacimiento = Yacimiento.objects.filter(estado__nombre__exact=estado)
+
+		for y in yacimiento:
+
+			nroPiedras = ConstitucionYacimiento.objects.filter(yacimiento__id = y.id)
+			piedras = Piedra.objects.filter(yacimiento__id = y.id)
+			listaYacimientos += [{'yacimiento':y,'nroPiedrasTrabajadas':nroPiedras,
+								'nroPiedras': len(piedras)}]
+			
+		return render(request,entrada,{'listaYacimientos':listaYacimientos,'estado':estado})
+
+	elif (cruce_id == "11"):
+		# Falta implementar
+		estado = request.GET['estado']
+		codigo = request.GET['codigo']
+
+		manifestacion = \
+		ManifestacionYacimiento.objects.filter(Q(yacimiento__estado__nombre=estado)|
+			Q(yacimiento__codigo=codigo))
+		geoglifo = manifestacion.filter(esGeoglifo=True)
+		pinturasRupestres = manifestacion.filter(esPintura=True)
+		micropetroglifos = manifestacion.filter(esMicroPetroglifo=True)
+		petroglifo = manifestacion.filter(esPetroglifo = True)
+		petroglifoPintado = manifestacion.filter(esPetroglifoPintado = True)
+		PiedraMiticaNatural = manifestacion.filter(esPiedraMiticaNatural=True)
+		CerroMiticoNatural = manifestacion.filter(esCerroMiticoNatural=True)
+		Batea = manifestacion.filter(esBatea=True)
+		Menhires = manifestacion.filter(esMenhires=True)
+		Amoladores = manifestacion.filter(esAmolador=True)
+		PuntosAcoplados = manifestacion.filter(esPuntosAcoplados=True)
+		Cupula = manifestacion.filter(esCupulas = True)
+
+
+		return render(request,entrada,{'estado':estado,'codigo':codigo,
+			'geoglifo':geoglifo,'pinturasRupestres':pinturasRupestres,
+			'micropetroglifos':micropetroglifos,'petroglifo':petroglifo,
+			'petroglifoPintado': petroglifoPintado,'PiedraMiticaNatural':PiedraMiticaNatural,
+			'CerroMiticoNatural':CerroMiticoNatural,'Batea':Batea,'Menhires':Menhires,
+			'Amoladores':Amoladores,'PuntosAcoplados':PuntosAcoplados,'Cupula':Cupula})
+		
+	return render(request,entrada)
 
 def consulta(request):
 	# Se realiza la consula:

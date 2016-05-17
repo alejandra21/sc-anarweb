@@ -8,33 +8,31 @@
 {% endblock %}
 
 {% block title %}
-	Pinturas rupestres que tienen <u>tipo de línea sencilla</u>:{{tipo}}
+	Petroglifos con <u>roca ígnea</u>:{{tipo}}
 {% endblock %}
 
 {% block content %}
+	<br>
+	<h4><strong>Carabobo</strong></h4>
+	<li>
+		<strong>Código:</strong> PB1-51, 
+		<i> 
+			LA RUEDA DEL INDIO 
+		</i>
+	</li>
 
-		<br>
-		<h4><strong>Carabobo</strong></h4>
-    	<li>
-    		<strong>Código:</strong> PB1-51, 
-			<i> 
-				LA RUEDA DEL INDIO 
-			</i>
-		</li>
+	<h4><strong>Bolívar</strong></h4>
+	<li>
+		<strong>Código:</strong> PB1-444,	
+		<i> 
+			CUEVA CAÑO ORE, Cueva del Chamán, White Shaman Cave 
+		</i>
 
-    	<h4><strong>Bolívar</strong></h4>
-		<li>
-			<strong>Código:</strong> PB1-444,	
-			<i> 
-				CUEVA CAÑO ORE, Cueva del Chamán, White Shaman Cave 
-			</i>
-
-		</li>
-
+	</li>
+	<h3>{{tipo}}</h3>
     {% for esta, lista in yacimientos.items%}
 		{%if lista|length > 0%}
 		<h3>{{esta}}</h3>
-
 		<ul>
 		{% for yacimiento in lista %}
             <li>{{ yacimiento.nombre }}</li>
@@ -42,7 +40,6 @@
 		</ul>
 		{%endif%}
     {%endfor%}
-
 
 {% endblock %}
 

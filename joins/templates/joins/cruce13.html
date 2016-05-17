@@ -1,0 +1,57 @@
+{% extends "website-base.html" %}
+
+{% load staticfiles %}
+
+{% block pagetitle %}
+	Cruces - Yacimiento
+{% endblock %}
+
+{% block title %}
+	Listar por estado el ancho y la profundidad del surco grabado para todos los yacimientos de Petroglifos
+{% endblock %}
+
+{% block content %}
+
+	<!--- Cuando se implemente la búsqueda, utilizar sólo este código -->
+	{% for esta, lista in yacimientos.items%}
+		{%if lista|length > 0%}
+	<h3>{{esta}}</h3>
+		<ul>
+		{% for yacimiento in lista %}
+			<li><strong>Ancho:</strong> {{ yacimiento.carasurcopetroancho }} </li>
+			<li><strong>Profundidad:</strong> {{ yacimiento.carasurcopetroprofun }} </li>
+		{% endfor %}
+		</ul>
+	{%endif%}
+	{%endfor%}
+
+		
+	<!--- Datos de Ejemplo para muestra del Diseño inicial -->
+	<h3>Amazonas</h3>
+		<ul>
+			<li><a href="" style="color:black;">La Rueda del Indio</a></li>
+			<ul>
+				<li><strong>Ancho:</strong> 5cm </li>
+				<li><strong>Profundidad:</strong> 8cm  </li>
+			</ul>
+		</ul>
+
+	<h3>Bolívar</h3>
+		<ul>
+			<li><a href="" style="color:black;">Cueva Caño Ore</a></li>
+			<ul>
+				<li><strong>Ancho: </strong> 4cm </li>
+				<li><strong>Profundidad:</strong> 7cm  </li>
+			</ul>
+		</ul>
+		
+{% endblock %}
+
+{% block user %}
+	Ruby de Valencia
+{% endblock %}
+
+
+
+
+

@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 # Django settings for anar project.
 
@@ -139,7 +140,7 @@ INSTALLED_APPS = (
     'south',
     'joins',
     'haystack',
-	'smart_selects'
+    'smart_selects'
 )
 
 # A sample logging configuration. The only tangible logging
