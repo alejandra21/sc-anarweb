@@ -19,24 +19,26 @@
         <script type="text/javascript" src="{% static "site/bootstrap/js/bootstrap.min.js" %}"></script>
 
         <!-- STYLE -->
-        <link rel="stylesheet" type="text/css" href="{% static "site/css/basico.css" %}"/>    </head>
+        <link rel="stylesheet" type="text/css" href="{% static "site/css/basico.css" %}"/>    
+    </head>
+        
 	<script>
-	        function setImageVisible(id, v) {
+		function setImageVisible(id, v) {
         	var img = document.getElementById(id);
-		var atras = document.getElementById('contenido');
-		var fondo = document.getElementById('fondo');
-		if (v == 'block'){
-			atras.style.display ='none';
-			fondo.style.display ='block';
-		}else{
-			atras.style.display ='block';
-			fondo.style.display ='none';
-		}
+			var atras = document.getElementById('contenido');
+			var fondo = document.getElementById('fondo');
+			if (v == 'block'){
+				atras.style.display ='none';
+				fondo.style.display ='block';
+			}else{
+				atras.style.display ='block';
+				fondo.style.display ='none';
+			}
         	img.style.display = v;
-    		}
+    	}
+	</script>
 
 			
-	</script>
     <body>	
 
 	<table style="float:right"><tbody><tr>

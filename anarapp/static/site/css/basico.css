@@ -245,6 +245,7 @@
 	z-index: 5;
     	top: 20%;
 }
+
 .fondo {
     display: none;
     position: absolute;
@@ -256,8 +257,7 @@
     background-repeat:repeat;
     z-index: 999;
     height: 128%;
-}
-img{
+}img{
     width: 100%;
 }
 
