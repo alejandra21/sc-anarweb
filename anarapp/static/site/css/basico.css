@@ -101,8 +101,8 @@
 			div.sub-menu > ul{
 				display: table;
 				height: 0px;
-				width:90%;
-				margin-left: 30px;
+				width:103%;
+				margin-left: -1.5%;
 				padding:0px;
 				text-align: justify;
 				background-color:black;
@@ -112,7 +112,7 @@
 				width: 1%;
 				vertical-align: middle;
 				text-align:center;
-				font-size:14px;
+				font-size:16px;
 				height: 100%;
 				margin: 0px;
 				padding:0px 2px 0px 2px;
@@ -318,13 +318,13 @@ body {
 
 /* Botones del nav central redondeados. */
 .inicial {
-border-top-left-radius: 20px;
-border-bottom-left-radius:20px;
+border-top-left-radius: 10px;
+border-bottom-left-radius:10px;
 }
 
 .final{
-border-top-right-radius: 20px;
-border-bottom-right-radius:20px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
 border:0px;
 }
 
