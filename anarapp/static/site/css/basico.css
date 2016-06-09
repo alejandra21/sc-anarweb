@@ -4,10 +4,23 @@
 	PALETTE:
 		FOOTER #D7D7D7 
 */
+
 @font-face {
     font-family: epistolar;
     src: url(../fonts/epistolar.ttf);
 }
+
+@font-face {
+    font-family: page_century_gothic;
+    src: url(../fonts/GOTHIC.TTF);
+}
+
+@font-face {
+    font-family: page_century_gothic;
+    src: url(../fonts/GOTHICB.TTF);
+    font-weight: bold;
+}
+
 .topbar {
 	padding: 10px 0px;
 }
@@ -162,7 +175,6 @@
 			}
 			.content p {
 				text-align: left;
-				
 			}
 
 			.content >ul> table> tbody> tr> td{
@@ -289,7 +301,7 @@ html, body {
 	overflow: auto;
 }
 body {
-	font-family: Century Gothic, Tahoma, Geneva, sans-serif;
+	font-family: page_century_gothic;
 }
 
 
