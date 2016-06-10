@@ -270,8 +270,15 @@
     z-index: 999;
     height: 128%;
 }
+
 img{
     width: 100%;
+    
+}
+
+.img-inicio{
+   margin-right:5px; /*Separación a derecha entre las imágenes del inicio.*/
+   margin-left:5px; /*Separación a izquierda entre las imágenes del inicio.*/
 }
 
 /* vertical alignment styles */
