@@ -255,12 +255,21 @@
 	position:absolute;
 	display:none;
 	z-index: 5;
-    	top: 20%;
+    	top: 15%;
+    	 width:78%;/* Este es el margen a izquierda para que quede centrado en 1280x1024 */
+    text-align: center;
+}
+
+.boton-regresar {
+	position:absolute;
+	display:none;
+	z-index: 5;
+	right:71px; /* Este es el margen a derecha necesario para que la flecha quede donde debe en 1280x1024 */
 }
 
 .fondo {
     display: none;
-    position: absolute;
+    position: relative;
     width: 100%;
     top: 15%;
     left: 0;
@@ -273,7 +282,6 @@
 
 img{
     width: 100%;
-    
 }
 
 .img-inicio{
