@@ -8,9 +8,9 @@ Ruby de Valencia
 
 
 {% block submenu %}
-<ul class="list-inline " style="background-color:white">
+<ul class="list-inline ">
 	<table><tr>
-        <td class="active"><a href="{% url index %}">Inicio	</a></td>
+        <td class="active inicial"><a href="{% url index %}">Inicio	</a></td>
     <td role="presentation" class="dropdown ">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
 					Quienes somos</a>
@@ -71,7 +71,7 @@ Ruby de Valencia
 					Visitas Guiadas</a></li>
         </ul>
     </td>
-    <td style="border:0px"><a href="{% url contacto %}">
+    <td class="final" style="border:0px"><a href="{% url contacto %}">
 					Contacto</a></td>
 </tr></table>
 </ul>
