@@ -330,3 +330,14 @@ border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
 border:0px;
 }
+
+/* Botones de consulta. */
+
+.btn-consulta{
+
+	background-color: #9A2D2D;
+}
+
+.btn-consulta:hover{
+	background-color: #731414;
+}

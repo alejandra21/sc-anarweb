@@ -8,6 +8,8 @@ import os
 
 urlpatterns = patterns('',    
     url(r'^$', views.index, name='inicio'),
+    url(r'cruceUsuario', views.cruceUsuario, name='cruceUsuario'),
+    url(r'tiposCruceAdmin', views.tiposCruceAdmin, name='tiposCruceAdmin'),
     url(r'cruceAdmin', views.cruceAdmin, name='cruceAdmin'),
     url(r'^(?P<cruce_id>[0-9]+)/$', views.cruces, name='cruces'),
     url(r'consulta', views.consulta, name='consulta'),
