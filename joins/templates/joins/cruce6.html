@@ -3,48 +3,44 @@
 {% load staticfiles %}
 
 {% block pagetitle %}
-	Cruces - Yacimiento
+  Cruces - Yacimiento
 {% endblock %}
 
 {% block title %}
-	¿Qué <i>(31.6.4) Material Multimedia</i> tiene el <i>(00 - Código) Yacimiento de código: {{ codigo }}?
+  <center>Cruce 6 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></center></br>
+  ¿Qué <i>(31.6, 31.6.1, 31.6.2) Material Audiovisual</i> aparece en el <i>(00 - Código) Yacimiento</i> {{ codigo }}?
 {% endblock %}
 
 {% block content %}
 
-{% if yacimiento %}
-	{% for y in yacimiento%}
-		<h4 style="margin-left:1em;">
-			<a href="" style="color:black">
-				{{ y.nombre }}
-			</a>
-		</h4>
+  {% if yacimiento %}
+    <h4 style="margin-left:1em;">
+      <a href="" style="color:black">
+        (1) Nombre: {{ yacimiento.nombre }}
+      </a>
+    </h4>
 
-		<br>
+    <br>
 
-		<h4><strong>Material Multimedia:</strong></h4>
-			<!--- Cuando se implemente la búsqueda, utilizar sólo este código -->
+    <h4><strong>Material audiovisual:</strong></h4>
+    {% if yacimiento.MatAVYacimiento.all %}
+        <ul>
+          {% for pw in yacimiento.MatAVYacimiento.all %}
+            <li><a href="">{{ pw.direccionURLy }}</a></li>
+          {% endfor %}
+        </ul>
+    {% else %}
+      <h4>Sin resultados.</h4>
+      {% endif %}
 
-		{% if y.MultimediaYac.all %}
-	   <ul>
-	   	{% for mv in y.MultimediaYac.all %}
-				<li><strong>Técnica:</strong> {{ mv.tecnicaY }}</li>
-				<li><strong>Archivo:</strong><a href=""> {{ mv.archivoY }}</a></li>
-	    {% endfor %}
-	   </ul>
-	   {% else %}
-	   		<h4>Sin resultado.</h4>
-	   {% endif %}
-   {% endfor %}
+    {% else %}
 
-{% else %}
+      <h4>Sin resultados.</h4>
 
-	<h4>Sin resultado.</h4>
-	
-{% endif %}
+    {% endif %}
 
 {% endblock %}
 
 {% block user %}
-	Ruby de Valencia
+  Ruby de Valencia
 {% endblock %}
