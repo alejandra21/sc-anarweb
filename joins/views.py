@@ -16,8 +16,19 @@ def cruceUsuario(request):
 	return render(request, 'sistema.html',{'forma':forma})
 
 def tiposCruceAdmin(request):
-
 	return render(request, 'tipo_consultaAdmin.html')
+
+def consultaYacYac(request):
+	form = CrucesYYFormAdmin
+	return render(request, 'joins/yacimiento_yacimiento.html',{'form':form})
+
+def consultaYacRoc(request):
+	form = CrucesYYFormAdmin
+	return render(request, 'joins/yacimiento_roca.html',{'form':form})
+
+def consultaRocRoc(request):
+	form = CrucesYYFormAdmin
+	return render(request, 'joins/roca_roca.html',{'form':form})
 
 def cruceAdmin(request):
 	form = CrucesYYFormAdmin

@@ -1,16 +1,16 @@
 {% extends "website-base.html" %}
 {% load staticfiles %}
 {% block pagetitle %}Pagina Principal{% endblock %}
-{% block title %}Consulta de administrador{% endblock %}
+{% block title %}Consulta en Base de Datos{% endblock %}
 {% block user %}
 Ruby de Valencia
 {% endblock %}
 
 
 {% block submenu %}
-<ul class="list-inline">
+<ul class="list-inline " style="background-color:white">
     <table><tr>
-        <td class="active inicial"><a href="{% url index %}">Inicio </a></td>
+        <td class="active"><a href="{% url index %}">Inicio </a></td>
     <td role="presentation" class="dropdown ">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
                     Quienes somos</a>
@@ -18,12 +18,10 @@ Ruby de Valencia
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url origenytrayectoria %}">
                     Origen y Trayectoria</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url areasdeespecializacion %}">
-                    &Aacute;reas de Especializaci&oacute;n</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url organigrama %}">
-                    Organigrama</a></li>
+                    &Aacute;reas de Especializaci&oacute;n - Organigrama</a></li>
            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url profesionalesadjuntos %}">
                     Profesionales adjuntos</a></li>
-        </ul>
+    </ul>
     </td>
     <td role="presentation" class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
@@ -64,7 +62,7 @@ Ruby de Valencia
                     Productos y<br> Servicios</a>
         <ul class="dropdown-menu" role="menu">
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url publicaciones %}">
-                    Publicaciones</a></li>
+                    Publicaciones</li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url productos %}">
                     Productos</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url asesorias %}">
@@ -73,7 +71,7 @@ Ruby de Valencia
                     Visitas Guiadas</a></li>
         </ul>
     </td>
-    <td class="final" style="border:0px;"><a href="{% url contacto %}">
+    <td style="border:0px"><a href="{% url contacto %}">
                     Contacto</a></td>
 </tr></table>
 </ul>
@@ -81,27 +79,53 @@ Ruby de Valencia
 
 {% block content %}
 
-<div class="row-same-height" >
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-        <table>
-            <tr>
-                <a class="btn btn-primary btn-md btn-block btn-consulta" href="/cruces/consultaYacYac">Consulta <br> <strong>yacimiento - yacimiento</strong></a>
-            </tr>
-            <tr>
-                <a class="btn btn-primary btn-md btn-block btn-consulta" href="/cruces/consultaYacRoc"> Consulta <br> <strong>yacimiento - roca</strong></a>
-            </tr>
-            <tr>
-                <a class="btn btn-primary btn-md btn-block btn-consulta" href="/cruces/consultaRocRoc"> Consulta <br> <strong>roca - roca</strong></a>
-            </tr>
-        </table>
-    </div>
-    <div class="col-md-4"></div>
-</div>
+    <div style="width: 70%; margin: auto">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 27 - <i>(PB1) Yacimiento</i> con <i>(Pa) Roca</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
+                <form action="/cruces/27/">
+                    <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
 
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 28 - <i>(PB1) Yacimiento</i> con <i>(Pa) Roca</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
+                <form action="/cruces/28/">
+                    <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
 
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 29 - <i>(PB1) Yacimiento</i> con <i>(Pa) Roca</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
+                <form action="/cruces/29/">
+                    <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
 
+        </div>
+</body>
 
 {% endblock %}
-
-

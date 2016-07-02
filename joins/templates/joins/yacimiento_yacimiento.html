@@ -1,0 +1,539 @@
+{% extends "website-base.html" %}
+{% load staticfiles %}
+{% block pagetitle %}Pagina Principal{% endblock %}
+{% block title %}Consulta en Base de Datos Yacimiento - Yacimiento{% endblock %}
+{% block user %}
+Ruby de Valencia
+{% endblock %}
+
+
+{% block submenu %}
+<ul class="list-inline " style="background-color:white">
+    <table><tr>
+        <td class="active"><a href="{% url index %}">Inicio </a></td>
+    <td role="presentation" class="dropdown ">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
+                    Quienes somos</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url origenytrayectoria %}">
+                    Origen y Trayectoria</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url areasdeespecializacion %}">
+                    &Aacute;reas de Especializaci&oacute;n - Organigrama</a></li>
+           <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url profesionalesadjuntos %}">
+                    Profesionales adjuntos</a></li>
+    </ul>
+    </td>
+    <td role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
+                    Patrimonio Rupestre <br> Venezolano
+        <ul class="dropdown-menu" role="menu">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url nota %}">
+                    Nota    </a></li>           
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url leydeproteccion %}">
+                    Ley de Protecci&oacute;n del Patrimonio</a></li>
+            <li role="presentation"><a style="color: purple;" role="menuitem" tabindex="-1" href="{% url pinturasrupestres %}">
+                    Pinturas Rupestres</a></li>
+            <li role="presentation"><a style="color: #DF7401;" role="menuitem" tabindex="-1" href="{% url geoglifo %}">
+                    Geoglifo</a></li>
+            <li role="presentation"><a style="color: red;" role="menuitem" tabindex="-1" href="{% url petroglifo %}">
+                    Petroglifos</a></li>
+            <li role="presentation"><a style="color: #424242;" role="menuitem" tabindex="-1" href="{% url amoladores %}">
+                    Amoladores L&iacute;ticos, Puntos Acoplados, C&uacute;pulas</a></li>
+            <li role="presentation"><a style="color: #04B404;" role="menuitem" tabindex="-1" href="{% url monumentosmegaliticos %}">
+                    Monumentos Megal&iacute;ticos, Menhires, D&oacute;lmenes, Monolitos</a></li>
+            <li role="presentation"><a style="color: #DBA901;" role="menuitem" tabindex="-1" href="{% url micropetroglifos %}">
+                    Micropetroglifos</a></li>
+            <li role="presentation"><a style="color: #01A9DB;" role="menuitem" tabindex="-1" href="{% url piedrasycerrosmiticos %}">
+                    Piedras y Cerros M&iacute;ticos Naturales</a></li>
+        </ul>
+    </td>
+    <td role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
+                    Programa <br>de Educaci&oacute;n</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url manifestacionesylaescuela %}">
+                    Las Manifestaciones Rupestres y la Escuela</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url convenios %}">
+                    Convenios - Alianzas</a></li>
+        </ul>
+    </td>
+    <td role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
+                    Productos y<br> Servicios</a>
+        <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url publicaciones %}">
+                    Publicaciones</li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url productos %}">
+                    Productos</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url asesorias %}">
+                    Asesor&iacute;as</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url visitasguiadas %}">
+                    Visitas Guiadas</a></li>
+        </ul>
+    </td>
+    <td style="border:0px"><a href="{% url contacto %}">
+                    Contacto</a></td>
+</tr></table>
+</ul>
+{% endblock %}
+
+{% block content %}
+
+    <div style="width: 70%; margin: auto">
+    
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 1 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p align="left">¿Cuántos y cuáles <i>(00 - Código) Yacimientos </i> hay en el siguiente <i>(3) Estado</i>?</p>
+                <form action="/cruces/1/">
+                    <label>(3) Estado: {{ form.estado }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 2 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+            ¿Qué <i>(1) Nombre</i> tiene el <i>(00 - Código) Yacimiento</i>?
+            <form action="/cruces/2/">
+                <label>(00) Código: {{ form.codigo }} </label></br></br>
+                <input type="submit" class="button" value="Consultar"/>
+            </form>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 3 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                ¿Qué <i>(8) Coordenadas</i> tiene el <i>(00 - Código) Yacimiento</i>?<br/>
+                <form action="/cruces/3/">
+                    <label>(00) Código: {{ form.codigo }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 4 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                ¿Qué <i>(31.1) Apoyo Bibliográfico</i> tiene el <i>(00 - Código) Yacimiento?</i><br/>
+                <form action="/cruces/4/">
+                    <label>(00) Código: {{ form.codigo }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+      
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 5 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                ¿Qué <i>(31.2, 31.3, 31.4, 31.5) Gráficos</i> tiene el <i>(00 - Código) Yacimiento?</i><br/>
+                <form action="/cruces/5/">
+                    <label>(00) Código: {{ form.codigo }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+            
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 6 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                ¿Qué <i>(31.6.4) Material Multimedia</i> tiene el <i>(00 - Código) Yacimiento?</i>?<br/>
+                <form action="/cruces/6/">
+                    <label>(00) Código: {{ form.codigo }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+    
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 7 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                ¿En qué <i>(31.6.3) Páginas Web</i> aparece el <i>(00 - Código) Yacimiento</i>?<br/>
+                <form action="/cruces/7/">
+                    <label>(00) Código: {{ form.codigo }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+        <br/>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 8 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                ¿Qué <i>(31.6, 31.6.1, 31.6.2) Material Audiovisual</i> aparece en el <i>(00 - Código) Yacimiento</i>?<br/>
+                <form action="/cruces/8/">
+                    <label>(00) Código: {{ form.codigo }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+        <br/>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 9 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Listar todos los <i>(12.3, 13.8, 13.8.1, 13.8.2) Dólmenes</i>  
+                y </br><i>(13.7, 13.7.1,13.7.2) Menhires</i> en <i>
+                (0) Venezuela</i> y por <i>(3) Estado</i>:
+                <br/>
+                <form action="/cruces/9/">
+                    <label>(3) Estado: {{ form.estado }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+  
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 10 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Listar la <i>(21.2, 21.3, 21.4) Proporción de Número de Piedras 
+                Trabajadas</i> a </br><i>(21.1) Número de Piedras en el 
+                 Yacimiento Original</i> en el siguiente <i>(3) Estado</i>:<br/>
+                <form action="/cruces/10/">
+                    <label>(3) Estado: {{ form.estado }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+   
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 11 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Listar todos los  <i><b>(13.1) Geoglifos</b></i>, 
+                 <i><b>(13.2) Pinturas Rupestres</b></i>,
+                 <i><b>(13.4) Micropetroglifos</b></i>, 
+                 <i><b>(13.3) Petroglifos</b></i>, 
+                 <i><b>(13.3.1) Petroglifos Pintados</b></i>, 
+                 <i><b>(13.5) Piedras Míticas Naturales</b></i>, 
+                 <i><b>(13.6, 13.6.1, 13.6.2, 13.6.3) Cerros Míticos Naturales</b></i>, 
+                 <i><b>(13.10) Bateas</b></i>, 
+                 <i><b>(13.7, 13.7.1, 13.7.2) Menhires</b></i>, 
+                 <i><b>(13.9) Amoladores</b></i>, 
+                 <i><b>(13.11) Puntos Acoplados</b></i> y 
+                 <i><b>(13.12) Cúpulas</b></i> en el 
+                 <i>(00 - Código) Yacimiento</i> y <i>(3) Estado</i>:<br/>
+                <form action="/cruces/11/">
+                    <label>(00) Código: {{ form.codigo }} </label></br>
+                    <label>(3) Estado: {{ form.estado }} </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+             
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 12 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Listar por <i>(3) Estado</i> el total de 
+                <i><b>(13.1) Geoglifos</b></i>, 
+                <i><b>(13.2) Pinturas Rupestres</b></i>, 
+                <i><b>(13.4) Micropetroglifos</b></i>, 
+                <i><b>(13.3) Petroglifos</b></i>, 
+                <i><b>(13.3.1) Petroglifos Pintados</b></i>, 
+                <i><b>(13.5) Piedras Míticas Naturales</b></i>, 
+                <i><b>(13.6, 13.6.1, 13.6.2, 13.6.3) Cerros Míticos Naturales</b></i>, 
+                <i><b>(13.10) Bateas</b></i>, 
+                <i><b>(13.7, 13.7.1, 13.7.2) Menhires</b></i>, 
+                <i><b>(13.9) Amoladores</b></i>, 
+                <i><b>(13.11) Puntos Acoplados</b></i> y 
+                <i><b>(13.12) Cúpulas</b></i>
+                en la siguiente <i>(14) Ubicación</i>:<br/>
+                <form action="/cruces/12/">
+                    <label>(14) Ubicación: {{form.ubicacion}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+ 
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 13 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Listar por <i>(3) Estado</i> el <i>(24.1.1) Ancho</i> y la 
+                <i>(24.1.2) Profundidad del surco grabado</i> para todos 
+                los Yacimientos de <i>(13.3) Petroglifos</i><br/>
+                <form action="/cruces/13/">
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 14 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Para un mismo <i>(24.1.1) Ancho</i> y/o 
+                <i>(24.1.2) Profundidad de surco</i>, 
+                ¿cuántos (13.3) Petroglifos tienen:<br/>
+                <form action="/cruces/14/">
+                    <label>(24) Característica Surco: {{ form.caracteristicaSurco }}</label>?</br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+  
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 15 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Listar por <i>(3) Estado</i> cuántos y cuáles 
+                <i><b>(13.3) Petroglifos</b></i> tienen :<br/>
+                <form action="/cruces/15/">
+                    <label>(3) Estado: {{ form.estado }} </label></br></br>
+                    <label>(24) Característica del surco grabado: {{form.carasurcopetrotipo}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+ 
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 16 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Lísteme por <i>(3) Estado</i>, cuántas y cuáles 
+                <i><b>(13.2) Pinturas Rupestres</b></i> de 
+                todos los Yacimientos tienen: <br/>
+                <form action="/cruces/16/">
+                    <label>(3) Estado: {{ form.estado }} </label></br>
+                    <label>(25) Características de la Pintura: {{ form.tipoPintura }}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+  
+   
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 17 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                ¿Cuáles <i><b>(13.3) Petroglifos</b></i> tienen :<br/>
+                <form action="/cruces/17/">
+                    <label>(24) Característica del surco grabado: {{form.carasurcopetrotipo2}}</label>?</br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 18 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Listar por <i>(3) Estado</i>, los <i><b>(13.3) Petroglifos</b></i> con:<br/>
+                <form action="/cruces/18/">
+                    <label>(3) Estado: {{ form.estado }} </label></br>
+                    <label>(22) Material: {{form.material}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+     
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 19 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                ¿Cuáles <i><b>(13.2) Pinturas Rupestres</b></i> por 
+                <i>(3) Estado</i>, con la siguiente
+                combinación de pinturas</br>
+                -------- + -------- + -------- tienen:?<br/>
+                <form action="/cruces/19/">
+                    <label>(25.2) Pincelada de ancho de: {{form.pincelada}} a {{form.pincelada}}</label></br>
+                    <label>(25.3.1) Tipo de línea sencilla: </label></br>
+                    <label>(25.3.2) Tipo de línea compuesta: </label></br>
+                    <label>(26) Color base: </label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+   
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 20 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Listar por <i>(00) Código</i>, <i>(3) Estado</i> y <i>(13) Tipo de Manifestación</i>  
+                los yacimientos que contengan </br>
+                <i>(30) Manifestaciones Asociadas</i> de:
+                <br/>
+                <form action="/cruces/20/">
+                    <label>{{form.manifAsociadas}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+
+                <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 21 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+              Listar por <i>(3) Estado</i> y <i>(00) Yacimiento</i> con <b><i>(13.3) 
+              Petroglifos</i></b>, la proporción de número de piedras 
+              trabajadas (21.1.1) (21.1.2) / número de piedras en el 
+              yacimiento original (21.1), ubicadas en:<br/>
+                <form action="/cruces/21/">
+                    <label>(14) Ubicación: {{form.ubicacion}}</label>
+                     y su clasificación por:</br>
+                    <label>(24) Características del surco grabado: {{form.carasurcopetrotipo3}}</label></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 22 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Listar por <i>(3) Estado</i> y <i>(00) Yacimiento</i> con 
+                <i><b>(13.2) Pinturas Rupestres</b></i> ubicadas en:<br/>
+                <form action="/cruces/22/">
+                    <label>(14) Ubicación: {{form.ubicacion}}</label></br></br>
+                    <label>(25) Características de la Pintura: {{form.caracPintura}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 23 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Listar por tipo de material (22.1), (22.1.1), (22.1.2),
+                (22.1.3), (22.3), (22.4), (22.6)
+                <form action="/cruces/23/">
+                    <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 24 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Lísteme por estado (3) y yacimiento (00), y para cada tipo
+                de ubicación (14) ,(14.1), (14.2) (14.3), (14.4), (14.5)<br/>
+                <form action="/cruces/24/">
+                    <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 25 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Listar por Estado (3), Yacimiento (00) y Tipo de Material (22)<br/>
+                <form action="/cruces/25/">
+                    <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Cruce 26 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></strong></h3>
+          </div>
+          <div class="panel-body">
+            <p>
+                Listar por Estado (3), Yacimiento (00) y Tipo de Material (22)<br/>
+                <form action="/cruces/26/">
+                    <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                    <input type="submit" class="button" value="Consultar"/>
+                </form>
+            </p>
+          </div>
+        </div>
+
+  </div>
+
+</body>
+
+{% endblock %}
