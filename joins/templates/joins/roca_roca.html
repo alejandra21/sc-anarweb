@@ -79,114 +79,270 @@ Ruby de Valencia
 
 {% block content %}
 
-    <div style="width: 70%; margin: auto">
+<script type="text/javascript">
+
+$.fn.pageMe = function(opts){
+    var $this = this,
+        defaults = {
+            perPage: 7,
+            showPrevNext: false,
+            hidePageNumbers: false
+        },
+        settings = $.extend(defaults, opts);
     
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><strong>Cruce 30 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
-        </div>
-        <div class="panel-body">
-          <p>
-              Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
-              <form action="/cruces/30/">
-                  <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
-                  <input type="submit" class="button" value="Consultar"/>
-              </form>
-          </p>
-        </div>
-      </div>
+    var listElement = $this;
+    var perPage = settings.perPage; 
+    var children = listElement.children();
+    var pager = $('.pager');
+    
+    if (typeof settings.childSelector!="undefined") {
+        children = listElement.find(settings.childSelector);
+    }
+    
+    if (typeof settings.pagerSelector!="undefined") {
+        pager = $(settings.pagerSelector);
+    }
+    
+    var numItems = children.size();
+    var numPages = Math.ceil(numItems/perPage);
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><strong>Cruce 31 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
-        </div>
-        <div class="panel-body">
-          <p>
-              Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
-              <form action="/cruces/31/">
-                  <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
-                  <input type="submit" class="button" value="Consultar"/>
-              </form>
-          </p>
-        </div>
-      </div>
+    pager.data("curr",0);
+    
+    if (settings.showPrevNext){
+        $('<li><a href="#" class="prev_link">«</a></li>').appendTo(pager);
+    }
+    
+    var curr = 0;
+    while(numPages > curr && (settings.hidePageNumbers==false)){
+        $('<li><a href="#" class="page_link">'+(curr+1)+'</a></li>').appendTo(pager);
+        curr++;
+    }
+    
+    if (settings.showPrevNext){
+        $('<li><a href="#" class="next_link">»</a></li>').appendTo(pager);
+    }
+    
+    pager.find('.page_link:first').addClass('active');
+    pager.find('.prev_link').hide();
+    if (numPages<=1) {
+        pager.find('.next_link').hide();
+    }
+    pager.children().eq(1).addClass("active");
+    
+    children.hide();
+    children.slice(0, perPage).show();
+    
+    pager.find('li .page_link').click(function(){
+        var clickedPage = $(this).html().valueOf()-1;
+        goTo(clickedPage,perPage);
+        return false;
+    });
+    pager.find('li .prev_link').click(function(){
+        previous();
+        return false;
+    });
+    pager.find('li .next_link').click(function(){
+        next();
+        return false;
+    });
+    
+    function previous(){
+        var goToPage = parseInt(pager.data("curr")) - 1;
+        goTo(goToPage);
+    }
+     
+    function next(){
+        goToPage = parseInt(pager.data("curr")) + 1;
+        goTo(goToPage);
+    }
+    
+    function goTo(page){
+        var startAt = page * perPage,
+            endOn = startAt + perPage;
+        
+        children.css('display','none').slice(startAt, endOn).show();
+        
+        if (page>=1) {
+            pager.find('.prev_link').show();
+        }
+        else {
+            pager.find('.prev_link').hide();
+        }
+        
+        if (page<(numPages-1)) {
+            pager.find('.next_link').show();
+        }
+        else {
+            pager.find('.next_link').hide();
+        }
+        
+        pager.data("curr",page);
+        pager.children().removeClass("active");
+        pager.children().eq(page+1).addClass("active");
+    
+    }
+};
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><strong>Cruce 32 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
-        </div>
-        <div class="panel-body">
-          <p>
-              Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
-              <form action="/cruces/32/">
-                  <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
-                  <input type="submit" class="button" value="Consultar"/>
-              </form>
-          </p>
-        </div>
-      </div>
+$(document).ready(function(){
+    
+  $('#myTable').pageMe({pagerSelector:'#myPager',showPrevNext:true,hidePageNumbers:false,perPage:3});
+    
+});
+</script>
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><strong>Cruce 33 - Roca (Pa) con Roca (Pa)</strong></h3>
-        </div>
-        <div class="panel-body">
-          <p>
-              Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
-              <form action="/cruces/33/">
-                  <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
-                  <input type="submit" class="button" value="Consultar"/>
-              </form>
-          </p>
-        </div>
-      </div>
+<div class="container" style="width: 70%; margin: auto">
+  <div class="row">
+      <div class="table-responsive">
+        <table class="table">
+          <tbody id="myTable">
+            <tr>
+              <td>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Cruce 30 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
+                  </div>
+                  <div class="panel-body">
+                    <p>
+                        Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
+                        <form action="/cruces/30/">
+                            <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                            <input type="submit" class="button" value="Consultar"/>
+                        </form>
+                    </p>
+                  </div>
+                </div>
+              </td>
+            </tr>
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><strong>Cruce 34 - Roca (Pa) con Roca (Pa)</strong></h3>
-        </div>
-        <div class="panel-body">
-          <p>
-              Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
-              <form action="/cruces/34/">
-                  <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
-                  <input type="submit" class="button" value="Consultar"/>
-              </form>
-          </p>
-        </div>
-      </div>
+            <tr>
+              <td>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Cruce 31 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
+                  </div>
+                  <div class="panel-body">
+                    <p>
+                        Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
+                        <form action="/cruces/31/">
+                            <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                            <input type="submit" class="button" value="Consultar"/>
+                        </form>
+                    </p>
+                  </div>
+                </div>
+              </td>
+            </tr>
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><strong>Cruce 35 - Roca (Pa) con Roca (Pa)</strong> </h3>
-        </div>
-        <div class="panel-body">
-          <p>
-              Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
-              <form action="/cruces/35/">
-                  <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
-                  <input type="submit" class="button" value="Consultar"/>
-              </form>
-          </p>
-        </div>
-      </div>
+            <tr>
+              <td>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3 class="panel-title"><strong>Cruce 32 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
+                    </div>
+                    <div class="panel-body">
+                      <p>
+                          Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
+                          <form action="/cruces/32/">
+                              <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                              <input type="submit" class="button" value="Consultar"/>
+                          </form>
+                      </p>
+                    </div>
+                  </div>
+              </td>
+            </tr>
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><strong>Cruce 36 - Roca (Pa) con Roca (Pa)</strong></h3>
-        </div>
-        <div class="panel-body">
-          <p>
-              Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
-              <form action="/cruces/36/">
-                  <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
-                  <input type="submit" class="button" value="Consultar"/>
-              </form>
-          </p>
-        </div>
-      </div>
+            <tr>
+              <td>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3 class="panel-title"><strong>Cruce 33 - Roca (Pa) con Roca (Pa)</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                      <p>
+                          Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
+                          <form action="/cruces/33/">
+                              <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                              <input type="submit" class="button" value="Consultar"/>
+                          </form>
+                      </p>
+                    </div>
+                  </div>
+              </td>
+            </tr>
 
+            <tr>
+              <td>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3 class="panel-title"><strong>Cruce 34 - Roca (Pa) con Roca (Pa)</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                      <p>
+                          Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
+                          <form action="/cruces/34/">
+                              <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                              <input type="submit" class="button" value="Consultar"/>
+                          </form>
+                      </p>
+                    </div>
+                  </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Cruce 35 - Roca (Pa) con Roca (Pa)</strong> </h3>
+                  </div>
+                  <div class="panel-body">
+                    <p>
+                        Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
+                        <form action="/cruces/35/">
+                            <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                            <input type="submit" class="button" value="Consultar"/>
+                        </form>
+                    </p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Cruce 36 - Roca (Pa) con Roca (Pa)</strong></h3>
+                  </div>
+                  <div class="panel-body">
+                    <p>
+                        Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
+                        <form action="/cruces/36/">
+                            <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                            <input type="submit" class="button" value="Consultar"/>
+                        </form>
+                    </p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>   
       </div>
+      <div class="col-md-12 text-center">
+      <ul class="pagination pagination-lg pager" id="myPager"></ul>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 </body>
 
 {% endblock %}
