@@ -107,39 +107,48 @@ Ruby de Valencia
 
 <br>
 
+<div class="row">
+    <div class="col-xs-6">
 
-<h1>Resultados: </h1><br>
-Campos de búsqueda escogidos:
-<table>
+        <h1>Resultados: </h1><br>
+        Campos de búsqueda escogidos:
+        <table>
 
-{% if nombreElegido %}
+        {% if nombreElegido %}
 
-<tr>
-    <td><ul><strong>Nombre :</strong></ul></td>
-    <td>{{nombreElegido}}</td>
-</tr>
+        <tr>
+            <td><ul><strong>Nombre :</strong></ul></td>
+            <td>{{nombreElegido}}</td>
+        </tr>
 
-{% endif %}
+        {% endif %}
 
-{% if estadoElegido != "---"  %}
+        {% if estadoElegido != "---"  %}
 
-<tr>
-    <td><ul><strong>Estado :</strong></ul></td>
-    <td>{{estadoElegido}}</td>
-</tr>
+        <tr>
+            <td><ul><strong>Estado :</strong></ul></td>
+            <td>{{estadoElegido}}</td>
+        </tr>
 
-{% endif %}
+        {% endif %}
 
-{% if manifestacionElegida != "---" %}
+        {% if manifestacionElegida != "---" %}
 
-<tr>
-    <td><ul><strong>Manifestacion :</strong></ul></td>
-    <td>{{ manifestacionElegida }}</td>
-</tr>
+        <tr>
+            <td><ul><strong>Manifestacion :</strong></ul></td>
+            <td>{{ manifestacionElegida }}</td>
+        </tr>
 
-{% endif %}
+        {% endif %}
+        </table>
 
-</table>
+    </div>
+    <div class="col-xs-6 text-center">
+        {% if manifestacion != "" %}
+            <img src="{{mapa}}" style="width:210px;height:190px;"/>
+        {% endif %}
+    </div>
+</div>
 
 <br>
 
