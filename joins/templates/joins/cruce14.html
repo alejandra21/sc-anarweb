@@ -12,30 +12,22 @@
 
 {% block content %}
 	<!--- Este template es nuevo -->
-
+  {{caracteristica}}
   <br>
   <h4 style="margin-left:1em;">
-    <strong> Total de Petroglifos :</strong> {{ total }} 2
+    <strong> Total de Petroglifos :</strong> {{ total }}
   </h4>
 
-  <h4><strong>Carabobo</strong></h4>
-    <li>
-      <strong>Código:</strong> PB1-51, 
-    <i> 
-      LA RUEDA DEL INDIO 
-    </i>
-  </li>
+  {% for y in listaYacimiento %}
 
-    <h4><strong>Bolívar</strong></h4>
-  <li>
-    <strong>Código:</strong> PB1-444, 
-    <i> 
-      CUEVA CAÑO ORE, Cueva del Chamán, White Shaman Cave 
-    </i>
-
-  </li>
-
-
+    <h4><strong>{{y.estado}}</strong></h4>
+      <li>
+        <strong>Código:</strong>{{y.codigo}} 
+      <i> 
+        {{y.nombre}}
+      </i>
+    </li>
+  {% endfor %}
 
 {% endblock %}
 

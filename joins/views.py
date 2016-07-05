@@ -1,7 +1,7 @@
 # Create your views here.
 from django.shortcuts import render
 from django.db.models import Q
-from anarapp.models import Estado, Piedra, Yacimiento, ManifestacionYacimiento,FotografiaYac, Coordenadas,ConstitucionYacimiento
+from anarapp.models import Estado, Piedra, Yacimiento, ManifestacionYacimiento,FotografiaYac, Coordenadas,ConstitucionYacimiento,UbicacionYacimiento,CaracSurcoPetroglifo
 from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
@@ -104,8 +104,172 @@ def cruces(request,cruce_id):
 			'petroglifoPintado': petroglifoPintado,'PiedraMiticaNatural':PiedraMiticaNatural,
 			'CerroMiticoNatural':CerroMiticoNatural,'Batea':Batea,'Menhires':Menhires,
 			'Amoladores':Amoladores,'PuntosAcoplados':PuntosAcoplados,'Cupula':Cupula})
-		
+
+	# elif (cruce_id == "12"):
+	# 	ubicacion = request.GET['ubicacion']
+
+	# 	estados = ['Amazonas','Anzoategui','Apure','Aragua','Barinas','Bolvar', 
+	# 			'Carabobo','Cojedes', 'Delta Amacuro', 'Falcn', 'Gurico','Lara',
+	# 			'Mrida','Miranda','Monagas','Nueva Esparta','Portuguesa','Sucre',
+	# 			'Tachira','Trujillo','Vargas','Yaracuy','Zulia']
+
+	# 	listaManifestaciones = ["geoglifo","pinturasRupestres","micropetroglifos",
+	# 							"petroglifo","petroglifoPintado","piedraMiticaNatural",
+	# 							"cerroMiticoNatural","batea","menhires","amoladores",
+	# 							"puntosAcoplados","cupula"]
+	
+	# 	diccionario = {}
+	# 	diccionarioAux = {}
+
+	# 	for manif in listaManifestaciones:
+	# 		diccionarioAux[manif] = 0
+
+	# 	for i in estados:
+	# 		diccionario[i] = diccionarioAux
+
+	# 	if (ubicacion == "Cerro"):
+	# 		elementos = UbicacionYacimiento.objects.filter(enCerro=True)
+
+
+	# 	elif (ubicacion == "Cima"):
+	# 		elementos = UbicacionYacimiento.objects.filter(enCerroCima=True)
+
+	# 	elif (ubicacion == "Ladera"):
+	# 		elementos = UbicacionYacimiento.objects.filter(enCerroLadera=True)
+
+	# 	elif (ubicacion == "Pie de montana"):
+	# 		elementos = UbicacionYacimiento.objects.filter(enCerroPieDeMonte=True)
+
+	# 	elif (ubicacion == "Barranco"):
+	# 		elementos = UbicacionYacimiento.objects.filter(enCerroBarranco=True)
+
+	# 	elif (ubicacion == "Acantilado"):
+	# 		elementos = UbicacionYacimiento.objects.filter(enCerroAcantilado=True)
+
+	# 	elif (ubicacion == "Valle"):
+	# 		elementos = UbicacionYacimiento.objects.filter(enValle=True)
+
+	# 	elif (ubicacion == "Rio"):
+	# 		elementos = UbicacionYacimiento.objects.filter(enRio=True)
+
+	# 	elif (ubicacion == "Lecho"):
+	# 		elementos = UbicacionYacimiento.objects.filter(enRioLecho=True)
+
+	# 	elif (ubicacion == "Margen derecha"):
+	# 		elementos = UbicacionYacimiento.objects.filter(enRioMargenDerecha=True)
+
+	# 	elif (ubicacion == "Margen izquierda"):
+	# 		elementos = UbicacionYacimiento.objects.filter(enRioMargenIzquierda=True)
+
+	# 	elif (ubicacion == "Isla"):
+	# 		elementos = UbicacionYacimiento.objects.filter(enRioIsla=True)
+
+	# 	elif (ubicacion == "Raudal"):
+	# 		elementos = UbicacionYacimiento.objects.filter(enRioRaudal=True)
+
+	# 	elif (ubicacion == "Costa"):
+	# 		elementos = UbicacionYacimiento.objects.filter(enRioCosta=True)
+
+	# 	for e in elementos:
+
+	# 		y = e.yacimiento
+	# 		print(y)
+	# 		i = 0
+	# 		manifestacion = ManifestacionYacimiento.objects.filter(yacimiento__id=y.id)
+	# 		geoglifo = manifestacion.filter(esGeoglifo=True)
+	# 		pinturasRupestres = manifestacion.filter(esPintura=True)
+	# 		micropetroglifos = manifestacion.filter(esMicroPetroglifo=True)
+	# 		petroglifo = manifestacion.filter(esPetroglifo = True)
+	# 		petroglifoPintado = manifestacion.filter(esPetroglifoPintado = True)
+	# 		piedraMiticaNatural = manifestacion.filter(esPiedraMiticaNatural=True)
+	# 		cerroMiticoNatural = manifestacion.filter(esCerroMiticoNatural=True)
+	# 		batea = manifestacion.filter(esBatea=True)
+	# 		menhires = manifestacion.filter(esMenhires=True)
+	# 		amoladores = manifestacion.filter(esAmolador=True)
+	# 		puntosAcoplados = manifestacion.filter(esPuntosAcoplados=True)
+	# 		cupula = manifestacion.filter(esCupulas = True)
+
+	# 		arregloManifestaciones=[geoglifo,pinturasRupestres,micropetroglifos,
+	# 								petroglifo,petroglifoPintado,piedraMiticaNatural,
+	# 								cerroMiticoNatural,batea,menhires,amoladores,
+	# 								puntosAcoplados,cupula]
+
+	# 		a = y.estado.nombre
+	# 		print(a)
+	# 		cantidadManifestaciones = diccionario[y.estado.nombre]
+
+	# 		for m in listaManifestaciones:
+
+	# 			cantidadManifestaciones[m] = cantidadManifestaciones[m]+len(arregloManifestaciones[i])
+	# 			i += 1
+					
+
+	# 	return render(request,entrada,{'diccionario':diccionario,'estados':estados,
+	# 									'listaManifestaciones':listaManifestaciones})
+	
+	elif (cruce_id == "14"):
+		caracteristica = request.GET['caracteristicaSurco']
+		listaYacimientos = []
+
+		if (caracteristica == "Base redonda"):
+			caracPetroglifo = CaracSurcoPetroglifo.objects.filter(esBase=True)
+
+		elif (caracteristica == "Base aguda"):
+			caracPetroglifo = CaracSurcoPetroglifo.objects.filter(esBaseAguda=True)
+
+		else :
+			caracPetroglifo = CaracSurcoPetroglifo.objects.filter(esBaseAguda=True)
+
+
+		petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo = True)
+
+		for c in caracPetroglifo:
+
+			objetoAgregar = petroglifo.filter(yacimiento__id=c.yacimiento.id)
+
+			if (len(objetoAgregar)!=0):
+				listaYacimientos += [{'yacimiento':objetoAgregar.yacimiento.nombre,
+									'estado':objetoAgregar.estado.nombre,'codigo':objetoAgregar.yacimiento.id}]
+
+		total =  len(listaYacimientos)
+
+		return render(request,entrada,{'listaYacimientos':listaYacimientos,'total':total})
+
+
+	elif (cruce_id == "15"):
+
+		estado = request.GET['estado']
+		surco = request.GET['carasurcopetrotipo']
+		listaYacimientos = []
+
+		petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo=True)
+
+		for p in petroglifo:
+
+			if (caracteristica == "Bajo relieve lineal"):
+				caracPetroglifo = CaracSurcoPetroglifo.objects.filter(esBajoRelieveLineal=True,yacimiento__id=p.yacimiento.id)
+
+			elif (caracteristica == "Bajo relieve planar"):
+				caracPetroglifo = CaracSurcoPetroglifo.objects.filter(esBajoRelievePlanar=True,yacimiento__id=p.yacimiento.id)
+
+			elif (caracteristica == "Bajo relieve planar y lineal"):
+				caracPetroglifo = CaracSurcoPetroglifo.objects.filter(esBajoRelieveLineal=True,esBajoRelievePlanar=True,yacimiento__id=p.yacimiento.id)
+
+			elif (caracteristica == "Alto relieve lineal"):
+				caracPetroglifo = CaracSurcoPetroglifo.objects.filter(esAltoRelieveLineal=True,yacimiento__id=p.yacimiento.id)
+
+			elif (caracteristica == "Alto relieve planar"):
+				caracPetroglifo = CaracSurcoPetroglifo.objects.filter(esAltoRelievePlanar=True,yacimiento__id=p.yacimiento.id)
+
+			if (len(caracPetroglifo)!=0):
+				listaYacimientos += [{'yacimiento':caracPetroglifo.yacimiento.nombre,
+									'estado':caracPetroglifo.estado.nombre,'codigo':caracPetroglifo.yacimiento.id}]
+
+		total =  len(listaYacimientos)
+		return render(request,entrada,{'listaYacimientos':listaYacimientos,'total':total,'surco':surco,'estado':estado})
+
 	return render(request,entrada)
+
 
 def consulta(request):
 	# Se realiza la consula:
