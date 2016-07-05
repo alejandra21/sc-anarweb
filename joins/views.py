@@ -5,10 +5,19 @@ from anarapp.models import Estado, Piedra, Yacimiento, ManifestacionYacimiento,F
 from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
+
 def index(request):
+
+	return render(request, 'inicio-Sw-interactivo.html')
+
+def cruceUsuario(request):
 
 	forma = CrucesYYForm
 	return render(request, 'sistema.html',{'forma':forma})
+
+def tiposCruceAdmin(request):
+
+	return render(request, 'tipo_consultaAdmin.html')
 
 def cruceAdmin(request):
 	form = CrucesYYFormAdmin
