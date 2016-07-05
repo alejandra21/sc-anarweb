@@ -10,20 +10,19 @@ Ruby de Valencia
 {% block submenu %}
 <ul class="list-inline ">
 	<table><tr>
-        <td class="active inicial"><a href="{% url en %}">
-	Home
-	</a></td>
+        <td class="active inicial"><a href="{% url en %}">Home </a></td>
     <td role="presentation" class="dropdown ">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
-	Who we are
-	</a>
+    	    Who we are</a>
         <ul class="dropdown-menu" role="menu">
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enorigenytrayectoria %}">
-		Beggining and Development</a></li>
+		        Beggining and Development</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enareasdeespecializacion %}">
-		Specialization Areas - Organization</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enprofesionalesadjuntos %}">
-		Professionals attached</a></li>
+		        Specialization Areas</a></li>
+		    <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enorganigrama %}">
+		        Organization</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enprofesionalesadjuntos %}">
+		        Professionals attached</a></li>
         </ul>
     </td>
     <td role="presentation" class="dropdown">

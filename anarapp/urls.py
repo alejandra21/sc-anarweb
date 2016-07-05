@@ -37,7 +37,7 @@ urlpatterns = patterns('',
 
     url(r'en/quienessomos/origen', views.enquienessomosOrigenytrayectoria, name='enorigenytrayectoria'),
     url(r'en/quienessomos/areas', views.enquienessomosAreasdeespecializacion, name='enareasdeespecializacion'),
-    url(r'en/quienessomos/organigrama', views.quienessomosOrganigrama, name='organigrama'),
+    url(r'en/quienessomos/organigrama', views.enquienessomosOrganigrama, name='enorganigrama'),
     url(r'en/quienessomos/proyectos', views.enquienessomosProyectosactuales, name='enproyectosactuales'),
     url(r'en/quienessomos/adjuntos', views.enquienessomosProfesionalesadjuntos, name='enprofesionalesadjuntos'),
     url(r'en/patrimonio/nota', views.enpatrimoniorupestreNota, name='ennota'),
