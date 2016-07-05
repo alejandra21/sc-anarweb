@@ -1592,7 +1592,6 @@ class Foto (models.Model):
 
     def __unicode__(self):
         return '' # '# ' + str(self.id)
-	
 
 class FotoPiedra (Foto):
 
@@ -1603,6 +1602,14 @@ class FotoPiedra (Foto):
     class Meta:
         verbose_name =  ''
         verbose_name_plural = '13 Apoyos'
+
+class FotoApoyo(models.Model):
+    foto = models.ForeignKey(FotoPiedra,related_name='imagenes')
+    imagen = models.ImageField('La imagen', 
+                                upload_to='piedra/apoyos/fotografia/%Y_%m', 
+                                null=True, 
+                                blank=True)
+	
 
 # Representación gráfica de la piedra
 
