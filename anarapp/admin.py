@@ -702,7 +702,7 @@ class PiedraAdmin (admin.ModelAdmin):
 
     inlines = [
         FotografiaPiedraInline, Piedra2Inline, CaraTrabajadaInline, DimensionPiedraInline, UbicacionCarasInline, FigurasPorTipoInline,
-        EsquemaPorCaraInline,ConexionFigurasInline, ManifestacionesInline, OtrosValPiedraInline, TratFotoInline, FotoDigPiedraInline,EscalaNatPiedraInline, EscalaRedPiedraInline, BibPiedraInline,
+        EsquemaPorCaraInline,ConexionFigurasInline, OtrosValPiedraInline, TratFotoInline, FotoDigPiedraInline,EscalaNatPiedraInline, EscalaRedPiedraInline, BibPiedraInline,
         MatAudioVisualInline, VideoPiedraInline, PeliculaPiedraInline, PaginaWebPiedraInline,
         MultimediaPiedraInline, ObtInfoPiedraInline,  ObservacionPiedraInline,
         LlenadaPorPiedraInline, SupervisadaPorPiedraInline
@@ -710,7 +710,7 @@ class PiedraAdmin (admin.ModelAdmin):
     suit_form_tabs = (('generales', 'Datos Generales de la Roca'),
                       ('figuras', 'Figuras'),
                       ('tratamientos', 'Tratamiento para fotografia'),
-                      ('manifestaciones', 'Manifestaciones Asociadas'),
+                      ('manifestaciones', 'Valores de la Roca'),
                       ('apoyos', 'Apoyos'),
                       ('observaciones', 'Observaciones')                        
                       )	
