@@ -1572,11 +1572,14 @@ class Foto (models.Model):
         (3, 'Satelital'),
     )
 
-    esfoto = models.BooleanField('13.1 Fotografías')
-    negativo =  CharField('13.1.0. Negativo', blank=True)
+    foto = models.ImageField('13.1 Fotografías', 
+                                upload_to='piedra/apoyos/fotografia/%Y_%m', 
+                                null=True, 
+                                blank=True)
     tipoFotoA  = models.BooleanField('13.1.0.1. Aerea')
     tipoFotoNA = models.BooleanField('13.1.0.2. No Aerea')
     tipoFotoS  = models.BooleanField('13.1.0.3. Satelital')
+    tipoFotoNeg = models.BooleanField('13.1.0.4. Negativo')
     fecha = models.CharField('13.1.1. Fecha', blank = True, null= True, max_length=100)
     fotografo  = CharField('13.1.2. Fotógrafo',blank = True, null= True)
     institucion  = CharField('13.1.3. Institucion ',blank = True, null= True)
