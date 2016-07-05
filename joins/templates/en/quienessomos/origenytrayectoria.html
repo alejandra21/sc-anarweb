@@ -3,39 +3,102 @@
 {% load staticfiles%}
 
 {% block pagetitle %}Beggining and Development{% endblock %}
-{% block title %}Beggining and Development{% endblock %}
+{% block title %}{% endblock %}
 
 {% block content %}
-
-<p>
-The <b>ANAR</b> has its origins in the documentary investigation and compilation work on Rock Art begun by the anthropologist Jeannine Sujo in 1972, work which in its turn formed the basis for publications in 1975 (UCAB), 1976 (Paris), 1978 (IVIC), the exhibition Petroglifos del Guri in the Galer&iacute;a de Arte Nacional, Caracas in 1978, and the inclusion of the subject in the Diccionario de Historia of the Polar Foundation in 1988. 
-<p>
-Since 1985, Landscape architect Ruby De Valencia has been incorporated into this work. This research-worker improves the Archive with a series of personal photographic documents of the different sites of Venezuelan Rock Art, situated in 17 of the 23 States of the Venezuelan territory. Beside she complements it with an important set of other documents (cartographic and bibliographic in particular) on Venezuelan and international Rock Art, material collected during more than 10 years of field investigation and reviewed in several specialized magazines. 
-</p>
-
-<p><table>
-	<tbody>
-		<tr>
-			<td width="30%">
-				<img src="{% static "images/quienessomos/libro.jpg"  %}"  />
-			</td>
-			<td width="70%">
-			<p style="text-align:left">	
-This investigatory work formed the basis for the publication by the authors: Ruby De Valencia and Jeannine Sujo of the book <b>Design in venezuelan petroglyphs</b>, trilingual edition of the Pampero Foundation, Caracas, 1987, 410 pages; as well as the exhibition project with the same name proposed for the IBM's Exhibition Hall in New York (1988), and a project that is currently being prepared for the <b>ANAR</b> of Venezuelan Rock Art.
-</td>
-</tr>
-</tbody>
-</table>
-<p>
-The publication has received the following national and international prizes: Bronze Medal, <b>International Exhibition of Book Art</b>, 1989, Leipzig, Germany and Distinction at the <b>IX Annual Exhibition of the Illustrated Book and Documentary Photography</b>, 1988, Instituto Aut&oacute;nomo Biblioteca Nacional, Caracas. </p>
-<p>
-<b>Its contents allowed</b>:
-<ul>
-	<li>
-To present the first photographically documented inventory of the total of rock art sites registered at a national level up to that moment, sites which conform part of the archeological cultural heritage of Venezuela.</li>
-	<li>
-To sustain important conclusions in the field of anthropological research regarding Venezuela, based on the study and interrelation of the stylistic characteristics of these stations, stylistic horizons were formulated that define the different geographic zones of the country. These horizons allowed in turn to guide several hypothesis regarding some of the more ancient migratory routes of our country.
-	</li>
+<ul id="fondo" style="width:100%;height:800px;z-index=1;display:none;"></ul>
+<ul id="1" class="dropdown-image " role="menu">
+	<img src="{% static "images/quienessomos/libro.jpg" %}" style="width:370px"/>
+	<div class="description" style="font-size:11px"><br>
+		<p style="margin-left:215px">
+			<b>Design in venezuelan petroglyphs</b><br>
+			Ruby De Valencia and Jeannine Sujo<br>
+		</p>
+	</div>
+	<div onclick="setImageVisible('1','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
 </ul>
-</p><p>
+<div id="contenido">
+<h3><b>Beggining and Development</b></h3>
+	<div class="row">
+	    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+	        <p>
+				The <b>ANAR</b> has its origins in the documentary investigation 
+				and compilation work on Rock Art begun by the anthropologist 
+				Jeannine Sujo in 1972.
+			</p>
+			<p>
+				Since 1985, Landscape architect Ruby De Valencia has been incorporated 
+				into this work. This research-worker improves the Archive with a 
+				series of personal photographic documents of the different sites 
+				of Venezuelan Rock Art, situated in 17 of the 23 States of the 
+				Venezuelan territory. Beside she complements it with an important 
+				set of other documents (cartographic and bibliographic in particular) 
+				on Venezuelan and international Rock Art, material collected 
+				during more than 10 years of field investigation and reviewed in 
+				several specialized magazines. 
+			</p>
+			<p>
+				This investigatory work formed the basis for the publication by 
+				the authors: 
+			</p>	
+	    </div>
+	</div>
+	
+	<div class="row">
+	    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" onclick="setImageVisible('1','block')">
+			<img src="{% static "images/quienessomos/libro.jpg"  %}" class="img-responsive" />	
+	    </div>
+	    <div class="col-xs-6 col-sm-8 col-md-9 col-lg-10">
+	        <p>	
+	 			Ruby De Valencia and Jeannine Sujo of the book <b>Design in 
+	 			venezuelan petroglyphs</b>, trilingual edition of the Pampero 
+	 			Foundation, Caracas, 1987, 410 pages; as well as the exhibition 
+	 			project with the same name proposed for the IBM's Exhibition Hall 
+	 			in New York (1988), and a project that is currently being 
+	 			prepared for the <b>ANAR</b> of Venezuelan Rock Art.
+	 		</p>
+	    </div>
+	</div>
+
+	<div class="row">
+	    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+	        <p>
+				The publication has received the following national and 
+				international prizes: Bronze Medal, <b>International 
+				Exhibition of Book Art</b>, 1989, Leipzig, Germany and 
+				Distinction at the <b>IX Annual Exhibition of the Illustrated 
+				Book and Documentary Photography</b>, 1988, Instituto 
+				Aut&oacute;nomo Biblioteca Nacional, Caracas.
+			</p>	
+	    </div>
+	</div>
+
+	<div class="row">
+	    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+	        <p>
+				<b>Its contents allowed</b>: 
+				<ul>
+					<li>
+						To present the first photographically documented inventory 
+						of the total of rock art sites registered at a national 
+						level up to that moment, sites which conform part of the 
+						archeological cultural heritage of Venezuela.
+					</li>
+					<li>
+						To sustain important conclusions in the field of 
+						anthropological research regarding Venezuela, based on 
+						the study and interrelation of the stylistic 
+						characteristics of these stations, stylistic horizons 
+						were formulated that define the different geographic 
+						zones of the country. These horizons allowed in turn 
+						to guide several hypothesis regarding some of the more 
+						ancient migratory routes of our country.
+					</li>
+				</ul>
+			</p>	
+	    </div>
+	</div>
+</div>
 {% endblock %}

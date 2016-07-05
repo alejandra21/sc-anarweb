@@ -20,7 +20,7 @@ from anarapp.models import Yacimiento, LocalidadYacimiento, UsoActSuelo, Tenenci
     Piedra, Piedra2, FotografiaPiedra, DimensionPiedra, CaraTrabajada, UbicacionCaras, FigurasPorTipo, EsquemaPorCara, ConexionFiguras, \
     Manifestaciones, TratFotoPiedra, FotoPiedra, EscNatPiedra, EscRedPiedra, \
     BibPiedra, MatAVPiedra, VideoPiedra, PeliculaPiedra, PaginaWebPiedra, MultimediaPiedra, \
-    ObtInfoPiedra, OtrosValPiedra, ObservacPiedra, LlenadoPiedra, SupervisadoPiedra
+    ObtInfoPiedra, OtrosValPiedra, ObservacPiedra, LlenadoPiedra, SupervisadoPiedra, FotoApoyo
 
 
 ########################################################################################
@@ -536,7 +536,11 @@ class OtrosValPiedraInline(admin.StackedInline):
     extra = 1
     max_num = 1
     template = 'InlineTemplates/OtrosValoresRoca.html'    
-	
+
+class FotoApoyoInline(admin.TabularInline):
+    model = FotoApoyo
+    extra = 3
+
 class FotoDigPiedraInline(admin.StackedInline):
     extra = 1
     model =  FotoPiedra
@@ -685,6 +689,10 @@ class YacimientoAdmin(admin.ModelAdmin):
 #Administrador del modelo de datos Piedra
 #Usando los parametros de la extensión Suite, se mejora y organiza el admin
 
+class FotoPiedraAdmin(admin.ModelAdmin):
+     inlines = [FotoApoyoInline]
+
+
 class PiedraAdmin (admin.ModelAdmin):
     model = Piedra
     form = forms.PiedraForm
@@ -702,15 +710,15 @@ class PiedraAdmin (admin.ModelAdmin):
 
     inlines = [
         FotografiaPiedraInline, Piedra2Inline, CaraTrabajadaInline, DimensionPiedraInline, UbicacionCarasInline, FigurasPorTipoInline,
-        EsquemaPorCaraInline,ConexionFigurasInline, ManifestacionesInline, OtrosValPiedraInline, TratFotoInline, FotoDigPiedraInline,EscalaNatPiedraInline, EscalaRedPiedraInline, BibPiedraInline,
+        EsquemaPorCaraInline,ConexionFigurasInline, OtrosValPiedraInline, TratFotoInline, FotoDigPiedraInline,EscalaNatPiedraInline, EscalaRedPiedraInline, BibPiedraInline,
         MatAudioVisualInline, VideoPiedraInline, PeliculaPiedraInline, PaginaWebPiedraInline,
         MultimediaPiedraInline, ObtInfoPiedraInline,  ObservacionPiedraInline,
-        LlenadaPorPiedraInline, SupervisadaPorPiedraInline
+        LlenadaPorPiedraInline, SupervisadaPorPiedraInline,
     ] 
     suit_form_tabs = (('generales', 'Datos Generales de la Roca'),
                       ('figuras', 'Figuras'),
                       ('tratamientos', 'Tratamiento para fotografia'),
-                      ('manifestaciones', 'Manifestaciones Asociadas'),
+                      ('manifestaciones', 'Valores de la Roca'),
                       ('apoyos', 'Apoyos'),
                       ('observaciones', 'Observaciones')                        
                       )	

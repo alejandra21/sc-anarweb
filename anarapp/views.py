@@ -93,6 +93,9 @@ def enquienessomosOrigenytrayectoria(request):
 
 def enquienessomosAreasdeespecializacion(request):
 	return render(request, 'en/quienessomos/areasdeespecializacion.html')
+	
+def enquienessomosOrganigrama(request):
+    return render(request, 'en/quienessomos/organigrama.html')	
 
 def enquienessomosProyectosactuales(request):
 	return render(request, 'en/quienessomos/proyectosactuales.html')
