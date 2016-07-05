@@ -1572,7 +1572,7 @@ class Foto (models.Model):
         (3, 'Satelital'),
     )
 
-    esfoto = models.BooleanField('13.1 Fotográfico')
+    esfoto = models.BooleanField('13.1 Fotografías')
     negativo =  CharField('13.1.0. Negativo', blank=True)
     tipoFotoA  = models.BooleanField('13.1.0.1. Aerea')
     tipoFotoNA = models.BooleanField('13.1.0.2. No Aerea')
