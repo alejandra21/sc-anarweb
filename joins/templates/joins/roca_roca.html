@@ -203,11 +203,18 @@ $(document).ready(function(){
                   </div>
                   <div class="panel-body">
                     <p>
-                        Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
-                        <form action="/cruces/30/">
-                            <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
-                            <input type="submit" class="button" value="Consultar"/>
-                        </form>
+                      Listar todas las <i>(Pa 00) Rocas</i> del <i>(00 - Código) Yacimiento</i>  del
+                      <i>(Pa 3) Estado</i> Que comparten: <i>(Pa 5) Relación de número de caras trabajadas</i>
+                      entre <i>(Pa 4) Número de caras</i> u <i>(Pa 6) orientación de las caras trabajadas</i> que tienen:
+                      <ul>
+                        <li>La misma forma y cantidad de figuras por cara (Pa 9, Pa 9.1, Pa 9.2, Pa 9.3, Pa 9.6, Pa 9.7, Pa 9.8)</li>
+                        <li>La misma posición de las figuras por cara (Pa 10)</li>
+                        <li>El mismo porcentaje de conexión de las figuras (Pa 11, Pa 11.1, Pa 11.2, Pa 11.3, Pa 11.4)</li>
+                      </ul>
+                      <form action="/cruces/30/">
+                        <label>(00) Código: {{ form.codigo }} </label></br>
+                        <input type="submit" class="button" value="Consultar"/>
+                       </form>
                     </p>
                   </div>
                 </div>
@@ -222,11 +229,14 @@ $(document).ready(function(){
                   </div>
                   <div class="panel-body">
                     <p>
-                        Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
-                        <form action="/cruces/31/">
-                            <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
-                            <input type="submit" class="button" value="Consultar"/>
-                        </form>
+                      Listar todas las <i>(Pa 00) Rocas</i> del <i>(00 - Código) Yacimiento</i> 
+                      del <i>(Pa 3) Estado</i> que comparten la misma <i>(Pa 5) Relación 
+                      de número de caras</i> que tienen La misma <i>(Pa 6) Orientación 
+                      de sus caras trabajadas</i>
+                      <form action="/cruces/31/">
+                        <label>(00) Código: {{ form.codigo }} </label></br>
+                        <input type="submit" class="button" value="Consultar"/>
+                       </form>
                     </p>
                   </div>
                 </div>
@@ -241,9 +251,16 @@ $(document).ready(function(){
                     </div>
                     <div class="panel-body">
                       <p>
-                          Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
+                        Listar Todos las <i>(Pa 00) Rocas</i> del <i>(00 - Código) Yacimiento</i>,
+                        con la misma <i>(Pa 9, Pa 9.1, Pa 9.2, Pa 9.3, Pa 9.6, Pa
+                        9.7, Pa 9.8) Forma y cantidad de figuras por cara</i> que tienen:</br>
+                        <ul>
+                          <li>El mismo <i>(Pa 10) Posición de sus figuras</i></br></li>
+                          <li>El mismo <i>(Pa 11, Pa 11.1, Pa 11.2, Pa 11.3, Pa 11.4) Porcentaje de conexión</i></li></br>
+                        </ul>
                           <form action="/cruces/32/">
-                              <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                              <label>(00) Código: {{ form.codigo }} </label></br>
+                              <label>(3) Estado: {{ form.estado }} </label></br></br>
                               <input type="submit" class="button" value="Consultar"/>
                           </form>
                       </p>
@@ -260,9 +277,12 @@ $(document).ready(function(){
                     </div>
                     <div class="panel-body">
                       <p>
-                          Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
+                        Totalizar las cantidades por cada <i>(Pa 9, Pa 9.1, Pa 9.2, 
+                        Pa 9.3, Pa 9.6, Pa 9.7, Pa 9.8) tipo de forma</i> 
+                        por <i>(Pa 00) Rocas</i> y <i>(Pa 3) Estado</i>
                           <form action="/cruces/33/">
-                              <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                              <label>(Pa 00) Roca: {{ form.codigo }} </label></br>
+                              <label>(3) Estado: {{ form.estado }} </label></br></br>
                               <input type="submit" class="button" value="Consultar"/>
                           </form>
                       </p>
@@ -279,11 +299,18 @@ $(document).ready(function(){
                     </div>
                     <div class="panel-body">
                       <p>
-                          Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
-                          <form action="/cruces/34/">
-                              <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
-                              <input type="submit" class="button" value="Consultar"/>
-                          </form>
+                        Listar por <i>(Pa 3) Estado</i> y <i>(Pa 00) Rocas</i> del
+                        <i>(00 - Código) Yacimiento</i>, la <i>(Pa 5) Proporción de Número de caras
+                        trabajadas</i>, a <i>(Pa 4) Número de caras</i>,
+                        <i>(Pa 6) Orientación de las caras trabajadas</i>,
+                        <i>(Pa 9, Pa 9.1, Pa 9.2, Pa 9.3, Pa 9.6, Pa 9.7, Pa 9.8) cantidad de 
+                        figuras por caras</i>, <i>(Pa 10) posición por
+                        cara</i> y <i>(Pa 11, Pa 11.1, Pa 11.2, Pa 11.3, Pa 11.4) porcentaje de conexión</i>
+                        <form action="/cruces/34/">
+                          <label>(00) Código: {{ form.codigo }} </label></br>
+                          <label>(3) Estado: {{ form.estado }} </label></br></br>
+                          <input type="submit" class="button" value="Consultar"/>
+                        </form>
                       </p>
                     </div>
                   </div>
@@ -298,9 +325,15 @@ $(document).ready(function(){
                   </div>
                   <div class="panel-body">
                     <p>
-                        Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
+                        Listar los <i>(Pa 13), (Pa 13.9), (Pa.13.9.1), (Pa 13.9.2), 
+                        (Pa 13.9.3), (Pa 13.9.4), (Pa 13.9.5), (Pa13.9.6), (Pa 13.9.7), 
+                        (Pa 13.10), (Pa 13.10.1), (Pa 13.10.2.1), (Pa 13.11), 
+                        (Pa 13.12),</br> (Pa 13.12.1), (Pa 13.13), (Pa 13.14), (Pa 13.15), 
+                        (Pa 13.16) Apoyos </i> por <i>(Pa 00) Rocas</i> del</br>  
+                        <i>(00 - Código) Yacimiento</i> por <i>(Pa 3) Estado</i> </br>
                         <form action="/cruces/35/">
-                            <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                            <label>(00) Código: {{ form.codigo }} </label></br>
+                            <label>(3) Estado: {{ form.estado }} </label></br></br>
                             <input type="submit" class="button" value="Consultar"/>
                         </form>
                     </p>
@@ -317,11 +350,14 @@ $(document).ready(function(){
                   </div>
                   <div class="panel-body">
                     <p>
-                        Listema por codigo, estado y tipo de manifestacion los yacimientos que contengan manifestaciones asociadas de:<br/>
-                        <form action="/cruces/36/">
-                            <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
-                            <input type="submit" class="button" value="Consultar"/>
-                        </form>
+                      Listar por <i>(Pa 00) Rocas</i>  del 
+                      <i>(00 - Código) Yacimiento</i>, por <i>(Pa 3) Estado</i>, 
+                      <i>(Pa 15) Otros Valores de la Roca</i> <br/>
+                      <form action="/cruces/36/">
+                          <label>(00) Código: {{ form.codigo }} </label></br>
+                          <label>(3) Estado: {{ form.estado }} </label></br></br>
+                          <input type="submit" class="button" value="Consultar"/>
+                      </form>
                     </p>
                   </div>
                 </div>
