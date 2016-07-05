@@ -1,6 +1,6 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 
@@ -42,8 +42,7 @@
     <body>	
 
 	
-	 <table style="float:right;vertical-align:middle"><tbody><tr><td style="font-size:16px;padding:2px">
-	 <b>LANGUAGE:</b></td>
+	 <table style="float:right"><tbody><tr>
 	 <td style="padding:1px"><a href={% url en %}>
 		<img src="{% static "images/uk.jpg" %}" style="width:70%" />
 	 </a></td>
@@ -73,17 +72,27 @@
 	    			<div class="col-xs-2 col-xs-height col-top main-menu izq" style="background:black" >
 							<table class="list-unstyled main-menu">
 				<tbody><tr>
-                                <td style="background-color:#BF3300"><a href="#">
-					Interactive Software
+                                <td>
+                                	<a href="/cruces">
+				    <img id="es_si" style="display:none"src="/static/site/imagenes/Bot_SI.png"/>
+					<img id="en_si" src="/static/site/imagenes/Bot_SI_EN.png"/>
+					<span id="fr_si" style="display:none">Logiciel Interactif</span>
+			     </a></td>
+			     </tr>
+                                <tr><td><a href="#">
+					<img id="es_si" style="display:none" src="/static/site/imagenes/Bot_RA.png"/>
+					<img id="en_si" src="/static/site/imagenes/Bot_RA_EN.png"/>
+					<span id="fr_ra" style="display:none">R&eacute;alit&eacute; augment&eacute;e</span>
 			     </a></td></tr>
-                                <tr><td style="background-color:#FF4000"><a href="#">
-					Agumented Reality (demo)
+                                <tr><td><a href="#">
+					<img id="es_si" style="display:none" src="/static/site/imagenes/Bot_GEO.png"/>
+					<img id="en_si" src="/static/site/imagenes/Bot_GEO.png"/>
+					<span id="fr_gp" style="display:none">G&eacute;oportail</span>
 			     </a></td></tr>
-                                <tr><td style="background-color:#B18904"><a href="#">
-					Geoportal
-			     </a></td></tr>
-                                <tr><td style="background-color:#FFBF00"><a href="#">
-					Didactic Games
+                                <tr><td><a href="#">
+					<img id="es_si" style="display:none" src="/static/site/imagenes/Bot_JD.png"/>
+					<img id="en_si" src="/static/site/imagenes/Bot_JD_EN.png"/>
+					<span id="fr_jd" style="display:none">Jeux didactiques</span>
 				</a></td></tr>
 				</tbody></table>
 	    			</div>

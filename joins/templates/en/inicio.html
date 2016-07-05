@@ -79,89 +79,104 @@ Ruby de Valencia
 {% endblock %}
 
 {% block content %}
-<ul id="fondo" style="width:100%;height:800px;z-index=1;display:none;"></ul>
-<ul id="1" class="dropdown-image " role="menu">
-	<div class ="row " >
-			<img src="{% static "images/inicio/198.png" %}" />
-			<div class="description" style="align:left"><span style="color:red"><b>198 <br> 
-									  PETROGLYPH</b><br></span>
-									  Capitanejo<br>
-									  Estado Barinas<br>
-                                                                          Photo: E. Ruiz Guevara </p>
-			<div onclick="setImageVisible('1','none')" style="font-size:26px;text-align:right">&#x25C4;</a>
-	</div>
-</ul>
-<ul id="2" class="dropdown-image " role="menu">
-	<div class ="row">
-			<img src="{% static "images/inicio/51.png" %}" />
-			<div class="description" style="align:left"><span style="color:orange"><b>51 <br> 
-									  GEOGLYPH</b><br></span>
-									  La Rueda del Indio<br>
-									  Estado Carabobo<br>
-                                                                          Photo: Victor Hern&aacute;ndez </p>
-			<div onclick="setImageVisible('2','none')" style="font-size:26px;text-align:right">&#x25C4;</a>
-	</div>
-</ul>
-<ul id="3" class="dropdown-image " role="menu">
-	<div class ="row">
-			<img src="{% static "images/inicio/84.png" %}" />
-			<div class="description" style="align:left"><span style="color:#04B404"><b>84 <br> 
-									  MEGALITHIC MONUMENTS</b><br>MENHIRS<br></span>
-									  Vigirima<br>
-									  Estado Carabobo<br>
-                                                                          Photo: E. Victor Hern&aacute;ndez  </p>
-			<div onclick="setImageVisible('3','none')" style="font-size:26px;text-align:right">&#x25C4;</a>
-	</div>
-</ul>
-<ul id="4" class="dropdown-image " role="menu">
-	<div class ="row">
-			<img src="{% static "images/inicio/151.png" %}" />
-			<div class="description" style="align:left"><span style="color:purple"><b>451 <br> 
-									  RUPESTRIAN PAINTING</b><br></span>
-									  Cueva Cerro Gavil&aacute;<br>
-									  Estado Bol&iacute;var<br>
-                                                                          Photo: Gabriela Montoto </p>
-			<div onclick="setImageVisible('4','none')" style="font-size:26px;text-align:right">&#x25C4;</a>
+<ul id="fondo" style="width:100%;height:800px;z-index=1;display:none;" ></ul>
+<ul id="1" class="dropdown-image" role="menu">
+    <img src="{% static "images/inicio/198grande.png" %}" style="width:242px" />
+	<div class="description" style="font-size:11px"><br>
+	    <p style="margin-left:280px">
+    	    <span style="color:red"><b>198<br>PETROGLYPH</b></span><br>
+    		Capitanejo<br>
+    		Estado Barinas<br>
+            Fotog: E. Ruiz Guevara 
+        </p>
+    </div>
+	<div onclick="setImageVisible('1','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
 	</div>
 </ul>
 
+<ul id="2" class="dropdown-image" role="menu">
+	<img src="{% static "images/inicio/51grande.png" %}" style="width:370px" />
+	<div class="description" style="font-size:11px"><br>
+        <p style="margin-left:215px">
+            <span style="color:orange"><b>51<br>GEOGLYPH</b></span><br>
+		    La Rueda del Indio<br>
+		    Estado Carabobo<br>
+            Fotog: Victor Hern&aacute;ndez 
+        </p>
+    </div>
+	<div onclick="setImageVisible('2','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
+
+<ul id="3" class="dropdown-image" role="menu">
+	<img src="{% static "images/inicio/84grande.png" %}" style="width:370px" />
+	<div class="description" style="font-size:11px"><br>
+        <p style="margin-left:215px">
+            <span style="color:#04B404"><b>84<br>MEGALITHIC MONUMENTS</b><br>MENHIRS<br></span>
+	        Vigirima<br>
+	        Estado Carabobo<br>
+            Fotog: E. Victor Hern&aacute;ndez  
+        </p>
+    </div>
+	<div onclick="setImageVisible('3','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
+
+<ul id="4" class="dropdown-image">
+	<img src="{% static "images/inicio/151grande.png" %}" style="width:242px" />
+	<div class="description" style="font-size:11px"><br>
+	    <p style="margin-left:280px">
+	        <span style="color:purple"><b>451<br>RUPESTRIAN PAINTING</b></span><br>
+			Cueva Cerro Gavil&aacute;<br>
+			Estado Bol&iacute;var<br>
+            Fotog: Gabriela Montoto
+	    </p> 
+	</div>
+	<div onclick="setImageVisible('4','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul> 
 
 <div id="contenido">
 <div class="row">
-
-    <div class="col-sm-3 img-resize" onclick="setImageVisible('1','block')">
-    <img src="{% static "images/inicio/1.png" %}" />	
+    <div class="col-xs-2 col-xs-offset-1" onclick="setImageVisible('1','block')">
+        <img class="center-block" src="{% static "images/inicio/198peq.png" %}" class="img-responsive" style="height:100%;width:100%;max-width:118px;max-height:180px"/>	
     </div>
-    <div class="col-sm-3" onclick="setImageVisible('2','block')">
-    <img src="{% static "images/inicio/2.gif" %}"  />
+    <div class="col-xs-3" onclick="setImageVisible('2','block')">
+        <img class="center-block" src="{% static "images/inicio/51peq.png" %}" class="img-responsive" style="height:100%;width:100%;max-width:180px;max-height:118;margin-top: 31px;"/>
     </div>
-    <div class="col-sm-3" onclick="setImageVisible('3','block')">
-    <img src="{% static "images/inicio/3.gif" %}"  />
+    <div class="col-xs-3" onclick="setImageVisible('3','block')">
+        <img class="center-block" src="{% static "images/inicio/84peq.png" %}" class="img-responsive" style="height:100%;width:100%;max-width:180px;max-height:118px;margin-top: 31px;"/>
     </div>
-    <div class="col-sm-3" onclick="setImageVisible('4','block')">
-    <img src="{% static "images/inicio/4.gif" %}"  />
+    <div class="col-xs-2" onclick="setImageVisible('4','block')">
+        <img class="center-block" src="{% static "images/inicio/151peq.png" %}" class="img-responsive" style="height:100%;width:100%;max-width:118px;max-height:180px"/>
     </div>
 </div>
+
 <br>
-<p style="font-size:20px">
-The <b>ANAR - Rock Art Nacional Archive- (Archivo Nacional de Arte Rupestre)</b> <br> has as its basic purpose to serve as a Center of Reference and Information Service for the knowledge and protection of Rock Art in Venezuela, as part of the preservation of the historic and documentary memory of the archaeological cultural heritage of the country.</p>
+<h3 style="text-align: center">The <b>ANAR</b> -National Archives of Rupestrian Art-<br> 
+<b>(Archivo Nacional de Arte Rupestre)</b></h3>
+<p style="text-align: center;font-size:18px">
+    has as its basic purpose<br>
+    to serve as a Center of Reference and Information Service<br>
+    for the knowledge and protection<br>
+    of Rock Art in Venezuela,<br> as part of the preservation of the historic and documentary memory<br>
+    of the archaeological cultural heritage of the country.
+</p>
 <br>
 <div class="row" >
-    <div class="col-sm-2" style="width:19%">
-    <img src="{% static "images/inicio/FUNDABITAT.gif"  %}"  />
+    <div class="col-xs-8 col-xs-offset-2">
+        <img class="img-inicio" src="{% static "images/inicio/FUNDABITAT.gif"  %}"  style="width:91px;height:86px;margin-left:35px"/>
+        <img class="img-inicio" src="{% static "images/inicio/IFRAO.gif" %}"  style="width:91px;height:86px"/>
+        <img class="img-inicio" src="{% static "images/inicio/tamayop.gif" %}"  style="width:91px;height:86px"/>
+        <img class="img-inicio" src="{% static "images/inicio/ucvg.gif" %}"  style="width:91px;height:86px"/>
+        <img class="img-inicio" src="{% static "images/inicio/USB.png" %}" style="width:91px;height:86px"/>
     </div>
-    <div class="col-sm-2" style="width:19%">
-    <img src="{% static "images/inicio/IFRAO.gif" %}"  />
-    </div>
-    <div class="col-sm-2" style="width:19%">
-    <img src="{% static "images/inicio/tamayop.gif" %}"  />
-    </div>
-    <div class="col-sm-2" style="width:19%">
-    <img src="{% static "images/inicio/ucvg.gif" %}"  />
-    </div>
-    <div class="col-sm-2" style="width:19%">
-    <img src="{% static "images/inicio/USB.png" %}" />
-    </div>
+</div>
+
 </div>
 <br>
 {% endblock %}
