@@ -20,12 +20,12 @@
 
   {% for y in listaYacimiento %}
 
-    <h4><strong>{{y.estado}}</strong></h4>
+      <a href="/admin/anarapp/yacimiento/{{y.id}}">
+          <h4><strong>Nombre:</strong>{{y.nombre}}</h4>
+      </a>
       <li>
-        <strong>Código:</strong>{{y.codigo}} 
-      <i> 
-        {{y.nombre}}
-      </i>
+        <strong>Código:</strong>{{y.codigo}}
+        <strong>Estado:</strong>{{y.estado}} 
     </li>
   {% endfor %}
 

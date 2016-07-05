@@ -228,7 +228,7 @@ def cruces(request,cruce_id):
 			objetoAgregar = petroglifo.filter(yacimiento__id=c.yacimiento.id)
 
 			if (len(objetoAgregar)!=0):
-				listaYacimientos += [{'yacimiento':objetoAgregar.yacimiento.nombre,
+				listaYacimientos += [{'yacimiento':objetoAgregar.yacimiento.nombre,'id':objetoAgregar.yacimiento.id,
 									'estado':objetoAgregar.estado.nombre,'codigo':objetoAgregar.yacimiento.id}]
 
 		total =  len(listaYacimientos)

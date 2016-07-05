@@ -19,7 +19,7 @@
   {% for lista in yacimientos %}
   	{%if lista%}
       <ul>
-        <li>{{ lista.nombre }}</li>
+        <a href="/admin/anarapp/yacimiento/{{lista.yacimiento.id}}"><li>{{ lista.yacimiento.nombre }}</li></a>
       </ul>
 
     {%endif%}

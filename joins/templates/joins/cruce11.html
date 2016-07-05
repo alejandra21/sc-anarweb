@@ -15,62 +15,62 @@
 	<br>
 	<li><h4>Geoglifos:</h4></li>
     {% for g in geoglifo %}
-		<ul>{{g.yacimiento.nombre}}</ul>
+	   <a href="/admin/anarapp/yacimiento/{{g.yacimiento.id}}"><ul>{{g.yacimiento.nombre}}</ul></a>	
     {%endfor%}
 
     <li><h4>Pinturas rupestres:</h4></li>
     {% for p in pinturasRupestres %}
-		<ul>{{p.yacimiento.nombre}}</ul>
+	   <a href="/admin/anarapp/yacimiento/{{p.yacimiento.id}}"><ul>{{p.yacimiento.nombre}}</ul></a>
     {%endfor%}
 
    	<li><h4>Micropetroglifos:</h4></li>
     {% for m in micropetroglifos %}
-		<ul>{{m.yacimiento.nombre}}</ul>
+	   <a href="/admin/anarapp/yacimiento/{{m.yacimiento.id}}"><ul>{{m.yacimiento.nombre}}</ul></a>	
     {%endfor%}
 
     <li><h4>Petroglifos:</h4></li>
     {% for p in petroglifo %}
-		<ul>{{p.yacimiento.nombre}}</ul>
+	   <a href="/admin/anarapp/yacimiento/{{p.yacimiento.id}}"><ul>{{p.yacimiento.nombre}}</ul></a>	
     {%endfor%}
 
     <li><h4>Petroglifos pintados:</h4></li>
     {% for p in petroglifoPintado %}
-		<ul>{{p.yacimiento.nombre}}</ul>
+	   <a href="/admin/anarapp/yacimiento/{{p.yacimiento.id}}"><ul>{{p.yacimiento.nombre}}</ul></a>	
     {%endfor%}
 
     <li><h4>Piedra mitica natural:</h4></li>
     {% for p in PiedraMiticaNatural %}
-		<ul>{{p.yacimiento.nombre}}</ul>
+	   <a href="/admin/anarapp/yacimiento/{{p.yacimiento.id}}"><ul>{{p.yacimiento.nombre}}</ul></a>	
     {%endfor%}
 
     <li><h4>Cerro mitico natural:</h4></li>
     {% for c in CerroMiticoNatural %}
-		<ul>{{c.yacimiento.nombre}}</ul>
+	   <a href="/admin/anarapp/yacimiento/{{c.yacimiento.id}}"><ul>{{c.yacimiento.nombre}}</ul></a>	
     {%endfor%}
 
     <li><h4>Batea:</h4></li>
     {% for b in Batea %}
-		<ul>{{b.yacimiento.nombre}}</ul>
+	   <a href="/admin/anarapp/yacimiento/{{b.yacimiento.id}}"><ul>{{b.yacimiento.nombre}}</ul></a>	
     {%endfor%}
 
     <li><h4>Menhires:</h4></li>
     {% for m in Menhires %}
-		<ul>{{m.yacimiento.nombre}}</ul>
+	   <a href="/admin/anarapp/yacimiento/{{m.yacimiento.id}}"><ul>{{m.yacimiento.nombre}}</ul></a>	
     {%endfor%}
 
     <li><h4>Amoladores:</h4></li>
     {% for a in Amoladores %}
-		<ul>{{a.yacimiento.nombre}}</ul>
+	   <a href="/admin/anarapp/yacimiento/{{a.yacimiento.id}}"><ul>{{a.yacimiento.nombre}}</ul></a>	
     {%endfor%}
 
     <li><h4>Puntos acoplados:</h4></li>
     {% for p in PuntosAcoplados %}
-		<ul>{{p.yacimiento.nombre}}</ul>
+	   <a href="/admin/anarapp/yacimiento/{{p.yacimiento.id}}"><ul>{{p.yacimiento.nombre}}</ul></a>	
     {%endfor%}
 
     <li><h4>Cupula :</h4></li>
     {% for c in Cupula  %}
-		<ul>{{c.yacimiento.nombre}}</ul>
+	   <a href="/admin/anarapp/yacimiento/{{c.yacimiento.id}}"><ul>{{c.yacimiento.nombre}}</ul></a>	
     {%endfor%}
 
 {% endblock %}
