@@ -27,15 +27,178 @@
       {% for bib in y.BibYacimiento.all %}      
         <div class="panel panel-default">
           <div class="panel-body">
+
+            {% if bib.tienePDF %}
+              <ul> 
+                  <a href="/upload/{{bib.tienePDF}}" style="color:#333"> 
+                    <strong>(31.1.0.0) Archivo - PDF:</strong> {{ bib.tienePDF }} 
+                  </a>
+              </ul>
+            {% endif %}  
+
+            {% if bib.tienePDF1 %}
+              <ul> 
+                  <a href="/upload/{{bib.tienePDF1}}" style="color:#333"> 
+                    <strong>(31.1.0.2) Archivo - PDF:</strong> {{ bib.tienePDF1 }} 
+                  </a>
+              </ul>
+            {% endif %}  
+
+            {% if bib.tienePDF2 %}
+              <ul> 
+                  <a href="/upload/{{bib.tienePDF2}}" style="color:#333"> 
+                    <strong>(31.1.0.4) Archivo - PDF:</strong> {{ bib.tienePDF2 }} 
+                  </a>
+              </ul>
+            {% endif %}    
+
+            {% if bib.tieneWord %}
+              <ul> 
+                  <a href="/upload/{{bib.tieneWord}}" style="color:#333"> 
+                    <strong>(31.1.0.0.1) Archivo - Word:</strong> {{ bib.tieneWord }} 
+                  </a>
+              </ul>
+            {% endif %}
+
+            {% if bib.tieneWord1 %}
+              <ul> 
+                  <a href="/upload/{{bib.tieneWord1}}" style="color:#333"> 
+                    <strong>(31.1.0.0.2) Archivo - Word:</strong> {{ bib.tieneWord1 }} 
+                  </a>
+              </ul>
+            {% endif %}
+
             {% if bib.codigo %}
               <ul> <strong>(31.1.1) Código:</strong> {{ bib.codigo }} </ul>
             {% else %}
               <ul> <strong>(31.1.1) Código:</strong> -- </ul>
             {% endif %}
+
             <ul> <strong>(31.1.2) Título:</strong> {{ bib.titulo }} </ul>
             <ul> <strong>(31.1.3) Autor:</strong> {{ bib.autor }} </ul>
             <ul> <strong>(31.1.4) Año:</strong> {{ bib.ano }} </ul>
             <ul> <strong>(31.1.5) Institución:</strong> {{ bib.institucion }} </ul>
+
+            {% if bib.archivo %}
+              <ul> 
+                  <a href="/upload/{{bib.archivo}}" style="color:#333"> 
+                    <strong>(31.1.6.1) Dibujo - Archivo:</strong> {{ bib.archivo }} 
+                  </a>
+              </ul>
+            {% endif %}
+
+            {% if bib.archivo1 %}
+              <ul> 
+                  <a href="/upload/{{bib.archivo1}}" style="color:#333"> 
+                    <strong>(31.1.6.2) Dibujo - Archivo:</strong> {{ bib.archivo1 }} 
+                  </a>
+              </ul>
+            {% endif %}
+
+            {% if bib.archivo2 %}
+              <ul> 
+                  <a href="/upload/{{bib.archivo2}}" style="color:#333"> 
+                    <strong>(31.1.6.3) Dibujo - Archivo:</strong> {{ bib.archivo2 }} 
+                  </a>
+              </ul>
+            {% endif %}
+
+            {% if bib.archivo3 %}
+              <ul> 
+                  <a href="/upload/{{bib.archivo3}}" style="color:#333"> 
+                    <strong>(31.1.6.4) Dibujo - Archivo:</strong> {{ bib.archivo3 }} 
+                  </a>
+              </ul>
+            {% endif %}
+
+            {% if bib.archivo4 %}
+              <ul> 
+                  <a href="/upload/{{bib.archivo4}}" style="color:#333"> 
+                    <strong>(31.1.6.5) Dibujo - Archivo:</strong> {{ bib.archivo4 }} 
+                  </a>
+              </ul>
+            {% endif %}
+
+            {% if bib.tieneFotografia %}
+              <ul> 
+                  <a href="/upload/{{bib.tieneFotografia}}" style="color:#333"> 
+                    <strong>(31.1.7.0.0) Fotografía - Archivo:</strong> {{ bib.tieneFotografia }} 
+                  </a>
+              </ul>
+            {% endif %}
+
+            {% if bib.tieneFotografia1 %}
+              <ul> 
+                  <a href="/upload/{{bib.tieneFotografia1}}" style="color:#333"> 
+                    <strong>(31.1.7.0.1) Fotografía - Archivo:</strong> {{ bib.tieneFotografia1 }} 
+                  </a>
+              </ul>
+            {% endif %}
+
+            {% if bib.tieneFotografia2 %}
+              <ul> 
+                  <a href="/upload/{{bib.tieneFotografia2}}" style="color:#333"> 
+                    <strong>(31.1.7.0.2) Fotografía - Archivo:</strong> {{ bib.tieneFotografia2 }} 
+                  </a>
+              </ul>
+            {% endif %}
+
+            {% if bib.tieneFotografia3 %}
+              <ul> 
+                  <a href="/upload/{{bib.tieneFotografia3}}" style="color:#333"> 
+                    <strong>(31.1.7.0.3) Fotografía - Archivo:</strong> {{ bib.tieneFotografia3 }} 
+                  </a>
+              </ul>
+            {% endif %}
+
+            {% if bib.tieneFotografia4 %}
+              <ul> 
+                  <a href="/upload/{{bib.tieneFotografia2}}" style="color:#333"> 
+                    <strong>(31.1.7.0.4) Fotografía - Archivo:</strong> {{ bib.tieneFotografia4 }} 
+                  </a>
+              </ul>
+            {% endif %}
+
+            {% if bib.tieneMapa %}
+              <ul> 
+                  <a href="/upload/{{bib.tieneMapa}}" style="color:#333"> 
+                    <strong>(31.1.8.0.0) Mapa - Archivo:</strong> {{ bib.tieneMapa }} 
+                  </a>
+              </ul>
+            {% endif %}
+
+            {% if bib.tieneMapa1 %}
+              <ul> 
+                  <a href="/upload/{{bib.tieneMapa1}}" style="color:#333"> 
+                    <strong>(31.1.8.0.1) Mapa - Archivo:</strong> {{ bib.tieneMapa1 }} 
+                  </a>
+              </ul>
+            {% endif %}
+
+            {% if bib.tieneMapa2 %}
+              <ul> 
+                  <a href="/upload/{{bib.tieneMapa2}}" style="color:#333"> 
+                    <strong>(31.1.8.0.2) Mapa - Archivo:</strong> {{ bib.tieneMapa2 }} 
+                  </a>
+              </ul>
+            {% endif %}
+
+            {% if bib.tieneMapa3 %}
+              <ul> 
+                  <a href="/upload/{{bib.tieneMapa3}}" style="color:#333"> 
+                    <strong>(31.1.8.0.3) Mapa - Archivo:</strong> {{ bib.tieneMapa3 }} 
+                  </a>
+              </ul>
+            {% endif %}
+
+            {% if bib.tieneMapa4 %}
+              <ul> 
+                  <a href="/upload/{{bib.tieneMapa4}}" style="color:#333"> 
+                    <strong>(31.1.8.0.4) Mapa - Archivo:</strong> {{ bib.tieneMapa4 }} 
+                  </a>
+              </ul>
+            {% endif %}
+
           </div>
         </div>
       {% endfor %}
