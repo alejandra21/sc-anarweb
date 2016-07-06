@@ -8,9 +8,25 @@
 {% endblock %}
 
 {% block title %}
-	Yacimientos que contengan como manifestaciones asociadas <u>pintura rupestre</u>
+	Yacimientos que contengan como manifestaciones asociadas <u>{{manifestacion}}</u>
 {% endblock %}
 
+<br>
+
+<ul>
+    {% for resultado in yacimiento%}
+		<h4>
+			<a href="/admin/anarapp/yacimiento/{{resultado.id}}">
+				<li><strong>Nombre:</strong>{{resultado.nombre}}</li>
+			</a>
+		</h4>
+		<i> 
+			<ul>Código: {{resultado.codigo}}</ul>
+			<ul>Estado: {{resultado.estado}}</ul>
+		</i>
+	{%endfor%}
+	
+</ul>
 
 {% block content %}
 

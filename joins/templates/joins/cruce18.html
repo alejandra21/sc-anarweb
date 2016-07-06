@@ -8,39 +8,25 @@
 {% endblock %}
 
 {% block title %}
-	Petroglifos con <u>roca ígnea</u>:{{tipo}}
+	Petroglifos con <u>{{tipo}}</u>:
 {% endblock %}
 
 {% block content %}
 	<br>
-	<h4><strong>Carabobo</strong></h4>
-	<li>
-		<strong>Código:</strong> PB1-51, 
-		<i> 
-			LA RUEDA DEL INDIO 
-		</i>
-	</li>
 
-	<h4><strong>Bolívar</strong></h4>
-	<li>
-		<strong>Código:</strong> PB1-444,	
-		<i> 
-			CUEVA CAÑO ORE, Cueva del Chamán, White Shaman Cave 
-		</i>
+	{% if estado != "---"%}
+		<h4><strong>Estado: </strong>{{estado}}</h4>
+	{% endif %}
 
-	</li>
-	<h3>{{tipo}}</h3>
-    {% for esta, lista in yacimientos.items%}
-		{%if lista|length > 0%}
-		<h3>{{esta}}</h3>
-		<ul>
-		{% for yacimiento in lista %}
-            <li>{{ yacimiento.nombre }}</li>
-        {% endfor %}
-		</ul>
-		{%endif%}
-    {%endfor%}
+	{% for result in listaResultado%}
+		<li>
+			<strong>Código:</strong> {{result.petroglifo.yacimiento.codigo}}, 
+			<i> 
+				<a href="/admin/anarapp/yacimiento/{{resul.petroglifo.yacimiento.id}}">{{result.petroglifo.yacimiento.nombre}}</a>
+			</i>
+		</li>
 
+	{% endfor %}
 {% endblock %}
 
 {% block user %}

@@ -1,7 +1,11 @@
+# -*- coding: utf-8 -*-
 # Create your views here.
 from django.shortcuts import render
 from django.db.models import Q
-from anarapp.models import Estado, Piedra, Yacimiento, ManifestacionYacimiento,FotografiaYac, Coordenadas,ConstitucionYacimiento,UbicacionYacimiento,CaracSurcoPetroglifo
+from anarapp.models import Estado, Piedra, Yacimiento, \
+							ManifestacionYacimiento,FotografiaYac, \
+							Coordenadas,ConstitucionYacimiento,UbicacionYacimiento,\
+							CaracSurcoPetroglifo,DescColores,MaterialYacimiento
 from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
@@ -268,8 +272,150 @@ def cruces(request,cruce_id):
 		total =  len(listaYacimientos)
 		return render(request,entrada,{'listaYacimientos':listaYacimientos,'total':total,'surco':surco,'estado':estado})
 
-	return render(request,entrada)
+	elif (cruce_id=="16"):
 
+		estado = request.GET['estado']
+		pinturas = request.GET['tipoPintura']
+		yacPintura = ""
+		listaResultado = []
+
+		pinturasRupestres =  ManifestacionYacimiento.objects.filter(esPintura=True)
+
+		if (estado != "---"):
+
+			pinturasRupestres =  pinturasRupestres.filter(yacimiento__estado__nombre=estado)
+
+			if (pinturas == "---"):
+
+				for y in pinturasRupestres:
+					listaResultado += [{'yacimiento':y}]
+
+		if (pinturas != "---"):
+
+			if (pinturas in {'Pintura positiva negra','Pintura positiva blanca',\
+							'Pintura positiva amarilla','Pintura positiva roja',\
+							'Pintura positiva dos rojos','Pintura positiva tres rojos'}):
+
+				yacPintura = DescColores.objects.filter(esPositiva=True)
+
+			elif (pinturas in {'Pintura negativa negra','Pintura negativa blanca',\
+								'Pintura negativa amarilla','Pintura negativa roja',\
+								'Pintura negativa dos rojos','Pintura negativa tres rojos'}):
+
+				yacPintura = DescColores.objects.filter(esNegativa=True)
+
+
+		for y in yacPintura:
+
+			result = pinturasRupestres.filter(yacimiento__id=y.yacimiento.id)
+			if (len(result)!=0):
+				listaResultado += [{'yacimiento':result}]
+
+		total = len(listaResultado)
+		tipo = pinturas
+
+		return render(request,entrada,{'total':total,'tipo':tipo,'listaResultado':listaResultado})
+
+	elif (cruce_id=="17"):
+
+		caracteristica = request.GET['carasurcopetrotipo2']
+		listaResultado = []
+		caractYac = ""
+	
+		petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo=True)
+
+		if (caracteristica == "Areas interlineales pulidas"):
+			caractYac = CaracSurcoPetroglifo.objects.filter(esAreaInterlinealPulida=True)
+
+		elif (caracteristica == "Areas interlineales rebajadas"):
+			caractYac = CaracSurcoPetroglifo.objects.filter(esAreaInterlinealRebajada=True)
+
+		elif (caracteristica == "Grabados superpuestos"):
+			caractYac = CaracSurcoPetroglifo.objects.filter(esGrabadoSuperpuesto=True)
+
+		elif (caracteristica == "Grabados rebajados"):
+			caractYac = CaracSurcoPetroglifo.objects.filter(esGrabadoRebajado=True)
+
+		for result in caractYac:
+
+			resultadoBusq = petroglifo.filter(yacimiento__id=result.yacimiento.id)
+			if (len(resultadoBusq)!=0):
+				listaResultado += [{'result':resultadoBusq}]
+
+		return render(request,entrada,{'listaResultado':listaResultado,'tipo':caracteristica})
+
+	elif (cruce_id=="18"):
+		estado = request.GET['estado']
+		material = request.GET['material']
+		yacPetroglifo = ""
+		listaResultado = []
+
+		petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo=True)
+
+		if (estado != "---"):
+
+			petroglifo =  petroglifo.filter(yacimiento__estado__nombre=estado)
+
+			if (material == "---"):
+
+				for y in petroglifo:
+					listaResultado += [{'yacimiento':y}]
+
+		if (material != "---"):
+
+			if (material == "Roca ígnea"):
+				yacPetroglifo = MaterialYacimiento.objects.filter(esIgnea=True)
+
+			elif (material == "Roca metamórfica"):
+				yacPetroglifo = MaterialYacimiento.objects.filter(esMetamor=True)
+
+			elif (material == "Roca sedimentaria"):
+				yacPetroglifo = MaterialYacimiento.objects.filter(esSedimentaria=True)
+
+		for y in yacPetroglifo:
+
+			result = petroglifo.filter(yacimiento__id=y.yacimiento.id)
+			if (len(result)!=0):
+				listaResultado += [{'petroglifo':result}]
+
+		return render(request,entrada,{'listaResultado':listaResultado,'estado':estado,'tipo':material})
+
+
+	elif (cruce_id=="20"):
+
+		manifestacion = request.GET['manifAsociadas']
+
+		yacimiento = ""
+
+		if (manifestacion == "Litica"):
+			print("ENTRE")
+			yacimiento = Yacimiento.ManifestacionesAsociadas.objects.filter(esLitica=True)
+
+		elif (manifestacion == "Ceramica"):
+			yacimiento = Yacimiento.ManifestacionesAsociadas.objects.filter(esCeramica=True)
+
+		elif (manifestacion == "Oseo"):
+			yacimiento = Yacimiento.ManifestacionesAsociadas.objects.filter(esOseo=True)
+
+		elif (manifestacion == "Concha"):
+			yacimiento = Yacimiento.ManifestacionesAsociadas.objects.filter(esConcha=True)
+
+		elif (manifestacion == "Carbon no superficial"):
+			yacimiento = Yacimiento.ManifestacionesAsociadas.objects.filter(esCarbon=True)
+
+		elif (manifestacion == "Mitos"):
+			yacimiento = Yacimiento.ManifestacionesAsociadas.objects.filter(esMito=True)
+
+		elif (manifestacion == "Cementerios"):
+			yacimiento = Yacimiento.ManifestacionesAsociadas.objects.filter(esCementerio=True)
+
+		elif (manifestacion == "Monticulos"):
+			yacimiento = Yacimiento.ManifestacionesAsociadas.objects.filter(esMonticulo=True)
+
+		return render(request,entrada,{'yacimiento':yacimiento,'manifestacion':manifestacion})
+
+
+	return render(request,entrada)
 
 def consulta(request):
 	# Se realiza la consula:

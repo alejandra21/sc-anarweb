@@ -76,11 +76,10 @@ OPCIONES_SURCO_GRABADO = (
 
 OPCIONES_SURCO_GRABADO2 = (
 	('---', '---'),
-	('Áreas interlineales pulidas','Áreas interlineales pulidas'),
-	('Áreas interlineales rebajadas','Áreas interlineales rebajadas'),
+	('Areas interlineales pulidas','Areas interlineales pulidas'),
+	('Areas interlineales rebajadas','Areas interlineales rebajadas'),
 	('Grabados superpuestos','Grabados superpuestos'),
 	('Grabados rebajados','Grabados rebajados'),
-	('Re-grabados','Re-grabados'),
 )
 
 OPCIONES_SURCO_GRABADO3 = (
@@ -118,7 +117,6 @@ OPCIONES_MATERIAL = (
 	('Roca ígnea','Roca ígnea'),
 	('Roca metamórfica','Roca metamórfica'),
 	('Roca sedimentaria','Roca sedimentaria'),
-	('Erosión','Erosión'),
 )
 
 OPCIONES_CARACTERISTICA_SURCO = (
@@ -138,14 +136,14 @@ OPCIONES_PIEDRA_EROSION = (
 
 OPCIONES_MANIFESTACIONES_ASOCIADAS = (
 	('---','---'),
-	('Lítica','Lítica'),
-	('Cerámica','Cerámica'),
+	('Litica','Litica'),
+	('Ceramica','Ceramica'),
 	('Oseo','Oseo'),
 	('Concha','Concha'),
-	('Carbón no superficial','Carbón no superficial'),
+	('Carbon no superficial','Carbon no superficial'),
 	('Mitos','Mitos'),
 	('Cementerios','Cementerios'),
-	('Montículos','Montículos'),
+	('Monticulos','Monticulos'),
 	('Otros','Otros'),
 )
  
