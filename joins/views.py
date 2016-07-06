@@ -414,6 +414,152 @@ def cruces(request,cruce_id):
 
 		return render(request,entrada,{'yacimiento':yacimiento,'manifestacion':manifestacion})
 
+	elif (cruce_id=="21"):
+
+		ubicacion = request.GET['ubicacion']
+		caracteristica = request.GET['carasurcopetrotipo3']
+		hayUbicacion = False
+
+		if (ubicacion != "---"):
+
+			hayUbicacion = True
+			if (ubicacion == "Cerro"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enCerro=True)
+			elif (ubicacion == "Cima"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enCerroCima=True)
+
+			elif (ubicacion == "Ladera"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enCerroLadera=True)
+
+			elif (ubicacion == "Pie de montana"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enCerroPieDeMonte=True)
+
+			elif (ubicacion == "Barranco"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enCerroBarranco=True)
+
+			elif (ubicacion == "Acantilado"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enCerroAcantilado=True)
+
+			elif (ubicacion == "Valle"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enValle=True)
+
+			elif (ubicacion == "Rio"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enRio=True)
+
+			elif (ubicacion == "Lecho"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enRioLecho=True)
+
+			elif (ubicacion == "Margen derecha"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enRioMargenDerecha=True)
+
+			elif (ubicacion == "Margen izquierda"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enRioMargenIzquierda=True)
+
+			elif (ubicacion == "Isla"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enRioIsla=True)
+
+			elif (ubicacion == "Raudal"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enRioRaudal=True)
+
+			elif (ubicacion == "Costa"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enRioCosta=True)
+
+		# ('Ancho de surco','Ancho de surco'),
+		# ('Profundidad de surco','Profundidad de surco'),
+		# ('Base redonda','Base redonda'),
+		# ('Base aguda','Base aguda'),
+		# ('Bajo relieve lineal','Bajo relieve lineal'),
+		# ('Bajo relieve planar','Bajo relieve planar'),
+		# ('Alto relieve lineal','Alto relieve lineal'),
+		# ('Alto relieve planar','Alto relieve planar'),
+		# UbicacionYacimiento
+		# CaracSurcoPetroglifo
+		return render(request,entrada,{'yacimiento':elementos,'ubicacion':ubicacion})
+
+	elif (cruce_id == "22"):
+		ubicacion = request.GET['ubicacion']
+		elementos = ""
+
+		if (ubicacion != "---"):
+			if (ubicacion == "Cerro"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enCerro=True)
+			elif (ubicacion == "Cima"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enCerroCima=True)
+
+			elif (ubicacion == "Ladera"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enCerroLadera=True)
+
+			elif (ubicacion == "Pie de montana"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enCerroPieDeMonte=True)
+
+			elif (ubicacion == "Barranco"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enCerroBarranco=True)
+
+			elif (ubicacion == "Acantilado"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enCerroAcantilado=True)
+
+			elif (ubicacion == "Valle"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enValle=True)
+
+			elif (ubicacion == "Rio"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enRio=True)
+
+			elif (ubicacion == "Lecho"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enRioLecho=True)
+
+			elif (ubicacion == "Margen derecha"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enRioMargenDerecha=True)
+
+			elif (ubicacion == "Margen izquierda"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enRioMargenIzquierda=True)
+
+			elif (ubicacion == "Isla"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enRioIsla=True)
+
+			elif (ubicacion == "Raudal"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enRioRaudal=True)
+
+			elif (ubicacion == "Costa"):
+				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enRioCosta=True)
+		return render(request,entrada,{'yacimiento':elementos,'ubicacion':ubicacion})
+
+	elif (cruce_id == "23"):
+
+		manifestacion = request.GET['manifestacion']
+
+	 	# Se seleccionan las manifestaciones correspondientes
+		if(manifestacionElegida=="Pinturas Rupestres"):
+			manifestacion = Yacimiento.ManifestacionYacimiento.objects.filter(esPintura=True)
+
+		elif(manifestacionElegida=="Cerros y Piedras Miticas Naturales"):
+
+			manifestacion = Yacimiento.ManifestacionYacimiento.objects.filter(
+				Q(esPiedraMiticaNatural=True)| Q(esCerroMiticoNatural=True))
+
+		elif(manifestacionElegida=='Amoladores,Cupula,Puntos Acoplados'):
+			manifestacion = Yacimiento.ManifestacionYacimiento.objects.filter(
+				Q(esAmolador=True)|Q(esCupulas=True)|Q(esPuntosAcoplados=True) )
+
+			
+		elif(manifestacionElegida=="Geoglifo"):
+			manifestacion = Yacimiento.ManifestacionYacimiento.objects.filter(esGeoglifo=True)
+
+
+		elif(manifestacionElegida=="Micropentoglifos"):
+			# Hay que agregar este atributo en el modelo de datos
+			manifestacion = \
+			Yacimiento.ManifestacionYacimiento.objects.filter(esMonumentosMegaliticos=True)
+
+			
+		elif(manifestacionElegida=="Monumentos megaliticos"):
+			manifestacion = \
+			Yacimiento.ManifestacionYacimiento.objects.filter(esMonumentosMegaliticos=True)
+
+
+		elif(manifestacionElegida=="Petroglifos"):
+			manifestacion = Yacimiento.ManifestacionYacimiento.objects.filter(esPetroglifo=True)
+
+		return render(request,entrada,{'yacimiento':elementos,'manifestacion':manifestacion})
 
 	return render(request,entrada)
 
