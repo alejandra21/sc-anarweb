@@ -3,25 +3,65 @@
 {% load staticfiles%}
 
 {% block pagetitle %}Geoglyphs{% endblock %}
-{% block title %}<span style="color:orange">Geogliphs</span>{% endblock %}
+{% block title %}{% endblock %}
 
 {% block content %}
-<p align="justify">Another example of rock art which -like the monumental petroglyphs of <strong>Amazonas State</strong>- was doubtless intended to be visible from far away, is the <font color="#ff9933"><strong>Geoglyph</strong></font> (figure drawn on the ground).&nbsp;<br><br>The <font color="#ff9933"><strong>geoglyphs </strong></font><strong>of Nazca</strong>, Per&uacute; are known throughout the whole world, but very few Venezuelans and fewer foreigners know of the existence of the <font color="#ff9933"><strong>geoglyph</strong></font> in the <strong>Carabobo state</strong> or of the enigmatic tales that place them also in the <strong>Yaracuy state</strong>.&nbsp;<br><br>The <strong>ANAR</strong> documents them in videos and photographs taken from the air, maps and illustrated publications. of Nazca</p><table width="50%" align="center">
-<p><img src="{% static "images/patrimoniorupestrevenezolano/geoglifo/ubigeoglifo.png"  %}" style="width:70%;border:solid 2px #424242"/></p>
+<ul id="fondo" style="width:100%;height:800px;z-index=1;display:none;"></ul>
+<ul id="1" class="dropdown-image " role="menu">
+	<img src="{% static "images/patrimoniorupestrevenezolano/geoglifo/ubigeoglifo.png" %}" 
+		style="width:650px;border:solid 2px orange"/>
+		<br><br><br>
+	<div onclick="setImageVisible('1','none')" style="width:732px;font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
+<ul id="2" class="dropdown-image " role="menu">
+	<img src="{% static "images/patrimoniorupestrevenezolano/geoglifo/chirguagrande.png" %}" style="width:370px"/>
+	<div class="description" style="font-size:11px"><br>
+	<p style="margin-left:215px">
+		<span style="color:orange"><b>51<br>GEOGLYPH</b></span><br>
+		<b><i>La Rueda del Indio</i></b><br>
+		Chirgua<br>
+		Estado Carabobo<br>
+		Fotog: Ruby De Valencia<br>
+	</p>
+	</div>
+	<div onclick="setImageVisible('2','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
 
-
-	<tbody>
-		<tr>
-			<td align="center" width="40%">
-			<img src="{% static "images/patrimoniorupestrevenezolano/geoglifo/chirgua.png"  %}" width="20%" />
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p style="font-size:12px"><b><span style="color:orange;">51 - GEOGLYPH</span><br><u>La Rueda del Indio</u><br></b>Estado Carabobo<br>Fotog: Ruby De Valencia<br></p>
-			</td>
-		</tr>
-	</tbody>
-</table>
-
+<div id="contenido">
+<h3><b><span style="color:orange">Geoglifo</span></b></h3>
+	<div class="row">
+	  <div class="col-md-4 col-xs-8">
+	  	<img src="{% static "images/patrimoniorupestrevenezolano/geoglifo/chirgua.png"  %}" style="width:100%" onclick="setImageVisible('2','block')"/>
+	  	<div style="float:none">
+		    <object width="100%" pluginspage="http://www.macromedia.com/go/getflashplayer" wmode="transparent" 
+		    	type="application/x-shockwave-flash" width="80%" 
+		    	data="/static/images/patrimoniorupestrevenezolano/geoglifo/geoglifo.swf">
+		    </object>
+		</div>
+	  </div>
+	  <div class="col-md-8 col-xs-12">
+	  	<p class="text-left" style="text-align:left">
+			Another example of rock art which -like the monumental petroglyphs 
+			of <strong>Amazonas State</strong>- was doubtless intended to be 
+			visible from far away, is the 
+			<font color="#ff9933"><strong>Geoglyph</strong></font> 
+			(figure drawn on the ground).
+		</p>
+		<p class="text-left" style="text-align:left">
+			The <font color="#ff9933"><strong>geoglyphs 
+			</strong></font><strong>of Nazca</strong>, Per&uacute; are known 
+			throughout the whole world, but very few Venezuelans and fewer 
+			foreigners know of the existence of the 
+			<font color="#ff9933"><strong>geoglyph</strong></font> in the 
+			<strong>Carabobo state</strong> or of the enigmatic tales that 
+			place them also in the <strong>Yaracuy state</strong>.
+		</p>
+		<button type="button" class="btn btn-link pull-right" onclick="setImageVisible('1','block')">Location</button>
+	  </div>
+	</div>
+</div>
 {% endblock %}
