@@ -3,30 +3,78 @@
 {% load staticfiles%}
 
 {% block pagetitle %}Megalithics Monuments{% endblock %}
-{% block title %}<span style="color:#04B404">Megalithics Monuments</span>{% endblock %}
+{% block title %}{% endblock %}
 
 {% block content %}
-<p align="justify">The <strong>Stonehenge <font color="#04B404">megaliths</font></strong> are greatly admired, but the<strong> stone circles with astronomical engravings of the State of Cojedes, the rows of <font color="#04B404">megaliths of Carabobo</font>, and the <font color="#04B404">menhirs and dolmens</font> of the State of Amazonas</strong>, remain mostly unknown.<strong>&nbsp;<br><br></strong>The<strong> <font color="#424242">linear and circular engravings</font> found on </strong><strong><font color="#04B404">menhirs</font></strong> <strong>in Venezuela</strong>, indicators of the contemporaneousness of both manifestations in our country, are of universal importance in the difficult scope of archaeological dating.&nbsp;<br><br>The <strong>ANAR</strong> includes the chronicles and drawings of explorers as early as Chanffanjon and Humboldt, as well as digitally enhanced photographs of outstanding samples. </p>
-<p><img src="{% static "images/patrimoniorupestrevenezolano/monumentos/Ubimegaliticos.png"  %}" style="width:70%;border:solid 2px #04B404"/></p>
-<table width="80%" align="center">
-	<tbody>
-		<tr>
-			<td align="center" width="30%">
-			<img src="{% static "images/patrimoniorupestrevenezolano/monumentos/320.png"  %}" width="60%" />
-			</td>
-			<td align="center" width="60%">
-			<img src="{% static "images/patrimoniorupestrevenezolano/monumentos/84.png"  %}" width="20%" />
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p style="font-size:12px"><b><span style="color:#04B404;">84/3-2/0 MEGALITHIC MONUMENT</span><br><u>Vigirima</u><br></b>Estado Carabobo<br>Fotog: Ruby De Valencia<br></p>
-			</td>			<td>
-			<p style="font-size:12px"><b><span style="color:#04B404;">84/1/0 MEGALITHIC MONUMENT MENHIRS</span><br><u>Vigirima</u><br></b>Estado Carabobo<br>Fotog: Victor Hern&aacute;ndez<br></p>
-			</td>
-		</tr>
-	</tbody>
-</table>
+<ul id="fondo" style="width:100%;height:800px;z-index=1;display:none;"></ul>
+<ul id="1" class="dropdown-image " role="menu">
+	<img src="{% static "images/patrimoniorupestrevenezolano/monumentos/Ubimegaliticos.png" %}" 
+		style="width:650px;border:solid 2px #04B404"/>
+	<br><br><br>
+	<div onclick="setImageVisible('1','none')" style="width:732px;font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
+<ul id="2" class="dropdown-image " role="menu">
+	<img src="{% static "images/patrimoniorupestrevenezolano/monumentos/84grande.png" %}" style="width:370px"/>
+	<div class="description" style="font-size:11px"><br>
+		<p style="margin-left:215px">
+			<span style="color:#04B404"><b>84/3-2/0<br>MEGALITHIC MONUMENTS</b></span><br>
+			<b><i>Vigirima</i></b><br>
+			Estado Carabobo<br>
+			Fotog: Ruby De Valencia<br>
+		</p>
+	</div>
+	<div onclick="setImageVisible('2','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
+<ul id="3" class="dropdown-image " role="menu">
+	<img src="{% static "images/patrimoniorupestrevenezolano/monumentos/320grande.png" %}" style="width:242px"/>
+	<div class="description" style="font-size:11px"><br>
+		<p style="margin-left:280px">
+			<span style="color:#04B404"><b>84/1/0<br>MEGALITHIC MONUMENTS<br>MENHIRS</b></span><br>
+			<b><i>Vigirima</i></b><br>
+			Estado Carabobo<br>
+			Fotog: Victor Hern&aacute;ndez<br>
+		</p>
+	</div>
+	<div onclick="setImageVisible('3','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
 
-
+<div id="contenido">
+<h3><b><span style="color:#04B404">Megalithics Monuments</span></b></h3>
+	<div class="row">
+	  <div class="col-md-4 col-xs-8">
+	  	<img src="{% static "images/patrimoniorupestrevenezolano/monumentos/84peq.png"  %}" class="img-responsive" style="width:270px;height:177px" onclick="setImageVisible('2','block')"/>
+	  	<br>
+	  	<img src="{% static "images/patrimoniorupestrevenezolano/monumentos/320peq.png"  %}" class="img-responsive center-block" style="width:177px" onclick="setImageVisible('3','block')" />
+	  </div>
+	  <div class="col-md-8 col-xs-12">
+	  	<p class="text-left" style="text-align:left">
+	  		The <strong>Stonehenge <font color="#04B404">megaliths</font></strong> 
+	  		are greatly admired, but the<strong> stone circles with astronomical 
+	  		engravings of the State of Cojedes, the rows of 
+	  		<font color="#04B404">megaliths of Carabobo</font>, and the 
+	  		<font color="#04B404">menhirs and dolmens</font> of the State of 
+	  		Amazonas</strong>, remain mostly unknown.
+		</p>
+		<p class="text-left" style="text-align:left">
+			The<strong> <font color="#424242">linear and circular engravings</font> 
+			found on </strong><strong><font color="#04B404">menhirs</font></strong> 
+			<strong>in Venezuela</strong>, indicators of the contemporaneousness 
+			of both manifestations in our country, are of universal importance 
+			in the difficult scope of archaeological dating.
+		</p>
+		<p class="text-left" style="text-align:left">
+			The <strong>ANAR</strong> includes the chronicles and drawings of 
+			explorers as early as Chanffanjon and Humboldt, as well as digitally 
+			enhanced photographs of outstanding samples.
+		</p>
+		<button type="button" class="btn btn-link pull-right" onclick="setImageVisible('1','block')">Location</button>
+	  </div>
+	</div>
+</div>
 {% endblock %}
