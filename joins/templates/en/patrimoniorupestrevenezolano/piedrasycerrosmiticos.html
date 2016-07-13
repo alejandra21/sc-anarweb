@@ -3,34 +3,74 @@
 {% load staticfiles%}
 
 {% block pagetitle %}Natural Mythical Hills and Stones{% endblock %}
-{% block title %}<span style="color:#01A9DB">Natural Mythical Hills and Stones</span>{% endblock %}
+{% block title %}{% endblock %}
 
 {% block content %}
-Interpretations and meanings of the <span style="color:#01A9DB"><b> Natural Mythical Hills and Stones</b></span> in our country are correlated with the varied and extensive mythologies that still form part of the live culture of 30 linguistically-differentiated ethnic groups. 
+<ul id="fondo" style="width:100%;height:800px;z-index=1;display:none;"></ul>
+<ul id="1" class="dropdown-image " role="menu">
+	<img src="{% static "images/patrimoniorupestrevenezolano/piedras/Ubipiedras.png" %}" 
+		style="width:650px;border:solid 2px #DBA901"/>
+	<br><br><br>
+	<div onclick="setImageVisible('1','none')" style="width:732px;font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
+<ul id="2" class="dropdown-image " role="menu">
+	<img src="{% static "images/patrimoniorupestrevenezolano/piedras/414grande.png" %}" style="width:370px"/>
+	<div class="description" style="font-size:11px"><br>
+		<p style="margin-left:215px">
+			<span style="color:#01A9DB"><b>414<br>NATURAL MYTHICAL STONE</b></span><br>
+			<b><i>Olla de Napiruli</i></b><br>
+			Ca&ntilde;o Lemi<br>
+			Estado Amazonas<br>
+			Fotog: Omar Gonz&aacute;lez &Ntilde;.<br>
+		</p>
+	</div>
+	<div onclick="setImageVisible('2','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
+<ul id="3" class="dropdown-image " role="menu">
+	<img src="{% static "images/patrimoniorupestrevenezolano/piedras/35grande.png" %}" style="width:370px"/>
+	<div class="description" style="font-size:11px"><br>
+		<p style="margin-left:215px">
+			<span style="color:#01A9DB"><b>35<br>NATURAL MYTHICAL HILLS</b></span><br>
+			<b><i>Roca Culimacari</i></b><br>
+			Bajo Casiquiare<br>
+			Estado Amazonas<br>
+			Fotog: Siegfried Geyer<br>
+		</p>
+	</div>
+	<div onclick="setImageVisible('3','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
 
-The <b>ANAR</b> documents the material side of this heritage in photographs, field work registers and publications both of contemporary investigators as of explorers and chroniclers that traveled through Venezuela's hinterland centuries before the appearance of anthropology as a science.
-
-<p><img src="{% static "images/patrimoniorupestrevenezolano/piedras/Ubipiedras.png"  %}" style="width:70%;border:solid 2px #01A9DB"/></p>
-<p>
-
-<table width="80%" align="center">
-	<tbody>
-		<tr>
-			<td align="center" width="40%">
-			<img src="{% static "images/patrimoniorupestrevenezolano/piedras/35.png"  %}" width="40%" />
-			</td>
-			<td align="center" width="60%">
-			<img src="{% static "images/patrimoniorupestrevenezolano/piedras/414.png"  %}" width="20%" />
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p style="font-size:12px"><b><span style="color:#01A9DB;">35 - NATURAL MYTHICAL HILLS </span><br><u>Roca Culimacari</u><br></b>Bajo Casiquiare<br>Estado Amazonas<br>Fotog: Siegfried Geyer<br></p>
-			</td>			<td>
-			<p style="font-size:12px"><b><span style="color:#01A9DB;">414 - NATURAL MYTHICAL STONE </span><br><u>Olla de Napiruli</u><br></b>Ca&ntilde;o Lemi<br>Estado Amazonas<br>Fotog: Omar Gonz&aacute;lez &Ntilde;.<br></p>
-			</td>
-		</tr>
-	</tbody>
-</table>
-
+<div id="contenido">
+<h3><b><span style="color:#01A9DB">Natural Mythical Hills and Stones</span></b></h3>
+	<div class="row">
+	  <div class="col-md-4 col-xs-8">
+	  	<img src="{% static "images/patrimoniorupestrevenezolano/piedras/414peq.png"  %}" class="img-responsive" style="width:270px;height:177px" onclick="setImageVisible('2','block')"/>
+	  	<br>
+	  	<img src="{% static "images/patrimoniorupestrevenezolano/piedras/35peq.png"  %}" class="img-responsive center-block" style="width:177px" onclick="setImageVisible('3','block')" />
+	  </div>
+	  <div class="col-md-8 col-xs-12">
+	  	<p class="text-left" style="text-align:left">
+	  		Interpretations and meanings of the <span style="color:#01A9DB"><b> 
+	  		Natural Mythical Hills and Stones</b></span> in our country are 
+	  		correlated with the varied and extensive mythologies that still form 
+	  		part of the live culture of 30 linguistically-differentiated ethnic 
+	  		groups. 
+		</p>
+		<p class="text-left" style="text-align:left">
+	  		The <b>ANAR</b> documents the material side of this heritage in 
+	  		photographs, field work registers and publications both of contemporary 
+	  		investigators as of explorers and chroniclers that traveled through 
+	  		Venezuela's hinterland centuries before the appearance of anthropology 
+	  		as a science.
+		</p>
+		<button type="button" class="btn btn-link pull-right" onclick="setImageVisible('1','block')">Location</button>
+	  </div>
+	</div>
+</div>
 {% endblock %}

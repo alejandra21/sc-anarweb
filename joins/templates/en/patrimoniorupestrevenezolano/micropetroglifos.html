@@ -3,31 +3,71 @@
 {% load staticfiles%}
 
 {% block pagetitle %}Micropetroglyphs{% endblock %}
-{% block title %}<span style="color:#DBA901">Micropetroglyphs</span>{% endblock %}
+{% block title %}{% endblock %}
 
 {% block content %}
-<p align="justify">These small stone pebbles or slabs with engravings are the <font color="#DBA901"><strong>Micropetroglyphs</strong></font>.&nbsp;<br><br>Specimens of <font color="#DBA901"><strong>micropetroglyphs</strong></font>, have been found in the central and Andean states. These appear in anthropological literature, in tales about magical incantations, and their use as calendars or coins is also described. In addition, tribal informants describe their application by shamans in order to attract rain. </p>
+<ul id="fondo" style="width:100%;height:800px;z-index=1;display:none;"></ul>
+<ul id="1" class="dropdown-image " role="menu">
+	<img src="{% static "images/patrimoniorupestrevenezolano/micropetroglifos/Ubimicropetroglifos.png" %}" 
+		style="width:650px;border:solid 2px #DBA901"/>
+	<br><br><br>
+	<div onclick="setImageVisible('1','none')" style="width:732px;font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
+<ul id="2" class="dropdown-image " role="menu">
+	<img src="{% static "images/patrimoniorupestrevenezolano/micropetroglifos/100grande.png" %}" style="width:370px"/>
+	<div class="description" style="font-size:11px"><br>
+		<p style="margin-left:215px">
+			<span style="color:#DBA901"><b>100/0/3<br>MICROPETROGLYPHS</b></span><br>
+			<b><i>Lago de Valencia</i></b><br>
+			Estado de Carabobo<br>
+			Fotog: Alfredo Weber<br>
+		</p>
+	</div>
+	<div onclick="setImageVisible('2','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
+<ul id="3" class="dropdown-image " role="menu">
+	<img src="{% static "images/patrimoniorupestrevenezolano/micropetroglifos/359grande.png" %}" style="width:370px"/>
+	<div class="description" style="font-size:11px"><br>
+		<p style="margin-left:215px">
+			<span style="color:#DBA901"><b>359/0/1<br>MICROPETROGLYPHS</b></span><br>
+			<b><i>QUIBARIO - Piedra para medir el tiempo</i></b><br>
+			Sta Anita<br>
+			Estado Merida<br>
+			Fotog: A. M&aacute;rquez C.<br>
+		</p>
+	</div>
+	<div onclick="setImageVisible('3','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
 
-<p><img src="{% static "images/patrimoniorupestrevenezolano/micropetroglifos/Ubimicropetroglifos.png"  %}" style="width:70%;border:solid 2px #DBA901"/></p>
-
-<table width="80%" align="center">
-	<tbody>
-		<tr>
-			<td align="center" width="60%">
-			<img src="{% static "images/patrimoniorupestrevenezolano/micropetroglifos/100.png"  %}" width="50%" />
-			</td>
-			<td align="center" width="40%">
-			<img src="{% static "images/patrimoniorupestrevenezolano/micropetroglifos/359.png"  %}" width="50%" />
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p style="font-size:12px"><b><span style="color:#DBA901;">100/0/3 - MICROPETROGLYPHS</span><br><u>Lago de Valencia</u><br></b>Estado de Carabobo<br>Fotog: Alfredo Weber<br></p>
-			</td>			<td>
-			<p style="font-size:12px"><b><span style="color:#DBA901;">359/0/1 - MICROPETROGLYPHS</span><br><u>QUIBARIO - Piedra para medir el tiempo</u><br></b>Sta Anita, Estado Merida<br>Fotog: A. M&aacute;rquez C.<br></p>
-			</td>
-		</tr>
-	</tbody>
-</table>
-
+<div id="contenido">
+<h3><b><span style="color:#DBA901">Micropetroglyphs</span></b></h3>
+	<div class="row">
+	  <div class="col-md-4 col-xs-8">
+	  	<img src="{% static "images/patrimoniorupestrevenezolano/micropetroglifos/100peq.png"  %}" class="img-responsive" style="width:270px;height:177px" onclick="setImageVisible('2','block')"/>
+	  	<br>
+	  	<img src="{% static "images/patrimoniorupestrevenezolano/micropetroglifos/359peq.png"  %}" class="img-responsive center-block" style="width:177px" onclick="setImageVisible('3','block')" />
+	  </div>
+	  <div class="col-md-8 col-xs-12">
+	  	<p class="text-left" style="text-align:left">
+	  		These small stone pebbles or slabs with engravings are the 
+	  		<font color="#DBA901"><strong>Micropetroglyphs</strong></font>.
+		</p>
+		<p class="text-left" style="text-align:left">
+	  		Specimens of <font color="#DBA901"><strong>micropetroglyphs</strong></font>, 
+	  		have been found in the central and Andean states. These appear in 
+	  		anthropological literature, in tales about magical incantations, and 
+	  		their use as calendars or coins is also described. In addition, tribal 
+	  		informants describe their application by shamans in order to attract 
+	  		rain. 
+		</p>
+		<button type="button" class="btn btn-link pull-right" onclick="setImageVisible('1','block')">Location</button>
+	  </div>
+	</div>
+</div>
 {% endblock %}
