@@ -65,6 +65,21 @@ OPCIONES_UBICACION = (
 	('En el mar','En el mar'),
 )
 
+OPCIONES_UBICACION2 = (
+	('Abrigo','Abrigo'),
+	('Cueva','Cueva'),
+	('Cueva de recubrimiento','Cueva de recubrimiento'),
+)
+
+CLASIFICACION = (
+	('Linea sencilla','Linea sencilla'),
+	('Linea compuesta','Linea compuesta'),
+	('Figura rellena','Figura rellena'),
+	('Figura rellena','Figura rellena'),
+	('Impresion de manos positivo','Impresion de manos positivo'),
+	('Impresion de manos negativo','Impresion de manos negativo'),
+)
+
 OPCIONES_SURCO_GRABADO = (
 	('---', '---'),
 	('Bajo relieve lineal','Bajo relieve lineal'),
@@ -146,11 +161,45 @@ OPCIONES_MANIFESTACIONES_ASOCIADAS = (
 	('Monticulos','Monticulos'),
 	('Otros','Otros'),
 )
+
+SURCO = (
+	('Abrasion','Abrasion'),
+	('Percusion','Percusion'),
+)
+
+ESTADO_CONSERVACION = (
+	('Bueno','Bueno'),
+	('Modificado','Modificado'),
+)
+
+CARATERISTICA_PINTURA = (
+	('Linea sencilla','Linea sencilla'),
+	('Linea compuesta','Linea compuesta'),
+	('Pintura positiva','Pintura positiva'),
+	('Pintura negativa','Pintura negativa'),
+)
+
+SURCO_GRABADO = (
+
+	('Base redonda','Base redonda'),
+	('Base aguda','Base aguda'),
+	('Bajo relieve lineal','Bajo relieve lineal'),
+	('Bajo relieve planar','Bajo relieve planar'),
+	('Alto relieve lineal','Alto relieve lineal'),
+	('Alto relieve planar','Alto relieve planar'),
+	('Bateas','Bateas'),
+)
  
 class CrucesYYFormAdmin(forms.Form):
     codigo 	= forms.CharField(required=False, max_length=20)
     estado = forms.ChoiceField(required=False, choices=OPCIONES_ESTADO)
+    estadoConservacion = forms.ChoiceField(required=False, choices=ESTADO_CONSERVACION)
     ubicacion = forms.ChoiceField(required=False, choices=OPCIONES_UBICACION)
+    ubicacion2 = forms.ChoiceField(required=False, choices=OPCIONES_UBICACION2)
+    surco = forms.ChoiceField(required=False, choices=SURCO)
+    surcoGrabado = forms.ChoiceField(required=False, choices=SURCO_GRABADO)
+    clasificacion = forms.ChoiceField(required=False, choices=CLASIFICACION)
+    caracteristicaPintura = forms.ChoiceField(required=False, choices=CARATERISTICA_PINTURA)
     carasurcopetrotipo = forms.ChoiceField(required=False, choices=OPCIONES_SURCO_GRABADO)
     carasurcopetrotipo2 = forms.ChoiceField(required=False, choices=OPCIONES_SURCO_GRABADO2)
     carasurcopetrotipo3 = forms.ChoiceField(required=False, choices=OPCIONES_SURCO_GRABADO3)

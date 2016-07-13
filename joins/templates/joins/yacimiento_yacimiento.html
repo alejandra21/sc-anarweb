@@ -193,6 +193,7 @@ $(document).ready(function(){
       <div class="table-responsive">
         <table>
           <tbody id="myTable">
+
             <tr>
               <td>
                 <div class="panel panel-default">
@@ -210,6 +211,7 @@ $(document).ready(function(){
 
               </td>
             </tr>
+
             <tr>
               <td>
                 <div class="panel panel-default">
@@ -228,6 +230,7 @@ $(document).ready(function(){
                 </div>
               </td>              
             </tr>
+
             <tr>
               <td>
                 <div class="panel panel-default">
@@ -247,6 +250,7 @@ $(document).ready(function(){
               </td>
 
             </tr>
+            
             <tr>
               <td>
                 <div class="panel panel-default">
@@ -265,6 +269,7 @@ $(document).ready(function(){
                 </div>
               </td>
             </tr>
+
             <tr>
               <td>
                 <div class="panel panel-default">
@@ -283,6 +288,7 @@ $(document).ready(function(){
                 </div>
               </td>
             </tr>
+
             <tr>
               <td>
                 <div class="panel panel-default">
@@ -652,8 +658,8 @@ $(document).ready(function(){
                         Listar por <i>(3) Estado</i> y <i>(00) Yacimiento</i> con 
                         <i><b>(13.2) Pinturas Rupestres</b></i> ubicadas en:<br/>
                         <form action="/cruces/22/">
-                            <label>(14) Ubicación: {{form.ubicacion}}</label></br></br>
-                            <label>(25) Características de la Pintura: {{form.caracPintura}}</label></br></br>
+                            <label>(14) Ubicación: {{form.ubicacion2}}</label></br></br>
+                            <label>(25) Clasificadas por: {{form.clasificacion}}</label></br></br>
                             <input type="submit" class="button" value="Consultar"/>
                         </form>
                     </p>
@@ -671,9 +677,9 @@ $(document).ready(function(){
                   <div class="panel-body">
                     <p>
                         Listar por tipo de material (22.1), (22.1.1), (22.1.2),
-                        (22.1.3), (22.3), (22.4), (22.6)
+                        (22.1.3), (22.3), (22.4), (22.6) cuantos yacimientos tienen surcos hechos por:
                         <form action="/cruces/23/">
-                            <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                            <label> {{form.surco}}</label></br></br>
                             <input type="submit" class="button" value="Consultar"/>
                         </form>
                     </p>
@@ -691,9 +697,10 @@ $(document).ready(function(){
                   <div class="panel-body">
                     <p>
                         Lísteme por estado (3) y yacimiento (00), y para cada tipo
-                        de ubicación (14) ,(14.1), (14.2) (14.3), (14.4), (14.5)<br/>
+                        de ubicación (14) ,(14.1), (14.2) (14.3), (14.4), (14.5) con <br/>
                         <form action="/cruces/24/">
-                            <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                            <label>Tipo de material: {{form.material}}</label></br>
+                            <label>Estado de conservacion: {{form.estadoConservacion}}</label></br>
                             <input type="submit" class="button" value="Consultar"/>
                         </form>
                     </p>
@@ -710,9 +717,10 @@ $(document).ready(function(){
                   </div>
                   <div class="panel-body">
                     <p>
-                        Listar por Estado (3), Yacimiento (00) y Tipo de Material (22)<br/>
+                        Listar por Estado (3), Yacimiento (00) y Tipo de Material (22) con:<br/>
                         <form action="/cruces/25/">
-                            <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                            <label>Caracteristica petroglifo: {{form.carasurcopetrotipo3}}</label>
+                            <label>Caracteristica de la pintura: {{form.caracteristicaPintura}}</label></br></br>
                             <input type="submit" class="button" value="Consultar"/>
                         </form>
                     </p>
@@ -729,9 +737,10 @@ $(document).ready(function(){
                     </div>
                     <div class="panel-body">
                       <p>
-                          Listar por Estado (3), Yacimiento (00) y Tipo de Material (22)<br/>
+                          Listar por estado (3) los yacimientos (00), con
+                          micropetroglifos (13.4) con:<br/>
                           <form action="/cruces/26/">
-                              <label>Manifestacion asociada: {{form.manifasociadas}}</label></br></br>
+                              <label>Caracteristica de surco: {{form.surcoGrabado}}</label></br></br>
                               <input type="submit" class="button" value="Consultar"/>
                           </form>
                       </p>
@@ -744,7 +753,7 @@ $(document).ready(function(){
         </table>   
       </div>
       <div class="col-md-12 text-center">
-      <ul class="pagination pagination-lg pager" id="myPager"></ul>
+      <ul class="pagination pagination-lg pager pagination-btn" id="myPager"></ul>
       </div>
   </div>
                       
