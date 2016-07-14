@@ -129,8 +129,8 @@ OPCIONES_TIPO_PINTURA = (
 OPCIONES_MATERIAL = (
 
 	('---', '---'),
-	('Roca ígnea','Roca ígnea'),
-	('Roca metamórfica','Roca metamórfica'),
+	('Roca ignea','Roca ignea'),
+	('Roca metamorfica','Roca metamorfica'),
 	('Roca sedimentaria','Roca sedimentaria'),
 )
 
