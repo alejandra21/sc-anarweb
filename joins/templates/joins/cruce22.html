@@ -14,16 +14,16 @@ Listar por <i>(3) Estado</i> y <i>(00) Yacimiento</i> con
 {% block content %}
 
 <ul>
-    {% for resultado in yacimiento %}
+    {% for resultado in listaResultados %}
 		<h4>
-			<a href="/admin/anarapp/yacimiento/{{resultado.id}}">
-				<li><strong>Nombre:</strong>{{resultado.yacimiento.yacimiento.nombre}}</li>
+			<a href="/admin/anarapp/yacimiento/{{resultado.result.yacimiento.id}}">
+				<li><strong>Nombre:</strong>{{resultado.result.yacimiento.nombre}}</li>
 			</a>
 		</h4>
 		<i> 
-			<ul>Código: {{resultado.yacimiento.yacimiento.codigo}}</ul>
-			<ul>Estado: {{resultado.yacimiento.yacimiento.estado.nombre}}</ul>
-		</i>yacimiento.
+			<ul>Código: {{resultado.result.yacimiento.codigo}}</ul>
+			<ul>Estado: {{resultado.result.yacimiento.estado.nombre}}</ul>
+		</i>
 	{%endfor%}
 	
 </ul>

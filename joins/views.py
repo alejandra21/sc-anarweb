@@ -525,6 +525,7 @@ def cruces(request,cruce_id):
 		clasificacion = request.GET['clasificacion']
 
 		elementos = ""
+		listaResultados = []
 
 		if (ubicacion != "---"):
 
@@ -536,8 +537,12 @@ def cruces(request,cruce_id):
 
 			elif (ubicacion == "Cueva de recubrimiento"):
 				elementos = TipoYacimiento.objects.filter(esCuevadeRec=True)
+
+			for elem in elementos:
+				listaResultados += [{'result':elem}]
+
 		
-		return render(request,entrada,{'yacimiento':elementos,'ubicacion':ubicacion})
+		return render(request,entrada,{'listaResultados':listaResultados,'ubicacion':ubicacion})
 
 	elif (cruce_id == "23"):
 
