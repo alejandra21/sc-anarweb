@@ -137,9 +137,7 @@ OPCIONES_MATERIAL = (
 OPCIONES_CARACTERISTICA_SURCO = (
 	('---', '---'),
 	('Base redonda','Base redonda'),
-	('Información de abrasión','Información de abrasión'),
 	('Base aguda','Base aguda'),
-	('Información de percusión','Información de percusión'),
 )
 
 OPCIONES_PIEDRA_EROSION = (
