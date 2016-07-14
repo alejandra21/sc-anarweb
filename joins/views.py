@@ -253,19 +253,19 @@ def cruces(request,cruce_id):
 
 		for p in petroglifo:
 
-			if (caracteristica == "Bajo relieve lineal"):
+			if (surco == "Bajo relieve lineal"):
 				caracPetroglifo = CaracSurcoPetroglifo.objects.filter(esBajoRelieveLineal=True,yacimiento__id=p.yacimiento.id)
 
-			elif (caracteristica == "Bajo relieve planar"):
+			elif (surco == "Bajo relieve planar"):
 				caracPetroglifo = CaracSurcoPetroglifo.objects.filter(esBajoRelievePlanar=True,yacimiento__id=p.yacimiento.id)
 
-			elif (caracteristica == "Bajo relieve planar y lineal"):
+			elif (surco == "Bajo relieve planar y lineal"):
 				caracPetroglifo = CaracSurcoPetroglifo.objects.filter(esBajoRelieveLineal=True,esBajoRelievePlanar=True,yacimiento__id=p.yacimiento.id)
 
-			elif (caracteristica == "Alto relieve lineal"):
+			elif (surco == "Alto relieve lineal"):
 				caracPetroglifo = CaracSurcoPetroglifo.objects.filter(esAltoRelieveLineal=True,yacimiento__id=p.yacimiento.id)
 
-			elif (caracteristica == "Alto relieve planar"):
+			elif (surco == "Alto relieve planar"):
 				caracPetroglifo = CaracSurcoPetroglifo.objects.filter(esAltoRelievePlanar=True,yacimiento__id=p.yacimiento.id)
 
 			if (len(caracPetroglifo)!=0):
