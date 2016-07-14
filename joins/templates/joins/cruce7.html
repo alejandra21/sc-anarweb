@@ -14,25 +14,27 @@
 {% block content %}
 
 	{% if yacimiento %}
-		<h4 style="margin-left:1em;">
+		{% for y in yacimiento %}
+			<h4 style="margin-left:1em;">
 
-			<a href="/admin/anarapp/yacimiento/{{yacimiento.id}}" style="color:black">
-				(1) Nombre: {{ yacimiento.nombre }}
-			</a>
-		</h4>
+				<a href="/admin/anarapp/yacimiento/{{y.id}}" style="color:black">
+					(1) Nombre: {{ y.nombre }}
+				</a>
+			</h4>
 
-		<br>
+			<br>
 
-		<h4><strong>Páginas Web:</strong></h4>
-		{% if yacimiento.PaginaWebYac.all %}
-		    <ul>
-			    {% for pw in yacimiento.PaginaWebYac.all %}
-		        <li>(31.5.1) URL de página web: <a href="">{{ pw.direccionURLy }}</a></li>
-		  	  {% endfor %}
-		    </ul>
-		{% else %}
-			<h4>Sin resultados.</h4>
-	    {% endif %}
+			<h4><strong>Páginas Web:</strong></h4>
+			{% if y.PaginaWebYac.all %}
+			    <ul>
+				    {% for pw in y.PaginaWebYac.all %}
+			        <li>(31.5.1) URL de página web: <a href="direccionURLy">{{ pw.direccionURLy }}</a></li>
+			  	  {% endfor %}
+			    </ul>
+			{% else %}
+				<h4>Sin resultados.</h4>
+		    {% endif %}
+	    {% endfor %}
 
     {% else %}
 
