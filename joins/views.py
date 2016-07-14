@@ -612,10 +612,13 @@ def cruces(request,cruce_id):
 			elif (material == "Roca sedimentaria"):
 				yacPetroglifo = MaterialYacimiento.objects.filter(esSedimentaria=True)
 
-			if (conservacion == "---"):
+		
+			for w in yacPetroglifo:
+				listaResultados += [{'result':elem}]
 
-				for elem in yacPetroglifo:
-					listaResultados += [{'result':elem}]
+
+
+
 
 		return render(request,entrada,{'listaResultados':listaResultados,'material':material,'conservacion':conservacion})
 
