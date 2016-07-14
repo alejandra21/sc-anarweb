@@ -5,7 +5,8 @@ from django.db.models import Q
 from anarapp.models import Estado, Piedra, Yacimiento, \
 							ManifestacionYacimiento,FotografiaYac, \
 							Coordenadas,ConstitucionYacimiento,UbicacionYacimiento,\
-							CaracSurcoPetroglifo,DescColores,MaterialYacimiento,ManifestacionesAsociadas
+							CaracSurcoPetroglifo,DescColores,MaterialYacimiento,\
+							ManifestacionesAsociadas,TipoYacimiento
 from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
@@ -512,7 +513,7 @@ def cruces(request,cruce_id):
 			else:
 				for result in elementos:
 					resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id)
-					
+
 					for elem in resultadoBusq:
 						listaResultado += [{'result':elem}]
 
@@ -521,49 +522,21 @@ def cruces(request,cruce_id):
 
 	elif (cruce_id == "22"):
 		ubicacion = request.GET['ubicacion']
+		clasificacion = request.GET['clasificacion']
+		
 		elementos = ""
 
 		if (ubicacion != "---"):
-			if (ubicacion == "Cerro"):
-				elementos = UbicacionYacimiento.objects.filter(enCerro=True)
-			elif (ubicacion == "Cima"):
-				elementos = UbicacionYacimiento.objects.filter(enCerroCima=True)
 
-			elif (ubicacion == "Ladera"):
-				elementos = UbicacionYacimiento.objects.filter(enCerroLadera=True)
+			if (ubicacion == "Abrigo"):
+				elementos = UbicacionYacimiento.objects.filter(esAbrigo=True)
 
-			elif (ubicacion == "Pie de montana"):
-				elementos = UbicacionYacimiento.objects.filter(enCerroPieDeMonte=True)
+			elif (ubicacion == "Cueva"):
+				elementos = UbicacionYacimiento.objects.filter(esCueva=True)
 
-			elif (ubicacion == "Barranco"):
-				elementos = UbicacionYacimiento.objects.filter(enCerroBarranco=True)
-
-			elif (ubicacion == "Acantilado"):
-				elementos = UbicacionYacimiento.objects.filter(enCerroAcantilado=True)
-
-			elif (ubicacion == "Valle"):
-				elementos = UbicacionYacimiento.objects.filter(enValle=True)
-
-			elif (ubicacion == "Rio"):
-				elementos = UbicacionYacimiento.objects.filter(enRio=True)
-
-			elif (ubicacion == "Lecho"):
-				elementos = UbicacionYacimiento.objects.filter(enRioLecho=True)
-
-			elif (ubicacion == "Margen derecha"):
-				elementos = UbicacionYacimiento.objects.filter(enRioMargenDerecha=True)
-
-			elif (ubicacion == "Margen izquierda"):
-				elementos = UbicacionYacimiento.objects.filter(enRioMargenIzquierda=True)
-
-			elif (ubicacion == "Isla"):
-				elementos = UbicacionYacimiento.objects.filter(enRioIsla=True)
-
-			elif (ubicacion == "Raudal"):
-				elementos = UbicacionYacimiento.objects.filter(enRioRaudal=True)
-
-			elif (ubicacion == "Costa"):
-				elementos = UbicacionYacimiento.objects.filter(enRioCosta=True)
+			elif (ubicacion == "Cueva de recubrimiento"):
+				elementos = UbicacionYacimiento.objects.filter(esCuevadeRec=True)
+		
 		return render(request,entrada,{'yacimiento':elementos,'ubicacion':ubicacion})
 
 	elif (cruce_id == "23"):
