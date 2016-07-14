@@ -13,17 +13,21 @@
 
 {% block content %}
   
-  {% for esta, lista in yacimientos.items%}
-		{%if lista|length > 0%}
-		  <h3>{{esta}}</h3>
-		  <ul>
-		  {% for yacimiento in lista %}
-        <li>{{ yacimiento.nombre }}</li>
-        <li>{{ yacimiento.ConstitucionYacimiento.nroPiedras }}</li>
-      {% endfor %}
-		  </ul>
-		{%endif%}
-  {%endfor%}
+
+<ul>
+    {% for resultado in yacimiento %}
+		<h4>
+			<a href="/admin/anarapp/yacimiento/{{resultado.id}}">
+				<li><strong>Nombre:</strong>{{resultado.yacimiento.nombre}}</li>
+			</a>
+		</h4>
+		<i> 
+			<ul>Código: {{resultado.yacimiento.codigo}}</ul>
+			<ul>Estado: {{resultado.yacimiento.estado}}</ul>
+		</i>
+	{%endfor%}
+	
+</ul>
 
 {% endblock %}
 
