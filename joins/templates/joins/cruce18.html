@@ -18,11 +18,11 @@
 		<h4><strong>Estado: </strong>{{estado}}</h4>
 	{% endif %}
 
-	{% for result in listaResultado%}
+	{% for result in listaResultado %}
 		<li>
 			<strong>Código:</strong> {{result.petroglifo.yacimiento.codigo}}, 
 			<i> 
-				<a href="/admin/anarapp/yacimiento/{{resul.petroglifo.yacimiento.id}}">{{result.petroglifo.yacimiento.nombre}}</a>
+				<a href="/admin/anarapp/yacimiento/{{result.petroglifo.yacimiento.id}}">{{result.petroglifo.yacimiento.nombre}}</a>
 			</i>
 		</li>
 

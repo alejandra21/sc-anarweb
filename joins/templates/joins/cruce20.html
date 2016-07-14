@@ -17,12 +17,12 @@
     {% for resultado in yacimiento%}
 		<h4>
 			<a href="/admin/anarapp/yacimiento/{{resultado.id}}">
-				<li><strong>Nombre:</strong>{{resultado.nombre}}</li>
+				<li><strong>Nombre:</strong>{{resultado.yacimiento.nombre}}</li>
 			</a>
 		</h4>
 		<i> 
-			<ul>Código: {{resultado.codigo}}</ul>
-			<ul>Estado: {{resultado.estado}}</ul>
+			<ul>Código: {{resultado.yacimiento.codigo}}</ul>
+			<ul>Estado: {{resultado.yacimiento.estado.nombre}}</ul>
 		</i>
 	{%endfor%}
 	
