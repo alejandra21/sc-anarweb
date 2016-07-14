@@ -6,7 +6,8 @@ from anarapp.models import Estado, Piedra, Yacimiento, \
 							ManifestacionYacimiento,FotografiaYac, \
 							Coordenadas,ConstitucionYacimiento,UbicacionYacimiento,\
 							CaracSurcoPetroglifo,DescColores,MaterialYacimiento,\
-							ManifestacionesAsociadas,TipoYacimiento,CaracDeLaPintura
+							ManifestacionesAsociadas,TipoYacimiento,CaracDeLaPintura,\
+							TecnicaParaMicroPetro
 from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
@@ -576,41 +577,17 @@ def cruces(request,cruce_id):
 
 	elif (cruce_id == "23"):
 
-		manifestacion = request.GET['manifestacion']
+		caracteristica = request.GET['surco']
 
-	 	# Se seleccionan las manifestaciones correspondientes
-		if(manifestacionElegida=="Pinturas Rupestres"):
-			manifestacion = Yacimiento.ManifestacionYacimiento.objects.filter(esPintura=True)
+		if (caracteristica == "abrasion"):
+			elementos = TecnicaParaMicroPetro.objects.filter(esAbrasion=True)
 
-		elif(manifestacionElegida=="Cerros y Piedras Miticas Naturales"):
+		elif (caracteristica == "percusion"):
+			elementos = TecnicaParaMicroPetro.objects.filter(Q(esGrabadoPercusion=True)|\
+															Q(esGrabadoPercusionDirecta=True)|\
+															Q(esGrabadoPercusionIndirecta=True))
 
-			manifestacion = Yacimiento.ManifestacionYacimiento.objects.filter(
-				Q(esPiedraMiticaNatural=True)| Q(esCerroMiticoNatural=True))
-
-		elif(manifestacionElegida=='Amoladores,Cupula,Puntos Acoplados'):
-			manifestacion = Yacimiento.ManifestacionYacimiento.objects.filter(
-				Q(esAmolador=True)|Q(esCupulas=True)|Q(esPuntosAcoplados=True) )
-
-			
-		elif(manifestacionElegida=="Geoglifo"):
-			manifestacion = Yacimiento.ManifestacionYacimiento.objects.filter(esGeoglifo=True)
-
-
-		elif(manifestacionElegida=="Micropentoglifos"):
-			# Hay que agregar este atributo en el modelo de datos
-			manifestacion = \
-			Yacimiento.ManifestacionYacimiento.objects.filter(esMonumentosMegaliticos=True)
-
-			
-		elif(manifestacionElegida=="Monumentos megaliticos"):
-			manifestacion = \
-			Yacimiento.ManifestacionYacimiento.objects.filter(esMonumentosMegaliticos=True)
-
-
-		elif(manifestacionElegida=="Petroglifos"):
-			manifestacion = Yacimiento.ManifestacionYacimiento.objects.filter(esPetroglifo=True)
-
-		return render(request,entrada,{'yacimiento':elementos,'manifestacion':manifestacion})
+		return render(request,entrada,{'result':elementos,'surco':caracteristica})
 
 	return render(request,entrada)
 

@@ -8,10 +8,24 @@
 
 {% block title %}
 Listar por tipo de material (22.1), (22.1.1), (22.1.2),
-(22.1.3), (22.3), (22.4), (22.6) yacimientos con manifestacion {{manifestacion}} asociada.
+(22.1.3), (22.3), (22.4), (22.6) yacimientos con manifestacion {{surco}} asociada.
 {% endblock %}
 
 {% block content %}
+<ul>
+    {% for resultado in elementos %}
+		<h4>
+			<a href="/admin/anarapp/yacimiento/{{resultado.result.yacimiento.id}}">
+				<li><strong>Nombre:</strong>{{resultado.result.yacimiento.nombre}}</li>
+			</a>
+		</h4>
+		<i> 
+			<ul>Código: {{resultado.result.yacimiento.codigo}}</ul>
+			<ul>Estado: {{resultado.result.yacimiento.estado.nombre}}</ul>
+		</i>
+	{%endfor%}
+	
+</ul>
 {% endblock %}
 
 {% block user %}
