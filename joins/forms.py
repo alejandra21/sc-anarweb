@@ -188,7 +188,6 @@ SURCO_GRABADO = (
 	('Bajo relieve planar','Bajo relieve planar'),
 	('Alto relieve lineal','Alto relieve lineal'),
 	('Alto relieve planar','Alto relieve planar'),
-	('Bateas','Bateas'),
 )
  
 class CrucesYYFormAdmin(forms.Form):

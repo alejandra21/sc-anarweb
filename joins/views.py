@@ -691,6 +691,43 @@ def cruces(request,cruce_id):
 		return render(request,entrada,{'listaResultados':listaResultados,'clasificacion':clasificacion,'caracteristica':caracteristica})
 
 
+	if (cruce_id == "26"):
+
+		surco = request.GET['surcoGrabado']
+		listaResultados = []
+
+		manifestacion =  ManifestacionYacimiento.objects.filter(esMicroPetroglifo=True)
+
+		if (surco == "Base redonda"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseRedonda=True)
+
+		elif (surco == "Base aguda"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseAguda=True)
+
+		elif (surco == "Base relieve lineal"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelieveLineal=True)
+
+		elif (surco == "Base relieve planar"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelievePlanar=True)
+
+		elif (surco == "Alto relieve planar"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelievePlanar=True)
+
+		elif (surco == "Alto relieve lineal"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelieveLineal=True)
+
+		elif (surco == "Bateas"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelieveLineal=True)
+
+
+		for result in manifestacion:
+			resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id)
+
+			for elem in resultadoBusq:
+				listaResultados += [{'result':elem}]
+
+		return render(request,entrada,{'listaResultados':listaResultados,'surco':surco})
+
 
 
 	return render(request,entrada)
