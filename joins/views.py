@@ -229,11 +229,14 @@ def cruces(request,cruce_id):
 
 		for c in caracPetroglifo:
 
-			objetoAgregar = petroglifo.filter.get(yacimiento__id=c.yacimiento.id)
+			objetoAgregar = petroglifo.filter(yacimiento__id=c.yacimiento.id)
 
 			if (len(objetoAgregar)!=0):
-				listaYacimientos += [{'yacimiento':objetoAgregar.yacimiento.nombre,'id':objetoAgregar.yacimiento.id,
-									'estado':objetoAgregar.estado.nombre,'codigo':objetoAgregar.yacimiento.id}]
+
+				for objeto in objetoAgregar:
+					listaYacimientos += [{'yacimiento':objeto.yacimiento.nombre,'id':objeto.yacimiento.id,
+										'estado':objeto.estado.nombre,'codigo':objeto.yacimiento.id}]
+					
 
 		total =  len(listaYacimientos)
 
