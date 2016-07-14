@@ -10,6 +10,10 @@
 {% endblock %}
 
 {% block content %}
+
+Lísteme por estado (3) y yacimiento (00), y para cada tipo
+de ubicación (14) ,(14.1), (14.2) (14.3), (14.4), (14.5) con tipo de material: <ul>{{material}}</ul>
+y estado de conservacion: <ul>{{conservacion}}</ul>
 <ul>
     {% for resultado in listaResultados %}
 		<h4>
