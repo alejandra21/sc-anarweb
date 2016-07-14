@@ -613,7 +613,7 @@ def cruces(request,cruce_id):
 				yacPetroglifo = MaterialYacimiento.objects.filter(esSedimentaria=True)
 
 		
-			for w in yacPetroglifo:
+			for elem in yacPetroglifo:
 				listaResultados += [{'result':elem}]
 
 
