@@ -403,31 +403,30 @@ def cruces(request,cruce_id):
 		manifestacion = request.GET['manifAsociadas']
 
 		yacimientoResult = ""
-		yacimiento = Yacimiento.objects.all()
 
 		if (manifestacion == "Litica"):
-			yacimientoResult = yacimiento.ManifestacionesAsociadas.objects.filter(esLitica=True)
+			yacimientoResult = ManifestacionesAsociadas.objects.filter(esLitica=True)
 
 		elif (manifestacion == "Ceramica"):
-			yacimientoResult = yacimiento.ManifestacionesAsociadas.objects.filter(esCeramica=True)
+			yacimientoResult = ManifestacionesAsociadas.objects.filter(esCeramica=True)
 
 		elif (manifestacion == "Oseo"):
-			yacimientoResult = yacimiento.ManifestacionesAsociadas.objects.filter(esOseo=True)
+			yacimientoResult = ManifestacionesAsociadas.objects.filter(esOseo=True)
 
 		elif (manifestacion == "Concha"):
-			yacimientoResult = yacimiento.ManifestacionesAsociadas.objects.filter(esConcha=True)
+			yacimientoResult = ManifestacionesAsociadas.objects.filter(esConcha=True)
 
 		elif (manifestacion == "Carbon no superficial"):
-			yacimientoResult = yacimiento.ManifestacionesAsociadas.objects.filter(esCarbon=True)
+			yacimientoResult = ManifestacionesAsociadas.objects.filter(esCarbon=True)
 
 		elif (manifestacion == "Mitos"):
-			yacimientoResult = yacimiento.ManifestacionesAsociadas.objects.filter(esMito=True)
+			yacimientoResult = ManifestacionesAsociadas.objects.filter(esMito=True)
 
 		elif (manifestacion == "Cementerios"):
-			yacimientoResult = yacimiento.ManifestacionesAsociadas.objects.filter(esCementerio=True)
+			yacimientoResult = ManifestacionesAsociadas.objects.filter(esCementerio=True)
 
 		elif (manifestacion == "Monticulos"):
-			yacimientoResult = yacimiento.ManifestacionesAsociadas.objects.filter(esMonticulo=True)
+			yacimientoResult = ManifestacionesAsociadas.objects.filter(esMonticulo=True)
 
 		return render(request,entrada,{'yacimiento':yacimientoResult,'manifestacion':manifestacion})
 
