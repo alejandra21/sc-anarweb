@@ -13,7 +13,7 @@ Listar por tipo de material (22.1), (22.1.1), (22.1.2),
 
 {% block content %}
 <ul>
-    {% for resultado in elementos %}
+    {% for resultado in listaResultados %}
 		<h4>
 			<a href="/admin/anarapp/yacimiento/{{resultado.result.yacimiento.id}}">
 				<li><strong>Nombre:</strong>{{resultado.result.yacimiento.nombre}}</li>

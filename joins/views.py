@@ -578,6 +578,7 @@ def cruces(request,cruce_id):
 	elif (cruce_id == "23"):
 
 		caracteristica = request.GET['surco']
+		listaResultados = []
 
 		if (caracteristica == "Abrasion"):
 			elementos = TecnicaParaMicroPetro.objects.filter(esAbrasion=True)
@@ -587,7 +588,11 @@ def cruces(request,cruce_id):
 															Q(esGrabadoPercusionDirecta=True)|\
 															Q(esGrabadoPercusionIndirecta=True))
 
-		return render(request,entrada,{'result':elementos,'surco':caracteristica})
+		for elem in elementos:
+			listaResultados += [{'result':elem}]
+
+
+		return render(request,entrada,{'listaResultados':listaResultados,'surco':caracteristica})
 
 	return render(request,entrada)
 
