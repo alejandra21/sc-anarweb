@@ -8,7 +8,7 @@
 
 {% block title %}
   <center>Cruce 6 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></center></br>
-  ¿Qué <i>(31.6, 31.6.1, 31.6.2) Material Audiovisual</i> aparece en el <i>(00 - Código) Yacimiento</i> {{ codigo }}?
+  ¿Qué <i>(31.2) Material Audiovisual</i> aparece en el <i>(00 - Código) Yacimiento</i> {{ codigo }}?
 {% endblock %}
 
 {% block content %}
@@ -22,13 +22,18 @@
 
     <br>
 
-    <h4><strong>Material audiovisual:</strong></h4>
+    <h4><strong>(31.2) Material Audiovisual:</strong></h4>
     {% if yacimiento.MatAVYacimiento.all %}
+        {% for mv in y.MatAVYacimiento.all %}
         <ul>
-          {% for pw in yacimiento.MatAVYacimiento.all %}
-            <li><a href="">{{ pw.direccionURLy }}</a></li>
-          {% endfor %}
+          <li><strong>(31.2.1) Formato:</strong> {{ mv.format }}</li>
+          <li>
+            <a href="/upload/{{mv.archive}}" style="color:#333">
+                <strong>(31.2.2) Archivo:</strong> {{ mv.archive }}
+            </a>
+          </li>
         </ul>
+        {% endfor %}
     {% else %}
       <h4>Sin resultados.</h4>
       {% endif %}
