@@ -73,6 +73,7 @@ OPCIONES_UBICACION2 = (
 )
 
 CLASIFICACION = (
+	('---', '---'),
 	('Linea sencilla','Linea sencilla'),
 	('Linea compuesta','Linea compuesta'),
 	('Figura rellena','Figura rellena'),

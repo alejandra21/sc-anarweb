@@ -538,7 +538,7 @@ def cruces(request,cruce_id):
 			elif (ubicacion == "Cueva de recubrimiento"):
 				elementos = TipoYacimiento.objects.filter(esCuevadeRec=True)
 
-			if (clasificacion  == "---"):
+			if (clasificacion == "---"):
 				for elem in elementos:
 					listaResultados += [{'result':elem}]
 
