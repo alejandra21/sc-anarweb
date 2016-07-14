@@ -589,11 +589,35 @@ def cruces(request,cruce_id):
 			elementos = TecnicaParaMicroPetro.objects.filter(Q(esGrabadoPercusion=True)|\
 															Q(esGrabadoPercusionDirecta=True)|\
 															Q(esGrabadoPercusionIndirecta=True))
-
 		for elem in elementos:
 			listaResultados += [{'result':elem}]
 
 		return render(request,entrada,{'listaResultados':listaResultados,'surco':caracteristica})
+
+	elif (cruce_id == "24"):
+
+		material = request.GET['material']
+		conservacion = request.GET['estadoConservacion']
+		listaResultados = []
+
+
+		if (material != "---"):
+
+			if (material == "Roca ignea"):
+				yacPetroglifo = MaterialYacimiento.objects.filter(esIgnea=True)
+
+			elif (material == "Roca metamorfica"):
+				yacPetroglifo = MaterialYacimiento.objects.filter(esMetamor=True)
+
+			elif (material == "Roca sedimentaria"):
+				yacPetroglifo = MaterialYacimiento.objects.filter(esSedimentaria=True)
+
+			if (conservacion == "---"):
+
+				for elem in yacPetroglifo:
+					listaResultados += [{'result':elem}]
+
+		return render(request,entrada,{'listaResultados':listaResultados,'material':material,'conservacion':conservacion})
 
 	return render(request,entrada)
 
