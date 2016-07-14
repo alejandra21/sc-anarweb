@@ -402,34 +402,34 @@ def cruces(request,cruce_id):
 
 		manifestacion = request.GET['manifAsociadas']
 
-		yacimiento = ""
+		yacimientoResult = ""
+		yacimiento = Yacimiento.objects.all()
 
 		if (manifestacion == "Litica"):
-			print("ENTRE")
-			yacimiento = Yacimiento.ManifestacionesAsociadas.objects.filter(esLitica=True)
+			yacimientoResult = yacimiento.ManifestacionesAsociadas.objects.filter(esLitica=True)
 
 		elif (manifestacion == "Ceramica"):
-			yacimiento = Yacimiento.ManifestacionesAsociadas.objects.filter(esCeramica=True)
+			yacimientoResult = yacimiento.ManifestacionesAsociadas.objects.filter(esCeramica=True)
 
 		elif (manifestacion == "Oseo"):
-			yacimiento = Yacimiento.ManifestacionesAsociadas.objects.filter(esOseo=True)
+			yacimientoResult = yacimiento.ManifestacionesAsociadas.objects.filter(esOseo=True)
 
 		elif (manifestacion == "Concha"):
-			yacimiento = Yacimiento.ManifestacionesAsociadas.objects.filter(esConcha=True)
+			yacimientoResult = yacimiento.ManifestacionesAsociadas.objects.filter(esConcha=True)
 
 		elif (manifestacion == "Carbon no superficial"):
-			yacimiento = Yacimiento.ManifestacionesAsociadas.objects.filter(esCarbon=True)
+			yacimientoResult = yacimiento.ManifestacionesAsociadas.objects.filter(esCarbon=True)
 
 		elif (manifestacion == "Mitos"):
-			yacimiento = Yacimiento.ManifestacionesAsociadas.objects.filter(esMito=True)
+			yacimientoResult = yacimiento.ManifestacionesAsociadas.objects.filter(esMito=True)
 
 		elif (manifestacion == "Cementerios"):
-			yacimiento = Yacimiento.ManifestacionesAsociadas.objects.filter(esCementerio=True)
+			yacimientoResult = yacimiento.ManifestacionesAsociadas.objects.filter(esCementerio=True)
 
 		elif (manifestacion == "Monticulos"):
-			yacimiento = Yacimiento.ManifestacionesAsociadas.objects.filter(esMonticulo=True)
+			yacimientoResult = yacimiento.ManifestacionesAsociadas.objects.filter(esMonticulo=True)
 
-		return render(request,entrada,{'yacimiento':yacimiento,'manifestacion':manifestacion})
+		return render(request,entrada,{'yacimiento':yacimientoResult,'manifestacion':manifestacion})
 
 	elif (cruce_id=="21"):
 
