@@ -369,7 +369,7 @@ def cruces(request,cruce_id):
 
 			if (material == "---"):
 				for y in petroglifo:
-					listaResultado += [{'yacimiento':y}]
+					listaResultado += [{'petroglifo':y}]
 
 		if (material != "---"):
 
@@ -384,7 +384,7 @@ def cruces(request,cruce_id):
 
 			if (estado == "---"):
 				for y in yacPetroglifo:
-					listaResultado += [{'yacimiento':y}]
+					listaResultado += [{'petroglifo':y}]
 
 		for y in yacPetroglifo:
 			
