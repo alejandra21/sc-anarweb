@@ -14,35 +14,33 @@
 {% block content %}
 
   {% if yacimiento %}
-    <h4 style="margin-left:1em;">
-      <a href="/admin/anarapp/yacimiento/{{yacimiento.id}}" style="color:black">
-        (1) Nombre: {{ yacimiento.nombre }}
-      </a>
-    </h4>
-
-    <br>
-
-    <h4><strong>(31.2) Material Audiovisual:</strong></h4>
-    {% if yacimiento.MatAVYacimiento.all %}
-        {% for mv in y.MatAVYacimiento.all %}
-        <ul>
-          <li><strong>(31.2.1) Formato:</strong> {{ mv.format }}</li>
-          <li>
-            <a href="/upload/{{mv.archive}}" style="color:#333">
-                <strong>(31.2.2) Archivo:</strong> {{ mv.archive }}
-            </a>
-          </li>
-        </ul>
-        {% endfor %}
-    {% else %}
-      <h4>Sin resultados.</h4>
+    {% for y in yacimiento %}
+      <h4 style="margin-left:1em;">
+        <a href="/admin/anarapp/yacimiento/{{y.id}}" style="color:#333">
+          (1) Nombre: {{y.nombre}}
+        </a>
+      </h4>
+      <br>
+      <h4><strong>(31.2) Material Audiovisual:</strong></h4>
+      {% if y.MatAVYacimiento.all %}
+          {% for mv in y.MatAVYacimiento.all %}
+          <ul>
+            <li><strong>(31.2.1) Formato:</strong> {{ mv.format }}</li>
+            <li>
+              <a href="/upload/{{mv.archive}}" style="color:#333">
+                  <strong>(31.2.2) Archivo:</strong> {{ mv.archive }}
+              </a>
+            </li>
+          </ul>
+          {% endfor %}
+      {% else %}
+        <h4>Sin resultados.</h4>
       {% endif %}
+    {% endfor %}
 
-    {% else %}
-
-      <h4>Sin resultados.</h4>
-
-    {% endif %}
+  {% else %}
+    <h4>Sin resultados.</h4>
+  {% endif %}
 
 {% endblock %}
 
