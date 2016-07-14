@@ -248,6 +248,7 @@ def cruces(request,cruce_id):
 		estado = request.GET['estado']
 		surco = request.GET['carasurcopetrotipo']
 		listaYacimientos = []
+		caracPetroglifo = []
 
 		petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo=True)
 
@@ -269,8 +270,10 @@ def cruces(request,cruce_id):
 				caracPetroglifo = CaracSurcoPetroglifo.objects.filter(esAltoRelievePlanar=True,yacimiento__id=p.yacimiento.id)
 
 			if (len(caracPetroglifo)!=0):
-				listaYacimientos += [{'yacimiento':caracPetroglifo.yacimiento.nombre,
-									'estado':caracPetroglifo.estado.nombre,'codigo':caracPetroglifo.yacimiento.id}]
+
+				for yac in caracPetroglifo:
+					listaYacimientos += [{'yacimiento':yac.yacimiento.nombre,
+										'estado':yac.yacimiento.estado.nombre,'codigo':yac.yacimiento.id}]
 
 		total =  len(listaYacimientos)
 		return render(request,entrada,{'listaYacimientos':listaYacimientos,'total':total,'surco':surco,'estado':estado})
