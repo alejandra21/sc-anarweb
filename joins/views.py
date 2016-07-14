@@ -581,8 +581,10 @@ def cruces(request,cruce_id):
 		listaResultados = []
 
 		if (caracteristica == "Abrasion"):
-			elementos = TecnicaParaMicroPetro.objects.filter(esAbrasion=True)
-
+			elementos = TecnicaParaMicroPetro.objects.filter(Q(esAbrasion=True)|\
+															Q(esAbrasionPiedra=True)|\
+															Q(esAbrasionArena=True))
+			
 		elif (caracteristica == "Percusion"):
 			elementos = TecnicaParaMicroPetro.objects.filter(Q(esGrabadoPercusion=True)|\
 															Q(esGrabadoPercusionDirecta=True)|\
@@ -590,7 +592,6 @@ def cruces(request,cruce_id):
 
 		for elem in elementos:
 			listaResultados += [{'result':elem}]
-
 
 		return render(request,entrada,{'listaResultados':listaResultados,'surco':caracteristica})
 
