@@ -438,7 +438,7 @@ def cruces(request,cruce_id):
 			if (ubicacion == "Cerro"):
 				elementos = UbicacionYacimiento.objects.filter(enCerro=True)
 			elif (ubicacion == "Cima"):
-				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enCerroCima=True)
+				elementos = UbicacionYacimiento.objects.filter(enCerroCima=True)
 
 			elif (ubicacion == "Ladera"):
 				elementos = UbicacionYacimiento.objects.filter(enCerroLadera=True)
