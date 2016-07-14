@@ -659,34 +659,34 @@ def cruces(request,cruce_id):
 				for elem in elementosCar:
 					listaResultados += [{'result':elem}]
 
-		# if (clasificacion != "---"):
+		if (clasificacion != "---"):
 
-		# 	if (clasificacion == "Linea sencilla"):
+			if (clasificacion == "Linea sencilla"):
 
-		# 		elementos = CaracDeLaPintura.objects.filter(esLineaSencilla=True)
+				elementos = CaracDeLaPintura.objects.filter(esLineaSencilla=True)
 
-		# 	elif (clasificacion == "Linea compuesta"):
-		# 		elementos = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
+			elif (clasificacion == "Linea compuesta"):
+				elementos = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
 
-		# 	elif (clasificacion == "Figura rellena"):
-		# 		elementos = CaracDeLaPintura.objects.filter(esFiguraRellena=True)
+			elif (clasificacion == "Figura rellena"):
+				elementos = CaracDeLaPintura.objects.filter(esFiguraRellena=True)
 
-		# 	elif (clasificacion == "Impresion de manos positivo"):
-		# 		elementos = CaracDeLaPintura.objects.filter(esImpresionDeManosPositivo=True)
+			elif (clasificacion == "Impresion de manos positivo"):
+				elementos = CaracDeLaPintura.objects.filter(esImpresionDeManosPositivo=True)
 
-		# 	elif (clasificacion == "Impresion de manos negativo"):
-		# 		elementos = CaracDeLaPintura.objects.filter(esImpresionDeManosNegativo=True)
+			elif (clasificacion == "Impresion de manos negativo"):
+				elementos = CaracDeLaPintura.objects.filter(esImpresionDeManosNegativo=True)
 
-			# if (caracteristica == "---"):
-			# 	for elem in elementos:
-			# 		listaResultados += [{'result':elem}]
+			if (caracteristica == "---"):
+				for elem in elementos:
+					listaResultados += [{'result':elem}]
 
-			# else:
-			# 	for result in elementosCar:
-			# 		resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id)
+			else:
+				for result in elementosCar:
+					resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id)
 
-			# 		for elem in resultadoBusq:
-			# 			listaResultados += [{'result':elem}]
+					for elem in resultadoBusq:
+						listaResultados += [{'result':elem}]
 
 		return render(request,entrada,{'listaResultados':listaResultados,'clasificacion':clasificacion,'caracteristica':caracteristica})
 
