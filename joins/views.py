@@ -521,9 +521,9 @@ def cruces(request,cruce_id):
 		return render(request,entrada,{'listaResultado':listaResultado,'ubicacion':ubicacion})
 
 	elif (cruce_id == "22"):
-		ubicacion = request.GET['ubicacion']
+		ubicacion = request.GET['ubicacion2']
 		clasificacion = request.GET['clasificacion']
-		
+
 		elementos = ""
 
 		if (ubicacion != "---"):
