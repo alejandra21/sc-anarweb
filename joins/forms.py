@@ -66,6 +66,7 @@ OPCIONES_UBICACION = (
 )
 
 OPCIONES_UBICACION2 = (
+	('---', '---'),
 	('Abrigo','Abrigo'),
 	('Cueva','Cueva'),
 	('Cueva de recubrimiento','Cueva de recubrimiento'),
@@ -171,6 +172,7 @@ ESTADO_CONSERVACION = (
 )
 
 CARATERISTICA_PINTURA = (
+	('---','---'),
 	('Linea sencilla','Linea sencilla'),
 	('Linea compuesta','Linea compuesta'),
 	('Pintura positiva','Pintura positiva'),

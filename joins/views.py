@@ -6,7 +6,7 @@ from anarapp.models import Estado, Piedra, Yacimiento, \
 							ManifestacionYacimiento,FotografiaYac, \
 							Coordenadas,ConstitucionYacimiento,UbicacionYacimiento,\
 							CaracSurcoPetroglifo,DescColores,MaterialYacimiento,\
-							ManifestacionesAsociadas,TipoYacimiento
+							ManifestacionesAsociadas,TipoYacimiento,CaracDeLaPintura
 from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
@@ -538,10 +538,40 @@ def cruces(request,cruce_id):
 			elif (ubicacion == "Cueva de recubrimiento"):
 				elementos = TipoYacimiento.objects.filter(esCuevadeRec=True)
 
-			for elem in elementos:
-				listaResultados += [{'result':elem}]
+			if (caracteristica == "---"):
+				for elem in elementos:
+					listaResultados += [{'result':elem}]
 
-		
+		if (clasificacion != "---"):
+
+			if (clasificacion == "Linea sencilla"):
+
+				elementosCar = CaracDeLaPintura.objects.filter(esLineaSencilla=True)
+
+			elif (clasificacion == "Linea compuesta"):
+				elementosCar = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
+
+			elif (clasificacion == "Figura rellena"):
+				elementosCar = CaracDeLaPintura.objects.filter(esFiguraRellena=True)
+
+			elif (clasificacion == "Impresion de manos positivo"):
+				elementosCar = CaracDeLaPintura.objects.filter(esImpresionDeManosPositivo=True)
+
+			elif (clasificacion == "Impresion de manos negativo"):
+				elementosCar = CaracDeLaPintura.objects.filter(esImpresionDeManosNegativo=True)
+
+			if (ubicacion == "---"):
+				for elem in elementosCar:
+					listaResultados += [{'result':elem}]
+
+			else:
+				for result in elementos:
+					resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id)
+
+					for elem in resultadoBusq:
+						listaResultado += [{'result':elem}]
+
+
 		return render(request,entrada,{'listaResultados':listaResultados,'ubicacion':ubicacion})
 
 	elif (cruce_id == "23"):
