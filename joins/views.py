@@ -613,10 +613,10 @@ def cruces(request,cruce_id):
 				yacPetroglifo = MaterialYacimiento.objects.filter(esSedimentaria=True)
 
 
-		if (conservacion == ):
+		if (conservacion == "Bueno"):
 			elementos = EstadoConserYac.objects.filter(enBuenEstado=True)
 
-		elif (conservacion == ):
+		elif (conservacion == "Modificado"):
 			elementos = EstadoConserYac.objects.filter(estadoModificado=True)
 
 		for result in yacPetroglifo:
