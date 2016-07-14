@@ -19,11 +19,11 @@
 	<br>
 	<h3>Hay un total de {{total}} petroglifos</h3>
 
-	{% for y in listaYacimiento %}
+	{% for y in listaYacimientos %}
 
-	  <a href="/admin/anarapp/yacimiento/{{y.id}}">
-	      <h4><strong>Nombre:</strong>{{y.nombre}}</h4>
-	  </a>
+	  <h4>
+	    <strong><a href="/admin/anarapp/yacimiento/{{y.id}}">{{y.nombre}}</a></strong>
+	  </h4>
 	  <li>
 	    <strong>Código:</strong>{{y.codigo}}
 	  </li>

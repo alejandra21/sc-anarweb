@@ -234,7 +234,7 @@ def cruces(request,cruce_id):
 			if (len(objetoAgregar)!=0):
 
 				for objeto in objetoAgregar:
-					listaYacimientos += [{'yacimiento':objeto.yacimiento.nombre,'id':objeto.yacimiento.id,
+					listaYacimientos += [{'nombre':objeto.yacimiento.nombre,'id':objeto.yacimiento.id,
 										'estado':objeto.yacimiento.estado.nombre,'codigo':objeto.yacimiento.id}]
 					
 
@@ -248,6 +248,7 @@ def cruces(request,cruce_id):
 		estado = request.GET['estado']
 		surco = request.GET['carasurcopetrotipo']
 		listaYacimientos = []
+		caracPetroglifo = []
 
 		petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo=True)
 
@@ -269,8 +270,10 @@ def cruces(request,cruce_id):
 				caracPetroglifo = CaracSurcoPetroglifo.objects.filter(esAltoRelievePlanar=True,yacimiento__id=p.yacimiento.id)
 
 			if (len(caracPetroglifo)!=0):
-				listaYacimientos += [{'yacimiento':caracPetroglifo.yacimiento.nombre,
-									'estado':caracPetroglifo.estado.nombre,'codigo':caracPetroglifo.yacimiento.id}]
+
+				for yac in caracPetroglifo:
+					listaYacimientos += [{'nombre':yac.yacimiento.nombre,
+										'estado':yac.yacimiento.estado.nombre,'codigo':yac.yacimiento.id}]
 
 		total =  len(listaYacimientos)
 		return render(request,entrada,{'listaYacimientos':listaYacimientos,'total':total,'surco':surco,'estado':estado})
@@ -279,7 +282,7 @@ def cruces(request,cruce_id):
 
 		estado = request.GET['estado']
 		pinturas = request.GET['tipoPintura']
-		yacPintura = ""
+		yacPintura = []
 		listaResultado = []
 
 		pinturasRupestres =  ManifestacionYacimiento.objects.filter(esPintura=True)
@@ -307,17 +310,21 @@ def cruces(request,cruce_id):
 
 				yacPintura = DescColores.objects.filter(esNegativa=True)
 
+			if (estado == "---"):
+
+				for y in yacPintura:
+					listaResultado += [{'yacimiento':y}]
 
 		for y in yacPintura:
 
 			result = pinturasRupestres.filter(yacimiento__id=y.yacimiento.id)
 			if (len(result)!=0):
-				listaResultado += [{'yacimiento':result}]
+				for objeto in result:
+					listaResultado += [{'yacimiento':objeto}]
 
 		total = len(listaResultado)
-		tipo = pinturas
 
-		return render(request,entrada,{'total':total,'tipo':tipo,'listaResultado':listaResultado})
+		return render(request,entrada,{'total':total,'tipo':pinturas,'listaResultado':listaResultado})
 
 	elif (cruce_id=="17"):
 
