@@ -5,7 +5,7 @@ from django.db.models import Q
 from anarapp.models import Estado, Piedra, Yacimiento, \
 							ManifestacionYacimiento,FotografiaYac, \
 							Coordenadas,ConstitucionYacimiento,UbicacionYacimiento,\
-							CaracSurcoPetroglifo,DescColores,MaterialYacimiento
+							CaracSurcoPetroglifo,DescColores,MaterialYacimiento,ManifestacionesAsociadas
 from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
