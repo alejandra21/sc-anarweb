@@ -7,7 +7,7 @@ from anarapp.models import Estado, Piedra, Yacimiento, \
 							Coordenadas,ConstitucionYacimiento,UbicacionYacimiento,\
 							CaracSurcoPetroglifo,DescColores,MaterialYacimiento,\
 							ManifestacionesAsociadas,TipoYacimiento,CaracDeLaPintura,\
-							TecnicaParaMicroPetro
+							TecnicaParaMicroPetro,EstadoConserYac
 from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
@@ -612,13 +612,19 @@ def cruces(request,cruce_id):
 			elif (material == "Roca sedimentaria"):
 				yacPetroglifo = MaterialYacimiento.objects.filter(esSedimentaria=True)
 
-		
-			for elem in yacPetroglifo:
+
+		if (conservacion == ):
+			elementos = EstadoConserYac.objects.filter(enBuenEstado=True)
+
+		elif (conservacion == ):
+			elementos = EstadoConserYac.objects.filter(estadoModificado=True)
+
+		for result in yacPetroglifo:
+
+			resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id)
+
+			for elem in resultadoBusq:
 				listaResultados += [{'result':elem}]
-
-
-
-
 
 		return render(request,entrada,{'listaResultados':listaResultados,'material':material,'conservacion':conservacion})
 
