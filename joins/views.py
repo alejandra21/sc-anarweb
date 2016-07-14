@@ -234,7 +234,7 @@ def cruces(request,cruce_id):
 			if (len(objetoAgregar)!=0):
 
 				for objeto in objetoAgregar:
-					listaYacimientos += [{'yacimiento':objeto.yacimiento.nombre,'id':objeto.yacimiento.id,
+					listaYacimientos += [{'nombre':objeto.yacimiento.nombre,'id':objeto.yacimiento.id,
 										'estado':objeto.yacimiento.estado.nombre,'codigo':objeto.yacimiento.id}]
 					
 
@@ -272,7 +272,7 @@ def cruces(request,cruce_id):
 			if (len(caracPetroglifo)!=0):
 
 				for yac in caracPetroglifo:
-					listaYacimientos += [{'yacimiento':yac.yacimiento.nombre,
+					listaYacimientos += [{'nombre':yac.yacimiento.nombre,
 										'estado':yac.yacimiento.estado.nombre,'codigo':yac.yacimiento.id}]
 
 		total =  len(listaYacimientos)
