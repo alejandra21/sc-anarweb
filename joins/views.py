@@ -235,7 +235,7 @@ def cruces(request,cruce_id):
 
 				for objeto in objetoAgregar:
 					listaYacimientos += [{'yacimiento':objeto.yacimiento.nombre,'id':objeto.yacimiento.id,
-										'estado':objeto.estado.nombre,'codigo':objeto.yacimiento.id}]
+										'estado':objeto.yacimiento.estado.nombre,'codigo':objeto.yacimiento.id}]
 					
 
 		total =  len(listaYacimientos)
