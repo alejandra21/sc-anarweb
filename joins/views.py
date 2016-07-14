@@ -433,10 +433,13 @@ def cruces(request,cruce_id):
 		ubicacion = request.GET['ubicacion']
 		caracteristica = request.GET['carasurcopetrotipo3']
 
+		listaResultado = []
+
 		if (ubicacion != "---"):
 
 			if (ubicacion == "Cerro"):
 				elementos = UbicacionYacimiento.objects.filter(enCerro=True)
+
 			elif (ubicacion == "Cima"):
 				elementos = UbicacionYacimiento.objects.filter(enCerroCima=True)
 
@@ -476,7 +479,45 @@ def cruces(request,cruce_id):
 			elif (ubicacion == "Costa"):
 				elementos = UbicacionYacimiento.objects.filter(enRioCosta=True)
 
-		return render(request,entrada,{'yacimiento':elementos,'ubicacion':ubicacion})
+			if (caracteristica == "---"):
+
+				for y in elementos:
+					listaResultado += [{'result':y}]
+
+		if (caracteristica != "---"):
+
+			if (caracteristica == "Base redonda"):
+				elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseRedonda=True)
+
+			elif (caracteristica == "Base aguda"):
+				elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseAguda=True)
+
+			elif (caracteristica == "Base relieve lineal"):
+				elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelieveLineal=True)
+
+			elif (caracteristica == "Base relieve planar"):
+				elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelievePlanar=True)
+
+			elif (caracteristica == "Alto relieve planar"):
+				elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelievePlanar=True)
+
+			elif (caracteristica == "Alto relieve lineal"):
+				elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelieveLineal=True)
+
+
+			if (ubicacion == "---"):
+				for y in elementosCar:
+					listaResultado += [{'result':y}]
+
+			else:
+				for result in elementos:
+					resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id)
+					
+					for elem in resultadoBusq:
+						listaResultado += [{'result':elem}]
+
+
+		return render(request,entrada,{'listaResultado':listaResultado,'ubicacion':ubicacion})
 
 	elif (cruce_id == "22"):
 		ubicacion = request.GET['ubicacion']

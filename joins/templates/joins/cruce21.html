@@ -15,15 +15,15 @@
   
 
 <ul>
-    {% for resultado in yacimiento %}
+    {% for resultado in listaResultado %}
 		<h4>
 			<a href="/admin/anarapp/yacimiento/{{resultado.id}}">
-				<li><strong>Nombre:</strong>{{resultado.yacimiento.nombre}}</li>
+				<li><strong>Nombre:</strong>{{resultado.result.yacimiento.nombre}}</li>
 			</a>
 		</h4>
 		<i> 
-			<ul>Código: {{resultado.yacimiento.codigo}}</ul>
-			<ul>Estado: {{resultado.yacimiento.estado}}</ul>
+			<ul>Código: {{resultado.result.yacimiento.codigo}}</ul>
+			<ul>Estado: {{resultado.result.yacimiento.estado.nombre}}</ul>
 		</i>
 	{%endfor%}
 	
