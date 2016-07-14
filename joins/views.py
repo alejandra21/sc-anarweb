@@ -402,8 +402,6 @@ def cruces(request,cruce_id):
 
 		manifestacion = request.GET['manifAsociadas']
 
-		yacimientoResult = ""
-
 		if (manifestacion == "Litica"):
 			yacimientoResult = ManifestacionesAsociadas.objects.filter(esLitica=True)
 
