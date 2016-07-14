@@ -7,35 +7,25 @@
 {% endblock %}
 
 {% block title %}
-	Listar por estado el total de Geoglifos, Pinturas Rupestres, Micropetroglifos, Petroglifos, Petroglifos Pintados, Piedras Míticas Naturales, Cerros Miticos Naturales, Bateas, Menhires, Amoladores, Puntos Acoplados y Cúpulas en la siguiente ubicación: Cima {{ubi}}
+	Listar por estado el total de Geoglifos, Pinturas Rupestres, Micropetroglifos, Petroglifos, Petroglifos Pintados, Piedras Míticas Naturales, Cerros Miticos Naturales, Bateas, Menhires, Amoladores, Puntos Acoplados y Cúpulas en la siguiente ubicación: Cima {{ubicacion}}
 {% endblock %}
 
 {% block content %}
 
-	<!--- Cuando se implemente la búsqueda, utilizar sólo este código -->
-	{% for esta,ubis in yacimientos.items%}
-    {%if ubis|length > 0%}
-			<h3>{{esta}}</h3>
-			<ul>
-				{% for ubica ,cant in ubis.items%}
-					<li>{{ubica}}:{{cant}}</li>
-				{%endfor%}
-			</ul>
-		{%endif%}
-  {%endfor%}
-
-  <!--- Datos de Ejemplo para muestra del Diseño inicial -->
-  <h3>Amazonas</h3>
-		<ul>
-			<li><strong>Geoglifos:</strong> 3 </li>
-			<li><strong>Pinturas Rupestres:</strong> 4 </li>
-		</ul>
-
-	<h3>Bolívar</h3>
-		<ul>
-			<li><strong>Micropetroglifos:</strong> 1 </li>
-			<li><strong>Cerros Míticos Naturales:</strong> 4 </li>
-		</ul>
+	<ul>
+	    {% for resultado in listaManifestaciones %}
+			<h4>
+				<a href="/admin/anarapp/yacimiento/{{resultado.yacimiento.id}}">
+					<li><strong>Nombre:</strong>{{resultado.yacimiento.nombre}}</li>
+				</a>
+			</h4>
+			<i> 
+				<ul>Código: {{resultado.yacimiento.codigo}}</ul>
+				<ul>Estado: {{resultado.yacimiento.estado.nombre}}</ul>
+			</i>
+		{%endfor%}
+		
+	</ul>
 
 {% endblock %}
 

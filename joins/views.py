@@ -111,107 +111,53 @@ def cruces(request,cruce_id):
 			'CerroMiticoNatural':CerroMiticoNatural,'Batea':Batea,'Menhires':Menhires,
 			'Amoladores':Amoladores,'PuntosAcoplados':PuntosAcoplados,'Cupula':Cupula})
 
-	# elif (cruce_id == "12"):
-	# 	ubicacion = request.GET['ubicacion']
+	elif (cruce_id == "12"):
 
-	# 	estados = ['Amazonas','Anzoategui','Apure','Aragua','Barinas','Bolvar', 
-	# 			'Carabobo','Cojedes', 'Delta Amacuro', 'Falcn', 'Gurico','Lara',
-	# 			'Mrida','Miranda','Monagas','Nueva Esparta','Portuguesa','Sucre',
-	# 			'Tachira','Trujillo','Vargas','Yaracuy','Zulia']
+		ubicacion = request.GET['ubicacion']
 
-	# 	listaManifestaciones = ["geoglifo","pinturasRupestres","micropetroglifos",
-	# 							"petroglifo","petroglifoPintado","piedraMiticaNatural",
-	# 							"cerroMiticoNatural","batea","menhires","amoladores",
-	# 							"puntosAcoplados","cupula"]
-	
-	# 	diccionario = {}
-	# 	diccionarioAux = {}
+		if (ubicacion == "Cerro"):
+			elementos = UbicacionYacimiento.objects.filter(enCerro=True)
 
-	# 	for manif in listaManifestaciones:
-	# 		diccionarioAux[manif] = 0
+		elif (ubicacion == "Cima"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroCima=True)
 
-	# 	for i in estados:
-	# 		diccionario[i] = diccionarioAux
+		elif (ubicacion == "Ladera"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroLadera=True)
 
-	# 	if (ubicacion == "Cerro"):
-	# 		elementos = UbicacionYacimiento.objects.filter(enCerro=True)
+		elif (ubicacion == "Pie de montana"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroPieDeMonte=True)
 
+		elif (ubicacion == "Barranco"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroBarranco=True)
 
-	# 	elif (ubicacion == "Cima"):
-	# 		elementos = UbicacionYacimiento.objects.filter(enCerroCima=True)
+		elif (ubicacion == "Acantilado"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroAcantilado=True)
 
-	# 	elif (ubicacion == "Ladera"):
-	# 		elementos = UbicacionYacimiento.objects.filter(enCerroLadera=True)
+		elif (ubicacion == "Valle"):
+			elementos = UbicacionYacimiento.objects.filter(enValle=True)
 
-	# 	elif (ubicacion == "Pie de montana"):
-	# 		elementos = UbicacionYacimiento.objects.filter(enCerroPieDeMonte=True)
+		elif (ubicacion == "Rio"):
+			elementos = UbicacionYacimiento.objects.filter(enRio=True)
 
-	# 	elif (ubicacion == "Barranco"):
-	# 		elementos = UbicacionYacimiento.objects.filter(enCerroBarranco=True)
+		elif (ubicacion == "Lecho"):
+			elementos = UbicacionYacimiento.objects.filter(enRioLecho=True)
 
-	# 	elif (ubicacion == "Acantilado"):
-	# 		elementos = UbicacionYacimiento.objects.filter(enCerroAcantilado=True)
+		elif (ubicacion == "Margen derecha"):
+			elementos = UbicacionYacimiento.objects.filter(enRioMargenDerecha=True)
 
-	# 	elif (ubicacion == "Valle"):
-	# 		elementos = UbicacionYacimiento.objects.filter(enValle=True)
+		elif (ubicacion == "Margen izquierda"):
+			elementos = UbicacionYacimiento.objects.filter(enRioMargenIzquierda=True)
 
-	# 	elif (ubicacion == "Rio"):
-	# 		elementos = UbicacionYacimiento.objects.filter(enRio=True)
+		elif (ubicacion == "Isla"):
+			elementos = UbicacionYacimiento.objects.filter(enRioIsla=True)
 
-	# 	elif (ubicacion == "Lecho"):
-	# 		elementos = UbicacionYacimiento.objects.filter(enRioLecho=True)
+		elif (ubicacion == "Raudal"):
+			elementos = UbicacionYacimiento.objects.filter(enRioRaudal=True)
 
-	# 	elif (ubicacion == "Margen derecha"):
-	# 		elementos = UbicacionYacimiento.objects.filter(enRioMargenDerecha=True)
+		elif (ubicacion == "Costa"):
+			elementos = UbicacionYacimiento.objects.filter(enRioCosta=True)
 
-	# 	elif (ubicacion == "Margen izquierda"):
-	# 		elementos = UbicacionYacimiento.objects.filter(enRioMargenIzquierda=True)
-
-	# 	elif (ubicacion == "Isla"):
-	# 		elementos = UbicacionYacimiento.objects.filter(enRioIsla=True)
-
-	# 	elif (ubicacion == "Raudal"):
-	# 		elementos = UbicacionYacimiento.objects.filter(enRioRaudal=True)
-
-	# 	elif (ubicacion == "Costa"):
-	# 		elementos = UbicacionYacimiento.objects.filter(enRioCosta=True)
-
-	# 	for e in elementos:
-
-	# 		y = e.yacimiento
-	# 		print(y)
-	# 		i = 0
-	# 		manifestacion = ManifestacionYacimiento.objects.filter(yacimiento__id=y.id)
-	# 		geoglifo = manifestacion.filter(esGeoglifo=True)
-	# 		pinturasRupestres = manifestacion.filter(esPintura=True)
-	# 		micropetroglifos = manifestacion.filter(esMicroPetroglifo=True)
-	# 		petroglifo = manifestacion.filter(esPetroglifo = True)
-	# 		petroglifoPintado = manifestacion.filter(esPetroglifoPintado = True)
-	# 		piedraMiticaNatural = manifestacion.filter(esPiedraMiticaNatural=True)
-	# 		cerroMiticoNatural = manifestacion.filter(esCerroMiticoNatural=True)
-	# 		batea = manifestacion.filter(esBatea=True)
-	# 		menhires = manifestacion.filter(esMenhires=True)
-	# 		amoladores = manifestacion.filter(esAmolador=True)
-	# 		puntosAcoplados = manifestacion.filter(esPuntosAcoplados=True)
-	# 		cupula = manifestacion.filter(esCupulas = True)
-
-	# 		arregloManifestaciones=[geoglifo,pinturasRupestres,micropetroglifos,
-	# 								petroglifo,petroglifoPintado,piedraMiticaNatural,
-	# 								cerroMiticoNatural,batea,menhires,amoladores,
-	# 								puntosAcoplados,cupula]
-
-	# 		a = y.estado.nombre
-	# 		print(a)
-	# 		cantidadManifestaciones = diccionario[y.estado.nombre]
-
-	# 		for m in listaManifestaciones:
-
-	# 			cantidadManifestaciones[m] = cantidadManifestaciones[m]+len(arregloManifestaciones[i])
-	# 			i += 1
-					
-
-	# 	return render(request,entrada,{'diccionario':diccionario,'estados':estados,
-	# 									'listaManifestaciones':listaManifestaciones})
+		return render(request,entrada,{'listaManifestaciones':elementos,'ubicacion':ubicacion})
 	
 	elif (cruce_id == "14"):
 		caracteristica = request.GET['caracteristicaSurco']
