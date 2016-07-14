@@ -8,9 +8,9 @@ Ruby de Valencia
 
 
 {% block submenu %}
-<ul class="list-inline " style="background-color:white">
+<ul class="list-inline">
     <table><tr>
-        <td class="active"><a href="{% url index %}">Inicio </a></td>
+        <td class="active inicial"><a href="{% url index %}">Inicio </a></td>
     <td role="presentation" class="dropdown ">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
                     Quienes somos</a>
@@ -18,10 +18,12 @@ Ruby de Valencia
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url origenytrayectoria %}">
                     Origen y Trayectoria</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url areasdeespecializacion %}">
-                    &Aacute;reas de Especializaci&oacute;n - Organigrama</a></li>
+                    &Aacute;reas de Especializaci&oacute;n</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url organigrama %}">
+                    Organigrama</a></li>
            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url profesionalesadjuntos %}">
                     Profesionales adjuntos</a></li>
-    </ul>
+        </ul>
     </td>
     <td role="presentation" class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
@@ -62,7 +64,7 @@ Ruby de Valencia
                     Productos y<br> Servicios</a>
         <ul class="dropdown-menu" role="menu">
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url publicaciones %}">
-                    Publicaciones</li>
+                    Publicaciones</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url productos %}">
                     Productos</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url asesorias %}">
@@ -71,7 +73,7 @@ Ruby de Valencia
                     Visitas Guiadas</a></li>
         </ul>
     </td>
-    <td style="border:0px"><a href="{% url contacto %}">
+    <td class="final" style="border:0px;"><a href="{% url contacto %}">
                     Contacto</a></td>
 </tr></table>
 </ul>
