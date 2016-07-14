@@ -282,7 +282,7 @@ def cruces(request,cruce_id):
 
 		estado = request.GET['estado']
 		pinturas = request.GET['tipoPintura']
-		yacPintura = ""
+		yacPintura = []
 		listaResultado = []
 
 		pinturasRupestres =  ManifestacionYacimiento.objects.filter(esPintura=True)
@@ -310,6 +310,10 @@ def cruces(request,cruce_id):
 
 				yacPintura = DescColores.objects.filter(esNegativa=True)
 
+			if (estado == "---"):
+
+				for y in yacPintura:
+					listaResultado += [{'yacimiento':y}]
 
 		for y in yacPintura:
 
