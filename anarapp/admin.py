@@ -20,8 +20,7 @@ from anarapp.models import Yacimiento, LocalidadYacimiento, UsoActSuelo, Tenenci
     Piedra, Piedra2, FotografiaPiedra, DimensionPiedra, CaraTrabajada, UbicacionCaras, FigurasPorTipo, EsquemaPorCara, ConexionFiguras, \
     Manifestaciones, TratFotoPiedra, FotoPiedra, EscNatPiedra, EscRedPiedra, \
     BibPiedra, MatAVPiedra, VideoPiedra, PeliculaPiedra, PaginaWebPiedra, MultimediaPiedra, \
-    ObtInfoPiedra, OtrosValPiedra, ObservacPiedra, LlenadoPiedra, SupervisadoPiedra, FotoApoyo
-
+    ObtInfoPiedra, OtrosValPiedra, ObservacPiedra, LlenadoPiedra, SupervisadoPiedra
 
 ########################################################################################
 # Declaracion de modelos inlines para yacimiento
@@ -537,10 +536,6 @@ class OtrosValPiedraInline(admin.StackedInline):
     max_num = 1
     template = 'InlineTemplates/OtrosValoresRoca.html'    
 
-class FotoApoyoInline(admin.TabularInline):
-    model = FotoApoyo
-    extra = 3
-
 class FotoDigPiedraInline(admin.StackedInline):
     extra = 1
     model =  FotoPiedra
@@ -688,10 +683,6 @@ class YacimientoAdmin(admin.ModelAdmin):
     
 #Administrador del modelo de datos Piedra
 #Usando los parametros de la extensión Suite, se mejora y organiza el admin
-
-class FotoPiedraAdmin(admin.ModelAdmin):
-     inlines = [FotoApoyoInline]
-
 
 class PiedraAdmin (admin.ModelAdmin):
     model = Piedra
