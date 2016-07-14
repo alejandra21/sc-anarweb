@@ -579,10 +579,10 @@ def cruces(request,cruce_id):
 
 		caracteristica = request.GET['surco']
 
-		if (caracteristica == "abrasion"):
+		if (caracteristica == "Abrasion"):
 			elementos = TecnicaParaMicroPetro.objects.filter(esAbrasion=True)
 
-		elif (caracteristica == "percusion"):
+		elif (caracteristica == "Percusion"):
 			elementos = TecnicaParaMicroPetro.objects.filter(Q(esGrabadoPercusion=True)|\
 															Q(esGrabadoPercusionDirecta=True)|\
 															Q(esGrabadoPercusionIndirecta=True))
