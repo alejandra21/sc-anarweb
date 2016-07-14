@@ -29,7 +29,11 @@
      <ul>
       {% for mv in y.MultimediaYac.all %}
         <li><strong>(31.6.1) Técnica:</strong> {{ mv.tecnicaY }}</li>
-        <li><strong>(31.6.2) Archivo:</strong><a href=""> {{ mv.archivoY }}</a></li>
+        <li>
+          <a href="/upload/{{mv.archivoY}}" style="color:#333">
+            <strong>(31.6.2) Archivo:</strong> {{ mv.archivoY }}
+          </a>
+        </li>
       {% endfor %}
      </ul>
      {% else %}
