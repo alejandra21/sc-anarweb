@@ -529,13 +529,13 @@ def cruces(request,cruce_id):
 		if (ubicacion != "---"):
 
 			if (ubicacion == "Abrigo"):
-				elementos = UbicacionYacimiento.objects.filter(esAbrigo=True)
+				elementos = TipoYacimiento.objects.filter(esAbrigo=True)
 
 			elif (ubicacion == "Cueva"):
-				elementos = UbicacionYacimiento.objects.filter(esCueva=True)
+				elementos = TipoYacimiento.objects.filter(esCueva=True)
 
 			elif (ubicacion == "Cueva de recubrimiento"):
-				elementos = UbicacionYacimiento.objects.filter(esCuevadeRec=True)
+				elementos = TipoYacimiento.objects.filter(esCuevadeRec=True)
 		
 		return render(request,entrada,{'yacimiento':elementos,'ubicacion':ubicacion})
 
