@@ -565,12 +565,17 @@ def cruces(request,cruce_id):
 		elif (conservacion == "Modificado"):
 			elementos = EstadoConserYac.objects.filter(estadoModificado=True)
 
-		for result in yacPetroglifo:
-
-			resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id)
-
-			for elem in resultadoBusq:
+		if (material == "---"):
+			for elem in elementos:
 				listaResultados += [{'result':elem}]
+
+		else:
+			for result in yacPetroglifo:
+
+				resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id)
+
+				for elem in resultadoBusq:
+					listaResultados += [{'result':elem}]
 
 		return render(request,entrada,{'listaResultados':listaResultados,'material':material,'conservacion':conservacion})
 
