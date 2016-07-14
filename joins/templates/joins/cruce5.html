@@ -28,7 +28,11 @@
         {% for mv in y.MatAVYacimiento.all %}
         <ul>
           <li><strong>(31.2.1) Formato:</strong> {{ mv.format }}</li>
-          <li><strong>(31.2.2) Archivo:</strong> {{ mv.archive }}</li>
+          <li>
+            <a href="/upload/{{mv.archive}}" style="color:#333">
+                <strong>(31.2.2) Archivo:</strong> {{ mv.archive }}
+            </a>
+          </li>
         </ul>
         {% endfor %}
 
@@ -44,13 +48,40 @@
             <li><strong>(31.3.5) Nro. de referencia:</strong> {{ video.numReferenciay }}</li>
             <li><strong>(31.3.6) ¿Es de ANAR?:</strong> {{ video.isFromAnary }}</li>
             <li><strong>(31.3.6.1) Nro. de copia:</strong> {{ video.numCopiayac }}</li>
+            <li>
+                <a href="/upload/{{video.archivoy}}" style="color:#333">
+                    <strong>(31.3.7) Video - Archivo:</strong> {{ video.archivoy }}
+                </a>
+            </li>
     	    {% endfor %}
         </ul>
+
+        <h4><strong>(31.4) Peliculas:</strong></h4>
+
+
+        <ul>
+            {% for peli in y.PeliYacimiento.all %}
+            <li><strong>(31.4.0) Año:</strong> {{ peli.anioy }}</li>
+            <li><strong>(31.4.1) Formato:</strong> {{ peli.formatoy }}</li>
+            <li><strong>(31.4.2) Título:</strong> {{ peli.tituloy }}</li>
+            <li><strong>(31.4.3) Autor:</strong> {{ peli.autory }}</li>
+            <li><strong>(31.4.4) Institución:</strong> {{ peli.instituciony }}</li>
+            <li><strong>(31.4.5) Nro. de referencia:</strong> {{ peli.numReferenciay }}</li>
+            <li><strong>(31.4.6) ¿Es de ANAR?:</strong> {{ peli.isFromAnary }}</li>
+            <li><strong>(31.4.6.1) Nro. de copia:</strong> {{ peli.numCopiayacAN }}</li>
+            <li>
+                <a href="/upload/{{peli.archivoy}}" style="color:#333">
+                    <strong>(31.4.7) Video - Archivo:</strong> {{ peli.archivoy }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+
 
     	<h4><strong>(31.5) Páginas Web:</strong></h4>
         <ul>
     	    {% for pw in y.PaginaWebYac.all %}
-            <li>(31.5.1) URL de página web: <a href="">{{ pw.direccionURLy }}</a></li>
+            <li>(31.5.1) URL de página web: <a href="pw.direccionURLy">{{ pw.direccionURLy }}</a></li>
       	  {% endfor %}
         </ul>
     {% endfor %}
