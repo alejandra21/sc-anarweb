@@ -347,10 +347,11 @@ def cruces(request,cruce_id):
 			caractYac = CaracSurcoPetroglifo.objects.filter(esGrabadoRebajado=True)
 
 		for result in caractYac:
+			resultadoBusq = petroglifo.filter(yacimiento__id=result.yacimiento.id)  
 
-			resultadoBusq = petroglifo.filter(yacimiento__id=result.yacimiento.id)
 			if (len(resultadoBusq)!=0):
-				listaResultado += [{'result':resultadoBusq}]
+				for resultado in resultadoBusq:
+					listaResultado += [{'result':resultado}]
 
 		return render(request,entrada,{'listaResultado':listaResultado,'tipo':caracteristica})
 
