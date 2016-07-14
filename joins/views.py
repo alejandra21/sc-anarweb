@@ -229,7 +229,7 @@ def cruces(request,cruce_id):
 
 		for c in caracPetroglifo:
 
-			objetoAgregar = petroglifo.filter(yacimiento__id=c.yacimiento.id)
+			objetoAgregar = petroglifo.filter.get(yacimiento__id=c.yacimiento.id)
 
 			if (len(objetoAgregar)!=0):
 				listaYacimientos += [{'yacimiento':objetoAgregar.yacimiento.nombre,'id':objetoAgregar.yacimiento.id,
@@ -464,16 +464,6 @@ def cruces(request,cruce_id):
 			elif (ubicacion == "Costa"):
 				elementos = Yacimiento.UbicacionYacimiento.objects.filter(enRioCosta=True)
 
-		# ('Ancho de surco','Ancho de surco'),
-		# ('Profundidad de surco','Profundidad de surco'),
-		# ('Base redonda','Base redonda'),
-		# ('Base aguda','Base aguda'),
-		# ('Bajo relieve lineal','Bajo relieve lineal'),
-		# ('Bajo relieve planar','Bajo relieve planar'),
-		# ('Alto relieve lineal','Alto relieve lineal'),
-		# ('Alto relieve planar','Alto relieve planar'),
-		# UbicacionYacimiento
-		# CaracSurcoPetroglifo
 		return render(request,entrada,{'yacimiento':elementos,'ubicacion':ubicacion})
 
 	elif (cruce_id == "22"):
