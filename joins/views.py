@@ -373,23 +373,21 @@ def cruces(request,cruce_id):
 
 		if (material != "---"):
 
-			if (material == "Roca ígnea"):
+			if (material == "Roca ignea"):
 				yacPetroglifo = MaterialYacimiento.objects.filter(esIgnea=True)
 
-			elif (material == "Roca metamórfica"):
+			elif (material == "Roca metamorfica"):
 				yacPetroglifo = MaterialYacimiento.objects.filter(esMetamor=True)
 
 			elif (material == "Roca sedimentaria"):
 				yacPetroglifo = MaterialYacimiento.objects.filter(esSedimentaria=True)
 
-			if (estado == "---"):
-				for y in yacPetroglifo:
-					listaResultado += [{'petroglifo':y}]
 
 		for y in yacPetroglifo:
-			
+
 			if (estado != "---"):
 				result = petroglifoResult.filter(yacimiento__id=y.yacimiento.id)
+
 			else:
 				result = petroglifo.filter(yacimiento__id=y.yacimiento.id)
 
