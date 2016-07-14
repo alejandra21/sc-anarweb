@@ -315,12 +315,12 @@ def cruces(request,cruce_id):
 
 			result = pinturasRupestres.filter(yacimiento__id=y.yacimiento.id)
 			if (len(result)!=0):
-				listaResultado += [{'yacimiento':result}]
+				for objeto in result:
+					listaResultado += [{'yacimiento':objeto}]
 
 		total = len(listaResultado)
-		tipo = pinturas
 
-		return render(request,entrada,{'total':total,'tipo':tipo,'listaResultado':listaResultado})
+		return render(request,entrada,{'total':total,'tipo':pinturas,'listaResultado':listaResultado})
 
 	elif (cruce_id=="17"):
 
