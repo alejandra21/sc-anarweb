@@ -569,7 +569,7 @@ def cruces(request,cruce_id):
 					resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id)
 
 					for elem in resultadoBusq:
-						listaResultado += [{'result':elem}]
+						listaResultados += [{'result':elem}]
 
 
 		return render(request,entrada,{'listaResultados':listaResultados,'ubicacion':ubicacion})
