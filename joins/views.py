@@ -628,6 +628,71 @@ def cruces(request,cruce_id):
 
 		return render(request,entrada,{'listaResultados':listaResultados,'material':material,'conservacion':conservacion})
 
+	elif (cruce_id == "25"):
+
+
+		caracteristica = request.GET['carasurcopetrotipo3']
+		clasificacion = request.GET['caracteristicaPintura']
+		listaResultados = []
+
+		if (caracteristica != "---"):
+
+			if (caracteristica == "Base redonda"):
+				elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseRedonda=True)
+
+			elif (caracteristica == "Base aguda"):
+				elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseAguda=True)
+
+			elif (caracteristica == "Base relieve lineal"):
+				elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelieveLineal=True)
+
+			elif (caracteristica == "Base relieve planar"):
+				elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelievePlanar=True)
+
+			elif (caracteristica == "Alto relieve planar"):
+				elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelievePlanar=True)
+
+			elif (caracteristica == "Alto relieve lineal"):
+				elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelieveLineal=True)
+
+			if (clasificacion == "---"):
+				for elem in elementosCar:
+					listaResultados += [{'result':elem}]
+
+		# if (clasificacion != "---"):
+
+		# 	if (clasificacion == "Linea sencilla"):
+
+		# 		elementos = CaracDeLaPintura.objects.filter(esLineaSencilla=True)
+
+		# 	elif (clasificacion == "Linea compuesta"):
+		# 		elementos = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
+
+		# 	elif (clasificacion == "Figura rellena"):
+		# 		elementos = CaracDeLaPintura.objects.filter(esFiguraRellena=True)
+
+		# 	elif (clasificacion == "Impresion de manos positivo"):
+		# 		elementos = CaracDeLaPintura.objects.filter(esImpresionDeManosPositivo=True)
+
+		# 	elif (clasificacion == "Impresion de manos negativo"):
+		# 		elementos = CaracDeLaPintura.objects.filter(esImpresionDeManosNegativo=True)
+
+			# if (caracteristica == "---"):
+			# 	for elem in elementos:
+			# 		listaResultados += [{'result':elem}]
+
+			# else:
+			# 	for result in elementosCar:
+			# 		resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id)
+
+			# 		for elem in resultadoBusq:
+			# 			listaResultados += [{'result':elem}]
+
+		return render(request,entrada,{'listaResultados':listaResultados,'clasificacion':clasificacion,'caracteristica':caracteristica})
+
+
+
+
 	return render(request,entrada)
 
 def consulta(request):
