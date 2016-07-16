@@ -519,7 +519,7 @@ def cruces(request,cruce_id):
 						listaResultados += [{'result':elem}]
 
 
-		return render(request,entrada,{'listaResultados':listaResultados,'ubicacion':ubicacion})
+		return render(request,entrada,{'listaResultados':listaResultados,'ubicacion':ubicacion,'clasificacion':clasificacion})
 
 	elif (cruce_id == "23"):
 
