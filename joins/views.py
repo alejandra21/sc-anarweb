@@ -345,11 +345,11 @@ def cruces(request,cruce_id):
 
 		if (estado != "Todos"):
 
-			petroglifoResult =  petroglifo.filter(yacimiento__estado__nombre=estado)
+			petroglifo =  petroglifo.filter(yacimiento__estado__nombre=estado)
 
-			if (material == "---"):
-				for y in petroglifoResult:
-					listaResultado += [{'petroglifo':y}]
+		if (material == "---"):
+			for y in petroglifo:
+				listaResultado += [{'petroglifo':y}]
 
 		if (material != "---"):
 
@@ -365,15 +365,10 @@ def cruces(request,cruce_id):
 
 		for y in yacPetroglifo:
 
-			if (estado != "Todos"):
-				result = petroglifoResult.filter(yacimiento__id=y.yacimiento.id)
+			result = petroglifo.filter(yacimiento__id=y.yacimiento.id)
 
-			else:
-				result = petroglifo.filter(yacimiento__id=y.yacimiento.id)
-
-			if (len(result)!=0):
-				for objeto in result:
-					listaResultado += [{'petroglifo':objeto}]
+			for objeto in result:
+				listaResultado += [{'petroglifo':objeto}]
 
 		return render(request,entrada,{'listaResultado':listaResultado,'estado':estado,'tipo':material})
 
