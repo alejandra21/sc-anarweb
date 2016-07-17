@@ -598,63 +598,58 @@ def cruces(request,cruce_id):
 
 	elif (cruce_id == "25"):
 
-
+		estado = request.GET['estado']
 		caracteristica = request.GET['carasurcopetrotipo3']
 		clasificacion = request.GET['caracteristicaPintura']
 		listaResultados = []
 
-		if (caracteristica != "---"):
+		if (caracteristica == "Base redonda"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseRedonda=True)
 
-			if (caracteristica == "Base redonda"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseRedonda=True)
+		elif (caracteristica == "Base aguda"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseAguda=True)
 
-			elif (caracteristica == "Base aguda"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseAguda=True)
+		elif (caracteristica == "Base relieve lineal"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelieveLineal=True)
 
-			elif (caracteristica == "Base relieve lineal"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelieveLineal=True)
+		elif (caracteristica == "Base relieve planar"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelievePlanar=True)
 
-			elif (caracteristica == "Base relieve planar"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelievePlanar=True)
+		elif (caracteristica == "Alto relieve planar"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelievePlanar=True)
 
-			elif (caracteristica == "Alto relieve planar"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelievePlanar=True)
+		elif (caracteristica == "Alto relieve lineal"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelieveLineal=True)
 
-			elif (caracteristica == "Alto relieve lineal"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelieveLineal=True)
 
-			if (clasificacion == "---"):
-				for elem in elementosCar:
-					listaResultados += [{'result':elem}]
+		if (clasificacion == "Linea sencilla"):
 
-		if (clasificacion != "---"):
+			elementos = CaracDeLaPintura.objects.filter(esLineaSencilla=True)
 
-			if (clasificacion == "Linea sencilla"):
+		elif (clasificacion == "Linea compuesta"):
+			elementos = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
 
-				elementos = CaracDeLaPintura.objects.filter(esLineaSencilla=True)
+		elif (clasificacion == "Figura rellena"):
+			elementos = CaracDeLaPintura.objects.filter(esFiguraRellena=True)
 
-			elif (clasificacion == "Linea compuesta"):
-				elementos = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
+		elif (clasificacion == "Impresion de manos positivo"):
+			elementos = CaracDeLaPintura.objects.filter(esImpresionDeManosPositivo=True)
 
-			elif (clasificacion == "Figura rellena"):
-				elementos = CaracDeLaPintura.objects.filter(esFiguraRellena=True)
+		elif (clasificacion == "Impresion de manos negativo"):
+			elementos = CaracDeLaPintura.objects.filter(esImpresionDeManosNegativo=True)
 
-			elif (clasificacion == "Impresion de manos positivo"):
-				elementos = CaracDeLaPintura.objects.filter(esImpresionDeManosPositivo=True)
 
-			elif (clasificacion == "Impresion de manos negativo"):
-				elementos = CaracDeLaPintura.objects.filter(esImpresionDeManosNegativo=True)
+		for result in elementosCar:
 
-			if (caracteristica == "---"):
-				for elem in elementos:
-					listaResultados += [{'result':elem}]
+			if (estado != "Todos"):
+				resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id,
+												yacimiento__estado__nombre=estado)
 
 			else:
-				for result in elementosCar:
-					resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id)
+				resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id)
 
-					for elem in resultadoBusq:
-						listaResultados += [{'result':elem}]
+			for elem in resultadoBusq:
+				listaResultados += [{'result':elem}]
 
 		return render(request,entrada,{'listaResultados':listaResultados,'clasificacion':clasificacion,'caracteristica':caracteristica})
 

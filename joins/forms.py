@@ -167,7 +167,6 @@ ESTADO_CONSERVACION = (
 )
 
 CARATERISTICA_PINTURA = (
-	('---','---'),
 	('Linea sencilla','Linea sencilla'),
 	('Linea compuesta','Linea compuesta'),
 	('Pintura positiva','Pintura positiva'),
