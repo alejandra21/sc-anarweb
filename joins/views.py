@@ -140,6 +140,7 @@ def cruces(request,cruce_id):
 	elif (cruce_id == "12"):
 
 		ubicacion = request.GET['ubicacion']
+		estado = request.GET['estado']
 
 		if (ubicacion == "Cerro"):
 			elementos = UbicacionYacimiento.objects.filter(enCerro=True)
@@ -182,6 +183,12 @@ def cruces(request,cruce_id):
 
 		elif (ubicacion == "Costa"):
 			elementos = UbicacionYacimiento.objects.filter(enRioCosta=True)
+
+		if (estado != "Todos"):
+			elementos = elementos.filter(yacimiento__estado__nombre=estado)
+
+		else:
+			pass
 
 		return render(request,entrada,{'listaManifestaciones':elementos,'ubicacion':ubicacion})
 	
