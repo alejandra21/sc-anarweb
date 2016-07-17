@@ -409,91 +409,85 @@ def cruces(request,cruce_id):
 
 	elif (cruce_id=="21"):
 
+		estado = request.GET['estado']
 		ubicacion = request.GET['ubicacion']
 		caracteristica = request.GET['carasurcopetrotipo3']
 
 		listaResultado = []
 
-		if (ubicacion != "---"):
+		if (ubicacion == "Cerro"):
+			elementos = UbicacionYacimiento.objects.filter(enCerro=True)
 
-			if (ubicacion == "Cerro"):
-				elementos = UbicacionYacimiento.objects.filter(enCerro=True)
+		elif (ubicacion == "Cima"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroCima=True)
 
-			elif (ubicacion == "Cima"):
-				elementos = UbicacionYacimiento.objects.filter(enCerroCima=True)
+		elif (ubicacion == "Ladera"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroLadera=True)
 
-			elif (ubicacion == "Ladera"):
-				elementos = UbicacionYacimiento.objects.filter(enCerroLadera=True)
+		elif (ubicacion == "Pie de montana"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroPieDeMonte=True)
 
-			elif (ubicacion == "Pie de montana"):
-				elementos = UbicacionYacimiento.objects.filter(enCerroPieDeMonte=True)
+		elif (ubicacion == "Barranco"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroBarranco=True)
 
-			elif (ubicacion == "Barranco"):
-				elementos = UbicacionYacimiento.objects.filter(enCerroBarranco=True)
+		elif (ubicacion == "Acantilado"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroAcantilado=True)
 
-			elif (ubicacion == "Acantilado"):
-				elementos = UbicacionYacimiento.objects.filter(enCerroAcantilado=True)
+		elif (ubicacion == "Valle"):
+			elementos = UbicacionYacimiento.objects.filter(enValle=True)
 
-			elif (ubicacion == "Valle"):
-				elementos = UbicacionYacimiento.objects.filter(enValle=True)
+		elif (ubicacion == "Rio"):
+			elementos = UbicacionYacimiento.objects.filter(enRio=True)
 
-			elif (ubicacion == "Rio"):
-				elementos = UbicacionYacimiento.objects.filter(enRio=True)
+		elif (ubicacion == "Lecho"):
+			elementos = UbicacionYacimiento.objects.filter(enRioLecho=True)
 
-			elif (ubicacion == "Lecho"):
-				elementos = UbicacionYacimiento.objects.filter(enRioLecho=True)
+		elif (ubicacion == "Margen derecha"):
+			elementos = UbicacionYacimiento.objects.filter(enRioMargenDerecha=True)
 
-			elif (ubicacion == "Margen derecha"):
-				elementos = UbicacionYacimiento.objects.filter(enRioMargenDerecha=True)
+		elif (ubicacion == "Margen izquierda"):
+			elementos = UbicacionYacimiento.objects.filter(enRioMargenIzquierda=True)
 
-			elif (ubicacion == "Margen izquierda"):
-				elementos = UbicacionYacimiento.objects.filter(enRioMargenIzquierda=True)
+		elif (ubicacion == "Isla"):
+			elementos = UbicacionYacimiento.objects.filter(enRioIsla=True)
 
-			elif (ubicacion == "Isla"):
-				elementos = UbicacionYacimiento.objects.filter(enRioIsla=True)
+		elif (ubicacion == "Raudal"):
+			elementos = UbicacionYacimiento.objects.filter(enRioRaudal=True)
 
-			elif (ubicacion == "Raudal"):
-				elementos = UbicacionYacimiento.objects.filter(enRioRaudal=True)
-
-			elif (ubicacion == "Costa"):
-				elementos = UbicacionYacimiento.objects.filter(enRioCosta=True)
-
-			if (caracteristica == "---"):
-
-				for y in elementos:
-					listaResultado += [{'result':y}]
-
-		if (caracteristica != "---"):
-
-			if (caracteristica == "Base redonda"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseRedonda=True)
-
-			elif (caracteristica == "Base aguda"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseAguda=True)
-
-			elif (caracteristica == "Base relieve lineal"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelieveLineal=True)
-
-			elif (caracteristica == "Base relieve planar"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelievePlanar=True)
-
-			elif (caracteristica == "Alto relieve planar"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelievePlanar=True)
-
-			elif (caracteristica == "Alto relieve lineal"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelieveLineal=True)
+		elif (ubicacion == "Costa"):
+			elementos = UbicacionYacimiento.objects.filter(enRioCosta=True)
 
 
-			if (ubicacion == "---"):
-				for y in elementosCar:
-					listaResultado += [{'result':y}]
+		if (caracteristica == "Base redonda"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseRedonda=True)
 
-			else:
-				for result in elementos:
+		elif (caracteristica == "Base aguda"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseAguda=True)
+
+		elif (caracteristica == "Base relieve lineal"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelieveLineal=True)
+
+		elif (caracteristica == "Base relieve planar"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelievePlanar=True)
+
+		elif (caracteristica == "Alto relieve planar"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelievePlanar=True)
+
+		elif (caracteristica == "Alto relieve lineal"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelieveLineal=True)
+
+		else:
+			for result in elementos:
+
+				if (estado != "Todos"):
+					resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id,
+														yacimiento__estado__nombre=estado)
+
+				else:
 					resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id)
 
-					for elem in resultadoBusq:
-						listaResultado += [{'result':elem}]
+				for elem in resultadoBusq:
+					listaResultado += [{'result':elem}]
 
 
 		return render(request,entrada,{'listaResultado':listaResultado,'ubicacion':ubicacion})

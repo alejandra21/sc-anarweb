@@ -99,7 +99,6 @@ OPCIONES_SURCO_GRABADO2 = (
 )
 
 OPCIONES_SURCO_GRABADO3 = (
-	('---','---'),
 	('Ancho de surco','Ancho de surco'),
 	('Profundidad de surco','Profundidad de surco'),
 	('Base redonda','Base redonda'),
