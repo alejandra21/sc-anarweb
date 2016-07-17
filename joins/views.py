@@ -276,12 +276,12 @@ def cruces(request,cruce_id):
 
 			pinturasRupestres =  pinturasRupestres.filter(yacimiento__estado__nombre=estado)
 
-			if (pinturas == "---"):
+		if (pinturas == "---"):
 
-				for y in pinturasRupestres:
-					listaResultado += [{'yacimiento':y}]
+			for y in pinturasRupestres:
+				listaResultado += [{'yacimiento':y}]
 
-		if (pinturas != "---"):
+		else:
 
 			if (pinturas in {'Pintura positiva negra','Pintura positiva blanca',\
 							'Pintura positiva amarilla','Pintura positiva roja',\
@@ -294,11 +294,6 @@ def cruces(request,cruce_id):
 								'Pintura negativa dos rojos','Pintura negativa tres rojos'}):
 
 				yacPintura = DescColores.objects.filter(esNegativa=True)
-
-			if (estado == "Todos"):
-
-				for y in yacPintura:
-					listaResultado += [{'yacimiento':y}]
 
 		for y in yacPintura:
 
