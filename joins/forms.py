@@ -149,7 +149,6 @@ OPCIONES_PIEDRA_EROSION = (
 )
 
 OPCIONES_MANIFESTACIONES_ASOCIADAS = (
-	('---','---'),
 	('Litica','Litica'),
 	('Ceramica','Ceramica'),
 	('Oseo','Oseo'),
