@@ -130,6 +130,7 @@ def cruces(request,cruce_id):
 		PuntosAcoplados = manifestacion.filter(esPuntosAcoplados=True)
 		Cupula = manifestacion.filter(esCupulas = True)
 
+
 		return render(request,entrada,{'estado':estado,'codigo':codigo,
 			'geoglifo':geoglifo,'pinturasRupestres':pinturasRupestres,
 			'micropetroglifos':micropetroglifos,'petroglifo':petroglifo,
@@ -620,7 +621,6 @@ def cruces(request,cruce_id):
 
 		elif (caracteristica == "Alto relieve lineal"):
 			elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelieveLineal=True)
-
 
 		if (clasificacion == "Linea sencilla"):
 
