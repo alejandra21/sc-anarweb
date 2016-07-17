@@ -562,21 +562,19 @@ def cruces(request,cruce_id):
 
 	elif (cruce_id == "24"):
 
+		estado = request.GET['estado']
 		material = request.GET['material']
 		conservacion = request.GET['estadoConservacion']
 		listaResultados = []
 
+		if (material == "Roca ignea"):
+			yacPetroglifo = MaterialYacimiento.objects.filter(esIgnea=True)
 
-		if (material != "---"):
+		elif (material == "Roca metamorfica"):
+			yacPetroglifo = MaterialYacimiento.objects.filter(esMetamor=True)
 
-			if (material == "Roca ignea"):
-				yacPetroglifo = MaterialYacimiento.objects.filter(esIgnea=True)
-
-			elif (material == "Roca metamorfica"):
-				yacPetroglifo = MaterialYacimiento.objects.filter(esMetamor=True)
-
-			elif (material == "Roca sedimentaria"):
-				yacPetroglifo = MaterialYacimiento.objects.filter(esSedimentaria=True)
+		elif (material == "Roca sedimentaria"):
+			yacPetroglifo = MaterialYacimiento.objects.filter(esSedimentaria=True)
 
 
 		if (conservacion == "Bueno"):
@@ -587,7 +585,11 @@ def cruces(request,cruce_id):
 
 		for result in yacPetroglifo:
 
-			resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id)
+			if (estado != "Total"):
+				resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id,
+												yacimiento__estado__nombre=estado)
+			else:
+				resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id)
 
 			for elem in resultadoBusq:
 				listaResultados += [{'result':elem}]
