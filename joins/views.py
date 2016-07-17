@@ -585,7 +585,7 @@ def cruces(request,cruce_id):
 
 		for result in yacPetroglifo:
 
-			if (estado != "Total"):
+			if (estado != "Todos"):
 				resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id,
 												yacimiento__estado__nombre=estado)
 			else:
