@@ -402,7 +402,7 @@ def cruces(request,cruce_id):
 		elif (manifestacion == "Monticulos"):
 			yacimientoResult = ManifestacionesAsociadas.objects.filter(esMonticulo=True)
 
-		if (estado != Todos):
+		if (estado != "Todos"):
 			yacimientoResult = yacimientoResult.filter(yacimiento__estado__nombre=estado)
 
 		return render(request,entrada,{'yacimiento':yacimientoResult,'manifestacion':manifestacion})
