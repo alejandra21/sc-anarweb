@@ -375,6 +375,7 @@ def cruces(request,cruce_id):
 
 	elif (cruce_id=="20"):
 
+		estado = request.GET['estado']
 		manifestacion = request.GET['manifAsociadas']
 
 		if (manifestacion == "Litica"):
@@ -400,6 +401,9 @@ def cruces(request,cruce_id):
 
 		elif (manifestacion == "Monticulos"):
 			yacimientoResult = ManifestacionesAsociadas.objects.filter(esMonticulo=True)
+
+		if (estado != Todos):
+			yacimientoResult = yacimientoResult.filter(yacimiento__estado__nombre=estado)
 
 		return render(request,entrada,{'yacimiento':yacimientoResult,'manifestacion':manifestacion})
 
