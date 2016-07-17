@@ -492,55 +492,51 @@ def cruces(request,cruce_id):
 		return render(request,entrada,{'listaResultado':listaResultado,'ubicacion':ubicacion})
 
 	elif (cruce_id == "22"):
+
+		estado = request.GET['estado']
 		ubicacion = request.GET['ubicacion2']
 		clasificacion = request.GET['clasificacion']
 
 		elementos = ""
 		listaResultados = []
 
-		if (ubicacion != "---"):
+		if (ubicacion == "Abrigo"):
+			elementos = TipoYacimiento.objects.filter(esAbrigo=True)
 
-			if (ubicacion == "Abrigo"):
-				elementos = TipoYacimiento.objects.filter(esAbrigo=True)
+		elif (ubicacion == "Cueva"):
+			elementos = TipoYacimiento.objects.filter(esCueva=True)
 
-			elif (ubicacion == "Cueva"):
-				elementos = TipoYacimiento.objects.filter(esCueva=True)
+		elif (ubicacion == "Cueva de recubrimiento"):
+			elementos = TipoYacimiento.objects.filter(esCuevadeRec=True)
 
-			elif (ubicacion == "Cueva de recubrimiento"):
-				elementos = TipoYacimiento.objects.filter(esCuevadeRec=True)
 
-			if (clasificacion == "---"):
-				for elem in elementos:
-					listaResultados += [{'result':elem}]
+		if (clasificacion == "Linea sencilla"):
 
-		if (clasificacion != "---"):
+			elementosCar = CaracDeLaPintura.objects.filter(esLineaSencilla=True)
 
-			if (clasificacion == "Linea sencilla"):
+		elif (clasificacion == "Linea compuesta"):
+			elementosCar = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
 
-				elementosCar = CaracDeLaPintura.objects.filter(esLineaSencilla=True)
+		elif (clasificacion == "Figura rellena"):
+			elementosCar = CaracDeLaPintura.objects.filter(esFiguraRellena=True)
 
-			elif (clasificacion == "Linea compuesta"):
-				elementosCar = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
+		elif (clasificacion == "Impresion de manos positivo"):
+			elementosCar = CaracDeLaPintura.objects.filter(esImpresionDeManosPositivo=True)
 
-			elif (clasificacion == "Figura rellena"):
-				elementosCar = CaracDeLaPintura.objects.filter(esFiguraRellena=True)
+		elif (clasificacion == "Impresion de manos negativo"):
+			elementosCar = CaracDeLaPintura.objects.filter(esImpresionDeManosNegativo=True)
 
-			elif (clasificacion == "Impresion de manos positivo"):
-				elementosCar = CaracDeLaPintura.objects.filter(esImpresionDeManosPositivo=True)
 
-			elif (clasificacion == "Impresion de manos negativo"):
-				elementosCar = CaracDeLaPintura.objects.filter(esImpresionDeManosNegativo=True)
+		for result in elementos:
 
-			if (ubicacion == "---"):
-				for elem in elementosCar:
-					listaResultados += [{'result':elem}]
-
+			if (estado != "Todos"):
+				resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id,
+													yacimiento__estado__nombre=estado)
 			else:
-				for result in elementos:
-					resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id)
+				resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id)
 
-					for elem in resultadoBusq:
-						listaResultados += [{'result':elem}]
+			for elem in resultadoBusq:
+				listaResultados += [{'result':elem}]
 
 
 		return render(request,entrada,{'listaResultados':listaResultados,'ubicacion':ubicacion})

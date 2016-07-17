@@ -65,14 +65,12 @@ OPCIONES_UBICACION = (
 )
 
 OPCIONES_UBICACION2 = (
-	('---', '---'),
 	('Abrigo','Abrigo'),
 	('Cueva','Cueva'),
 	('Cueva de recubrimiento','Cueva de recubrimiento'),
 )
 
 CLASIFICACION = (
-	('---', '---'),
 	('Linea sencilla','Linea sencilla'),
 	('Linea compuesta','Linea compuesta'),
 	('Figura rellena','Figura rellena'),
