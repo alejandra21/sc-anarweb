@@ -446,6 +446,7 @@ $(document).ready(function(){
                         <i><b>(13.12) Cúpulas</b></i>
                         en la siguiente <i>(14) Ubicación</i>:<br/>
                         <form action="/cruces/12/">
+                            <label>(3) Estado: {{form.estado}}</label></br>
                             <label>(14) Ubicación: {{form.ubicacion}}</label></br></br>
                             <input type="submit" class="button" value="Consultar"/>
                         </form>
@@ -467,6 +468,7 @@ $(document).ready(function(){
                         <i>(24.1.2) Profundidad del surco grabado</i> para todos 
                         los Yacimientos de <i><b>(13.3) Petroglifos:</b></i><br/>
                         <form action="/cruces/13/">
+                            <label>(3) Estado: {{form.estado}}</label></br>
                             <input type="submit" class="button" value="Consultar"/>
                         </form>
                     </p>
@@ -615,10 +617,10 @@ $(document).ready(function(){
                     <p>
                         Listar por <i>(00) Código</i>, <i>(3) Estado</i> y <i>(13) Tipo de Manifestación</i>  
                         los yacimientos que contengan </br>
-                        <i>(30) Manifestaciones Asociadas</i> de:
                         <br/>
                         <form action="/cruces/20/">
-                            <label>{{form.manifAsociadas}}</label></br></br>
+                            <label>(30) Manifestaciones Asociadas{{form.manifAsociadas}}</label></br></br>
+                            <label>(3) Estado: {{form.estado}}</label></br>
                             <input type="submit" class="button" value="Consultar"/>
                         </form>
                     </p>
@@ -640,6 +642,7 @@ $(document).ready(function(){
                       trabajadas (21.1.1) (21.1.2) / número de piedras en el 
                       yacimiento original (21.1), ubicadas en:<br/>
                         <form action="/cruces/21/">
+                            <label>(3) Estado: {{form.estado}}</label></br>
                             <label>(14) Ubicación: {{form.ubicacion}}</label>
                              y su clasificación por:</br>
                             <label>(24) Características del surco grabado: {{form.carasurcopetrotipo3}}</label></br>
@@ -662,6 +665,7 @@ $(document).ready(function(){
                         Listar por <i>(3) Estado</i> y <i>(00) Yacimiento</i> con 
                         <i><b>(13.2) Pinturas Rupestres</b></i> ubicadas en:<br/>
                         <form action="/cruces/22/">
+                            <label>(3) Estado: {{form.estado}}</label></br>
                             <label>(14) Ubicación: {{form.ubicacion2}}</label></br></br>
                             <label>(25) Clasificadas por: {{form.clasificacion}}</label></br></br>
                             <input type="submit" class="button" value="Consultar"/>
@@ -703,6 +707,7 @@ $(document).ready(function(){
                         Lísteme por estado (3) y yacimiento (00), y para cada tipo
                         de ubicación (14) ,(14.1), (14.2) (14.3), (14.4), (14.5) con <br/>
                         <form action="/cruces/24/">
+                            <label>(3) Estado: {{form.estado}}</label></br>
                             <label>Tipo de material: {{form.material}}</label></br>
                             <label>Estado de conservacion: {{form.estadoConservacion}}</label></br>
                             <input type="submit" class="button" value="Consultar"/>
@@ -723,6 +728,7 @@ $(document).ready(function(){
                     <p>
                         Listar por Estado (3), Yacimiento (00) y Tipo de Material (22) con:<br/>
                         <form action="/cruces/25/">
+                            <label>(3) Estado: {{form.estado}}</label></br>
                             <label>Caracteristica petroglifo: {{form.carasurcopetrotipo3}}</label>
                             <label>Caracteristica de la pintura: {{form.caracteristicaPintura}}</label></br></br>
                             <input type="submit" class="button" value="Consultar"/>
@@ -744,6 +750,7 @@ $(document).ready(function(){
                           Listar por estado (3) los yacimientos (00), con
                           micropetroglifos (13.4) con:<br/>
                           <form action="/cruces/26/">
+                              <label>(3) Estado: {{form.estado}}</label></br>
                               <label>Caracteristica de surco: {{form.surcoGrabado}}</label></br></br>
                               <input type="submit" class="button" value="Consultar"/>
                           </form>
