@@ -476,18 +476,17 @@ def cruces(request,cruce_id):
 		elif (caracteristica == "Alto relieve lineal"):
 			elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelieveLineal=True)
 
-		else:
-			for result in elementos:
+		for result in elementos:
 
-				if (estado != "Todos"):
-					resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id,
-														yacimiento__estado__nombre=estado)
+			if (estado != "Todos"):
+				resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id,
+													yacimiento__estado__nombre=estado)
 
-				else:
-					resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id)
+			else:
+				resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id)
 
-				for elem in resultadoBusq:
-					listaResultado += [{'result':elem}]
+			for elem in resultadoBusq:
+				listaResultado += [{'result':elem}]
 
 
 		return render(request,entrada,{'listaResultado':listaResultado,'ubicacion':ubicacion})
