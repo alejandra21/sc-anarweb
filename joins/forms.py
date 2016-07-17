@@ -46,7 +46,6 @@ OPCIONES_MANIFESTACIONES = (
 )
 
 OPCIONES_UBICACION = (
-	('---', '---'),
 	('Cerro','Cerro'),
 	('Cima','Cima'),
 	('Ladera','Ladera'),
