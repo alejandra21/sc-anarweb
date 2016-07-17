@@ -108,8 +108,14 @@ def cruces(request,cruce_id):
 				Q(yacimiento__codigo=codigo))
 
 		else:
-			manifestacion = \
-			ManifestacionYacimiento.objects.filter(yacimiento__codigo=codigo)
+
+			if (codigo!=""):
+				manifestacion = \
+				ManifestacionYacimiento.objects.filter(yacimiento__codigo=codigo)
+
+			else:
+				manifestacion = \
+				ManifestacionYacimiento.objects.all()
 
 		geoglifo = manifestacion.filter(esGeoglifo=True)
 		pinturasRupestres = manifestacion.filter(esPintura=True)
