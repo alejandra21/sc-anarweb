@@ -656,10 +656,16 @@ def cruces(request,cruce_id):
 
 	if (cruce_id == "26"):
 
+		estado = request.GET['estado']
 		surco = request.GET['surcoGrabado']
 		listaResultados = []
 
-		manifestacion =  ManifestacionYacimiento.objects.filter(esMicroPetroglifo=True)
+		if (estado != "Todos"):
+			manifestacion =  ManifestacionYacimiento.objects.filter(esMicroPetroglifo=True,yacimiento__estado__nombre=estado)
+
+		else:
+			manifestacion =  ManifestacionYacimiento.objects.filter(esMicroPetroglifo=True)
+			
 
 		if (surco == "Base redonda"):
 			elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseRedonda=True)
