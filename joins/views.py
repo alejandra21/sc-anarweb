@@ -46,7 +46,12 @@ def cruces(request,cruce_id):
 	# print(cruce_id == "1")
 	if (cruce_id == "1"):
 		estado = request.GET['estado']
-		results=Yacimiento.objects.filter(estado__nombre__exact=estado)
+
+		if (estado != "Todos"):
+			results=Yacimiento.objects.filter(estado__nombre__exact=estado)
+		else:
+			results = Yacimiento.objects.all()
+
 		total = len(results)
 		return render(request,entrada,{'total':total,'results':results,'estado':estado})
 
@@ -58,20 +63,30 @@ def cruces(request,cruce_id):
 
 	elif (cruce_id == "9"):
 		estado = request.GET['estado']
-		results = ManifestacionYacimiento.objects.filter(yacimiento__estado__nombre=estado)
+		results = ManifestacionYacimiento.objects.all()
 
 		if (results):
 			yacimiento = results.filter(Q(esMenhires=True)|Q(esCerroConDolmen=True))
-		else:
-			yacimiento = ""
 
-		return render(request,entrada,{'yacimiento':yacimiento,'estado':estado})
+			if (estado != "Todos"):
+				yacimientoResult = yacimiento.filter(yacimiento__estado__nombre=estado)
+			else:
+				yacimientoResult = yacimiento
+
+		else:
+			yacimientoResult = ""
+
+		return render(request,entrada,{'yacimiento':yacimientoResult,'estado':estado})
 
 	elif (cruce_id == "10"):
 		# Falta implementar
 		listaYacimientos = []
 		estado = request.GET['estado']
-		yacimiento = Yacimiento.objects.filter(estado__nombre__exact=estado)
+
+		if (estado != "Todos"):
+			yacimiento = Yacimiento.objects.filter(estado__nombre__exact=estado)
+		else:
+			yacimiento = Yacimiento.objects.all()
 
 		for y in yacimiento:
 
@@ -87,9 +102,15 @@ def cruces(request,cruce_id):
 		estado = request.GET['estado']
 		codigo = request.GET['codigo']
 
-		manifestacion = \
-		ManifestacionYacimiento.objects.filter(Q(yacimiento__estado__nombre=estado)|
-			Q(yacimiento__codigo=codigo))
+		if (estado != "Todos"):
+			manifestacion = \
+			ManifestacionYacimiento.objects.filter(Q(yacimiento__estado__nombre=estado)|
+				Q(yacimiento__codigo=codigo))
+
+		else:
+			manifestacion = \
+			ManifestacionYacimiento.objects.filter(yacimiento__codigo=codigo)
+
 		geoglifo = manifestacion.filter(esGeoglifo=True)
 		pinturasRupestres = manifestacion.filter(esPintura=True)
 		micropetroglifos = manifestacion.filter(esMicroPetroglifo=True)
@@ -102,7 +123,6 @@ def cruces(request,cruce_id):
 		Amoladores = manifestacion.filter(esAmolador=True)
 		PuntosAcoplados = manifestacion.filter(esPuntosAcoplados=True)
 		Cupula = manifestacion.filter(esCupulas = True)
-
 
 		return render(request,entrada,{'estado':estado,'codigo':codigo,
 			'geoglifo':geoglifo,'pinturasRupestres':pinturasRupestres,
@@ -756,7 +776,7 @@ def consulta(request):
 
 		if(nombreElegido=="" and estadoElegido=="Todos"):
 			# Se supone que tiene que redireccionar a un .html
-			return render(request, 'sistema.html',{'forma':forma})
+			yacimiento=Yacimiento.objects.all()
 			#yacimiento=Yacimiento.objects.filter(estado__nombre__exact=estadoElegido)
 
 		elif(nombreElegido!="" and estadoElegido=="Todos"):
