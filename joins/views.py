@@ -235,7 +235,7 @@ def cruces(request,cruce_id):
 
 		pinturasRupestres =  ManifestacionYacimiento.objects.filter(esPintura=True)
 
-		if (estado != "---"):
+		if (estado != "Todos"):
 
 			pinturasRupestres =  pinturasRupestres.filter(yacimiento__estado__nombre=estado)
 
@@ -258,7 +258,7 @@ def cruces(request,cruce_id):
 
 				yacPintura = DescColores.objects.filter(esNegativa=True)
 
-			if (estado == "---"):
+			if (estado == "Todos"):
 
 				for y in yacPintura:
 					listaResultado += [{'yacimiento':y}]
@@ -311,7 +311,7 @@ def cruces(request,cruce_id):
 
 		petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo=True)
 
-		if (estado != "---"):
+		if (estado != "Todos"):
 
 			petroglifoResult =  petroglifo.filter(yacimiento__estado__nombre=estado)
 
@@ -333,7 +333,7 @@ def cruces(request,cruce_id):
 
 		for y in yacPetroglifo:
 
-			if (estado != "---"):
+			if (estado != "Todos"):
 				result = petroglifoResult.filter(yacimiento__id=y.yacimiento.id)
 
 			else:
@@ -732,20 +732,20 @@ def consulta(request):
 
 		########################################################################	
 
-		if(nombreElegido=="" and estadoElegido=="---"):
+		if(nombreElegido=="" and estadoElegido=="Todos"):
 			pass
 
-		elif(nombreElegido!="" and estadoElegido=="---"):
+		elif(nombreElegido!="" and estadoElegido=="Todos"):
 
 			manifestacion =\
 			 manifestacion.filter(yacimiento__nombre__icontains=nombreElegido)
 
-		elif(nombreElegido=="" and estadoElegido!="---"):
+		elif(nombreElegido=="" and estadoElegido!="Todos"):
 
 			manifestacion=\
 			manifestacion.filter(yacimiento__estado__nombre=estadoElegido)
 
-		elif(nombreElegido!="" and estadoElegido!="---"):
+		elif(nombreElegido!="" and estadoElegido!="Todos"):
 
 			# Conculta encadenada
 			manifestacion = \
@@ -754,20 +754,20 @@ def consulta(request):
 
 	else:
 
-		if(nombreElegido=="" and estadoElegido=="---"):
+		if(nombreElegido=="" and estadoElegido=="Todos"):
 			# Se supone que tiene que redireccionar a un .html
 			return render(request, 'sistema.html',{'forma':forma})
 			#yacimiento=Yacimiento.objects.filter(estado__nombre__exact=estadoElegido)
 
-		elif(nombreElegido!="" and estadoElegido=="---"):
+		elif(nombreElegido!="" and estadoElegido=="Todos"):
 
 			yacimiento=Yacimiento.objects.filter(nombre__icontains=nombreElegido)
 
-		elif(nombreElegido=="" and estadoElegido!="---"):
+		elif(nombreElegido=="" and estadoElegido!="Todos"):
 
 			yacimiento=Yacimiento.objects.filter(estado__nombre__exact=estadoElegido)
 
-		elif(nombreElegido!="" and estadoElegido!="---"):
+		elif(nombreElegido!="" and estadoElegido!="Todos"):
 
 			# Conculta encadenada
 			yacimiento = Yacimiento.objects.filter(nombre__icontains=nombreElegido,

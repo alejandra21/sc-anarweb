@@ -7,7 +7,6 @@ from django import forms
 ########################################################################################
 
 OPCIONES_ESTADO = (
-	('---', '---'),
 	('Todos', 'Todos'),
 	('Amazonas'	, 'Amazonas'),
 	('Anzoategui', 'Anzoategui'),
