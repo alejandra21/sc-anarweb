@@ -7,7 +7,7 @@ from anarapp.models import Estado, Piedra, Yacimiento, \
 							Coordenadas,ConstitucionYacimiento,UbicacionYacimiento,\
 							CaracSurcoPetroglifo,DescColores,MaterialYacimiento,\
 							ManifestacionesAsociadas,TipoYacimiento,CaracDeLaPintura,\
-							TecnicaParaMicroPetro,EstadoConserYac
+							TecnicaParaMicroPetro,EstadoConserYac,TecnicaParaPetroglifo
 from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
