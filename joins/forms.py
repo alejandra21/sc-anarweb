@@ -109,7 +109,6 @@ OPCIONES_SURCO_GRABADO3 = (
 
 OPCIONES_TIPO_PINTURA = (
 
-	('---', '---'),
 	('Pintura positiva negra','Pintura positiva negra'),
 	('Pintura positiva blanca','Pintura positiva blanca'),
 	('Pintura positiva amarilla','Pintura positiva amarilla'),

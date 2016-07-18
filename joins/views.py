@@ -455,7 +455,8 @@ def cruces(request,cruce_id):
 					listaResultados += [{'result':yac,'anchoDesde':anchoD,
 										'anchoHasta':anchoH}]
 				
-		return render(request,entrada,{'listaResultados':listaResultados})
+		return render(request,entrada,{'listaResultados':listaResultados,'caracteristica':caracteristica,
+									'color':tipo})
 
 
 	elif (cruce_id=="20"):
