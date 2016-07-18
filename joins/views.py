@@ -211,17 +211,18 @@ def cruces(request,cruce_id):
 
 		for elem in petroglifo:
 
-			medida = CaracSurcoPetroglifo.objects.filter(yacimiento__id=elem.yacimiento.id)
-			anchoD = medida.anchoDe 
-			anchoH = medida.anchoA
-			profundidadD = medida.produndidadDe
-			profundidadH = medida.profundidadA
+			medidaSet = CaracSurcoPetroglifo.objects.filter(yacimiento__id=elem.yacimiento.id)
+			for medida in medidaSet:
+				anchoD = medida.anchoDe 
+				anchoH = medida.anchoA
+				profundidadD = medida.produndidadDe
+				profundidadH = medida.profundidadA
 
-			if (anchoD <= anchoDesde and anchoH >= anchoHasta and\
-				profundidadD <= profundidadDesde and\
-				profundidadH >= profundidadHasta ):
+				if (anchoD <= anchoDesde and anchoH >= anchoHasta and\
+					profundidadD <= profundidadDesde and\
+					profundidadH >= profundidadHasta ):
 
-				listaYacimientos += [{'result':elem}]
+					listaYacimientos += [{'result':elem}]
 
 		return render(request,entrada,{'listaResultado':listaYacimientos})
 	
