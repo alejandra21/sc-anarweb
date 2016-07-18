@@ -222,7 +222,9 @@ def cruces(request,cruce_id):
 					profundidadD <= profundidadDesde and\
 					profundidadH >= profundidadHasta ):
 
-					listaYacimientos += [{'result':elem}]
+					listaYacimientos += [{'result':elem,'anchoDesde':anchoD,
+										'anchoHasta':anchoH,'profundidadDesde':profundidadD,
+										'profundidadHasta':profundidadH}]
 
 		return render(request,entrada,{'listaResultado':listaYacimientos})
 	

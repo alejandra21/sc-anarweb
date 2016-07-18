@@ -22,11 +22,35 @@
 		<i> 
 			<ul>Código: {{resultado.result.yacimiento.codigo}}</ul>
 			<ul>Estado: {{resultado.result.yacimiento.estado.nombre}}</ul>
+			<ul>Ancho desde: {{resultado.anchoDesde}}</ul>
+			<ul>Ancho hasta : {{resultado.anchoHasta}}</ul>
+			<ul>Profundida desde: {{resultado.profundidadDesde}}</ul>
+			<ul>Profundidad hasta: {{resultado.profundidadHasta}}</ul>
 		</i>
 	{%endfor%}
 	
 </ul>
 
+		
+	<!--- Datos de Ejemplo para muestra del Diseño inicial -->
+	<h3>Amazonas</h3>
+		<ul>
+			<li><a href="" style="color:black;">La Rueda del Indio</a></li>
+			<ul>
+				<li><strong>Ancho:</strong> 5cm </li>
+				<li><strong>Profundidad:</strong> 8cm  </li>
+			</ul>
+		</ul>
+
+	<h3>Bolívar</h3>
+		<ul>
+			<li><a href="" style="color:black;">Cueva Caño Ore</a></li>
+			<ul>
+				<li><strong>Ancho: </strong> 4cm </li>
+				<li><strong>Profundidad:</strong> 7cm  </li>
+			</ul>
+		</ul>
+		
 {% endblock %}
 
 {% block user %}
