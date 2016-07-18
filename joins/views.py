@@ -204,9 +204,9 @@ def cruces(request,cruce_id):
 		listaYacimientos = []
 
 		if (estado != "Todos"):
-			petroglifo = manifestacion.filter(esPetroglifo = True,yacimiento__estado__nombre=estado)
+			petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo = True,yacimiento__estado__nombre=estado)
 		else:
-			petroglifo = manifestacion.filter(esPetroglifo = True)
+			petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo = True)
 
 
 		for elem in petroglifo:
