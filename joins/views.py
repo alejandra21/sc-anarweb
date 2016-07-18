@@ -375,9 +375,8 @@ def cruces(request,cruce_id):
 		for result in caractYac:
 			resultadoBusq = petroglifo.filter(yacimiento__id=result.yacimiento.id)  
 
-			if (len(resultadoBusq)!=0):
-				for resultado in resultadoBusq:
-					listaResultado += [{'result':resultado}]
+			for resultado in resultadoBusq:
+				listaResultado += [{'result':resultado}]
 
 		return render(request,entrada,{'listaResultado':listaResultado,'tipo':caracteristica})
 
@@ -644,20 +643,37 @@ def cruces(request,cruce_id):
 		listaResultados = []
 
 		if (caracteristica == "Abrasion"):
-			elementos = TecnicaParaMicroPetro.objects.filter(Q(esAbrasion=True)|\
+			elementos = TecnicaParaPetroglifo.objects.filter(Q(esAbrasion=True)|\
+															Q(esAbrasionPiedra=True)|\
+															Q(esAbrasionArena=True))
+
+			elementosPetro = TecnicaParaPetroglifo.objects.filter(Q(esAbrasion=True)|\
 															Q(esAbrasionPiedra=True)|\
 															Q(esAbrasionArena=True))
 			
 		elif (caracteristica == "Percusion"):
-			elementos = TecnicaParaMicroPetro.objects.filter(Q(esGrabadoPercusion=True)|\
+			elementos = TecnicaParaPetroglifo.objects.filter(Q(esGrabadoPercusion=True)|\
 															Q(esGrabadoPercusionDirecta=True)|\
 															Q(esGrabadoPercusionIndirecta=True))
 
+			elementosPetro = TecnicaParaPetroglifo.objects.filter(Q(esGrabadoPercusion=True)|\
+															Q(esGrabadoPercusionDirecta=True)|\
+															Q(esGrabadoPercusionIndirecta=True))
+
+
 		if (estado != "Todos"):
 			elementos = elementos.filter(yacimiento__estado__nombre=estado)
+			elementosPetro = elementosPetro.filter(yacimiento__estado__nombre=estado)
 
 
-		return render(request,entrada,{'listaResultados':elementos,'surco':caracteristica})
+		for elem in elementos:
+			listaResultados += [{'result':elem}]
+
+		for elem in elementosPetro:
+			listaResultados += [{'result':elem}]
+
+
+		return render(request,entrada,{'listaResultados':listaResultados,'surco':caracteristica})
 
 	elif (cruce_id == "24"):
 
