@@ -643,7 +643,7 @@ def cruces(request,cruce_id):
 		listaResultados = []
 
 		if (caracteristica == "Abrasion"):
-			elementos = TecnicaParaPetroglifo.objects.filter(Q(esAbrasion=True)|\
+			elementos = TecnicaParaMicroPetro.objects.filter(Q(esAbrasion=True)|\
 															Q(esAbrasionPiedra=True)|\
 															Q(esAbrasionArena=True))
 
@@ -652,7 +652,7 @@ def cruces(request,cruce_id):
 															Q(esAbrasionArena=True))
 			
 		elif (caracteristica == "Percusion"):
-			elementos = TecnicaParaPetroglifo.objects.filter(Q(esGrabadoPercusion=True)|\
+			elementos = TecnicaParaMicroPetro.objects.filter(Q(esGrabadoPercusion=True)|\
 															Q(esGrabadoPercusionDirecta=True)|\
 															Q(esGrabadoPercusionIndirecta=True))
 
