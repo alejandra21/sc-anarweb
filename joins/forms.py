@@ -173,6 +173,11 @@ CARATERISTICA_PINTURA = (
 	('Pintura negativa','Pintura negativa'),
 )
 
+CARATERISTICA_PINTURA2 = (
+	('Linea sencilla','Linea sencilla'),
+	('Linea compuesta','Linea compuesta'),
+)
+
 SURCO_GRABADO = (
 
 	('Base redonda','Base redonda'),
@@ -197,6 +202,7 @@ class CrucesYYFormAdmin(forms.Form):
     surcoGrabado = forms.ChoiceField(required=False, choices=SURCO_GRABADO)
     clasificacion = forms.ChoiceField(required=False, choices=CLASIFICACION)
     caracteristicaPintura = forms.ChoiceField(required=False, choices=CARATERISTICA_PINTURA)
+    caracteristicaPintura2 = forms.ChoiceField(required=False, choices=CARATERISTICA_PINTURA2)
     carasurcopetrotipo = forms.ChoiceField(required=False, choices=OPCIONES_SURCO_GRABADO)
     carasurcopetrotipo2 = forms.ChoiceField(required=False, choices=OPCIONES_SURCO_GRABADO2)
     carasurcopetrotipo3 = forms.ChoiceField(required=False, choices=OPCIONES_SURCO_GRABADO3)

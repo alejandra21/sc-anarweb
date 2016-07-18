@@ -597,10 +597,10 @@ $(document).ready(function(){
                         combinación de pinturas</br>
                         -------- + -------- + -------- tienen:?<br/>
                         <form action="/cruces/19/">
-                            <label>(25.2) Pincelada de ancho de: {{form.pincelada}} a {{form.pincelada}}</label></br>
-                            <label>(25.3.1) Tipo de línea sencilla: </label></br>
-                            <label>(25.3.2) Tipo de línea compuesta: </label></br>
-                            <label>(26) Color base: </label></br></br>
+                            <label>(3) Estado: {{ form.estado }} </label></br>
+                            <label>(25.2) Pincelada de ancho de: {{form.anchoDesde}} a {{form.anchoHasta}}</label></br>
+                            <label>(25.3) Caracteristica pintura: {{form.caracteristicaPintura2}} </label></br>
+                            <label>(26) Color base: {{form.tipoPintura}} </label></br>
                             <input type="submit" class="button" value="Consultar"/>
                         </form>
                     </p>

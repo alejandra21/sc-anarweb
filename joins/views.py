@@ -408,6 +408,81 @@ def cruces(request,cruce_id):
 
 		return render(request,entrada,{'listaResultado':listaResultado,'estado':estado,'tipo':material})
 
+	elif (cruce_id == "19"):
+
+		estado = request.GET['estado']
+		anchoDesde = request.GET['anchoDesde']
+		anchoHasta = request.GET['anchoHasta']
+		caracteristica = request.GET['caracteristicaPintura2']
+		tipo = request.GET['tipoPintura']
+		listaResultados = []
+
+		if (clasificacion == "Linea sencilla"):
+
+			elementos = CaracDeLaPintura.objects.filter(esLineaSencilla=True)
+
+		elif (clasificacion == "Linea compuesta"):
+			elementos = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
+
+
+		if (tipo == 'Pintura positiva negra'):
+
+			elementosTipo = DescColores.objects.filter(posNegro=True)
+
+		elif (tipo == 'Pintura positiva blanca'):
+			elementosTipo = DescColores.objects.filter(posBlanco=True)
+
+		elif (tipo == 'Pintura positiva amarilla' ):
+			elementosTipo = DescColores.objects.filter(posAmarillo=True)
+
+		elif (tipo == 'Pintura positiva roja'):
+			elementosTipo = DescColores.objects.filter(posUnRojo=True)
+
+		elif (tipo == 'Pintura positiva dos rojos'):
+			elementosTipo = DescColores.objects.filter(posDosRojos=True)
+
+		elif (tipo == 'Pintura positiva tres rojos'):
+			elementosTipo = DescColores.objects.filter(posTresRojos=True)
+
+		elif (tipo == 'Pintura negativa negra'):
+			elementosTipo = DescColores.objects.filter(negNegro=True)
+
+		elif (tipo == 'Pintura negativa blanca'):
+			elementosTipo = DescColores.objects.filter(negBlanco=True)
+
+		elif (tipo == 'Pintura negativa amarilla'):
+			elementosTipo = DescColores.objects.filter(negAmarillo=True)
+
+		elif (tipo == 'Pintura negativa roja'):
+			elementosTipo = DescColores.objects.filter(negUnRojo=True)
+
+		elif (tipo == 'Pintura negativa dos rojos'):
+			elementosTipo = DescColores.objects.filter(negDosRojos=True)
+
+		elif (tipo == 'Pintura negativa tres rojos'):
+			elementosTipo = DescColores.objects.filter(negTresRojos=True)
+
+
+		for result in elementosTipo:
+
+			if (estado!="Todos"):
+				resultadoSet =  elementos.filter(yacimiento__id=result.yacimiento.id,
+												yacimiento__estado__nombre=estado)
+
+			else:
+				resultadoSet =  elementos.filter(yacimiento__id=result.yacimiento.id)
+
+			for yac in resultadoSet:
+
+				anchoD = yac.anchoDe
+				anchoH = yac.anchoA 
+
+				if (anchoD <= anchoDesde  and anchoH >= anchoHasta):
+					listaResultados += [{'result':yac,'anchoDesde':anchoD,
+										'anchoHasta':anchoH}]
+				
+		return render(request,entrada,{'listaResultados':listaResultados})
+
 
 	elif (cruce_id=="20"):
 
