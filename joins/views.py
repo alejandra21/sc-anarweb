@@ -417,11 +417,11 @@ def cruces(request,cruce_id):
 		tipo = request.GET['tipoPintura']
 		listaResultados = []
 
-		if (clasificacion == "Linea sencilla"):
+		if (caracteristica == "Linea sencilla"):
 
 			elementos = CaracDeLaPintura.objects.filter(esLineaSencilla=True)
 
-		elif (clasificacion == "Linea compuesta"):
+		elif (caracteristica == "Linea compuesta"):
 			elementos = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
 
 
