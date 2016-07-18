@@ -425,43 +425,17 @@ def cruces(request,cruce_id):
 			elementos = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
 
 
-		if (tipo == 'Pintura positiva negra'):
+		if (tipo in {'Pintura positiva negra','Pintura positiva blanca',\
+						'Pintura positiva amarilla','Pintura positiva roja',\
+						'Pintura positiva dos rojos','Pintura positiva tres rojos'}):
 
-			elementosTipo = DescColores.objects.filter(posNegro=True)
+			elementosTipo = DescColores.objects.filter(esPositiva=True)
 
-		elif (tipo == 'Pintura positiva blanca'):
-			elementosTipo = DescColores.objects.filter(posBlanco=True)
+		elif (tipo in {'Pintura negativa negra','Pintura negativa blanca',\
+							'Pintura negativa amarilla','Pintura negativa roja',\
+							'Pintura negativa dos rojos','Pintura negativa tres rojos'}):
 
-		elif (tipo == 'Pintura positiva amarilla' ):
-			elementosTipo = DescColores.objects.filter(posAmarillo=True)
-
-		elif (tipo == 'Pintura positiva roja'):
-			elementosTipo = DescColores.objects.filter(posUnRojo=True)
-
-		elif (tipo == 'Pintura positiva dos rojos'):
-			elementosTipo = DescColores.objects.filter(posDosRojos=True)
-
-		elif (tipo == 'Pintura positiva tres rojos'):
-			elementosTipo = DescColores.objects.filter(posTresRojos=True)
-
-		elif (tipo == 'Pintura negativa negra'):
-			elementosTipo = DescColores.objects.filter(negNegro=True)
-
-		elif (tipo == 'Pintura negativa blanca'):
-			elementosTipo = DescColores.objects.filter(negBlanco=True)
-
-		elif (tipo == 'Pintura negativa amarilla'):
-			elementosTipo = DescColores.objects.filter(negAmarillo=True)
-
-		elif (tipo == 'Pintura negativa roja'):
-			elementosTipo = DescColores.objects.filter(negUnRojo=True)
-
-		elif (tipo == 'Pintura negativa dos rojos'):
-			elementosTipo = DescColores.objects.filter(negDosRojos=True)
-
-		elif (tipo == 'Pintura negativa tres rojos'):
-			elementosTipo = DescColores.objects.filter(negTresRojos=True)
-
+			elementosTipo = DescColores.objects.filter(esNegativa=True)
 
 		for result in elementosTipo:
 
