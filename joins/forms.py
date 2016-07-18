@@ -131,13 +131,11 @@ OPCIONES_MATERIAL = (
 )
 
 OPCIONES_CARACTERISTICA_SURCO = (
-	('---', '---'),
 	('Base redonda','Base redonda'),
 	('Base aguda','Base aguda'),
 )
 
 OPCIONES_PIEDRA_EROSION = (
-	('---', '---'),
 	('Tipo de línea sencilla','Tipo de línea sencilla'),
 	('Tipo de línea compuesta','Tipo de línea compuesta'),
 	('Color base','Color base'),

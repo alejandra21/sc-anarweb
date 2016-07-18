@@ -230,6 +230,7 @@ def cruces(request,cruce_id):
 	
 	elif (cruce_id == "14"):
 		caracteristica = request.GET['caracteristicaSurco']
+		estado = request.GET['estado']
 		listaYacimientos = []
 
 		if (caracteristica == "Base redonda"):
@@ -242,7 +243,10 @@ def cruces(request,cruce_id):
 			caracPetroglifo = CaracSurcoPetroglifo.objects.filter(esBaseAguda=True)
 
 
-		petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo = True)
+		if (estado != "Todos"):
+			petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo = True,yacimiento__estado__nombre=estado)
+		else:
+			petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo = True)
 
 		for c in caracPetroglifo:
 
@@ -345,10 +349,16 @@ def cruces(request,cruce_id):
 	elif (cruce_id=="17"):
 
 		caracteristica = request.GET['carasurcopetrotipo2']
+		estado = request.GET['estado']
 		listaResultado = []
 		caractYac = ""
 	
-		petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo=True)
+		if (estado != "Todos"):
+			petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo=True,
+																yacimiento__estado__nombre=estado)
+
+		else:
+			petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo=True)
 
 		if (caracteristica == "Areas interlineales pulidas"):
 			caractYac = CaracSurcoPetroglifo.objects.filter(esAreaInterlinealPulida=True)
@@ -630,6 +640,7 @@ def cruces(request,cruce_id):
 	elif (cruce_id == "23"):
 
 		caracteristica = request.GET['surco']
+		estado = request.GET['estado']
 		listaResultados = []
 
 		if (caracteristica == "Abrasion"):
@@ -641,10 +652,12 @@ def cruces(request,cruce_id):
 			elementos = TecnicaParaMicroPetro.objects.filter(Q(esGrabadoPercusion=True)|\
 															Q(esGrabadoPercusionDirecta=True)|\
 															Q(esGrabadoPercusionIndirecta=True))
-		for elem in elementos:
-			listaResultados += [{'result':elem}]
 
-		return render(request,entrada,{'listaResultados':listaResultados,'surco':caracteristica})
+		if (estado != "Todos"):
+			elementos = elementos.filter(yacimiento__estado__nombre=estado)
+
+
+		return render(request,entrada,{'listaResultados':elementos,'surco':caracteristica})
 
 	elif (cruce_id == "24"):
 

@@ -491,6 +491,7 @@ $(document).ready(function(){
                         <i>(24.1.2) Profundidad de surco</i>, 
                         ¿cuántos <b><i>(13.3) Petroglifos</i></b> tienen:<br/>
                         <form action="/cruces/14/">
+                            <label>(3) Estado: {{ form.estado }} </label></br>
                             <label>(23.1) Informacion de percusion: {{form.percusion}}</label>?</br>
                             <label>(23.2) Informacion de abrasion: {{form.abrasion}}</label>?</br>
                             <label>(24) Característica Surco: {{form.caracteristicaSurco}}</label>?</br>
@@ -555,6 +556,7 @@ $(document).ready(function(){
                     <p>
                         ¿Cuáles <i><b>(13.3) Petroglifos</b></i> tienen :<br/>
                         <form action="/cruces/17/">
+                            <label>(3) Estado: {{ form.estado }} </label></br>
                             <label>(24) Característica del surco grabado: {{form.carasurcopetrotipo2}}</label>?</br></br>
                             <input type="submit" class="button" value="Consultar"/>
                         </form>
@@ -686,6 +688,7 @@ $(document).ready(function(){
                         Listar por tipo de material (22.1), (22.1.1), (22.1.2),
                         (22.1.3), (22.3), (22.4), (22.6) cuantos yacimientos tienen surcos hechos por:
                         <form action="/cruces/23/">
+                            <label>(3) Estado: {{ form.estado }} </label></br>
                             <label>Tipo de material: {{form.material}}</label></br>
                             <label> (23) {{form.surco}}</label></br></br>
                             <input type="submit" class="button" value="Consultar"/>

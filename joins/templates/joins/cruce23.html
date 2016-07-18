@@ -15,13 +15,13 @@ Listar por tipo de material (22.1), (22.1.1), (22.1.2),
 <ul>
     {% for resultado in listaResultados %}
 		<h4>
-			<a href="/admin/anarapp/yacimiento/{{resultado.result.yacimiento.id}}">
-				<li><strong>Nombre:</strong>{{resultado.result.yacimiento.nombre}}</li>
+			<a href="/admin/anarapp/yacimiento/{{resultado.yacimiento.id}}">
+				<li><strong>Nombre:</strong>{{resultado.yacimiento.nombre}}</li>
 			</a>
 		</h4>
 		<i> 
-			<ul>Código: {{resultado.result.yacimiento.codigo}}</ul>
-			<ul>Estado: {{resultado.result.yacimiento.estado.nombre}}</ul>
+			<ul>Código: {{resultado.yacimiento.codigo}}</ul>
+			<ul>Estado: {{resultado.yacimiento.estado.nombre}}</ul>
 		</i>
 	{%endfor%}
 	
