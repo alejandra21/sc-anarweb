@@ -185,6 +185,10 @@ SURCO_GRABADO = (
  
 class CrucesYYFormAdmin(forms.Form):
     codigo 	= forms.CharField(required=False, max_length=20)
+    anchoDesde = forms.CharField(required=False, max_length=20)
+    anchoHasta = forms.CharField(required=False, max_length=20)
+    profundidadDesde = forms.CharField(required=False, max_length=20)
+    profundidadHasta = forms.CharField(required=False, max_length=20)
     estado = forms.ChoiceField(required=False, choices=OPCIONES_ESTADO)
     estadoConservacion = forms.ChoiceField(required=False, choices=ESTADO_CONSERVACION)
     ubicacion = forms.ChoiceField(required=False, choices=OPCIONES_UBICACION)

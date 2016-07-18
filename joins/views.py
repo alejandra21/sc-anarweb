@@ -192,6 +192,38 @@ def cruces(request,cruce_id):
 			pass
 
 		return render(request,entrada,{'listaManifestaciones':elementos,'ubicacion':ubicacion})
+
+
+	elif (cruce_id == "13"):
+
+		estado = request.GET['estado']
+		anchoDesde = request.GET['anchoDesde']
+		anchoHasta = request.GET['anchoHasta']
+		profundidadDesde = request.GET['profundidadDesde']
+		profundidadHasta = request.GET['profundidadHasta']
+		listaYacimientos = []
+
+		if (estado != "Todos"):
+			petroglifo = manifestacion.filter(esPetroglifo = True,yacimiento__estado__nombre=estado)
+		else:
+			petroglifo = manifestacion.filter(esPetroglifo = True)
+
+
+		for elem in petroglifo:
+
+			medida = CaracSurcoPetroglifo.objects.filter(yacimiento__id=elem.yacimiento.id)
+			anchoD = medida.anchoDe 
+			anchoH = medida.anchoA
+			profundidadD = medida.produndidadDe
+			profundidadH = medida.profundidadA
+
+			if (anchoD <= anchoDesde and anchoH >= anchoHasta and\
+				profundidadD <= profundidadDesde and\
+				profundidadH >= profundidadHasta ):
+
+				listaYacimientos += [{'result':elem}]
+
+		return render(request,entrada,{'listaResultado':listaYacimientos})
 	
 	elif (cruce_id == "14"):
 		caracteristica = request.GET['caracteristicaSurco']
