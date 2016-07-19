@@ -639,6 +639,7 @@ def cruces(request,cruce_id):
 	elif (cruce_id == "23"):
 
 		caracteristica = request.GET['surco']
+		material = request.GET['material']
 		estado = request.GET['estado']
 		listaResultados = []
 
@@ -666,11 +667,27 @@ def cruces(request,cruce_id):
 			elementosPetro = elementosPetro.filter(yacimiento__estado__nombre=estado)
 
 
-		for elem in elementos:
-			listaResultados += [{'result':elem}]
+		if (material == "Roca ignea"):
+			yacPetroglifo = MaterialYacimiento.objects.filter(esIgnea=True)
 
-		for elem in elementosPetro:
-			listaResultados += [{'result':elem}]
+		elif (material == "Roca metamorfica"):
+			yacPetroglifo = MaterialYacimiento.objects.filter(esMetamor=True)
+
+		elif (material == "Roca sedimentaria"):
+			yacPetroglifo = MaterialYacimiento.objects.filter(esSedimentaria=True)
+
+
+		for result in elementos:
+			resultSet = yacPetroglifo.filter(yacimiento__id=result.yacimiento.id)
+
+			for elem in resultSet:
+				listaResultados += [{'result':elem,'manifestacion':"Micropetroglifos"}]
+
+		for result in elementosPetro:
+			resultSet = yacPetroglifo.filter(yacimiento__id=result.yacimiento.id)
+
+			for elem in resultSet:
+				listaResultados += [{'result':elem,'manifestacion':"Petroglifos"}]
 
 
 		return render(request,entrada,{'listaResultados':listaResultados,'surco':caracteristica})
