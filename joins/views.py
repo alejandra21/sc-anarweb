@@ -228,6 +228,7 @@ def cruces(request,cruce_id):
 										'profundidadHasta':profundidadH}]
 
 		return render(request,entrada,{'listaResultado':listaYacimientos})
+
 	
 	elif (cruce_id == "14"):
 		caracteristica = request.GET['caracteristicaSurco']
@@ -851,7 +852,7 @@ def cruces(request,cruce_id):
 
 
 			listaPiedras = []
-			for pNombre,pInfo in piedras,piedras2:
+			for pNombre,pInfo in zip(piedras,piedras2):
 
 				numeroCaras = pInfo.numeroCaras
 				numeroCarasTrabajadas = pInfo.numeroCarasTrajabadas
