@@ -7,7 +7,8 @@ from anarapp.models import Estado, Piedra, Yacimiento, \
 							Coordenadas,ConstitucionYacimiento,UbicacionYacimiento,\
 							CaracSurcoPetroglifo,DescColores,MaterialYacimiento,\
 							ManifestacionesAsociadas,TipoYacimiento,CaracDeLaPintura,\
-							TecnicaParaMicroPetro,EstadoConserYac,TecnicaParaPetroglifo
+							TecnicaParaMicroPetro,EstadoConserYac,TecnicaParaPetroglifo,
+							Piedra2
 from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
@@ -785,7 +786,7 @@ def cruces(request,cruce_id):
 		return render(request,entrada,{'listaResultados':listaResultados,'clasificacion':clasificacion,'caracteristica':caracteristica})
 
 
-	if (cruce_id == "26"):
+	elif (cruce_id == "26"):
 
 		estado = request.GET['estado']
 		surco = request.GET['surcoGrabado']
@@ -797,7 +798,6 @@ def cruces(request,cruce_id):
 		else:
 			manifestacion =  ManifestacionYacimiento.objects.filter(esMicroPetroglifo=True)
 			
-
 		if (surco == "Base redonda"):
 			elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseRedonda=True)
 
@@ -829,6 +829,41 @@ def cruces(request,cruce_id):
 		return render(request,entrada,{'listaResultados':listaResultados,'surco':surco})
 
 
+	elif (cruce_id=="30"):
+
+		estado = request.GET['estado']
+		noCaras = request.GET['noCaras']
+		noCarasTrabajadas = request.GET['noCarasTrabajadas']
+		listaResultados = []
+		listaPiedras = []
+
+		if (estado != "Todos"):
+			yacimiento = Yacimiento.objects.filter(yacimiento__estado__nombre=estado)
+
+		else:
+			yacimiento = Yacimiento.objects.all()
+
+
+		for y in yacimiento :
+
+			piedras = Piedra.objects.filter(yacimiento__id = y.id)
+			piedras2 = Piedra2.objects.filter(yacimiento__id = y.id)
+
+
+			listaPiedras = []
+			for pNombre,pInfo in piedras,piedras2:
+
+				numeroCaras = pInfo.numeroCaras
+				numeroCarasTrabajadas = pInfo.numeroCarasTrajabadas
+
+				if (numeroCaras == noCaras or numeroCarasTrajabadas == noCarasTrabajadas):
+					listaPiedras += [{'piedra':pNombre}]
+	
+			if (len(listaPiedras)!=0):
+				listaResultados += [{'yacimiento':y,'piedra':listaPiedras}]
+
+
+		return render(request,entrada,{'listaResultados':listaResultados})
 
 	return render(request,entrada)
 

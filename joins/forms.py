@@ -184,14 +184,31 @@ SURCO_GRABADO = (
 	('Alto relieve lineal','Alto relieve lineal'),
 	('Alto relieve planar','Alto relieve planar'),
 )
+
+FORMA = (
+
+	('Antropomorfa','Antropomorfa'),
+	('Zoomorfa','Zoomorfa'),
+	('Geometricas','Geometricas'),
+	('Puntos acoplados','Puntos acoplados'),
+	('Cupulas','Cupulas'),
+	('Zooantropomorfas','Zooantropomorfas'),
+	('Antropogeometricos','Antropogeometricos'),
+	('Zoogeometricos','Zoogeometricos'),
+	('Amoladores','Amoladores'),
+	('Batea','Batea'),
+)
  
 class CrucesYYFormAdmin(forms.Form):
+	noCaras = forms.IntField(required=True, max_length=20)
+	noCarasTrabajadas = forms.IntField(required=True, max_length=20)
     codigo 	= forms.CharField(required=False, max_length=20)
     anchoDesde = forms.CharField(required=False, max_length=20)
     anchoHasta = forms.CharField(required=False, max_length=20)
     profundidadDesde = forms.CharField(required=False, max_length=20)
     profundidadHasta = forms.CharField(required=False, max_length=20)
     estado = forms.ChoiceField(required=False, choices=OPCIONES_ESTADO)
+    forma = forms.ChoiceField(required=False, choices=FORMA)
     estadoConservacion = forms.ChoiceField(required=False, choices=ESTADO_CONSERVACION)
     ubicacion = forms.ChoiceField(required=False, choices=OPCIONES_UBICACION)
     ubicacion2 = forms.ChoiceField(required=False, choices=OPCIONES_UBICACION2)

@@ -10,6 +10,31 @@
 {% endblock %}
 
 {% block content %}
+
+
+<ul>
+    {% for resultado in listaResultado %}
+		<h4>
+			<a href="/admin/anarapp/yacimiento/{{resultado.yacimiento.id}}">
+				<li><strong>Nombre:</strong>{{resultado.yacimiento.nombre}}</li>
+			</a>
+		</h4>
+		<i> 
+			<ul><strong>Código</strong>: {{resultado.yacimiento.codigo}}</ul>
+			<ul><strong>Estado</strong>: {{resultado.yacimiento.estado.nombre}}</ul>
+
+			<h5>Rocas :</h5>
+			{% for piedras in resultado.piedra %}
+				<ul><strong>Código</strong>: {{piedras.piedra.codigo}}</ul>
+				<ul><strong>Estado</strong>: {{piedras.piedra.estado.nombre}}</ul>
+			{% endfor %}
+
+		</i>
+	{%endfor%}
+	
+</ul>
+
+
 {% endblock %}
 
 {% block user %}

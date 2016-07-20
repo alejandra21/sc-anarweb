@@ -215,6 +215,9 @@ $(document).ready(function(){
                       </ul>
                       <form action="/cruces/30/">
                         <label>(00) Código: {{ form.codigo }} </label></br>
+                        <label>(3) Estado: {{ form.estado }} </label></br>
+                        <label>(Pa 4) Numero de caras: {{ form.noCaras }} </label></br>
+                        <label>(Pa 5) Numero de caras trabajadas: {{ form.noCarasTrabajadas }} </label></br>
                         <input type="submit" class="button" value="Consultar"/>
                        </form>
                     </p>
@@ -237,6 +240,7 @@ $(document).ready(function(){
                       de sus caras trabajadas</i>
                       <form action="/cruces/31/">
                         <label>(00) Código: {{ form.codigo }} </label></br>
+                        <label>(3) Estado: {{ form.estado }} </label></br>
                         <input type="submit" class="button" value="Consultar"/>
                        </form>
                     </p>
@@ -283,8 +287,8 @@ $(document).ready(function(){
                         Pa 9.3, Pa 9.6, Pa 9.7, Pa 9.8) tipo de forma</i> 
                         por <i>(Pa 00) Rocas</i> y <i>(Pa 3) Estado</i>
                           <form action="/cruces/33/">
-                              <label>(Pa 00) Roca: {{ form.codigo }} </label></br>
-                              <label>(3) Estado: {{ form.estado }} </label></br></br>
+                              <label>(3) Estado: {{ form.estado }} </label></br>
+                              <label>(9) Forma: {{ form.forma }} </label></br>
                               <input type="submit" class="button" value="Consultar"/>
                           </form>
                       </p>
