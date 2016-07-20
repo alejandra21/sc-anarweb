@@ -832,9 +832,10 @@ def cruces(request,cruce_id):
 
 	elif (cruce_id=="30"):
 
+		codigo = request.GET['codigo']
 		estado = request.GET['estado']
-		noCaras = request.GET['noCaras']
-		noCarasTrabajadas = request.GET['noCarasTrabajadas']
+		noCaras = int(request.GET['noCaras'])
+		noCarasTrabajadas = int(request.GET['noCarasTrabajadas'])
 		listaResultados = []
 		listaPiedras = []
 
@@ -848,17 +849,19 @@ def cruces(request,cruce_id):
 		for y in yacimiento :
 
 			piedras = Piedra.objects.filter(yacimiento__id = y.id)
-			piedras2 = Piedra2.objects.filter(yacimiento__id = y.id)
-
-
+			
 			listaPiedras = []
-			for pNombre,pInfo in zip(piedras,piedras2):
+			for pNombre in piedras:
 
-				numeroCaras = pInfo.numeroCaras
-				numeroCarasTrabajadas = pInfo.numeroCarasTrajabadas
+				piedras2 = Piedra2.objects.filter(yacimiento__id = pNombre.id)
 
-				if (numeroCaras == noCaras or numeroCarasTrajabadas == noCarasTrabajadas):
-					listaPiedras += [{'piedra':pNombre}]
+				for pInfo in piedras2:
+
+					numeroCaras = pInfo.numeroCaras
+					numeroCarasTrabajadas = pInfo.numeroCarasTrajabadas
+
+					if ((numeroCaras == noCaras) or (numeroCarasTrabajadas == noCarasTrabajadas)):
+						listaPiedras += [{'piedra':pNombre}]
 	
 			if (len(listaPiedras)!=0):
 				listaResultados += [{'yacimiento':y,'piedra':listaPiedras}]
