@@ -200,8 +200,8 @@ FORMA = (
 )
  
 class CrucesYYFormAdmin(forms.Form):
-    noCaras = forms.IntegerField(required=True, max_length=20)
-    noCarasTrabajadas = forms.IntegerField(required=True, max_length=20)
+    noCaras = forms.IntegerField(required=True)
+    noCarasTrabajadas = forms.IntegerField(required=True)
     codigo     = forms.CharField(required=False, max_length=20)
     anchoDesde = forms.CharField(required=False, max_length=20)
     anchoHasta = forms.CharField(required=False, max_length=20)
