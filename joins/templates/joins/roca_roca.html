@@ -214,7 +214,6 @@ $(document).ready(function(){
                         <li>El mismo porcentaje de conexión de las figuras (Pa 11, Pa 11.1, Pa 11.2, Pa 11.3, Pa 11.4)</li>
                       </ul>
                       <form action="/cruces/30/">
-                        <label>(00) Código: {{ form.codigo }} </label></br>
                         <label>(3) Estado: {{ form.estado }} </label></br>
                         <label>(Pa 4) Numero de caras: {{ form.noCaras }} </label></br>
                         <label>(Pa 5) Numero de caras trabajadas: {{ form.noCarasTrabajadas }} </label></br>
@@ -228,32 +227,9 @@ $(document).ready(function(){
 
             <tr>
               <td>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Cruce 2 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
-                  </div>
-                  <div class="panel-body">
-                    <p>
-                      Listar todas las <i>(Pa 00) Rocas</i> del <i>(00 - Código) Yacimiento</i> 
-                      del <i>(Pa 3) Estado</i> que comparten la misma <i>(Pa 5) Relación 
-                      de número de caras</i> que tienen La misma <i>(Pa 6) Orientación 
-                      de sus caras trabajadas</i>
-                      <form action="/cruces/31/">
-                        <label>(00) Código: {{ form.codigo }} </label></br>
-                        <label>(3) Estado: {{ form.estado }} </label></br>
-                        <input type="submit" class="button" value="Consultar"/>
-                       </form>
-                    </p>
-                  </div>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
                   <div class="panel panel-default">
                     <div class="panel-heading">
-                      <h3 class="panel-title"><strong>Cruce 3 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
+                      <h3 class="panel-title"><strong>Cruce 2 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
                     </div>
                     <div class="panel-body">
                       <p>
@@ -266,7 +242,9 @@ $(document).ready(function(){
                         </ul>
                           <form action="/cruces/32/">
                               <label>(00) Código: {{ form.codigo }} </label></br>
-                              <label>(3) Estado: {{ form.estado }} </label></br></br>
+                              <label>(3) Estado: {{ form.estado }} </label></br>
+                              <label>(Pa 9) Forma: {{ form.forma }} </label></br>
+                              <label>(Pa 4) Cantidad de figuras por cara: {{ form.noCaras }} </label></br>
                               <input type="submit" class="button" value="Consultar"/>
                           </form>
                       </p>
@@ -279,7 +257,7 @@ $(document).ready(function(){
               <td>
                   <div class="panel panel-default">
                     <div class="panel-heading">
-                      <h3 class="panel-title"><strong>Cruce 4 - Roca (Pa) con Roca (Pa)</strong></h3>
+                      <h3 class="panel-title"><strong>Cruce 3 - Roca (Pa) con Roca (Pa)</strong></h3>
                     </div>
                     <div class="panel-body">
                       <p>
@@ -301,7 +279,7 @@ $(document).ready(function(){
               <td>
                   <div class="panel panel-default">
                     <div class="panel-heading">
-                      <h3 class="panel-title"><strong>Cruce 5 - Roca (Pa) con Roca (Pa)</strong></h3>
+                      <h3 class="panel-title"><strong>Cruce 4 - Roca (Pa) con Roca (Pa)</strong></h3>
                     </div>
                     <div class="panel-body">
                       <p>
@@ -327,7 +305,7 @@ $(document).ready(function(){
               <td>
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Cruce 6 - Roca (Pa) con Roca (Pa)</strong> </h3>
+                    <h3 class="panel-title"><strong>Cruce 5 - Roca (Pa) con Roca (Pa)</strong> </h3>
                   </div>
                   <div class="panel-body">
                     <p>
@@ -352,7 +330,7 @@ $(document).ready(function(){
               <td>
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Cruce 7 - Roca (Pa) con Roca (Pa)</strong></h3>
+                    <h3 class="panel-title"><strong>Cruce 6 - Roca (Pa) con Roca (Pa)</strong></h3>
                   </div>
                   <div class="panel-body">
                     <p>

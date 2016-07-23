@@ -8,7 +8,7 @@ from anarapp.models import Estado, Piedra, Yacimiento, \
 							CaracSurcoPetroglifo,DescColores,MaterialYacimiento,\
 							ManifestacionesAsociadas,TipoYacimiento,CaracDeLaPintura,\
 							TecnicaParaMicroPetro,EstadoConserYac,TecnicaParaPetroglifo,\
-							Piedra2
+							Piedra2,FigurasPorTipo
 from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
@@ -866,6 +866,38 @@ def cruces(request,cruce_id):
 			if (len(listaPiedras)!=0):
 				listaResultados += [{'yacimiento':y,'piedra':listaPiedras}]
 
+
+		return render(request,entrada,{'listaResultados':listaResultados})
+
+
+	elif (cruce_id == "32"):
+
+		codigo = request.GET['codigo']
+		estado = request.GET['estado']
+		forma = int(request.GET['forma'])
+		noCaras = int(request.GET['noCaras'])
+		listaResultados = []
+
+		if (estado!= "Todos"):
+			yacimiento = Yacimiento.objects.filter(yacimiento__estado__nombre=estado)
+
+		else:
+			yacimiento = Yacimiento.objects.all()
+
+
+		for yac in yacimiento:
+
+			piedra = Piedra.objects.filter(yacimiento__id=yac.id)
+			listaPiedras = []
+
+			for roc in piedra:
+				roca = FigurasPorTipo.objects.filter(tipoFigura=forma,cantidad=noCaras,
+													piedra__id=roc.id)
+
+				listaPiedras += [{'piedra':roca}]
+
+			if (len(listaPiedras)!=0):
+				listaResultados += [{'yacimiento':yac,'piedra':listaPiedras}]
 
 		return render(request,entrada,{'listaResultados':listaResultados})
 
