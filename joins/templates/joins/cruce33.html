@@ -10,6 +10,41 @@
 {% endblock %}
 
 {% block content %}
+
+<ul>
+    {% for resultado in listaResultados %}
+		<h4>
+			<a href="/admin/anarapp/yacimiento/{{resultado.yacimiento.id}}">
+				<li><strong>Nombre:</strong>{{resultado.yacimiento.nombre}}</li>
+			</a>
+		</h4>
+		<i> 
+			<ul><strong>Código</strong>: {{resultado.yacimiento.codigo}}</ul>
+			<ul><strong>Estado</strong>: {{resultado.yacimiento.estado.nombre}}</ul>
+
+			<ul><h4><strong>Rocas :</strong></h4>
+			{% for piedras in resultado.piedra %}
+				<ul><strong>Código</strong>: {{piedras.piedra.piedra.codigo}}</ul>
+				<ul><strong>Código</strong>: {{piedras.piedra.piedra.nombre}}</ul>
+				<ul><strong>Antropomorfa: </strong>{{piedra.antropomorfa}}</ul>
+				<ul><strong>Zoomorfa: </strong>{{piedra.zoomorfa}}</ul>
+				<ul><strong>Geometricas: </strong>{{piedra.geometricas}}</ul>
+				<ul><strong>Puntos acoplados: </strong>{{piedra.puntos_acoplados}}</ul>
+				<ul><strong>Cupulas: </strong> {{piedras.cupulas}}</ul>
+				<ul><strong>Zooantropomorfas: </strong>{{piedras.zooantropomorfas}}</ul>
+				<ul><strong>Antropogeometricos: </strong>{{piedras.antropogeometricos}}</ul>
+				<ul><strong>Zoogeometricos: </strong>{{piedras.zoogeometricos}}</ul>
+				<ul><strong>Amoladores: </strong>{{piedras.amoladores}}</ul>
+				<ul><strong>Batea : </strong>{{piedras.batea}}</ul>
+
+			{% endfor %}
+
+			</ul>
+
+		</i>
+	{%endfor%}
+	
+</ul>
 {% endblock %}
 
 {% block user %}

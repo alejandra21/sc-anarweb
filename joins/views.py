@@ -902,6 +902,66 @@ def cruces(request,cruce_id):
 
 		return render(request,entrada,{'listaResultados':listaResultados})
 
+	elif (cruce_id == "33"):
+
+		estado = request.GET['estado']
+		forma = int(request.GET['forma'])
+		listaResultados = []
+
+		if (estado!= "Todos"):
+			yacimiento = Yacimiento.objects.filter(yacimiento__estado__nombre=estado)
+
+		else:
+			yacimiento = Yacimiento.objects.all()
+
+		for yac in yacimiento:
+
+			piedra = Piedra.objects.filter(yacimiento__id=yac.id)
+			listaPiedras = []
+
+			for roc in piedra:
+				
+				antropomorfa = FigurasPorTipo.objects.filter(tipoFigura=1,piedra__id=roc.id)
+
+				zoomorfa = FigurasPorTipo.objects.filter(tipoFigura=2,
+													piedra__id=roc.id)
+
+				geometricas = FigurasPorTipo.objects.filter(tipoFigura=3,
+													piedra__id=roc.id)
+
+				puntos_acoplados = FigurasPorTipo.objects.filter(tipoFigura=4,
+													piedra__id=roc.id)
+
+				cupulas = FigurasPorTipo.objects.filter(tipoFigura=5,
+													piedra__id=roc.id)
+
+				zooantropomorfas = FigurasPorTipo.objects.filter(tipoFigura=6,
+													piedra__id=roc.id)
+
+				antropogeometricos = FigurasPorTipo.objects.filter(tipoFigura=7,
+													piedra__id=roc.id)
+
+				zoogeometricos = FigurasPorTipo.objects.filter(tipoFigura=8,
+													piedra__id=roc.id)
+
+				amoladores = FigurasPorTipo.objects.filter(tipoFigura=9,
+													piedra__id=roc.id)
+
+				batea = FigurasPorTipo.objects.filter(tipoFigura=10,
+													piedra__id=roc.id)
+
+
+				listaPiedras += [{'piedra':roc,'antropomorfa':len(antropomorfa),'zoomorfa':len(zoomorfa),
+								'geometricas':len(geometricas),'puntos_acoplados':len(puntos_acoplados),
+								'cupulas':len(cupulas),'zooantropomorfas':len(zooantropomorfas),
+								'antropogeometricos':len(antropogeometricos),'zoogeometricos':len(zoogeometricos),
+								'amoladores':len(amoladores),'batea':len(batea)}]
+
+			listaResultados += [{'yacimiento':yac,'piedra':listaPiedras}]
+
+		return render(request,entrada,{'listaResultados':listaResultados})
+
+
 	return render(request,entrada)
 
 def consulta(request):
