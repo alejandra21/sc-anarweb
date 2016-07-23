@@ -894,7 +894,8 @@ def cruces(request,cruce_id):
 				roca = FigurasPorTipo.objects.filter(tipoFigura=forma,cantidad=noCaras,
 													piedra__id=roc.id)
 
-				listaPiedras += [{'piedra':roca}]
+				for elem in roca:	
+					listaPiedras += [{'piedra':elem}]
 
 			if (len(listaPiedras)!=0):
 				listaResultados += [{'yacimiento':yac,'piedra':listaPiedras}]
