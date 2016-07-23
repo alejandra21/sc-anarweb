@@ -24,8 +24,8 @@
 
 			<ul><h4><strong>Rocas :</strong></h4>
 			{% for piedras in resultado.piedra %}
-				<ul><strong>Código</strong>: {{piedras.piedra.codigo}}</ul>
-				<ul><strong>Estado</strong>: {{piedras.piedra.estado.nombre}}</ul>
+				<ul><strong>Código</strong>: {{piedras.piedra.piedra.codigo}}</ul>
+				<ul><strong>Estado</strong>: {{piedras.piedra.piedra.estado.nombre}}</ul>
 			{% endfor %}
 
 			</ul>
