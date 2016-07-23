@@ -920,7 +920,7 @@ def cruces(request,cruce_id):
 			listaPiedras = []
 
 			for roc in piedra:
-				
+
 				antropomorfa = FigurasPorTipo.objects.filter(tipoFigura=1,piedra__id=roc.id)
 
 				zoomorfa = FigurasPorTipo.objects.filter(tipoFigura=2,
@@ -957,7 +957,8 @@ def cruces(request,cruce_id):
 								'antropogeometricos':len(antropogeometricos),'zoogeometricos':len(zoogeometricos),
 								'amoladores':len(amoladores),'batea':len(batea)}]
 
-			listaResultados += [{'yacimiento':yac,'piedra':listaPiedras}]
+			if (len(listaPiedras)!=0):
+				listaResultados += [{'yacimiento':yac,'piedra':listaPiedras}]
 
 		return render(request,entrada,{'listaResultados':listaResultados})
 
