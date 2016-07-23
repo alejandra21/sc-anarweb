@@ -191,7 +191,7 @@ FORMA = (
     (2,'Zoomorfa'),
     (3,'Geometricas'),
     (4,'Puntos acoplados'),
-    (5,'Cupulas','Cupulas'),
+    (5,'Cupulas'),
     (6,'Zooantropomorfas'),
     (7,'Antropogeometricos'),
     (8,'Zoogeometricos'),
