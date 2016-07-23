@@ -187,16 +187,16 @@ SURCO_GRABADO = (
 
 FORMA = (
 
-    ('Antropomorfa','Antropomorfa'),
-    ('Zoomorfa','Zoomorfa'),
-    ('Geometricas','Geometricas'),
-    ('Puntos acoplados','Puntos acoplados'),
-    ('Cupulas','Cupulas'),
-    ('Zooantropomorfas','Zooantropomorfas'),
-    ('Antropogeometricos','Antropogeometricos'),
-    ('Zoogeometricos','Zoogeometricos'),
-    ('Amoladores','Amoladores'),
-    ('Batea','Batea'),
+    (1,'Antropomorfa'),
+    (2,'Zoomorfa'),
+    (3,'Geometricas'),
+    (4,'Puntos acoplados'),
+    (5'Cupulas','Cupulas'),
+    (6,'Zooantropomorfas'),
+    (7,'Antropogeometricos'),
+    (8,'Zoogeometricos'),
+    (9,'Amoladores'),
+    (10,'Batea'),
 )
  
 class CrucesYYFormAdmin(forms.Form):
