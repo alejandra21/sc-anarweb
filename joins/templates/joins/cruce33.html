@@ -25,8 +25,6 @@
 			<ul><h4><strong>Rocas :</strong></h4>
 			{% for piedras in resultado.piedra %}
 
-				<ul>
-					
 				<ul><strong>Código</strong>: {{piedras.piedra.codigo}}</ul>
 				<ul><strong>Nombre</strong>: {{piedras.piedra.nombre}}</ul>
 				<ul><strong>Antropomorfa: </strong>{{piedras.antropomorfa}}</ul>
@@ -39,8 +37,7 @@
 				<ul><strong>Zoogeometricos: </strong>{{piedras.zoogeometricos}}</ul>
 				<ul><strong>Amoladores: </strong>{{piedras.amoladores}}</ul>
 				<ul><strong>Batea : </strong>{{piedras.batea}}</ul>
-
-				</ul>
+				<br>
 
 			{% endfor %}
 
