@@ -27,17 +27,24 @@
 				{% for piedras in resultado.piedra %}
 					<ul><strong>Código</strong>: {{piedras.codigo}}</ul>
 					<ul><strong>Nombre</strong>: {{piedras.nombre}}</ul>
-					<ul><strong>Material audiovisual </strong>:</ul>
-					{% for mv in piedras.MatAVPiedra.all %}
+
+					{% if piedras.MatAVPiedra.all %}
+						<ul><strong>Material audiovisual </strong>:</ul>
 						<ul>
-						  <li><strong>(31.2.1) Formato:</strong> {{ mv.format }}</li>
-						  <li>
-						    <a href="/upload/{{mv.archive}}" style="color:#333">
-						        <strong>(31.2.2) Archivo:</strong> {{ mv.archive }}
-						    </a>
-						  </li>
+						{% for mv in piedras.MatAVPiedra.all %}
+							
+							  <li><strong>(31.2.1) Formato:</strong> {{ mv.format }}</li>
+							  <li>
+							    <a href="/upload/{{mv.archive}}" style="color:#333">
+							        <strong>(31.2.2) Archivo:</strong> {{ mv.archive }}
+							    </a>
+							  </li>
+							
+						{% endfor %}
 						</ul>
-					{% endfor %}
+
+					{% endif %}
+
 					<br>
 				{% endfor %}
 
