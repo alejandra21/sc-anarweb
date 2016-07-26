@@ -10,6 +10,72 @@
 {% endblock %}
 
 {% block content %}
+
+<ul>
+    {% for resultado in listaResultados %}
+		<h4>
+			<a href="/admin/anarapp/yacimiento/{{resultado.yacimiento.id}}">
+				<li><strong>Nombre:</strong>{{resultado.yacimiento.nombre}}</li>
+			</a>
+		</h4>
+		<i> 
+			<ul><strong>Código</strong>: {{resultado.yacimiento.codigo}}</ul>
+			<ul><strong>Estado</strong>: {{resultado.yacimiento.estado.nombre}}</ul>
+
+			<ul><h4><strong>Rocas :</strong></h4>
+			{% for piedras in resultado.piedra %}
+				<ul><strong>Código</strong>: {{piedras.piedra.codigo}}</ul>
+				<ul><strong>Nombre</strong>: {{piedras.piedra.nombre}}</ul>
+				<ul><strong>Material audiovisual </strong>:
+				{% for mv in piedras.piedra.MatAVPiedra.all %}
+					<ul>
+					  <li><strong>(31.2.1) Formato:</strong> {{ mv.format }}</li>
+					  <li>
+					    <a href="/upload/{{mv.archive}}" style="color:#333">
+					        <strong>(31.2.2) Archivo:</strong> {{ mv.archive }}
+					    </a>
+					  </li>
+					</ul>
+				{% endfor %}
+				<br>
+			{% endfor %}
+
+			</ul>
+		</i>
+	{%endfor%}
+	
+</ul>
+
+
+{% if yacimiento %}
+  {% for y in yacimiento %}
+    <h4 style="margin-left:1em;">
+      <a href="/admin/anarapp/yacimiento/{{y.id}}" style="color:#333">
+        (1) Nombre: {{y.nombre}}
+      </a>
+    </h4>
+    <br>
+    <h4><strong>(31.2) Material Audiovisual:</strong></h4>
+    {% if y.MatAVYacimiento.all %}
+        {% for mv in y.MatAVYacimiento.all %}
+        <ul>
+          <li><strong>(31.2.1) Formato:</strong> {{ mv.format }}</li>
+          <li>
+            <a href="/upload/{{mv.archive}}" style="color:#333">
+                <strong>(31.2.2) Archivo:</strong> {{ mv.archive }}
+            </a>
+          </li>
+        </ul>
+        {% endfor %}
+    {% else %}
+      <h4>Sin resultados.</h4>
+    {% endif %}
+  {% endfor %}
+
+{% else %}
+  <h4>Sin resultados.</h4>
+{% endif %}
+
 {% endblock %}
 
 {% block user %}
