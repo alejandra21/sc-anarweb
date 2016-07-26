@@ -36,25 +36,18 @@
                         <ul><strong>(Pa 5)Numero de caras trabajadas </strong>:{{roca.numeroCarasTrajabadas}}</ul>
                     {% endfor %}
 
-         
-
-                    
                     {% for roca in piedras.FigurasPorTipo.all %}
                         <ul><strong>(Pa 6.1)Numero de caras trabajadas</strong>:{{roca.numero}}</ul>
                         <ul><strong>(Pa 9) Tipo de figura </strong>:{{roca.tipoFigura}}</ul>
                         <ul><strong>(Pa 9.a) Cantidad de figuras </strong>:{{roca.cantidad}}</ul>
                     {% endfor %}
                     <br>
-                    
-
-                    
+ 
                     {% for roca in piedras.ConexionFiguras.all %}
                         <ul><strong>(Pa 11)Conexion figuras</strong>:{{roca.conexionFiguras}}</ul>
                     {% endfor %}
                     <br>
 
-                        
-                    <br>
                 {% endfor %}
 
                 </ul>

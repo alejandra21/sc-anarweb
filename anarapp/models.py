@@ -1491,7 +1491,7 @@ class ConexionFiguras(models.Model):
         (3, '3 - 50% interconectadas'),
         (4, '4 - Mas del 80% interconectadas'),
     )    
-    piedra = models.OneToOneField(Piedra, related_name='ConexionFiguras')    
+    piedra = models.ForeignKey(Piedra, related_name='ConexionFiguras')    
     conexionFiguras = models.IntegerField('11. Conexion de figuras', choices = CONEXION_FIGURAS)
     
     def __unicode__(self):
