@@ -34,12 +34,12 @@
 						
 						{% for mv in piedras.MatAVPiedra.all %}
 							
-							  <li><strong>(31.2.1) Formato:</strong> {{ mv.format }}</li>
-							  <li>
+							  <ul><strong>(31.2.1) Formato:</strong> {{ mv.format }}</ul>
+							  <ul>
 							    <a href="/upload/{{mv.archive}}" style="color:#333">
 							        <strong>(31.2.2) Archivo:</strong> {{ mv.archive }}
 							    </a>
-							  </li>
+							  </ul>
 							
 						{% endfor %}
 						</ul>
@@ -50,11 +50,11 @@
 						<ul><strong>Videos</strong>:
 
 						{% for video in piedras.VideoPiedra.all %}
-							  <li>
+							  <ul>
 							    <a href="/upload/{{video.archivoy}}" style="color:#333">
 							        <strong>(31.2.2) Archivo:</strong> {{video.archivoy}}
 							    </a>
-							  </li>
+							  </ul>
 							
 						{% endfor %}
 						</ul>
@@ -64,16 +64,16 @@
 						<ul><strong>Peliculas</strong>:
 
 						{% for pelicula in piedras.PeliculaPiedra.all %}
-							  <li>
+							  <ul>
 							    <a href="/upload/{{pelicula.archivoy}}" style="color:#333">
 							        <strong>(31.2.2) Archivo:</strong> {{pelicula.archivoy}}
 							    </a>
-							  </li>
+							  </ul>
 						{% endfor %}
 
 						</ul>
 					{% endif %}
-					
+
 					<br>
 				{% endfor %}
 
