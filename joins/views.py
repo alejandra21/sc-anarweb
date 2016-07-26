@@ -966,7 +966,6 @@ def cruces(request,cruce_id):
 	elif (cruce_id == "34"):
 
 		estado = request.GET['estado']
-		# codigo = request.GET['codigo']
 		listaResultados = []
 
 		if (estado != "Todos"):
@@ -990,7 +989,6 @@ def cruces(request,cruce_id):
 	elif (cruce_id == "35"):
 
 		estado = request.GET['estado']
-		# codigo = request.GET['codigo']
 		listaResultados = []
 
 		if (estado != "Todos"):
@@ -1014,7 +1012,6 @@ def cruces(request,cruce_id):
 	elif (cruce_id == "36"):
 
 		estado = request.GET['estado']
-		# codigo = request.GET['codigo']
 		listaResultados = []
 
 		if (estado != "Todos"):
