@@ -23,22 +23,21 @@
 				<ul><strong>Código</strong>: {{resultado.yacimiento.codigo}}</ul>
 				<ul><strong>Estado</strong>: {{resultado.yacimiento.estado.nombre}}</ul>
 
-				<ul><h4><strong>Rocas :</strong></h4>
+				<ul> <h4><strong>Rocas :</strong></h4>
 				{% for piedras in resultado.piedra %}
 					<ul><strong>Código</strong>: {{piedras.codigo}}</ul>
 					<ul><strong>Nombre</strong>: {{piedras.nombre}}</ul>
 					<ul><strong>Material audiovisual </strong>:
+
 					{% for mv in piedras.MatAVPiedra.all %}
-						<ul>
 						  <li><strong>(31.2.1) Formato:</strong> {{ mv.format }}</li>
 						  <li>
 						    <a href="/upload/{{mv.archive}}" style="color:#333">
 						        <strong>(31.2.2) Archivo:</strong> {{ mv.archive }}
 						    </a>
 						  </li>
-						</ul>
 					{% endfor %}
-					<br>
+			
 				{% endfor %}
 
 				</ul>
