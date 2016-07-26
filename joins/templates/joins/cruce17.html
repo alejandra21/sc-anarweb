@@ -8,24 +8,23 @@
 {% endblock %}
 
 {% block title %}
-	Cuáles petroglifos tienen <u>bajo relieve planar</u>:{{tipo}}
+	Cuáles petroglifos tienen <u>{{tipo}}</u>:
 {% endblock %}
 
 {% block content %}
 	<br>
-	<li>
-		<strong>Código:</strong> PB1-51, 
-		<i> 
-			<ul>LA RUEDA DEL INDIO </ul>
-			<ul>Estado: Carabobo.</ul>
-		</i>
-	</li>
 
-
-	<h3>{{cruce}}</h3>
 	<ul>
-	    {% for yac in yacimientos%}
-			<li>{{yac.nombre}}</li>
+	    {% for resultado in listaResultado%}
+			<h4>
+				<a href="/admin/anarapp/yacimiento/{{resultado.result.yacimiento.id}}">
+					<li><strong>Nombre:</strong>{{resultado.result.yacimiento.nombre}}</li>
+				</a>
+			</h4>
+			<i> 
+				<ul>Código: {{resultado.result.yacimiento.codigo}}</ul>
+				<ul>Estado: {{resultado.result.yacimiento.estado}}</ul>
+			</i>
     	{%endfor%}
 	</ul>
 

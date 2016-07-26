@@ -1,0 +1,32 @@
+{% extends "website-base.html" %}
+
+{% load staticfiles %}
+
+{% block pagetitle %}
+	Cruces - Yacimiento
+{% endblock %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+Listar por Estado (3), Yacimiento (00) y Tipo de Material (22) con caracteristica de petroglifo: <u>{{caracteristica}}</u> y caracteristica de la pintura {{clasificacion}}
+<ul>
+    {% for resultado in listaResultados %}
+		<h4>
+			<a href="/admin/anarapp/yacimiento/{{resultado.result.yacimiento.id}}">
+				<li><strong>Nombre:</strong>{{resultado.result.yacimiento.nombre}}</li>
+			</a>
+		</h4>
+		<i> 
+			<ul>Código: {{resultado.result.yacimiento.codigo}}</ul>
+			<ul>Estado: {{resultado.result.yacimiento.estado.nombre}}</ul>
+		</i>
+	{%endfor%}
+	
+</ul>
+{% endblock %}
+
+{% block user %}
+	Ruby de Valencia
+{% endblock %}

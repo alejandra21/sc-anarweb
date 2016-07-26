@@ -8,22 +8,26 @@
 
 {% block title %}
 	 Lísteme por estado y yacimientos la proporción de número de piedras 
-	 trabajadas a número de piedras en el yacimiento original ubicadas en:
+	 trabajadas a número de piedras en el yacimiento original ubicadas en <u>{{ubicacion}}</u>
 {% endblock %}
 
 {% block content %}
   
-  {% for esta, lista in yacimientos.items%}
-		{%if lista|length > 0%}
-		  <h3>{{esta}}</h3>
-		  <ul>
-		  {% for yacimiento in lista %}
-        <li>{{ yacimiento.nombre }}</li>
-        <li>{{ yacimiento.ConstitucionYacimiento.nroPiedras }}</li>
-      {% endfor %}
-		  </ul>
-		{%endif%}
-  {%endfor%}
+
+<ul>
+    {% for resultado in listaResultado %}
+		<h4>
+			<a href="/admin/anarapp/yacimiento/{{resultado.id}}">
+				<li><strong>Nombre:</strong>{{resultado.result.yacimiento.nombre}}</li>
+			</a>
+		</h4>
+		<i> 
+			<ul>Código: {{resultado.result.yacimiento.codigo}}</ul>
+			<ul>Estado: {{resultado.result.yacimiento.estado.nombre}}</ul>
+		</i>
+	{%endfor%}
+	
+</ul>
 
 {% endblock %}
 

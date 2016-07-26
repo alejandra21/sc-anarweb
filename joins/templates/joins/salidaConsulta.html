@@ -8,9 +8,10 @@ Ruby de Valencia
 
 
 {% block submenu %}
-<ul class="list-inline " style="background-color:white">
+
+<ul class="list-inline">
     <table><tr>
-        <td class="active"><a href="{% url index %}">Inicio </a></td>
+        <td class="active inicial"><a href="{% url index %}">Inicio </a></td>
     <td role="presentation" class="dropdown ">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
                     Quienes somos</a>
@@ -18,10 +19,12 @@ Ruby de Valencia
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url origenytrayectoria %}">
                     Origen y Trayectoria</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url areasdeespecializacion %}">
-                    &Aacute;reas de Especializaci&oacute;n - Organigrama</a></li>
+                    &Aacute;reas de Especializaci&oacute;n</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url organigrama %}">
+                    Organigrama</a></li>
            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url profesionalesadjuntos %}">
                     Profesionales adjuntos</a></li>
-    </ul>
+        </ul>
     </td>
     <td role="presentation" class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
@@ -62,7 +65,7 @@ Ruby de Valencia
                     Productos y<br> Servicios</a>
         <ul class="dropdown-menu" role="menu">
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url publicaciones %}">
-                    Publicaciones</li>
+                    Publicaciones</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url productos %}">
                     Productos</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url asesorias %}">
@@ -71,7 +74,7 @@ Ruby de Valencia
                     Visitas Guiadas</a></li>
         </ul>
     </td>
-    <td style="border:0px"><a href="{% url contacto %}">
+    <td class="final" style="border:0px;"><a href="{% url contacto %}">
                     Contacto</a></td>
 </tr></table>
 </ul>
@@ -107,39 +110,48 @@ Ruby de Valencia
 
 <br>
 
+<div class="row">
+    <div class="col-xs-6">
 
-<h1>Resultados: </h1><br>
-Campos de búsqueda escogidos:
-<table>
+        <h1>Resultados: </h1><br>
+        Campos de búsqueda escogidos:
+        <table>
 
-{% if nombreElegido %}
+        {% if nombreElegido %}
 
-<tr>
-    <td><ul><strong>Nombre :</strong></ul></td>
-    <td>{{nombreElegido}}</td>
-</tr>
+        <tr>
+            <td><ul><strong>Nombre :</strong></ul></td>
+            <td>{{nombreElegido}}</td>
+        </tr>
 
-{% endif %}
+        {% endif %}
 
-{% if estadoElegido != "---"  %}
+        {% if estadoElegido != "---"  %}
 
-<tr>
-    <td><ul><strong>Estado :</strong></ul></td>
-    <td>{{estadoElegido}}</td>
-</tr>
+        <tr>
+            <td><ul><strong>Estado :</strong></ul></td>
+            <td>{{estadoElegido}}</td>
+        </tr>
 
-{% endif %}
+        {% endif %}
 
-{% if manifestacionElegida != "---" %}
+        {% if manifestacionElegida != "---" %}
 
-<tr>
-    <td><ul><strong>Manifestacion :</strong></ul></td>
-    <td>{{ manifestacionElegida }}</td>
-</tr>
+        <tr>
+            <td><ul><strong>Manifestacion :</strong></ul></td>
+            <td>{{ manifestacionElegida }}</td>
+        </tr>
 
-{% endif %}
+        {% endif %}
+        </table>
 
-</table>
+    </div>
+    <div class="col-xs-6 text-center">
+        {% if manifestacion != "" %}
+            <img src="{{mapa}}" style="width:210px;height:190px;"/>
+        {% endif %}
+    </div>
+</div>
 
 <br>
 

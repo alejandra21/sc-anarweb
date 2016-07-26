@@ -15,8 +15,9 @@
 	{% if yacimiento %}
 		{% for y in yacimiento %}
 			<h4 style="margin-left:3em;">
-				<a href="" style="color:black">
-					{{ y.nombre }}
+				(1) Nombre:
+				<a href="/admin/anarapp/yacimiento/{{y.id}}" style="color:black">
+					 {{ y.nombre }}
 				</a>
 			</h4>
 		{% endfor %}

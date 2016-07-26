@@ -8,42 +8,27 @@
 {% endblock %}
 
 {% block title %}
-	Petroglifos que tienen <u>bajo relieve planar</u>:{{tipo}}
+	Petroglifos 
+	{%if estado != "---"  %} en el estado {{estado}} {%endif%}
+
+	{% if surco != "---" %} que tienen <u>{{surco}}</u>{%endif%}
 {% endblock %}
 
 {% block content %}
 
 	<br>
-	<h3>Hay un total de 2{{total}} petroglifos</h3>
-		<h4><strong>Carabobo</strong></h4>
-    	<li>
-    		<strong>Código:</strong> PB1-51, 
-			<i> 
-				LA RUEDA DEL INDIO 
-			</i>
-		</li>
+	<h3>Hay un total de {{total}} petroglifos</h3>
 
-    	<h4><strong>Bolívar</strong></h4>
-		<li>
-			<strong>Código:</strong> PB1-444,	
-			<i> 
-				CUEVA CAÑO ORE, Cueva del Chamán, White Shaman Cave 
-			</i>
+	{% for y in listaYacimientos %}
 
-		</li>
+	  <h4>
+	    <strong><a href="/admin/anarapp/yacimiento/{{y.id}}">{{y.nombre}}</a></strong>
+	  </h4>
+	  <li>
+	    <strong>Código:</strong>{{y.codigo}}
+	  </li>
 
-    {% for esta, lista in yacimientos.items%}
-		{%if lista|length > 0%}
-		<h3>{{esta}}</h3>
-
-		<ul>
-		{% for yacimiento in lista %}
-            <li>{{ yacimiento.nombre }}</li>
-        {% endfor %}
-		</ul>
-		{%endif%}
-    {%endfor%}
-
+	{% endfor %}
 
 {% endblock %}
 

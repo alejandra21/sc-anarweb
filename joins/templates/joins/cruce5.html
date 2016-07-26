@@ -7,7 +7,8 @@
 {% endblock %}
 
 {% block title %}
-	¿Qué gráficos tiene el yacimiento de código  {{ codigo }}?
+    <center>Cruce 5 - <i>(PB1) Yacimiento</i> con <i>(PB1) Yacimiento</i></center></br>
+	¿Qué <i>(31.2, 31.3, 31.4, 31.5) Gráficos</i> tiene el <i>(00 - Código) Yacimiento de código: {{ codigo }}?</i>
 {% endblock %}
 
 {% block content %}
@@ -16,47 +17,77 @@
   {% if yacimiento %}
     {% for y in yacimiento %}
     	<h4 style="margin-left:1em;">
-    		<a href="" style="color:black">
-    			<strong>Nombre del yacimiento : </strong>{{ y.nombre }}
+    		<a href="/admin/anarapp/yacimiento/{{y.id}}" style="color:black">
+    			<strong>(1) Nombre: </strong>{{ y.nombre }}
     		</a>
     	</h4>
 
     	<br>
 
-    	<h4><strong>Material Audiovisual:</strong></h4>
+    	<h4><strong>(31.2) Material Audiovisual:</strong></h4>
         {% for mv in y.MatAVYacimiento.all %}
         <ul>
-          <li><strong>Formato:</strong> {{ mv.format }}</li>
-          <li><strong>Archivo:</strong> {{ mv.archive }}</li>
+          <li><strong>(31.2.1) Formato:</strong> {{ mv.format }}</li>
+          <li>
+            <a href="/upload/{{mv.archive}}" style="color:#333">
+                <strong>(31.2.2) Archivo:</strong> {{ mv.archive }}
+            </a>
+          </li>
         </ul>
         {% endfor %}
 
-    	<h4><strong>Videos:</strong></h4>
+    	<h4><strong>(31.3) Videos:</strong></h4>
 
         <ul>
     	    {% for video in y.VideoYacimiento.all %}
-            <li><strong>Año:</strong> {{ video.anioy }}</li>
-            <li><strong>Formato:</strong> {{ video.formatoy }}</li>
-            <li><strong>Título:</strong> {{ video.tituloy }}</li>
-            <li><strong>Autor:</strong> {{ video.autory }}</li>
-            <li><strong>Institución:</strong> {{ video.instituciony }}</li>
-            <li><strong>Nro. de referencia:</strong> {{ video.numReferenciay }}</li>
-            <li><strong>¿Es de ANAR?:</strong> {{ video.isFromAnary }}</li>
-            <li><strong>Nro. de copia:</strong> {{ video.numCopiayac }}</li>
+            <li><strong>(31.3.0) Año:</strong> {{ video.anioy }}</li>
+            <li><strong>(31.3.1) Formato:</strong> {{ video.formatoy }}</li>
+            <li><strong>(31.3.2) Título:</strong> {{ video.tituloy }}</li>
+            <li><strong>(31.3.3) Autor:</strong> {{ video.autory }}</li>
+            <li><strong>(31.3.4) Institución:</strong> {{ video.instituciony }}</li>
+            <li><strong>(31.3.5) Nro. de referencia:</strong> {{ video.numReferenciay }}</li>
+            <li><strong>(31.3.6) ¿Es de ANAR?:</strong> {{ video.isFromAnary }}</li>
+            <li><strong>(31.3.6.1) Nro. de copia:</strong> {{ video.numCopiayac }}</li>
+            <li>
+                <a href="/upload/{{video.archivoy}}" style="color:#333">
+                    <strong>(31.3.7) Video - Archivo:</strong> {{ video.archivoy }}
+                </a>
+            </li>
     	    {% endfor %}
         </ul>
 
-    	<h4><strong>Páginas Web:</strong></h4>
-    		<!--- Cuando se implemente la búsqueda, utilizar sólo este código -->
+        <h4><strong>(31.4) Peliculas:</strong></h4>
+
+
+        <ul>
+            {% for peli in y.PeliYacimiento.all %}
+            <li><strong>(31.4.0) Año:</strong> {{ peli.anioy }}</li>
+            <li><strong>(31.4.1) Formato:</strong> {{ peli.formatoy }}</li>
+            <li><strong>(31.4.2) Título:</strong> {{ peli.tituloy }}</li>
+            <li><strong>(31.4.3) Autor:</strong> {{ peli.autory }}</li>
+            <li><strong>(31.4.4) Institución:</strong> {{ peli.instituciony }}</li>
+            <li><strong>(31.4.5) Nro. de referencia:</strong> {{ peli.numReferenciay }}</li>
+            <li><strong>(31.4.6) ¿Es de ANAR?:</strong> {{ peli.isFromAnary }}</li>
+            <li><strong>(31.4.6.1) Nro. de copia:</strong> {{ peli.numCopiayacAN }}</li>
+            <li>
+                <a href="/upload/{{peli.archivoy}}" style="color:#333">
+                    <strong>(31.4.7) Video - Archivo:</strong> {{ peli.archivoy }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+
+
+    	<h4><strong>(31.5) Páginas Web:</strong></h4>
         <ul>
     	    {% for pw in y.PaginaWebYac.all %}
-            <li><a href="">{{ pw.direccionURLy }}</a></li>
+            <li>(31.5.1) URL de página web: <a href="pw.direccionURLy">{{ pw.direccionURLy }}</a></li>
       	  {% endfor %}
         </ul>
     {% endfor %}
 
   {% else %}
-    <h4>Sin resultado.</h4>
+    <h4>Sin resultados.</h4>
   {% endif %}
 
   

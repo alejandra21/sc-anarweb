@@ -1,0 +1,11 @@
+#!/bin/bash
+
+for i in {8..35}
+do
+	mv cruce$i.html $(($i + 1))
+done
+
+for i in {9..36}
+do
+	mv $i cruce$i.html
+done

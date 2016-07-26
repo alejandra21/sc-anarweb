@@ -7,11 +7,27 @@
 {% endblock %}
 
 {% block title %}
-  ¿Cuáles <b>Pinturas Rupestres (13.2)</b> por estado (3), con la siguiente 
-  combinación de pinturas -------- + -------- + -------- tienen:?
+Listar por <i>(3) Estado</i> y <i>(00) Yacimiento</i> con 
+<i><b>(13.2) Pinturas Rupestres</b></i> ubicadas en: <u>{{ubicacion}}</u>
+clasificada por <u>{{clasificacion}}</u><br/>
 {% endblock %}
 
 {% block content %}
+
+<ul>
+    {% for resultado in listaResultados %}
+		<h4>
+			<a href="/admin/anarapp/yacimiento/{{resultado.result.yacimiento.id}}">
+				<li><strong>Nombre:</strong>{{resultado.result.yacimiento.nombre}}</li>
+			</a>
+		</h4>
+		<i> 
+			<ul>Código: {{resultado.result.yacimiento.codigo}}</ul>
+			<ul>Estado: {{resultado.result.yacimiento.estado.nombre}}</ul>
+		</i>
+	{%endfor%}
+	
+</ul>
 {% endblock %}
 
 {% block user %}

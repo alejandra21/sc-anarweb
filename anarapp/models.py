@@ -1576,6 +1576,27 @@ class Foto (models.Model):
                                 upload_to='piedra/apoyos/fotografia/%Y_%m', 
                                 null=True, 
                                 blank=True)
+    foto2 = models.ImageField('13.1.0.0 Fotografía 2', 
+                                upload_to='piedra/apoyos/fotografia/%Y_%m', 
+                                null=True, 
+                                blank=True)
+    foto3 = models.ImageField('13.1.0.1 Fotografía 3', 
+                                upload_to='piedra/apoyos/fotografia/%Y_%m',
+                                null=True,
+                                blank=True)
+    foto4 = models.ImageField('13.1.0.2 Fotografía 4', 
+                                upload_to='piedra/apoyos/fotografia/%Y_%m',
+                                null=True,
+                                blank=True)
+    foto5 = models.ImageField('13.1.0.3 Fotografía 5', 
+                                upload_to='piedra/apoyos/fotografia/%Y_%m',
+                                null=True,
+                                blank=True)
+
+
+
+
+
     tipoFotoA  = models.BooleanField('13.1.0.1. Aerea')
     tipoFotoNA = models.BooleanField('13.1.0.2. No Aerea')
     tipoFotoS  = models.BooleanField('13.1.0.3. Satelital')
@@ -1602,14 +1623,6 @@ class FotoPiedra (Foto):
     class Meta:
         verbose_name =  ''
         verbose_name_plural = '13 Apoyos'
-
-class FotoApoyo(models.Model):
-    foto = models.ForeignKey(FotoPiedra,related_name='imagenes')
-    imagen = models.ImageField('La imagen', 
-                                upload_to='piedra/apoyos/fotografia/%Y_%m', 
-                                null=True, 
-                                blank=True)
-	
 
 # Representación gráfica de la piedra
 
