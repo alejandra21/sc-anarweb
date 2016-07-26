@@ -38,6 +38,28 @@
 
                     {% for roca in piedras.FigurasPorTipo.all %}
                         <ul><strong>(Pa 6.1)Numero de caras trabajadas</strong>:{{roca.numero}}</ul>
+
+                        {% if roca.tipoFigura == 1 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Antropomorfas</ul>
+                        {% elif roca.tipoFigura == 2 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Zoomorfas</ul>
+                        {% elif roca.tipoFigura == 3 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Geométricas</ul>
+                        {% elif roca.tipoFigura == 4 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Puntos Acoplados</ul>
+                        {% elif roca.tipoFigura == 5 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Cupulas</ul>
+                        {% elif roca.tipoFigura == 6 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Zoo-antropomorfas</ul>
+                        {% elif roca.tipoFigura == 7 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Antropo-geométricas</ul>
+                        {% elif roca.tipoFigura == 8 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Zoo-geométricas</ul>
+                        {% elif roca.tipoFigura == 9 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Amoladores </ul>
+                        {% elif roca.tipoFigura == 10 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Bateas </ul>
+                        {% endif %}
                         <ul><strong>(Pa 9) Tipo de figura </strong>:{{roca.tipoFigura}}</ul>
                         <ul><strong>(Pa 9.a) Cantidad de figuras </strong>:{{roca.cantidad}}</ul>
                     {% endfor %}
@@ -54,7 +76,6 @@
                     		<ul><strong>(Pa 11)Conexion figuras</strong>:Mas de 80% interconectadas </ul>
                     	{% endif %}
 
-                        <ul><strong>(Pa 11)Conexion figuras</strong>:{{roca.conexionFiguras}}</ul>
                     {% endfor %}
                     <br>
 
