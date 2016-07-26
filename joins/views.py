@@ -837,6 +837,8 @@ def cruces(request,cruce_id):
 		ubicacion = request.GET['ubicacion']
 		caracteristica = request.GET['carasurcopetrotipo3']
 
+		listaResultados = []
+
 
 		if (ubicacion == "Cerro"):
 			elementos = UbicacionYacimiento.objects.filter(enCerro=True)
@@ -940,14 +942,14 @@ def cruces(request,cruce_id):
 					resultSet2 = elementosCar.filter(yacimiento__id=resultUbic.yacimiento.id)
 
 					for elem in resultSet2:
-						rocas = Piedra.objects.filter(yacimiento__id=elem.id)
+						rocas = Piedra.objects.filter(yacimiento__id=elem.yacimiento.id)
 
 						if (estado!="Todos"):
-							yacimiento = Yacimiento.objects.filter(yacimiento__id=elem.id,
+							yacimiento = Yacimiento.objects.filter(yacimiento__id=elem.yacimiento.id,
 																	yacimiento__estado__nombre=estado)
 
 						else:
-							yacimiento = Yacimiento.objects.filter(yacimiento__id=elem.id)
+							yacimiento = Yacimiento.objects.filter(yacimiento__id=elem.yacimiento.id)
 
 						if (len(rocas)!=0):
 							listaResultados += [{'yacimiento':yacimiento,'piedra':rocas}]
@@ -959,21 +961,21 @@ def cruces(request,cruce_id):
 				resultSet2 = elementosCar.filter(yacimiento__id=resultUbic.yacimiento.id)
 
 				for elem in resultSet2:
-					rocas = Piedra.objects.filter(yacimiento__id=elem.id)
+					rocas = Piedra.objects.filter(yacimiento__id=elem.yacimiento.id)
 
 					if (estado!="Todos"):
-						yacimiento = Yacimiento.objects.filter(yacimiento__id=elem.id,
+						yacimiento = Yacimiento.objects.filter(yacimiento__id=elem.yacimiento.id,
 																yacimiento__estado__nombre=estado)
 
 					else:
-						yacimiento = Yacimiento.objects.filter(yacimiento__id=elem.id)
+						yacimiento = Yacimiento.objects.filter(yacimiento__id=elem.yacimiento.id)
 
 					if (len(rocas)!=0):
 						listaResultados += [{'yacimiento':yacimiento,'piedra':rocas}]
 
 
 		return render(request,entrada,{'listaResultados':listaResultados})
-		
+
 
 	elif (cruce_id=="30"):
 
