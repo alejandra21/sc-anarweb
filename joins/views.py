@@ -981,7 +981,7 @@ def cruces(request,cruce_id):
 			roca = Piedra.objects.filter(yacimiento__id=yac.id)
 
 			if (len(roca)!=0):
-				listaResultados += [{'yacimiento':yacimiento,'piedra':roca}]
+				listaResultados += [{'yacimiento':yac,'piedra':roca}]
 
 
 		return render(request,entrada,{'listaResultados':listaResultados})
