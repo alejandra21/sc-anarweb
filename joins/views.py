@@ -945,11 +945,11 @@ def cruces(request,cruce_id):
 						rocas = Piedra.objects.filter(yacimiento__id=elem.yacimiento.id)
 
 						if (estado!="Todos"):
-							yacimiento = Yacimiento.objects.filter(yacimiento__id=elem.yacimiento.id,
-																	yacimiento__estado__nombre=estado)
+							yacimiento = Yacimiento.objects.filter(id=elem.yacimiento.id,
+																	estado__nombre=estado)
 
 						else:
-							yacimiento = Yacimiento.objects.filter(yacimiento__id=elem.yacimiento.id)
+							yacimiento = Yacimiento.objects.filter(id=elem.yacimiento.id)
 
 						if (len(rocas)!=0):
 							listaResultados += [{'yacimiento':yacimiento,'piedra':rocas}]
@@ -964,11 +964,11 @@ def cruces(request,cruce_id):
 					rocas = Piedra.objects.filter(yacimiento__id=elem.yacimiento.id)
 
 					if (estado!="Todos"):
-						yacimiento = Yacimiento.objects.filter(yacimiento__id=elem.yacimiento.id,
-																yacimiento__estado__nombre=estado)
+						yacimiento = Yacimiento.objects.filter(id=elem.yacimiento.id,
+																estado__nombre=estado)
 
 					else:
-						yacimiento = Yacimiento.objects.filter(yacimiento__id=elem.yacimiento.id)
+						yacimiento = Yacimiento.objects.filter(id=elem.yacimiento.id)
 
 					if (len(rocas)!=0):
 						listaResultados += [{'yacimiento':yacimiento,'piedra':rocas}]
