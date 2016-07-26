@@ -38,8 +38,11 @@
                         {% for otros in piedras.OtrosValPiedra.all %}
                               <ul>{{ otros.texto  }}</ul>
                         {% endfor %}
+
                         </ul>
 
+                    {% else %}
+                        <ul><strong>La roca no posee otros valores </strong></ul>
                     {% endif %}
 
                     <br>
