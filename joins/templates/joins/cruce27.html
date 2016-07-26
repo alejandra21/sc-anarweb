@@ -80,6 +80,12 @@
 
                     {% endfor %}
 
+                    {% for roca in piedras.EsquemaPorCara.all %}
+                    	<ul><strong>(6.a) Número de cara trabajada</strong>:{{roca.numero}}</ul>
+                    	<ul><strong>(10.1) Cara</strong>:{{roca.textoCara}}</ul>
+                    	<ul><strong>(10.2) Posicion de las figuras en la cara</strong>:{{roca.posicion}}</ul>
+                    {% endfor %}
+
                     <br>
                 {% endfor %}
 
