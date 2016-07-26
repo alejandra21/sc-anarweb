@@ -16,7 +16,7 @@
 	    {% for resultado in listaResultados %}
 			<h4>
 				<a href="/admin/anarapp/yacimiento/{{resultado.yacimiento.id}}">
-					<li><strong>Nombre:</strong>{{resultado.yacimiento.nombre}}</li>
+					<li><strong>Nombre yacimiento:</strong>{{resultado.yacimiento.nombre}}</li>
 				</a>
 			</h4>
 			<i> 
@@ -27,7 +27,7 @@
 				{% for piedras in resultado.piedra %}
 
 					<ul><strong>Código</strong>: {{piedras.codigo}}</ul>
-					<ul><strong>Nombre</strong>: {{piedras.nombre}}</ul>
+					<ul><strong>Nombre roca</strong>: {{piedras.nombre}}</ul>
 
 					{% if piedras.MatAVPiedra.all %}
 						<ul><strong>Material audiovisual </strong>:
