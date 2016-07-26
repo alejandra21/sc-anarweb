@@ -963,6 +963,30 @@ def cruces(request,cruce_id):
 		return render(request,entrada,{'listaResultados':listaResultados})
 
 
+	elif (cruce_id == "34"):
+
+		estado = request.GET['estado']
+		codigo = request.GET['codigo']
+		listaResultados = []
+
+		if (estado != "Todos"):
+			yacimiento = Yacimiento.objects.filter(yacimiento__estado__nombre=estado)
+
+		else:
+			yacimiento = Yacimiento.objects.all()
+
+
+		for yac in yacimiento:
+
+			roca = Piedra.objects.filter(yacimiento__id=yac.id)
+
+			if (len(roca)!=0):
+				listaResultados += [{'yacimiento':yac,'piedra':roca}]
+
+
+		return render(request,entrada,{'listaResultados':listaResultados})
+
+
 	elif (cruce_id == "35"):
 
 		estado = request.GET['estado']
