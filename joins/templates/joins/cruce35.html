@@ -25,7 +25,7 @@
 
 				<ul> <h4><strong>Rocas :</strong></h4>
 				{% for piedras in resultado.piedra %}
-				
+
 					<ul><strong>Código</strong>: {{piedras.codigo}}</ul>
 					<ul><strong>Nombre</strong>: {{piedras.nombre}}</ul>
 
@@ -46,27 +46,34 @@
 
 					{% endif %}
 
-					<ul><strong>Videos</strong>:</ul>
+					{% if piedras.VideoPiedra.all  %}
+						<ul><strong>Videos</strong>:
 
-					{% for video in piedras.VideoPiedra.all %}
-						  <li>
-						    <a href="/upload/{{video.archivoy}}" style="color:#333">
-						        <strong>(31.2.2) Archivo:</strong> {{video.archivoy}}
-						    </a>
-						  </li>
-						
-					{% endfor %}
+						{% for video in piedras.VideoPiedra.all %}
+							  <li>
+							    <a href="/upload/{{video.archivoy}}" style="color:#333">
+							        <strong>(31.2.2) Archivo:</strong> {{video.archivoy}}
+							    </a>
+							  </li>
+							
+						{% endfor %}
+						</ul>
+					{% endif %}
 
-					<ul><strong>Peliculas</strong>:</ul>
+					{% if piedras.PeliculaPiedra.all %}
+						<ul><strong>Peliculas</strong>:
 
-					{% for pelicula in piedras.PeliculaPiedra.all %}
-						  <li>
-						    <a href="/upload/{{pelicula.archivoy}}" style="color:#333">
-						        <strong>(31.2.2) Archivo:</strong> {{pelicula.archivoy}}
-						    </a>
-						  </li>
-					{% endfor %}
+						{% for pelicula in piedras.PeliculaPiedra.all %}
+							  <li>
+							    <a href="/upload/{{pelicula.archivoy}}" style="color:#333">
+							        <strong>(31.2.2) Archivo:</strong> {{pelicula.archivoy}}
+							    </a>
+							  </li>
+						{% endfor %}
 
+						</ul>
+					{% endif %}
+					
 					<br>
 				{% endfor %}
 
