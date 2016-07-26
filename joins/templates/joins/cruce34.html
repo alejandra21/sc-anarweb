@@ -30,36 +30,30 @@
                     <ul><strong>Código</strong>: {{piedras.codigo}}</ul>
                     <ul><strong>Nombre roca</strong>: {{piedras.nombre}}</ul>
 
-                    {% if piedras.Piedra2.all %}
                         
-                        {% for piedra in piedras.OtrosValPiedra.all %}
-	                        <ul><strong>(Pa 4)Numero de caras</strong>:{{piedra.numeroCaras}}</ul>
-	                        <ul><strong>(Pa 5)Numero de caras trabajadas </strong>:{{piedra.numeroCarasTrajabadas}}</ul>
-                        {% endfor %}
+                    {% for roca in piedras.OtrosValPiedra.all %}
+                        <ul><strong>(Pa 4)Numero de caras</strong>:{{roca.numeroCaras}}</ul>
+                        <ul><strong>(Pa 5)Numero de caras trabajadas </strong>:{{roca.numeroCarasTrajabadas}}</ul>
+                    {% endfor %}
 
-                    {% endif %}
+         
 
-                    {% if piedras.FigurasPorTipo.all %}
-                        
-                        {% for piedra in piedras.FigurasPorTipo.all %}
-	                        <ul><strong>(Pa 6.1)Numero de caras trabajadas</strong>:{{piedra.numero}}</ul>
-	                        <ul><strong>(Pa 9) Tipo de figura </strong>:{{piedra.tipoFigura}}</ul>
-	                        <ul><strong>(Pa 9.a) Cantidad de figuras </strong>:{{piedra.cantidad}}</ul>
-                        {% endfor %}
-                        <br>
-                        
-                    {% endif %}
+                    
+                    {% for roca in piedras.FigurasPorTipo.all %}
+                        <ul><strong>(Pa 6.1)Numero de caras trabajadas</strong>:{{roca.numero}}</ul>
+                        <ul><strong>(Pa 9) Tipo de figura </strong>:{{roca.tipoFigura}}</ul>
+                        <ul><strong>(Pa 9.a) Cantidad de figuras </strong>:{{roca.cantidad}}</ul>
+                    {% endfor %}
+                    <br>
+                    
 
-                    {% if piedras.ConexionFiguras.all %}
+                    
+                    {% for roca in piedras.ConexionFiguras.all %}
+                        <ul><strong>(Pa 11)Conexion figuras</strong>:{{roca.conexionFiguras}}</ul>
+                    {% endfor %}
+                    <br>
+
                         
-                        {% for piedra in piedras.ConexionFiguras.all %}
-	                        <ul><strong>(Pa 11)Conexion figuras</strong>:{{piedra.conexionFiguras}}</ul>
-                        {% endfor %}
-                        <br>
-                        
-                        
-                    {% endif %}
-                    <hr>
                     <br>
                 {% endfor %}
 
