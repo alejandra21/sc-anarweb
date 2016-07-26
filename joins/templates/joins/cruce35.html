@@ -25,10 +25,10 @@
 
 				<ul><h4><strong>Rocas :</strong></h4>
 				{% for piedras in resultado.piedra %}
-					<ul><strong>Código</strong>: {{piedras.piedra.codigo}}</ul>
-					<ul><strong>Nombre</strong>: {{piedras.piedra.nombre}}</ul>
+					<ul><strong>Código</strong>: {{piedras.codigo}}</ul>
+					<ul><strong>Nombre</strong>: {{piedras.nombre}}</ul>
 					<ul><strong>Material audiovisual </strong>:
-					{% for mv in piedras.piedra.MatAVPiedra.all %}
+					{% for mv in piedras.MatAVPiedra.all %}
 						<ul>
 						  <li><strong>(31.2.1) Formato:</strong> {{ mv.format }}</li>
 						  <li>
