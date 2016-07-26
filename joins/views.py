@@ -967,7 +967,7 @@ def cruces(request,cruce_id):
 
 		estado = request.GET['estado']
 		codigo = request.GET['estado']
-		listaResultados
+		listaResultados = []
 
 		if (estado != "Todos"):
 			yacimiento = Yacimiento.objects.filter(yacimiento__estado__nombre=estado)
