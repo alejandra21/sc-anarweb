@@ -8,40 +8,27 @@
 {% endblock %}
 
 {% block title %}
-	Pinturas rupestres que tienen <u>tipo de línea sencilla</u>:{{tipo}}
+	Pinturas rupestres que tienen <u>{{caracteristica}}</u> y color base <u>{{color}}</u>:
 {% endblock %}
 
 {% block content %}
+<ul>
+    {% for resultado in listaResultados %}
+		<h4>
+			<a href="/admin/anarapp/yacimiento/{{resultado.result.yacimiento.id}}">
+				<li><strong>Nombre:</strong>{{resultado.result.yacimiento.nombre}}</li>
+			</a>
+		</h4>
+		<i> 
+			<ul><strong>Código</strong>: {{resultado.result.yacimiento.codigo}}</ul>
+			<ul><strong>Estado</strong>: {{resultado.result.yacimiento.estado.nombre}}</ul>
+			<ul><strong>Ancho desde</strong>: {{resultado.anchoDesde}}</ul>
+			<ul><strong>Ancho hasta</strong> : {{resultado.anchoHasta}}</ul>
 
-		<br>
-		<h4><strong>Carabobo</strong></h4>
-    	<li>
-    		<strong>Código:</strong> PB1-51, 
-			<i> 
-				LA RUEDA DEL INDIO 
-			</i>
-		</li>
-
-    	<h4><strong>Bolívar</strong></h4>
-		<li>
-			<strong>Código:</strong> PB1-444,	
-			<i> 
-				CUEVA CAÑO ORE, Cueva del Chamán, White Shaman Cave 
-			</i>
-
-		</li>
-
-    {% for esta, lista in yacimientos.items%}
-		{%if lista|length > 0%}
-		<h3>{{esta}}</h3>
-
-		<ul>
-		{% for yacimiento in lista %}
-            <li>{{ yacimiento.nombre }}</li>
-        {% endfor %}
-		</ul>
-		{%endif%}
-    {%endfor%}
+		</i>
+	{%endfor%}
+	
+</ul>
 
 
 {% endblock %}

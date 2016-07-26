@@ -7,7 +7,8 @@ from anarapp.models import Estado, Piedra, Yacimiento, \
 							Coordenadas,ConstitucionYacimiento,UbicacionYacimiento,\
 							CaracSurcoPetroglifo,DescColores,MaterialYacimiento,\
 							ManifestacionesAsociadas,TipoYacimiento,CaracDeLaPintura,\
-							TecnicaParaMicroPetro,EstadoConserYac
+							TecnicaParaMicroPetro,EstadoConserYac,TecnicaParaPetroglifo,\
+							Piedra2,FigurasPorTipo
 from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
@@ -46,7 +47,12 @@ def cruces(request,cruce_id):
 	# print(cruce_id == "1")
 	if (cruce_id == "1"):
 		estado = request.GET['estado']
-		results=Yacimiento.objects.filter(estado__nombre__exact=estado)
+
+		if (estado != "Todos"):
+			results=Yacimiento.objects.filter(estado__nombre__exact=estado)
+		else:
+			results = Yacimiento.objects.all()
+
 		total = len(results)
 		return render(request,entrada,{'total':total,'results':results,'estado':estado})
 
@@ -58,20 +64,30 @@ def cruces(request,cruce_id):
 
 	elif (cruce_id == "9"):
 		estado = request.GET['estado']
-		results = ManifestacionYacimiento.objects.filter(yacimiento__estado__nombre=estado)
+		results = ManifestacionYacimiento.objects.all()
 
 		if (results):
 			yacimiento = results.filter(Q(esMenhires=True)|Q(esCerroConDolmen=True))
-		else:
-			yacimiento = ""
 
-		return render(request,entrada,{'yacimiento':yacimiento,'estado':estado})
+			if (estado != "Todos"):
+				yacimientoResult = yacimiento.filter(yacimiento__estado__nombre=estado)
+			else:
+				yacimientoResult = yacimiento
+
+		else:
+			yacimientoResult = ""
+
+		return render(request,entrada,{'yacimiento':yacimientoResult,'estado':estado})
 
 	elif (cruce_id == "10"):
 		# Falta implementar
 		listaYacimientos = []
 		estado = request.GET['estado']
-		yacimiento = Yacimiento.objects.filter(estado__nombre__exact=estado)
+
+		if (estado != "Todos"):
+			yacimiento = Yacimiento.objects.filter(estado__nombre__exact=estado)
+		else:
+			yacimiento = Yacimiento.objects.all()
 
 		for y in yacimiento:
 
@@ -87,9 +103,21 @@ def cruces(request,cruce_id):
 		estado = request.GET['estado']
 		codigo = request.GET['codigo']
 
-		manifestacion = \
-		ManifestacionYacimiento.objects.filter(Q(yacimiento__estado__nombre=estado)|
-			Q(yacimiento__codigo=codigo))
+		if (estado != "Todos"):
+			manifestacion = \
+			ManifestacionYacimiento.objects.filter(Q(yacimiento__estado__nombre=estado)|
+				Q(yacimiento__codigo=codigo))
+
+		else:
+
+			if (codigo!=""):
+				manifestacion = \
+				ManifestacionYacimiento.objects.filter(yacimiento__codigo=codigo)
+
+			else:
+				manifestacion = \
+				ManifestacionYacimiento.objects.all()
+
 		geoglifo = manifestacion.filter(esGeoglifo=True)
 		pinturasRupestres = manifestacion.filter(esPintura=True)
 		micropetroglifos = manifestacion.filter(esMicroPetroglifo=True)
@@ -114,6 +142,7 @@ def cruces(request,cruce_id):
 	elif (cruce_id == "12"):
 
 		ubicacion = request.GET['ubicacion']
+		estado = request.GET['estado']
 
 		if (ubicacion == "Cerro"):
 			elementos = UbicacionYacimiento.objects.filter(enCerro=True)
@@ -157,10 +186,53 @@ def cruces(request,cruce_id):
 		elif (ubicacion == "Costa"):
 			elementos = UbicacionYacimiento.objects.filter(enRioCosta=True)
 
+		if (estado != "Todos"):
+			elementos = elementos.filter(yacimiento__estado__nombre=estado)
+
+		else:
+			pass
+
 		return render(request,entrada,{'listaManifestaciones':elementos,'ubicacion':ubicacion})
+
+
+	elif (cruce_id == "13"):
+
+		estado = request.GET['estado']
+		anchoDesde = request.GET['anchoDesde']
+		anchoHasta = request.GET['anchoHasta']
+		profundidadDesde = request.GET['profundidadDesde']
+		profundidadHasta = request.GET['profundidadHasta']
+		listaYacimientos = []
+
+		if (estado != "Todos"):
+			petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo = True,yacimiento__estado__nombre=estado)
+		else:
+			petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo = True)
+
+
+		for elem in petroglifo:
+
+			medidaSet = CaracSurcoPetroglifo.objects.filter(yacimiento__id=elem.yacimiento.id)
+			for medida in medidaSet:
+				anchoD = medida.anchoDe 
+				anchoH = medida.anchoA
+				profundidadD = medida.produndidadDe
+				profundidadH = medida.profundidadA
+
+				if (anchoD <= anchoDesde and anchoH >= anchoHasta and\
+					profundidadD <= profundidadDesde and\
+					profundidadH >= profundidadHasta ):
+
+					listaYacimientos += [{'result':elem,'anchoDesde':anchoD,
+										'anchoHasta':anchoH,'profundidadDesde':profundidadD,
+										'profundidadHasta':profundidadH}]
+
+		return render(request,entrada,{'listaResultado':listaYacimientos})
+
 	
 	elif (cruce_id == "14"):
 		caracteristica = request.GET['caracteristicaSurco']
+		estado = request.GET['estado']
 		listaYacimientos = []
 
 		if (caracteristica == "Base redonda"):
@@ -173,7 +245,10 @@ def cruces(request,cruce_id):
 			caracPetroglifo = CaracSurcoPetroglifo.objects.filter(esBaseAguda=True)
 
 
-		petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo = True)
+		if (estado != "Todos"):
+			petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo = True,yacimiento__estado__nombre=estado)
+		else:
+			petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo = True)
 
 		for c in caracPetroglifo:
 
@@ -198,7 +273,11 @@ def cruces(request,cruce_id):
 		listaYacimientos = []
 		caracPetroglifo = []
 
-		petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo=True)
+		if (estado != "Todos"):
+			petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo=True,yacimiento__estado__nombre=estado)
+
+		else:
+			petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo=True)
 
 		for p in petroglifo:
 
@@ -235,16 +314,16 @@ def cruces(request,cruce_id):
 
 		pinturasRupestres =  ManifestacionYacimiento.objects.filter(esPintura=True)
 
-		if (estado != "---"):
+		if (estado != "Todos"):
 
 			pinturasRupestres =  pinturasRupestres.filter(yacimiento__estado__nombre=estado)
 
-			if (pinturas == "---"):
+		if (pinturas == "---"):
 
-				for y in pinturasRupestres:
-					listaResultado += [{'yacimiento':y}]
+			for y in pinturasRupestres:
+				listaResultado += [{'yacimiento':y}]
 
-		if (pinturas != "---"):
+		else:
 
 			if (pinturas in {'Pintura positiva negra','Pintura positiva blanca',\
 							'Pintura positiva amarilla','Pintura positiva roja',\
@@ -257,11 +336,6 @@ def cruces(request,cruce_id):
 								'Pintura negativa dos rojos','Pintura negativa tres rojos'}):
 
 				yacPintura = DescColores.objects.filter(esNegativa=True)
-
-			if (estado == "---"):
-
-				for y in yacPintura:
-					listaResultado += [{'yacimiento':y}]
 
 		for y in yacPintura:
 
@@ -277,10 +351,16 @@ def cruces(request,cruce_id):
 	elif (cruce_id=="17"):
 
 		caracteristica = request.GET['carasurcopetrotipo2']
+		estado = request.GET['estado']
 		listaResultado = []
 		caractYac = ""
 	
-		petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo=True)
+		if (estado != "Todos"):
+			petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo=True,
+																yacimiento__estado__nombre=estado)
+
+		else:
+			petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo=True)
 
 		if (caracteristica == "Areas interlineales pulidas"):
 			caractYac = CaracSurcoPetroglifo.objects.filter(esAreaInterlinealPulida=True)
@@ -297,9 +377,8 @@ def cruces(request,cruce_id):
 		for result in caractYac:
 			resultadoBusq = petroglifo.filter(yacimiento__id=result.yacimiento.id)  
 
-			if (len(resultadoBusq)!=0):
-				for resultado in resultadoBusq:
-					listaResultado += [{'result':resultado}]
+			for resultado in resultadoBusq:
+				listaResultado += [{'result':resultado}]
 
 		return render(request,entrada,{'listaResultado':listaResultado,'tipo':caracteristica})
 
@@ -311,13 +390,13 @@ def cruces(request,cruce_id):
 
 		petroglifo = ManifestacionYacimiento.objects.filter(esPetroglifo=True)
 
-		if (estado != "---"):
+		if (estado != "Todos"):
 
-			petroglifoResult =  petroglifo.filter(yacimiento__estado__nombre=estado)
+			petroglifo =  petroglifo.filter(yacimiento__estado__nombre=estado)
 
-			if (material == "---"):
-				for y in petroglifoResult:
-					listaResultado += [{'petroglifo':y}]
+		if (material == "---"):
+			for y in petroglifo:
+				listaResultado += [{'petroglifo':y}]
 
 		if (material != "---"):
 
@@ -333,21 +412,67 @@ def cruces(request,cruce_id):
 
 		for y in yacPetroglifo:
 
-			if (estado != "---"):
-				result = petroglifoResult.filter(yacimiento__id=y.yacimiento.id)
+			result = petroglifo.filter(yacimiento__id=y.yacimiento.id)
 
-			else:
-				result = petroglifo.filter(yacimiento__id=y.yacimiento.id)
-
-			if (len(result)!=0):
-				for objeto in result:
-					listaResultado += [{'petroglifo':objeto}]
+			for objeto in result:
+				listaResultado += [{'petroglifo':objeto}]
 
 		return render(request,entrada,{'listaResultado':listaResultado,'estado':estado,'tipo':material})
+
+	elif (cruce_id == "19"):
+
+		estado = request.GET['estado']
+		anchoDesde = request.GET['anchoDesde']
+		anchoHasta = request.GET['anchoHasta']
+		caracteristica = request.GET['caracteristicaPintura2']
+		tipo = request.GET['tipoPintura']
+		listaResultados = []
+
+		if (caracteristica == "Linea sencilla"):
+
+			elementos = CaracDeLaPintura.objects.filter(esLineaSencilla=True)
+
+		elif (caracteristica == "Linea compuesta"):
+			elementos = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
+
+
+		if (tipo in {'Pintura positiva negra','Pintura positiva blanca',\
+						'Pintura positiva amarilla','Pintura positiva roja',\
+						'Pintura positiva dos rojos','Pintura positiva tres rojos'}):
+
+			elementosTipo = DescColores.objects.filter(esPositiva=True)
+
+		elif (tipo in {'Pintura negativa negra','Pintura negativa blanca',\
+							'Pintura negativa amarilla','Pintura negativa roja',\
+							'Pintura negativa dos rojos','Pintura negativa tres rojos'}):
+
+			elementosTipo = DescColores.objects.filter(esNegativa=True)
+
+		for result in elementosTipo:
+
+			if (estado!="Todos"):
+				resultadoSet =  elementos.filter(yacimiento__id=result.yacimiento.id,
+												yacimiento__estado__nombre=estado)
+
+			else:
+				resultadoSet =  elementos.filter(yacimiento__id=result.yacimiento.id)
+
+			for yac in resultadoSet:
+
+				anchoD = yac.anchoDe
+				anchoH = yac.anchoA 
+
+				if (anchoD <= anchoDesde  and anchoH >= anchoHasta):
+					listaResultados += [{'result':yac,'anchoDesde':anchoD,
+										'anchoHasta':anchoH}]
+				
+		return render(request,entrada,{'listaResultados':listaResultados,'caracteristica':caracteristica,
+									'color':tipo})
 
 
 	elif (cruce_id=="20"):
 
+		estado = request.GET['estado']
 		manifestacion = request.GET['manifAsociadas']
 
 		if (manifestacion == "Litica"):
@@ -374,160 +499,158 @@ def cruces(request,cruce_id):
 		elif (manifestacion == "Monticulos"):
 			yacimientoResult = ManifestacionesAsociadas.objects.filter(esMonticulo=True)
 
+		if (estado != "Todos"):
+			yacimientoResult = yacimientoResult.filter(yacimiento__estado__nombre=estado)
+
 		return render(request,entrada,{'yacimiento':yacimientoResult,'manifestacion':manifestacion})
 
 	elif (cruce_id=="21"):
 
+		estado = request.GET['estado']
 		ubicacion = request.GET['ubicacion']
 		caracteristica = request.GET['carasurcopetrotipo3']
 
 		listaResultado = []
 
-		if (ubicacion != "---"):
+		if (ubicacion == "Cerro"):
+			elementos = UbicacionYacimiento.objects.filter(enCerro=True)
 
-			if (ubicacion == "Cerro"):
-				elementos = UbicacionYacimiento.objects.filter(enCerro=True)
+		elif (ubicacion == "Cima"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroCima=True)
 
-			elif (ubicacion == "Cima"):
-				elementos = UbicacionYacimiento.objects.filter(enCerroCima=True)
+		elif (ubicacion == "Ladera"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroLadera=True)
 
-			elif (ubicacion == "Ladera"):
-				elementos = UbicacionYacimiento.objects.filter(enCerroLadera=True)
+		elif (ubicacion == "Pie de montana"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroPieDeMonte=True)
 
-			elif (ubicacion == "Pie de montana"):
-				elementos = UbicacionYacimiento.objects.filter(enCerroPieDeMonte=True)
+		elif (ubicacion == "Barranco"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroBarranco=True)
 
-			elif (ubicacion == "Barranco"):
-				elementos = UbicacionYacimiento.objects.filter(enCerroBarranco=True)
+		elif (ubicacion == "Acantilado"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroAcantilado=True)
 
-			elif (ubicacion == "Acantilado"):
-				elementos = UbicacionYacimiento.objects.filter(enCerroAcantilado=True)
+		elif (ubicacion == "Valle"):
+			elementos = UbicacionYacimiento.objects.filter(enValle=True)
 
-			elif (ubicacion == "Valle"):
-				elementos = UbicacionYacimiento.objects.filter(enValle=True)
+		elif (ubicacion == "Rio"):
+			elementos = UbicacionYacimiento.objects.filter(enRio=True)
 
-			elif (ubicacion == "Rio"):
-				elementos = UbicacionYacimiento.objects.filter(enRio=True)
+		elif (ubicacion == "Lecho"):
+			elementos = UbicacionYacimiento.objects.filter(enRioLecho=True)
 
-			elif (ubicacion == "Lecho"):
-				elementos = UbicacionYacimiento.objects.filter(enRioLecho=True)
+		elif (ubicacion == "Margen derecha"):
+			elementos = UbicacionYacimiento.objects.filter(enRioMargenDerecha=True)
 
-			elif (ubicacion == "Margen derecha"):
-				elementos = UbicacionYacimiento.objects.filter(enRioMargenDerecha=True)
+		elif (ubicacion == "Margen izquierda"):
+			elementos = UbicacionYacimiento.objects.filter(enRioMargenIzquierda=True)
 
-			elif (ubicacion == "Margen izquierda"):
-				elementos = UbicacionYacimiento.objects.filter(enRioMargenIzquierda=True)
+		elif (ubicacion == "Isla"):
+			elementos = UbicacionYacimiento.objects.filter(enRioIsla=True)
 
-			elif (ubicacion == "Isla"):
-				elementos = UbicacionYacimiento.objects.filter(enRioIsla=True)
+		elif (ubicacion == "Raudal"):
+			elementos = UbicacionYacimiento.objects.filter(enRioRaudal=True)
 
-			elif (ubicacion == "Raudal"):
-				elementos = UbicacionYacimiento.objects.filter(enRioRaudal=True)
-
-			elif (ubicacion == "Costa"):
-				elementos = UbicacionYacimiento.objects.filter(enRioCosta=True)
-
-			if (caracteristica == "---"):
-
-				for y in elementos:
-					listaResultado += [{'result':y}]
-
-		if (caracteristica != "---"):
-
-			if (caracteristica == "Base redonda"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseRedonda=True)
-
-			elif (caracteristica == "Base aguda"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseAguda=True)
-
-			elif (caracteristica == "Base relieve lineal"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelieveLineal=True)
-
-			elif (caracteristica == "Base relieve planar"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelievePlanar=True)
-
-			elif (caracteristica == "Alto relieve planar"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelievePlanar=True)
-
-			elif (caracteristica == "Alto relieve lineal"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelieveLineal=True)
+		elif (ubicacion == "Costa"):
+			elementos = UbicacionYacimiento.objects.filter(enRioCosta=True)
 
 
-			if (ubicacion == "---"):
-				for y in elementosCar:
-					listaResultado += [{'result':y}]
+		if (caracteristica == "Base redonda"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseRedonda=True)
+
+		elif (caracteristica == "Base aguda"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseAguda=True)
+
+		elif (caracteristica == "Base relieve lineal"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelieveLineal=True)
+
+		elif (caracteristica == "Base relieve planar"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelievePlanar=True)
+
+		elif (caracteristica == "Alto relieve planar"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelievePlanar=True)
+
+		elif (caracteristica == "Alto relieve lineal"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelieveLineal=True)
+
+		for result in elementos:
+
+			if (estado != "Todos"):
+				resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id,
+													yacimiento__estado__nombre=estado)
 
 			else:
-				for result in elementos:
-					resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id)
+				resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id)
 
-					for elem in resultadoBusq:
-						listaResultado += [{'result':elem}]
+			for elem in resultadoBusq:
+				listaResultado += [{'result':elem}]
 
 
 		return render(request,entrada,{'listaResultado':listaResultado,'ubicacion':ubicacion})
 
 	elif (cruce_id == "22"):
+
+		estado = request.GET['estado']
 		ubicacion = request.GET['ubicacion2']
 		clasificacion = request.GET['clasificacion']
 
 		elementos = ""
 		listaResultados = []
 
-		if (ubicacion != "---"):
+		if (ubicacion == "Abrigo"):
+			elementos = TipoYacimiento.objects.filter(esAbrigo=True)
 
-			if (ubicacion == "Abrigo"):
-				elementos = TipoYacimiento.objects.filter(esAbrigo=True)
+		elif (ubicacion == "Cueva"):
+			elementos = TipoYacimiento.objects.filter(esCueva=True)
 
-			elif (ubicacion == "Cueva"):
-				elementos = TipoYacimiento.objects.filter(esCueva=True)
+		elif (ubicacion == "Cueva de recubrimiento"):
+			elementos = TipoYacimiento.objects.filter(esCuevadeRec=True)
 
-			elif (ubicacion == "Cueva de recubrimiento"):
-				elementos = TipoYacimiento.objects.filter(esCuevadeRec=True)
 
-			if (clasificacion == "---"):
-				for elem in elementos:
-					listaResultados += [{'result':elem}]
+		if (clasificacion == "Linea sencilla"):
 
-		if (clasificacion != "---"):
+			elementosCar = CaracDeLaPintura.objects.filter(esLineaSencilla=True)
 
-			if (clasificacion == "Linea sencilla"):
+		elif (clasificacion == "Linea compuesta"):
+			elementosCar = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
 
-				elementosCar = CaracDeLaPintura.objects.filter(esLineaSencilla=True)
+		elif (clasificacion == "Figura rellena"):
+			elementosCar = CaracDeLaPintura.objects.filter(esFiguraRellena=True)
 
-			elif (clasificacion == "Linea compuesta"):
-				elementosCar = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
+		elif (clasificacion == "Impresion de manos positivo"):
+			elementosCar = CaracDeLaPintura.objects.filter(esImpresionDeManosPositivo=True)
 
-			elif (clasificacion == "Figura rellena"):
-				elementosCar = CaracDeLaPintura.objects.filter(esFiguraRellena=True)
+		elif (clasificacion == "Impresion de manos negativo"):
+			elementosCar = CaracDeLaPintura.objects.filter(esImpresionDeManosNegativo=True)
 
-			elif (clasificacion == "Impresion de manos positivo"):
-				elementosCar = CaracDeLaPintura.objects.filter(esImpresionDeManosPositivo=True)
 
-			elif (clasificacion == "Impresion de manos negativo"):
-				elementosCar = CaracDeLaPintura.objects.filter(esImpresionDeManosNegativo=True)
+		for result in elementos:
 
-			if (ubicacion == "---"):
-				for elem in elementosCar:
-					listaResultados += [{'result':elem}]
-
+			if (estado != "Todos"):
+				resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id,
+													yacimiento__estado__nombre=estado)
 			else:
-				for result in elementos:
-					resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id)
+				resultadoBusq = elementosCar.filter(yacimiento__id=result.yacimiento.id)
 
-					for elem in resultadoBusq:
-						listaResultados += [{'result':elem}]
+			for elem in resultadoBusq:
+				listaResultados += [{'result':elem}]
 
 
-		return render(request,entrada,{'listaResultados':listaResultados,'ubicacion':ubicacion,'clasificacion':clasificacion})
+		return render(request,entrada,{'listaResultados':listaResultados,'ubicacion':ubicacion})
 
 	elif (cruce_id == "23"):
 
 		caracteristica = request.GET['surco']
+		material = request.GET['material']
+		estado = request.GET['estado']
 		listaResultados = []
 
 		if (caracteristica == "Abrasion"):
 			elementos = TecnicaParaMicroPetro.objects.filter(Q(esAbrasion=True)|\
+															Q(esAbrasionPiedra=True)|\
+															Q(esAbrasionArena=True))
+
+			elementosPetro = TecnicaParaPetroglifo.objects.filter(Q(esAbrasion=True)|\
 															Q(esAbrasionPiedra=True)|\
 															Q(esAbrasionArena=True))
 			
@@ -535,28 +658,57 @@ def cruces(request,cruce_id):
 			elementos = TecnicaParaMicroPetro.objects.filter(Q(esGrabadoPercusion=True)|\
 															Q(esGrabadoPercusionDirecta=True)|\
 															Q(esGrabadoPercusionIndirecta=True))
-		for elem in elementos:
-			listaResultados += [{'result':elem}]
+
+			elementosPetro = TecnicaParaPetroglifo.objects.filter(Q(esGrabadoPercusion=True)|\
+															Q(esGrabadoPercusionDirecta=True)|\
+															Q(esGrabadoPercusionIndirecta=True))
+
+
+		if (estado != "Todos"):
+			elementos = elementos.filter(yacimiento__estado__nombre=estado)
+			elementosPetro = elementosPetro.filter(yacimiento__estado__nombre=estado)
+
+
+		if (material == "Roca ignea"):
+			yacPetroglifo = MaterialYacimiento.objects.filter(esIgnea=True)
+
+		elif (material == "Roca metamorfica"):
+			yacPetroglifo = MaterialYacimiento.objects.filter(esMetamor=True)
+
+		elif (material == "Roca sedimentaria"):
+			yacPetroglifo = MaterialYacimiento.objects.filter(esSedimentaria=True)
+
+
+		for result in elementos:
+			resultSet = yacPetroglifo.filter(yacimiento__id=result.yacimiento.id)
+
+			for elem in resultSet:
+				listaResultados += [{'result':elem,'manifestacion':"Micropetroglifos"}]
+
+		for result in elementosPetro:
+			resultSet = yacPetroglifo.filter(yacimiento__id=result.yacimiento.id)
+
+			for elem in resultSet:
+				listaResultados += [{'result':elem,'manifestacion':"Petroglifos"}]
+
 
 		return render(request,entrada,{'listaResultados':listaResultados,'surco':caracteristica})
 
 	elif (cruce_id == "24"):
 
+		estado = request.GET['estado']
 		material = request.GET['material']
 		conservacion = request.GET['estadoConservacion']
 		listaResultados = []
 
+		if (material == "Roca ignea"):
+			yacPetroglifo = MaterialYacimiento.objects.filter(esIgnea=True)
 
-		if (material != "---"):
+		elif (material == "Roca metamorfica"):
+			yacPetroglifo = MaterialYacimiento.objects.filter(esMetamor=True)
 
-			if (material == "Roca ignea"):
-				yacPetroglifo = MaterialYacimiento.objects.filter(esIgnea=True)
-
-			elif (material == "Roca metamorfica"):
-				yacPetroglifo = MaterialYacimiento.objects.filter(esMetamor=True)
-
-			elif (material == "Roca sedimentaria"):
-				yacPetroglifo = MaterialYacimiento.objects.filter(esSedimentaria=True)
+		elif (material == "Roca sedimentaria"):
+			yacPetroglifo = MaterialYacimiento.objects.filter(esSedimentaria=True)
 
 
 		if (conservacion == "Bueno"):
@@ -565,90 +717,88 @@ def cruces(request,cruce_id):
 		elif (conservacion == "Modificado"):
 			elementos = EstadoConserYac.objects.filter(estadoModificado=True)
 
-		if (material == "---"):
-			for elem in elementos:
-				listaResultados += [{'result':elem}]
+		for result in yacPetroglifo:
 
-		else:
-			for result in yacPetroglifo:
-
+			if (estado != "Todos"):
+				resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id,
+												yacimiento__estado__nombre=estado)
+			else:
 				resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id)
 
-				for elem in resultadoBusq:
-					listaResultados += [{'result':elem}]
+			for elem in resultadoBusq:
+				listaResultados += [{'result':elem}]
 
 		return render(request,entrada,{'listaResultados':listaResultados,'material':material,'conservacion':conservacion})
 
 	elif (cruce_id == "25"):
 
-
+		estado = request.GET['estado']
 		caracteristica = request.GET['carasurcopetrotipo3']
 		clasificacion = request.GET['caracteristicaPintura']
 		listaResultados = []
 
-		if (caracteristica != "---"):
+		if (caracteristica == "Base redonda"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseRedonda=True)
 
-			if (caracteristica == "Base redonda"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseRedonda=True)
+		elif (caracteristica == "Base aguda"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseAguda=True)
 
-			elif (caracteristica == "Base aguda"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseAguda=True)
+		elif (caracteristica == "Base relieve lineal"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelieveLineal=True)
 
-			elif (caracteristica == "Base relieve lineal"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelieveLineal=True)
+		elif (caracteristica == "Base relieve planar"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelievePlanar=True)
 
-			elif (caracteristica == "Base relieve planar"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelievePlanar=True)
+		elif (caracteristica == "Alto relieve planar"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelievePlanar=True)
 
-			elif (caracteristica == "Alto relieve planar"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelievePlanar=True)
+		elif (caracteristica == "Alto relieve lineal"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelieveLineal=True)
 
-			elif (caracteristica == "Alto relieve lineal"):
-				elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelieveLineal=True)
+		if (clasificacion == "Linea sencilla"):
 
-			if (clasificacion == "---"):
-				for elem in elementosCar:
-					listaResultados += [{'result':elem}]
+			elementos = CaracDeLaPintura.objects.filter(esLineaSencilla=True)
 
-		if (clasificacion != "---"):
+		elif (clasificacion == "Linea compuesta"):
+			elementos = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
 
-			if (clasificacion == "Linea sencilla"):
+		elif (clasificacion == "Figura rellena"):
+			elementos = CaracDeLaPintura.objects.filter(esFiguraRellena=True)
 
-				elementos = CaracDeLaPintura.objects.filter(esLineaSencilla=True)
+		elif (clasificacion == "Impresion de manos positivo"):
+			elementos = CaracDeLaPintura.objects.filter(esImpresionDeManosPositivo=True)
 
-			elif (clasificacion == "Linea compuesta"):
-				elementos = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
+		elif (clasificacion == "Impresion de manos negativo"):
+			elementos = CaracDeLaPintura.objects.filter(esImpresionDeManosNegativo=True)
 
-			elif (clasificacion == "Figura rellena"):
-				elementos = CaracDeLaPintura.objects.filter(esFiguraRellena=True)
 
-			elif (clasificacion == "Impresion de manos positivo"):
-				elementos = CaracDeLaPintura.objects.filter(esImpresionDeManosPositivo=True)
+		for result in elementosCar:
 
-			elif (clasificacion == "Impresion de manos negativo"):
-				elementos = CaracDeLaPintura.objects.filter(esImpresionDeManosNegativo=True)
-
-			if (caracteristica == "---"):
-				for elem in elementos:
-					listaResultados += [{'result':elem}]
+			if (estado != "Todos"):
+				resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id,
+												yacimiento__estado__nombre=estado)
 
 			else:
-				for result in elementosCar:
-					resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id)
+				resultadoBusq = elementos.filter(yacimiento__id=result.yacimiento.id)
 
-					for elem in resultadoBusq:
-						listaResultados += [{'result':elem}]
+			for elem in resultadoBusq:
+				listaResultados += [{'result':elem}]
 
 		return render(request,entrada,{'listaResultados':listaResultados,'clasificacion':clasificacion,'caracteristica':caracteristica})
 
 
-	if (cruce_id == "26"):
+	elif (cruce_id == "26"):
 
+		estado = request.GET['estado']
 		surco = request.GET['surcoGrabado']
 		listaResultados = []
 
-		manifestacion =  ManifestacionYacimiento.objects.filter(esMicroPetroglifo=True)
+		if (estado != "Todos"):
+			manifestacion =  ManifestacionYacimiento.objects.filter(esMicroPetroglifo=True,yacimiento__estado__nombre=estado)
 
+		else:
+			manifestacion =  ManifestacionYacimiento.objects.filter(esMicroPetroglifo=True)
+			
 		if (surco == "Base redonda"):
 			elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseRedonda=True)
 
@@ -680,6 +830,352 @@ def cruces(request,cruce_id):
 		return render(request,entrada,{'listaResultados':listaResultados,'surco':surco})
 
 
+	elif (cruce_id == "27"):
+
+		estado = request.GET['estado']
+		manifestacionElegida = request.GET['manifasociadas']
+		ubicacion = request.GET['ubicacion']
+		caracteristica = request.GET['carasurcopetrotipo3']
+
+
+		if (ubicacion == "Cerro"):
+			elementos = UbicacionYacimiento.objects.filter(enCerro=True)
+
+		elif (ubicacion == "Cima"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroCima=True)
+
+		elif (ubicacion == "Ladera"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroLadera=True)
+
+		elif (ubicacion == "Pie de montana"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroPieDeMonte=True)
+
+		elif (ubicacion == "Barranco"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroBarranco=True)
+
+		elif (ubicacion == "Acantilado"):
+			elementos = UbicacionYacimiento.objects.filter(enCerroAcantilado=True)
+
+		elif (ubicacion == "Valle"):
+			elementos = UbicacionYacimiento.objects.filter(enValle=True)
+
+		elif (ubicacion == "Rio"):
+			elementos = UbicacionYacimiento.objects.filter(enRio=True)
+
+		elif (ubicacion == "Lecho"):
+			elementos = UbicacionYacimiento.objects.filter(enRioLecho=True)
+
+		elif (ubicacion == "Margen derecha"):
+			elementos = UbicacionYacimiento.objects.filter(enRioMargenDerecha=True)
+
+		elif (ubicacion == "Margen izquierda"):
+			elementos = UbicacionYacimiento.objects.filter(enRioMargenIzquierda=True)
+
+		elif (ubicacion == "Isla"):
+			elementos = UbicacionYacimiento.objects.filter(enRioIsla=True)
+
+		elif (ubicacion == "Raudal"):
+			elementos = UbicacionYacimiento.objects.filter(enRioRaudal=True)
+
+		elif (ubicacion == "Costa"):
+			elementos = UbicacionYacimiento.objects.filter(enRioCosta=True)
+
+
+		if (caracteristica == "Base redonda"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseRedonda=True)
+
+		elif (caracteristica == "Base aguda"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBaseAguda=True)
+
+		elif (caracteristica == "Base relieve lineal"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelieveLineal=True)
+
+		elif (caracteristica == "Base relieve planar"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esBajoRelievePlanar=True)
+
+		elif (caracteristica == "Alto relieve planar"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelievePlanar=True)
+
+		elif (caracteristica == "Alto relieve lineal"):
+			elementosCar = CaracSurcoPetroglifo.objects.filter(esAltoRelieveLineal=True)
+
+		if (manifestacionElegida != "---"):
+
+		 	# Se seleccionan las manifestaciones correspondientes
+			if(manifestacionElegida=="Pinturas Rupestres"):
+				manifestacion = ManifestacionYacimiento.objects.filter(esPintura=True)
+
+			elif(manifestacionElegida=="Cerros y Piedras Miticas Naturales"):
+
+				manifestacion = ManifestacionYacimiento.objects.filter(
+					Q(esPiedraMiticaNatural=True)| Q(esCerroMiticoNatural=True))
+
+
+			elif(manifestacionElegida=='Amoladores,Cupula,Puntos Acoplados'):
+				manifestacion = ManifestacionYacimiento.objects.filter(
+					Q(esAmolador=True)|Q(esCupulas=True)|Q(esPuntosAcoplados=True) )
+				
+			elif(manifestacionElegida=="Geoglifo"):
+				manifestacion = ManifestacionYacimiento.objects.filter(esGeoglifo=True)
+
+			elif(manifestacionElegida=="Micropentoglifos"):
+				# Hay que agregar este atributo en el modelo de datos
+				manifestacion = \
+				ManifestacionYacimiento.objects.filter(esMonumentosMegaliticos=True)
+				
+			elif(manifestacionElegida=="Monumentos megaliticos"):
+				manifestacion = \
+				ManifestacionYacimiento.objects.filter(esMonumentosMegaliticos=True)
+
+			elif(manifestacionElegida=="Petroglifos"):
+				manifestacion = ManifestacionYacimiento.objects.filter(esPetroglifo=True)
+
+
+			for mani in manifestacion:
+
+				resultSet1 = elementos.filter(yacimiento__id=mani.yacimiento.id)
+
+				for resultUbic in resultSet1:
+
+					resultSet2 = elementosCar.filter(yacimiento__id=resultUbic.yacimiento.id)
+
+					for elem in resultSet2:
+						rocas = Piedra.objects.filter(yacimiento__id=elem.id)
+
+						if (estado!="Todos"):
+							yacimiento = Yacimiento.objects.filter(yacimiento__id=elem.id,
+																	yacimiento__estado__nombre=estado)
+
+						else:
+							yacimiento = Yacimiento.objects.filter(yacimiento__id=elem.id)
+
+						if (len(rocas)!=0):
+							listaResultados += [{'yacimiento':yacimiento,'piedra':rocas}]
+
+		else:
+
+			for resultUbic in elementos:
+
+				resultSet2 = elementosCar.filter(yacimiento__id=resultUbic.yacimiento.id)
+
+				for elem in resultSet2:
+					rocas = Piedra.objects.filter(yacimiento__id=elem.id)
+
+					if (estado!="Todos"):
+						yacimiento = Yacimiento.objects.filter(yacimiento__id=elem.id,
+																yacimiento__estado__nombre=estado)
+
+					else:
+						yacimiento = Yacimiento.objects.filter(yacimiento__id=elem.id)
+
+					if (len(rocas)!=0):
+						listaResultados += [{'yacimiento':yacimiento,'piedra':rocas}]
+
+
+		return render(request,entrada,{'listaResultados':listaResultados})
+		
+
+	elif (cruce_id=="30"):
+
+		codigo = request.GET['codigo']
+		estado = request.GET['estado']
+		noCaras = int(request.GET['noCaras'])
+		noCarasTrabajadas = int(request.GET['noCarasTrabajadas'])
+		listaResultados = []
+		listaPiedras = []
+
+		if (estado != "Todos"):
+			yacimiento = Yacimiento.objects.filter(yacimiento__estado__nombre=estado)
+
+		else:
+			yacimiento = Yacimiento.objects.all()
+
+
+		for y in yacimiento :
+
+			piedras = Piedra.objects.filter(yacimiento__id = y.id)
+			
+			listaPiedras = []
+			for pNombre in piedras:
+
+				piedras2 = Piedra2.objects.filter(yacimiento__id = pNombre.id)
+
+				for pInfo in piedras2:
+
+					numeroCaras = pInfo.numeroCaras
+					numeroCarasTrabajadas = pInfo.numeroCarasTrajabadas
+
+					if ((numeroCaras == noCaras) or (numeroCarasTrabajadas == noCarasTrabajadas)):
+						listaPiedras += [{'piedra':pNombre}]
+	
+			if (len(listaPiedras)!=0):
+				listaResultados += [{'yacimiento':y,'piedra':listaPiedras}]
+
+
+		return render(request,entrada,{'listaResultados':listaResultados})
+
+
+	elif (cruce_id == "32"):
+
+		codigo = request.GET['codigo']
+		estado = request.GET['estado']
+		forma = int(request.GET['forma'])
+		noCaras = int(request.GET['noCaras'])
+		listaResultados = []
+
+		if (estado!= "Todos"):
+			yacimiento = Yacimiento.objects.filter(yacimiento__estado__nombre=estado)
+
+		else:
+			yacimiento = Yacimiento.objects.all()
+
+
+		for yac in yacimiento:
+
+			piedra = Piedra.objects.filter(yacimiento__id=yac.id)
+			listaPiedras = []
+
+			for roc in piedra:
+				roca = FigurasPorTipo.objects.filter(tipoFigura=forma,cantidad=noCaras,
+													piedra__id=roc.id)
+
+				for elem in roca:	
+					listaPiedras += [{'piedra':elem}]
+
+			if (len(listaPiedras)!=0):
+				listaResultados += [{'yacimiento':yac,'piedra':listaPiedras}]
+
+		return render(request,entrada,{'listaResultados':listaResultados})
+
+	elif (cruce_id == "33"):
+
+		estado = request.GET['estado']
+		forma = int(request.GET['forma'])
+		listaResultados = []
+
+		if (estado!= "Todos"):
+			yacimiento = Yacimiento.objects.filter(yacimiento__estado__nombre=estado)
+
+		else:
+			yacimiento = Yacimiento.objects.all()
+
+		for yac in yacimiento:
+
+			piedra = Piedra.objects.filter(yacimiento__id=yac.id)
+			listaPiedras = []
+
+			for roc in piedra:
+
+				antropomorfa = FigurasPorTipo.objects.filter(tipoFigura=1,piedra__id=roc.id)
+
+				zoomorfa = FigurasPorTipo.objects.filter(tipoFigura=2,
+													piedra__id=roc.id)
+
+				geometricas = FigurasPorTipo.objects.filter(tipoFigura=3,
+													piedra__id=roc.id)
+
+				puntos_acoplados = FigurasPorTipo.objects.filter(tipoFigura=4,
+													piedra__id=roc.id)
+
+				cupulas = FigurasPorTipo.objects.filter(tipoFigura=5,
+													piedra__id=roc.id)
+
+				zooantropomorfas = FigurasPorTipo.objects.filter(tipoFigura=6,
+													piedra__id=roc.id)
+
+				antropogeometricos = FigurasPorTipo.objects.filter(tipoFigura=7,
+													piedra__id=roc.id)
+
+				zoogeometricos = FigurasPorTipo.objects.filter(tipoFigura=8,
+													piedra__id=roc.id)
+
+				amoladores = FigurasPorTipo.objects.filter(tipoFigura=9,
+													piedra__id=roc.id)
+
+				batea = FigurasPorTipo.objects.filter(tipoFigura=10,
+													piedra__id=roc.id)
+
+
+				listaPiedras += [{'piedra':roc,'antropomorfa':len(antropomorfa),'zoomorfa':len(zoomorfa),
+								'geometricas':len(geometricas),'puntos_acoplados':len(puntos_acoplados),
+								'cupulas':len(cupulas),'zooantropomorfas':len(zooantropomorfas),
+								'antropogeometricos':len(antropogeometricos),'zoogeometricos':len(zoogeometricos),
+								'amoladores':len(amoladores),'batea':len(batea)}]
+
+			if (len(listaPiedras)!=0):
+				listaResultados += [{'yacimiento':yac,'piedra':listaPiedras}]
+
+		return render(request,entrada,{'listaResultados':listaResultados})
+
+
+	elif (cruce_id == "34"):
+
+		estado = request.GET['estado']
+		listaResultados = []
+
+		if (estado != "Todos"):
+			yacimiento = Yacimiento.objects.filter(yacimiento__estado__nombre=estado)
+
+		else:
+			yacimiento = Yacimiento.objects.all()
+
+
+		for yac in yacimiento:
+
+			roca = Piedra.objects.filter(yacimiento__id=yac.id)
+
+			if (len(roca)!=0):
+				listaResultados += [{'yacimiento':yac,'piedra':roca}]
+
+
+		return render(request,entrada,{'listaResultados':listaResultados})
+
+
+	elif (cruce_id == "35"):
+
+		estado = request.GET['estado']
+		listaResultados = []
+
+		if (estado != "Todos"):
+			yacimiento = Yacimiento.objects.filter(yacimiento__estado__nombre=estado)
+
+		else:
+			yacimiento = Yacimiento.objects.all()
+
+
+		for yac in yacimiento:
+
+			roca = Piedra.objects.filter(yacimiento__id=yac.id)
+
+			if (len(roca)!=0):
+				listaResultados += [{'yacimiento':yac,'piedra':roca}]
+
+
+		return render(request,entrada,{'listaResultados':listaResultados})
+
+
+	elif (cruce_id == "36"):
+
+		estado = request.GET['estado']
+		listaResultados = []
+
+		if (estado != "Todos"):
+			yacimiento = Yacimiento.objects.filter(yacimiento__estado__nombre=estado)
+
+		else:
+			yacimiento = Yacimiento.objects.all()
+
+
+
+		for yac in yacimiento:
+
+			roca = Piedra.objects.filter(yacimiento__id=yac.id)
+
+			if (len(roca)!=0):
+				listaResultados += [{'yacimiento':yac,'piedra':roca}]
+
+
+		return render(request,entrada,{'listaResultados':listaResultados})
 
 	return render(request,entrada)
 
@@ -737,20 +1233,20 @@ def consulta(request):
 
 		########################################################################	
 
-		if(nombreElegido=="" and estadoElegido=="---"):
+		if(nombreElegido=="" and estadoElegido=="Todos"):
 			pass
 
-		elif(nombreElegido!="" and estadoElegido=="---"):
+		elif(nombreElegido!="" and estadoElegido=="Todos"):
 
 			manifestacion =\
 			 manifestacion.filter(yacimiento__nombre__icontains=nombreElegido)
 
-		elif(nombreElegido=="" and estadoElegido!="---"):
+		elif(nombreElegido=="" and estadoElegido!="Todos"):
 
 			manifestacion=\
 			manifestacion.filter(yacimiento__estado__nombre=estadoElegido)
 
-		elif(nombreElegido!="" and estadoElegido!="---"):
+		elif(nombreElegido!="" and estadoElegido!="Todos"):
 
 			# Conculta encadenada
 			manifestacion = \
@@ -759,20 +1255,20 @@ def consulta(request):
 
 	else:
 
-		if(nombreElegido=="" and estadoElegido=="---"):
+		if(nombreElegido=="" and estadoElegido=="Todos"):
 			# Se supone que tiene que redireccionar a un .html
-			return render(request, 'sistema.html',{'forma':forma})
+			yacimiento=Yacimiento.objects.all()
 			#yacimiento=Yacimiento.objects.filter(estado__nombre__exact=estadoElegido)
 
-		elif(nombreElegido!="" and estadoElegido=="---"):
+		elif(nombreElegido!="" and estadoElegido=="Todos"):
 
 			yacimiento=Yacimiento.objects.filter(nombre__icontains=nombreElegido)
 
-		elif(nombreElegido=="" and estadoElegido!="---"):
+		elif(nombreElegido=="" and estadoElegido!="Todos"):
 
 			yacimiento=Yacimiento.objects.filter(estado__nombre__exact=estadoElegido)
 
-		elif(nombreElegido!="" and estadoElegido!="---"):
+		elif(nombreElegido!="" and estadoElegido!="Todos"):
 
 			# Conculta encadenada
 			yacimiento = Yacimiento.objects.filter(nombre__icontains=nombreElegido,

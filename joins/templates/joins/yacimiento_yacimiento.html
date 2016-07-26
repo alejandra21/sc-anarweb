@@ -446,6 +446,7 @@ $(document).ready(function(){
                         <i><b>(13.12) Cúpulas</b></i>
                         en la siguiente <i>(14) Ubicación</i>:<br/>
                         <form action="/cruces/12/">
+                            <label>(3) Estado: {{form.estado}}</label></br>
                             <label>(14) Ubicación: {{form.ubicacion}}</label></br></br>
                             <input type="submit" class="button" value="Consultar"/>
                         </form>
@@ -467,6 +468,9 @@ $(document).ready(function(){
                         <i>(24.1.2) Profundidad del surco grabado</i> para todos 
                         los Yacimientos de <i><b>(13.3) Petroglifos:</b></i><br/>
                         <form action="/cruces/13/">
+                            <label>(3) Estado: {{form.estado}}</label></br>
+                            <label>(24.1.1) Ancho del surco desde: {{form.anchoDesde}} hasta {{form.anchoHasta}}</label></br>
+                            <label>(24.1.2) Profundidad del surco desde: {{form.profundidadDesde}} hasta {{form.profundidadHasta}}</label></br>
                             <input type="submit" class="button" value="Consultar"/>
                         </form>
                     </p>
@@ -487,6 +491,7 @@ $(document).ready(function(){
                         <i>(24.1.2) Profundidad de surco</i>, 
                         ¿cuántos <b><i>(13.3) Petroglifos</i></b> tienen:<br/>
                         <form action="/cruces/14/">
+                            <label>(3) Estado: {{ form.estado }} </label></br>
                             <label>(23.1) Informacion de percusion: {{form.percusion}}</label>?</br>
                             <label>(23.2) Informacion de abrasion: {{form.abrasion}}</label>?</br>
                             <label>(24) Característica Surco: {{form.caracteristicaSurco}}</label>?</br>
@@ -551,6 +556,7 @@ $(document).ready(function(){
                     <p>
                         ¿Cuáles <i><b>(13.3) Petroglifos</b></i> tienen :<br/>
                         <form action="/cruces/17/">
+                            <label>(3) Estado: {{ form.estado }} </label></br>
                             <label>(24) Característica del surco grabado: {{form.carasurcopetrotipo2}}</label>?</br></br>
                             <input type="submit" class="button" value="Consultar"/>
                         </form>
@@ -589,14 +595,12 @@ $(document).ready(function(){
                   <div class="panel-body">
                     <p>
                         ¿Cuáles <i><b>(13.2) Pinturas Rupestres</b></i> por 
-                        <i>(3) Estado</i>, con la siguiente
-                        combinación de pinturas</br>
-                        -------- + -------- + -------- tienen:?<br/>
+                        <i>(3) Estado</i> tienen:?<br/>
                         <form action="/cruces/19/">
-                            <label>(25.2) Pincelada de ancho de: {{form.pincelada}} a {{form.pincelada}}</label></br>
-                            <label>(25.3.1) Tipo de línea sencilla: </label></br>
-                            <label>(25.3.2) Tipo de línea compuesta: </label></br>
-                            <label>(26) Color base: </label></br></br>
+                            <label>(3) Estado: {{ form.estado }} </label></br>
+                            <label>(25.2) Pincelada de ancho de: {{form.anchoDesde}} a {{form.anchoHasta}}</label></br>
+                            <label>(25.3) Caracteristica pintura: {{form.caracteristicaPintura2}} </label></br>
+                            <label>(26) Color base: {{form.tipoPintura}} </label></br>
                             <input type="submit" class="button" value="Consultar"/>
                         </form>
                     </p>
@@ -615,10 +619,9 @@ $(document).ready(function(){
                     <p>
                         Listar por <i>(00) Código</i>, <i>(3) Estado</i> y <i>(13) Tipo de Manifestación</i>  
                         los yacimientos que contengan </br>
-                        <i>(30) Manifestaciones Asociadas</i> de:
-                        <br/>
                         <form action="/cruces/20/">
-                            <label>{{form.manifAsociadas}}</label></br></br>
+                            <label>(3) Estado: {{form.estado}}</label></br>
+                            <label>(30) Manifestaciones Asociadas{{form.manifAsociadas}}</label></br>
                             <input type="submit" class="button" value="Consultar"/>
                         </form>
                     </p>
@@ -640,6 +643,7 @@ $(document).ready(function(){
                       trabajadas (21.1.1) (21.1.2) / número de piedras en el 
                       yacimiento original (21.1), ubicadas en:<br/>
                         <form action="/cruces/21/">
+                            <label>(3) Estado: {{form.estado}}</label></br>
                             <label>(14) Ubicación: {{form.ubicacion}}</label>
                              y su clasificación por:</br>
                             <label>(24) Características del surco grabado: {{form.carasurcopetrotipo3}}</label></br>
@@ -662,7 +666,8 @@ $(document).ready(function(){
                         Listar por <i>(3) Estado</i> y <i>(00) Yacimiento</i> con 
                         <i><b>(13.2) Pinturas Rupestres</b></i> ubicadas en:<br/>
                         <form action="/cruces/22/">
-                            <label>(14) Ubicación: {{form.ubicacion2}}</label></br></br>
+                            <label>(3) Estado: {{form.estado}}</label></br>
+                            <label>(14) Ubicación: {{form.ubicacion2}}</label></br>
                             <label>(25) Clasificadas por: {{form.clasificacion}}</label></br></br>
                             <input type="submit" class="button" value="Consultar"/>
                         </form>
@@ -683,6 +688,8 @@ $(document).ready(function(){
                         Listar por tipo de material (22.1), (22.1.1), (22.1.2),
                         (22.1.3), (22.3), (22.4), (22.6) cuantos yacimientos tienen surcos hechos por:
                         <form action="/cruces/23/">
+                            <label>(3) Estado: {{ form.estado }} </label></br>
+                            <label> (22.1) Tipo de material: {{form.material}}</label></br>
                             <label> (23) {{form.surco}}</label></br></br>
                             <input type="submit" class="button" value="Consultar"/>
                         </form>
@@ -703,6 +710,7 @@ $(document).ready(function(){
                         Lísteme por estado (3) y yacimiento (00), y para cada tipo
                         de ubicación (14) ,(14.1), (14.2) (14.3), (14.4), (14.5) con <br/>
                         <form action="/cruces/24/">
+                            <label>(3) Estado: {{form.estado}}</label></br>
                             <label>Tipo de material: {{form.material}}</label></br>
                             <label>Estado de conservacion: {{form.estadoConservacion}}</label></br>
                             <input type="submit" class="button" value="Consultar"/>
@@ -723,6 +731,7 @@ $(document).ready(function(){
                     <p>
                         Listar por Estado (3), Yacimiento (00) y Tipo de Material (22) con:<br/>
                         <form action="/cruces/25/">
+                            <label>(3) Estado: {{form.estado}}</label></br>
                             <label>Caracteristica petroglifo: {{form.carasurcopetrotipo3}}</label>
                             <label>Caracteristica de la pintura: {{form.caracteristicaPintura}}</label></br></br>
                             <input type="submit" class="button" value="Consultar"/>
@@ -744,6 +753,7 @@ $(document).ready(function(){
                           Listar por estado (3) los yacimientos (00), con
                           micropetroglifos (13.4) con:<br/>
                           <form action="/cruces/26/">
+                              <label>(3) Estado: {{form.estado}}</label></br>
                               <label>Caracteristica de surco: {{form.surcoGrabado}}</label></br></br>
                               <input type="submit" class="button" value="Consultar"/>
                           </form>

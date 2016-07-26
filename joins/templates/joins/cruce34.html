@@ -10,6 +10,85 @@
 {% endblock %}
 
 {% block content %}
+
+{% if listaResultados %}
+
+    <ul>
+        {% for resultado in listaResultados %}
+            <h4>
+                <a href="/admin/anarapp/yacimiento/{{resultado.yacimiento.id}}">
+                    <li><strong>Nombre yacimiento:</strong>{{resultado.yacimiento.nombre}}</li>
+                </a>
+            </h4>
+            <i> 
+                <ul><strong>Código</strong>: {{resultado.yacimiento.codigo}}</ul>
+                <ul><strong>Estado</strong>: {{resultado.yacimiento.estado.nombre}}</ul>
+
+                <ul> <h4><strong>Rocas :</strong></h4>
+                {% for piedras in resultado.piedra %}
+
+                    <ul><strong>Código</strong>: {{piedras.codigo}}</ul>
+                    <ul><strong>Nombre roca</strong>: {{piedras.nombre}}</ul>
+
+                        
+                    {% for roca in piedras.Piedra2.all %}
+                        <ul><strong>(Pa 4)Numero de caras</strong>:{{roca.numeroCaras}}</ul>
+                        <ul><strong>(Pa 5)Numero de caras trabajadas </strong>:{{roca.numeroCarasTrajabadas}}</ul>
+                    {% endfor %}
+
+                    {% for roca in piedras.FigurasPorTipo.all %}
+                        <ul><strong>(Pa 6.1)Numero de caras trabajadas</strong>:{{roca.numero}}</ul>
+
+                        {% if roca.tipoFigura == 1 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Antropomorfas</ul>
+                        {% elif roca.tipoFigura == 2 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Zoomorfas</ul>
+                        {% elif roca.tipoFigura == 3 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Geométricas</ul>
+                        {% elif roca.tipoFigura == 4 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Puntos Acoplados</ul>
+                        {% elif roca.tipoFigura == 5 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Cupulas</ul>
+                        {% elif roca.tipoFigura == 6 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Zoo-antropomorfas</ul>
+                        {% elif roca.tipoFigura == 7 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Antropo-geométricas</ul>
+                        {% elif roca.tipoFigura == 8 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Zoo-geométricas</ul>
+                        {% elif roca.tipoFigura == 9 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Amoladores </ul>
+                        {% elif roca.tipoFigura == 10 %}
+                        	<ul><strong>(Pa 9) Tipo de figura </strong>: Bateas </ul>
+                        {% endif %}
+                        <ul><strong>(Pa 9.a) Cantidad de figuras </strong>:{{roca.cantidad}}</ul>
+                    {% endfor %}
+ 
+                    {% for roca in piedras.ConexionFiguras.all %}
+
+                    	{% if roca.conexionFiguras == 1 %}
+                    	    <ul><strong>(Pa 11)Conexion figuras</strong>:Presencia de una sola figura</ul>
+                    	{% elif roca.conexionFiguras == 2  %}
+                    		<ul><strong>(Pa 11)Conexion figuras</strong>:Menos de 10% interconectadas </ul>
+                    	{% elif roca.conexionFiguras == 3 %}
+                    		<ul><strong>(Pa 11)Conexion figuras</strong>:50% interconectadas </ul>
+                    	{% elif roca.conexionFiguras == 4 %}
+                    		<ul><strong>(Pa 11)Conexion figuras</strong>:Mas de 80% interconectadas </ul>
+                    	{% endif %}
+
+                    {% endfor %}
+                    <br>
+
+                {% endfor %}
+
+                </ul>
+            </i>
+        {%endfor%}
+        
+    </ul>
+{% else %}
+  <h4>Sin resultados.</h4>
+{% endif %}
+
 {% endblock %}
 
 {% block user %}

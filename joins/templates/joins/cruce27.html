@@ -10,7 +10,39 @@
 {% endblock %}
 
 {% block content %}
-{% endblock %}
+{% if listaResultados %}
+
+    <ul>
+        {% for resultado in listaResultados %}
+
+        	{% for resultadoY in resultado.yacimiento %}
+	            <h4>
+	                <a href="/admin/anarapp/yacimiento/{{resultadoY.id}}">
+	                    <li><strong>Nombre yacimiento:</strong>{{resultadoY.nombre}}</li>
+	                </a>
+	            </h4>
+	            <i> 
+	                <ul><strong>Código</strong>: {{resultadoY.codigo}}</ul>
+	                <ul><strong>Estado</strong>: {{resultadoY.estado.nombre}}</ul>
+        	{% endfor %}
+
+                <ul> <h4><strong>Rocas :</strong></h4>
+                {% for piedras in resultado.piedra %}
+
+                    <ul><strong>Código</strong>: {{piedras.codigo}}</ul>
+                    <ul><strong>Nombre roca</strong>: {{piedras.nombre}}</ul>
+
+                    <br>
+                {% endfor %}
+
+                </ul>
+            </i>
+        {%endfor%}
+        
+    </ul>
+{% else %}
+  <h4>Sin resultados.</h4>
+{% endif %}
 
 {% block user %}
 	Ruby de Valencia
