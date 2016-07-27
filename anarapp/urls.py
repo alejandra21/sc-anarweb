@@ -10,6 +10,8 @@ urlpatterns = patterns('',
     url(r'es/inicio', views.inicio, name='index'),
     url(r'en/inicio', views.en, name='en'),
     url(r'sistema', views.sistema, name='sistema'),
+    url(r'es/juegosdidacticos/juegos', views.juegosdidacticosJuegos, name='juegosdidacticos'),
+    url(r'es/juegosdidacticos/rueda', views.juegosdidacticosRuedaDidactica, name='ruedadidactica'),
     url(r'es/quienessomos/origen', views.quienessomosOrigenytrayectoria, name='origenytrayectoria'),
     url(r'es/quienessomos/areas', views.quienessomosAreasdeespecializacion, name='areasdeespecializacion'),
     url(r'es/quienessomos/organigrama', views.quienessomosOrganigrama, name='organigrama'),
@@ -34,8 +36,7 @@ urlpatterns = patterns('',
     url(r'es/productosyservicios/asesorias', views.productosyserviciosAsesorias, name='asesorias'),
     url(r'es/productosyservicios/visitas', views.productosyserviciosVisitasguiadas, name='visitasguiadas'),
     url(r'es/contacto', views.contacto, name='contacto'),
-    url(r'es/juegosdidacticos/juegos', views.juegosdidacticosJuegos, name='juegosdidacticos'),
-    url(r'es/juegosdidacticos/rueda', views.juegosdidacticosRuedaDidactica, name='ruedadidactica'),
+    
     
 
     url(r'en/quienessomos/origen', views.enquienessomosOrigenytrayectoria, name='enorigenytrayectoria'),

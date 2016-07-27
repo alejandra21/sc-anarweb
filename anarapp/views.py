@@ -7,18 +7,18 @@ from django.shortcuts import render_to_response
 def index(request):
     return render(request, 'index.html')
 
-def juegosdidacticosJuegos(request):
-	return render(request, 'juegosdidacticos/juegos.html')
-
-def juegosdidacticosRuedaDidactica(request):
-	return render(request, 'juegosdidacticos/rueda.html')
-
 def inicio(request):
     return render(request, 'inicio.html')
 
 def sistema(request):
     return render(request, 'sistema.html')
+    
+def juegosdidacticosJuegos(request):
+	return render(request, 'juegosdidacticos/juegos.html')
 
+def juegosdidacticosRuedaDidactica(request):
+	return render(request, 'juegosdidacticos/rueda.html')
+	
 def quienessomosOrigenytrayectoria(request):
 	return render(request, 'quienessomos/origenytrayectoria.html')
 
