@@ -1,0 +1,354 @@
+body{
+	
+	background-image:url(backg.png);
+	background-repeat:no-repeat;
+	background-size:100% 1500px;
+	background-attachment:fixed;
+	
+	}
+
+div#gireizq{
+	position:absolute;
+	margin-left:10px;
+	font-family:cursive;
+	font-size: 1em;
+	color:gray;
+	top:600px;
+	}
+div#gireder{
+	position:absolute;
+	margin-left:850px;
+	font-family:cursive;
+	font-size: 1em;
+	color:gray;
+	top:600px;
+	}
+div#girerueda{
+	position:absolute;
+	margin-left:1030px;
+	font-family:cursive;
+	font-size: 1em;
+	top:600px;
+	}
+p#titulo{
+	position:absolute;
+	font-family:cursive;
+	font-size: 1.5em;
+	color:#CC8809;
+	left:50%;
+	margin-left:-120px;
+	margin-top:0px;
+	}
+	
+	
+div#supercaja{
+	width:1000px;
+	height:730px;
+	margin:0px 0px;
+	margin-top:0px;
+	margin-left:50px;
+
+	}
+div#caja{
+	
+	width:650px;
+	height:730px;
+	margin: 0px auto;
+	
+	}
+	
+.caras{
+	position:absolute;
+	margin:0px;
+	margin-top:72px;
+	width: 650px;
+	height: 650px;
+	}
+
+#cara1{
+	width:650px;
+	height:650px;
+	z-index:3;
+}
+
+#cara2{
+	width:650px;
+	height:650px;
+	z-index:1;
+}
+
+#tapauno{
+	position:absolute;
+	margin:0px;
+	margin-top:20px;
+	margin-left:121px;
+	width:410px;
+	height:585px;
+	z-index:4;
+}
+#tapados{
+	position:absolute;
+	margin:0px;
+	margin-top:26px;
+	margin-left:130px;
+	width:410px;
+	height:585px;
+	z-index:2;
+  }
+img#girarrueda{
+	position:absolute;
+	cursor:pointer;
+	width:180px;
+	height:150px;
+	margin-left:10px;
+	top:50px;	
+	}
+img#manoizq{
+	position:absolute;
+	cursor:pointer;
+	width:80px;
+	height:50px;
+	margin-left:95px;
+	top:650px;	
+
+	}
+
+img#manoder{
+	position:absolute;
+	cursor:pointer;
+	width:80px;
+	height:50px;
+	margin-left:825px;
+	top:650px;	
+	}	
+
+div#zoom1 {
+	position: absolute;
+	cursor: crosshair;
+	width: 120px;
+	height: 73px;
+	margin:0px;
+	margin-left:263px;
+	margin-top:185px;
+	border: 3px outset gray;
+	z-index: 10;
+	}
+div#zoom2 {
+	position: absolute;
+	cursor: crosshair;
+	width: 120px;
+	height: 55px;
+	margin:0px;
+	margin-left:263px;
+	margin-top:264px;
+	border: 3px outset gray;
+	z-index: 10;
+	}
+div#zoom3 {
+	position: absolute;
+	cursor: crosshair;
+	width: 120px;
+	height: 75px;
+	margin:0px;
+	margin-left:263px;
+	margin-top:415px;
+	border: 3px outset gray;
+	z-index: 10;
+	}
+div#zoom4 {
+	position: absolute;
+	cursor: crosshair;
+	width: 120px;
+	height: 70px;
+	margin:0px;
+	margin-left:263px;
+	margin-top:496px;
+	border: 3px outset gray;
+	z-index: 10;
+	}
+div#zoomtit {
+	position: absolute;
+	cursor: crosshair;
+	width: 120px;
+	height: 125px;
+	margin:0px;
+	margin-left:263px;
+	margin-top:50px;
+	border: 3px outset gray;
+	z-index: 10;
+	}
+div#zoomparte {
+	position: absolute;
+	cursor: crosshair;
+	width: 105px;
+	height: 210px;
+	margin:0px;
+	margin-left:150px;
+	margin-top:290px;
+	border: 3px outset gray;
+	z-index: 10;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	}
+div#zoomrupestre {
+	position: absolute;
+	cursor: crosshair;
+	width: 105px;
+	height: 210px;
+	margin:0px;
+	margin-left:390px;
+	margin-top:290px;
+	border: 3px outset gray;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	z-index: 10;
+	}
+div#zoomarte {
+	position: absolute;
+	cursor: crosshair;
+	width: 25px;
+	height: 25px;
+	margin:0px;
+	margin-left:375px;
+	margin-top:610px;
+	border: 3px outset gray;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	z-index: 10;
+	}
+
+img#avisorupestre{		
+		position:absolute;
+		width:25px;
+		height:25px;
+		margin:0px;
+		margin-top:185px;
+		margin-left:80px
+		}
+
+img#avisoparte{		
+		position:absolute;
+		width:25px;
+		height:25px;
+		margin:0px;
+		margin-top:185px;
+		margin-left:80px
+		}
+img#avisotit{		
+		position:absolute;
+		width:25px;
+		height:25px;
+		margin:0px;
+		margin-top:100px;
+		margin-left:98px
+		}
+img#avisoarte{		
+		position:absolute;
+		width:25px;
+		height:25px;
+		margin:0px;
+		margin-top:2.5px;
+		margin-left:2.5px
+		z-index: 10;	
+		}
+	img#aviso1{		
+		position:absolute;
+		width:25px;
+		height:25px;
+		margin:0px;
+		margin-top:50px;
+		margin-left:98px
+		}
+	img#aviso2{		
+		position:absolute;
+		width:25px;
+		height:25px;
+		margin:0px;
+		margin-top:33px;
+		margin-left:98px
+		}
+	img#aviso3{		
+		position:absolute;
+		width:25px;
+		height:25px;
+		margin:0px;
+		margin-top:53px;
+		margin-left:98px
+		}
+	img#aviso4{		
+		position:absolute;
+		width:25px;
+		height:25px;
+		margin:0px;
+		margin-top:48px;
+		margin-left:98px
+		}
+div#DivImgToZoom {
+	display:none;
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	margin:0px;
+	margin-left:750px;
+	margin-top: 20px;
+	border: 3px outset transparent;
+	z-index: 10;
+	}
+div#DivTitulo {
+	position: absolute;
+	width: 450px;
+	height: 50px;
+	margin:0px;
+	margin-left:280px;
+	margin-top: 20px; 
+	z-index: 10;
+	}
+div#instrucciones {
+	position: absolute;
+	right: 5%;
+	margin-top:15px;
+	font-size: 11px;
+	font-family: sans-serif; 	
+	}
+div#creditos {
+	position: absolute;
+	margin-left:290px;
+	margin-top: 140px; 
+	margin-bottom:20px;
+	z-index: 10;
+	font-size: 11px;
+	font-family: sans-serif; 
+	}
+img#ImgToTitulo{
+		position:absolute;
+		margin-left:0px;
+		width:450px;
+		height:50px;
+		}
+	
+	img#ImgToZoom{
+		position:absolute;
+		margin-left:0px;
+		width:300px;
+		height:200px;
+		}
+.imginstruccion {
+	height: 20px;
+	width: auto; 
+	} 
+#ruedapeq {
+	height: 40px;
+	width: auto; 
+	}
+#flechita {
+	height: 10px;
+	width: auto;
+	margin-top: 6px;
+	margin-right: 15px;
+	margin-left: 15px;
+	}
+
+
