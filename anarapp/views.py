@@ -85,6 +85,14 @@ def productosyserviciosVisitasguiadas(request):
 def contacto(request):
 	return render(request, 'contacto.html')
 
+def juegos(request):
+	return render(request, 'juegosdidacticos/juegos.html')
+
+def ruedadidactica(request):
+	return render(request, 'juegosdidacticos/rueda.html')
+	
+	
+
 def en(request):
 	return render(request, 'en/inicio.html')
 
