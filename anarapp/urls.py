@@ -34,8 +34,8 @@ urlpatterns = patterns('',
     url(r'es/productosyservicios/asesorias', views.productosyserviciosAsesorias, name='asesorias'),
     url(r'es/productosyservicios/visitas', views.productosyserviciosVisitasguiadas, name='visitasguiadas'),
     url(r'es/contacto', views.contacto, name='contacto'),
-    url(r'es/juegosdidacticos/juegos', views.juegos, name='juegos'),
-    url(r'es/juegosdidacticos/rueda', views.ruedadidactica, name='ruedadidactica'),
+    url(r'es/juegosdidacticos/juegos', views.juegosdidacticosJuegos, name='juegos'),
+    url(r'es/juegosdidacticos/rueda', views.juegosdidacticosRuedaDidactica, name='ruedadidactica'),
     
 
     url(r'en/quienessomos/origen', views.enquienessomosOrigenytrayectoria, name='enorigenytrayectoria'),
