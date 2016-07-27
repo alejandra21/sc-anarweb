@@ -1,0 +1,28 @@
+{% extends "juegos-base.html" %}
+{% load staticfiles%}
+
+{% block pagetitle %}Juegos didácticos{% endblock %}
+{% block title %}Juegos didácticos{% endblock %}
+
+{% block content %}
+<p>
+    El <b>ANAR</b> dispone actualmente de los siguientes juegos didácticos.
+</p>
+
+<div class="row">
+    <div class="col-xs-4 col-xs-offset-4" >
+        <a href="{% url ruedadidactica %}">
+        <h4>
+    		<span style="color:red">
+    			<b>Venezuela Rupestre -<br> Mundo Rupestre</b>
+    		</span>
+	    </h4>
+	  	<img src="{% static "images/productosyservicios/publicaciones/mundo.png"  %}"  />
+	  	</a>
+	</div>
+</div>
+<p>
+    Para acceder a los juegos haga clic con el cursor sobre la imagen 
+    correspondiente.
+</p>
+{% endblock %}

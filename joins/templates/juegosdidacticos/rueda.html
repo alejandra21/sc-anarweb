@@ -1,0 +1,83 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rueda: VENEZUELA RUPESTRE - MUNDO RUPESTRE</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="{% static "site/ruedadidactica/js/jquery.js" %}"></script>
+    <script type="text/javascript" src="{% static "site/ruedadidactica/js/jQueryRotate.js" %}"></script>
+    <script type="text/javascript" src="{% static "site/ruedadidactica/js/TransformJS.js" %}"></script>
+    <link href="{% static "site/ruedadidactica/css/ruedacss.css" %}" rel="stylesheet" type="text/css">
+  </head>
+	
+  <body>
+ 
+  <div id="supercaja">
+  	
+			<div id="DivImgToZoom"> 
+		  		<img id="ImgToZoom" class="zooms" >
+			
+			</div>
+		<div>  	
+				<img id="girarrueda" src="{% static "site/ruedadidactica/img/girar.png" %}" title="Click para cambiar la cara de la rueda"/>
+  		
+  				
+  		</div>
+  		<div>
+  				<img id="manoizq" src="{% static "site/ruedadidactica/img/manoizq.png" %}" title="Click para girar la rueda hacia la izquierda"/>
+  				
+  		
+		</div>
+  		
+  		<div>
+  				<img id="manoder" src="{% static "site/ruedadidactica/img/manoder.png" %}" title="Click para girar la rueda hacia la derecha"/>
+  					
+  		</div>
+  	
+ 			<div id="caja">
+				<div id="zoomtit"  title="Colocar Mouse encima para ampliar la imagen"> <img src="{% static "site/ruedadidactica/img/lupa.png" %}" id="avisotit" /> </div>
+				<div id="zoomparte"  title="Colocar Mouse encima para ampliar la imagen"> <img src="{% static "site/ruedadidactica/img/lupa.png" %}"  id="avisoparte" /> </div>
+				<div id="zoomrupestre"  title="Colocar Mouse encima para ampliar la imagen"> <img src="{% static "site/ruedadidactica/img/lupa.png" %}"  id="avisorupestre" /> </div> 	
+				<div id="zoomarte"  title="Colocar Mouse encima para ampliar la imagen"> <img src="{% static "site/ruedadidactica/img/lupa.png" %}" id="avisoarte" /> </div>			
+				<div id="zoom1"  title="Colocar Mouse encima para ampliar la imagen"> <img src="{% static "site/ruedadidactica/img/lupa.png" %}" id="aviso1" /> </div>
+ 				<div id="zoom2" title="Colocar Mouse encima para ampliar la imagen"> <img src="{% static "site/ruedadidactica/img/lupa.png" %}"  id="aviso2" /> </div>
+ 				<div id="zoom3" title="Colocar Mouse encima para ampliar la imagen"> <img src="{% static "site/ruedadidactica/img/lupa.png" %}"  id="aviso3" /> </div>
+ 				<div id="zoom4" title="Colocar Mouse encima para ampliar la imagen"> <img src="{% static "site/ruedadidactica/img/lupa.png" %}"  id="aviso4" /> </div>
+ 					<img class="caras" id="cara1" src="{% static "site/ruedadidactica/img/cara1.png" %}" />
+					<img class="caras" id="cara2" src="{% static "site/ruedadidactica/img/cara2.png" %}" />	
+					<img class="tapas" id="tapauno" src="{% static "site/ruedadidactica/img/tapavenezuela.png" %}" />	
+					<img class="tapas" id="tapados" src="{% static "site/ruedadidactica/img/tapamundo.png" %}" />
+					
+		
+			</div>
+			<div id="DivTitulo"> 
+		  		<img src="{% static "site/ruedadidactica/img/vzlarupestre.png" %}" id="ImgToTitulo" class="titulos" >
+			
+			</div>
+			
+			<div id="instrucciones">
+				<p> <img src="{% static "site/ruedadidactica/img/girar.png" %}" id="ruedapeq"> Cambio de rueda </p>
+				<p> 
+				    <img src="{% static "site/ruedadidactica/img/manoizq.png" %}" class="imginstruccion"> 
+				    <img src="{% static "site/ruedadidactica/img/manoder.png" %}" class="imginstruccion">
+				    A la derecha o izquierda 
+				</p>
+				<p> 
+				    <img src="{% static "site/ruedadidactica/img/lupa.png" %}" class="imginstruccion">
+				    <img src="{% static "site/ruedadidactica/zooms/artecerroguanari.png" %}" class="imginstruccion">
+				    Ampliar información 
+				</p>
+				<p>  <img src="{% static "site/ruedadidactica/img/flecha.png" %}" id="flechita">Información hacia arriba </p>
+			</div>
+			
+			<div id="creditos">
+				<p> 
+					Concepto, Diseño, Textos: <b>Ruby De Valencia,</b>  
+					Aplicación: <b>José Duque, © FUNDABITAT,</b> Caracas 2015  
+				</p>
+			</div>
+	</div>
+
+  </body>
+  <script type="text/javascript" src="{% static "site/ruedadidactica/js/rueda.js" %}"></script>
+</html>
