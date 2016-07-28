@@ -977,6 +977,35 @@ def cruces(request,cruce_id):
 		return render(request,entrada,{'listaResultados':listaResultados})
 
 
+	elif (cruce_id == "29"):
+
+		estado = request.GET['estado']
+		clasificacion = request.GET['caracteristicaPintura2']
+		anchoDesde = request.GET['anchoDesde']
+		anchoHasta = request.GET['anchoHasta']
+		listaResultados = []
+
+		if (clasificacion == "Linea sencilla"):
+			elementos = CaracDeLaPintura.objects.filter(esLineaSencilla=True)
+
+		elif (clasificacion == "Linea compuesta"):
+			elementos = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
+
+		for result in elementos:
+
+			anchoD = result.anchoDe
+			anchoH = result.anchoA
+
+			if (anchoD <= anchoDesde  and anchoH >= anchoHasta):
+				roca = Piedra.objects.filter(yacimiento__id=result.yacimiento.id)
+
+				listaResultados += [{'yacimiento':result,'piedra':roca,
+									'anchoDesde':anchoD,'anchoHasta':anchoH}]
+
+
+		return render(request,entrada,{'listaResultados':listaResultados})
+			
+
 	elif (cruce_id=="30"):
 
 		codigo = request.GET['codigo']
