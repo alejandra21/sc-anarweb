@@ -991,6 +991,11 @@ def cruces(request,cruce_id):
 		elif (clasificacion == "Linea compuesta"):
 			elementos = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
 
+
+		if (estado != "Todos"):
+			elementos = elementos.filter(yacimiento__estado__nombre=estado)
+
+
 		for result in elementos:
 
 			anchoD = result.anchoDe
