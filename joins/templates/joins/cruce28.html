@@ -16,17 +16,16 @@
     <ul>
         {% for resultado in listaResultados %}
 
-        	{% for resultadoY in resultado.yacimiento %}
+        
 	            <h4>
-	                <a href="/admin/anarapp/yacimiento/{{resultadoY.yacimiento.id}}">
-	                    <li><strong>Nombre yacimiento:</strong>{{resultadoY.yacimiento.nombre}}</li>
+	                <a href="/admin/anarapp/yacimiento/{{resultado.yacimiento.yacimiento.id}}">
+	                    <li><strong>Nombre yacimiento:</strong>{{resultado.yacimiento.yacimiento.nombre}}</li>
 	                </a>
 	            </h4>
 	            <i> 
-	                <ul><strong>Código</strong>: {{resultadoY.yacimiento.codigo}}</ul>
-	                <ul><strong>Estado</strong>: {{resultadoY.yacimiento.estado.nombre}}</ul>
-	                
-        	{% endfor %}
+	                <ul><strong>Código</strong>: {{resultado.yacimiento.yacimiento.codigo}}</ul>
+	                <ul><strong>Estado</strong>: {{resultado.yacimiento.yacimiento.estado.nombre}}</ul>
+
 
                 <ul> <h4><strong>Rocas :</strong></h4>
                 {% for piedras in resultado.piedra %}

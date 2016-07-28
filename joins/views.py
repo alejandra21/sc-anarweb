@@ -977,7 +977,7 @@ def cruces(request,cruce_id):
 		return render(request,entrada,{'listaResultados':listaResultados})
 
 
-	elif (cruce_id == "29"):
+	elif (cruce_id == "28"):
 
 		estado = request.GET['estado']
 		clasificacion = request.GET['caracteristicaPintura2']
@@ -997,6 +997,8 @@ def cruces(request,cruce_id):
 			anchoH = result.anchoA
 
 			if (anchoD <= anchoDesde  and anchoH >= anchoHasta):
+
+
 				roca = Piedra.objects.filter(yacimiento__id=result.yacimiento.id)
 
 				listaResultados += [{'yacimiento':result,'piedra':roca,
