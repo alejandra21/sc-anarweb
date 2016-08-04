@@ -1,3 +1,7 @@
+// Este archivo actualmente no se utiliza, el JS de la rueda está dentro del
+// mismo html para aprovechar las utilidades de django con el direccionamiento
+// de la página.
+
 $(document).ready(function(){
 var angle = 0;
 var angle2 = 0;
