@@ -2,7 +2,8 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 
-
+def landing_es(request):
+	return render(request, 'index.html')
 
 def index(request):
     return render(request, 'index.html')
@@ -92,6 +93,8 @@ def contacto(request):
 	return render(request, 'contacto.html')
 	
 	
+def landing_en(request):
+	return render(request, 'en/index.html')
 
 def en(request):
 	return render(request, 'en/inicio.html')

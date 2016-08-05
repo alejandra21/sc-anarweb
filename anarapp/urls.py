@@ -6,6 +6,7 @@ from . import views
 urlpatterns = patterns('',
     # ex: /polls/
     #url(r'imagenes/1', views.imagenes1, name='1'),
+    
     url(r'^$', views.index, name='inicio'),
     url(r'es/inicio', views.inicio, name='index'),
     url(r'en/inicio', views.en, name='en'),
@@ -38,7 +39,7 @@ urlpatterns = patterns('',
     url(r'es/contacto', views.contacto, name='contacto'),
     
     
-
+    url(r'en', views.landing_en, name='landing_en'),
     url(r'en/quienessomos/origen', views.enquienessomosOrigenytrayectoria, name='enorigenytrayectoria'),
     url(r'en/quienessomos/areas', views.enquienessomosAreasdeespecializacion, name='enareasdeespecializacion'),
     url(r'en/quienessomos/organigrama', views.enquienessomosOrganigrama, name='enorganigrama'),
@@ -64,4 +65,5 @@ urlpatterns = patterns('',
     url(r'en/productosyservicios/visitas', views.enproductosyserviciosVisitasguiadas, name='envisitasguiadas'),
     url(r'en/contacto', views.encontacto, name='encontacto'),
 
+    url(r'', views.landing_es, name='landing_es'),
     )
