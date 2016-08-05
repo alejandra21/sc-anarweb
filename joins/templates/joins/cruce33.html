@@ -11,6 +11,7 @@
 
 {% block content %}
 
+{% if listaResultados %}
 <ul>
     {% for resultado in listaResultados %}
 		<h4>
@@ -47,6 +48,13 @@
 	{%endfor%}
 	
 </ul>
+
+{% else %}
+
+  <h4>Sin resultados.</h4>
+  
+{% endif %}
+
 {% endblock %}
 
 {% block user %}

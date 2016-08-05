@@ -18,6 +18,8 @@
     <strong> Total de Petroglifos :</strong> {{ total }}
   </h4>
 
+{% if listaYacimiento %}
+
   {% for y in listaYacimientos %}
 
       <h4>
@@ -31,6 +33,12 @@
       </li>
 
   {% endfor %}
+
+{% else %}
+
+  <h4>Sin resultados.</h4>
+  
+{% endif %}
 
 {% endblock %}
 

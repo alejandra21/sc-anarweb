@@ -18,6 +18,8 @@
 		<h4><strong>Estado: </strong>{{estado}}</h4>
 	{% endif %}
 
+{% if listaResultado %}
+
 	{% for result in listaResultado %}
 		<li>
 			<strong>Código:</strong> {{result.petroglifo.yacimiento.codigo}}, 
@@ -27,6 +29,13 @@
 		</li>
 
 	{% endfor %}
+
+{% else %}
+
+  <h4>Sin resultados.</h4>
+  
+{% endif %}
+
 {% endblock %}
 
 {% block user %}

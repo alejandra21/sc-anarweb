@@ -13,22 +13,30 @@
 
 <br>
 
-<ul>
-    {% for resultado in yacimiento %}
-		<h4>
-			<a href="/admin/anarapp/yacimiento/{{resultado.id}}">
-				<li><strong>Nombre:</strong>{{resultado.yacimiento.nombre}}</li>
-			</a>
-		</h4>
-		<i> 
-			<ul>Código: {{resultado.yacimiento.codigo}}</ul>
-			<ul>Estado: {{resultado.yacimiento.estado.nombre}}</ul>
-		</i>
-	{%endfor%}
-	
-</ul>
-
 {% block content %}
+
+{% if yacimiento %}
+
+	<ul>
+	    {% for resultado in yacimiento %}
+			<h4>
+				<a href="/admin/anarapp/yacimiento/{{resultado.id}}">
+					<li><strong>Nombre:</strong>{{resultado.yacimiento.nombre}}</li>
+				</a>
+			</h4>
+			<i> 
+				<ul>Código: {{resultado.yacimiento.codigo}}</ul>
+				<ul>Estado: {{resultado.yacimiento.estado.nombre}}</ul>
+			</i>
+		{%endfor%}
+		
+	</ul>
+
+{% else %}
+
+  <h4>Sin resultados.</h4>
+  
+{% endif %}
 
 {% endblock %}
 

@@ -13,20 +13,29 @@
 Listar por estado (3) los yacimientos (00), con
 micropetroglifos (13.4) con caracteristica de surco <u>{{surco}}</u>
 
-<ul>
-    {% for resultado in listaResultados %}
-		<h4>
-			<a href="/admin/anarapp/yacimiento/{{resultado.result.yacimiento.id}}">
-				<li><strong>Nombre:</strong>{{resultado.result.yacimiento.nombre}}</li>
-			</a>
-		</h4>
-		<i> 
-			<ul>Código: {{resultado.result.yacimiento.codigo}}</ul>
-			<ul>Estado: {{resultado.result.yacimiento.estado.nombre}}</ul>
-		</i>
-	{%endfor%}
-	
-</ul>
+
+{% if listaResultados %}
+
+	<ul>
+	    {% for resultado in listaResultados %}
+			<h4>
+				<a href="/admin/anarapp/yacimiento/{{resultado.result.yacimiento.id}}">
+					<li><strong>Nombre:</strong>{{resultado.result.yacimiento.nombre}}</li>
+				</a>
+			</h4>
+			<i> 
+				<ul>Código: {{resultado.result.yacimiento.codigo}}</ul>
+				<ul>Estado: {{resultado.result.yacimiento.estado.nombre}}</ul>
+			</i>
+		{%endfor%}
+		
+	</ul>
+
+{% else %}
+
+  <h4>Sin resultados.</h4>
+  
+{% endif %}
 
 {% endblock %}
 
