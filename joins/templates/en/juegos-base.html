@@ -1,5 +1,4 @@
-{% extends "en/website-base.html" %}
-
+{% extends "website-base.html" %}
 
 {% block user %}
 Ruby de Valencia
@@ -8,21 +7,18 @@ Ruby de Valencia
 {% block submenu %}
 <ul class="list-inline ">
 	<table><tr>
-        <td class="inicial"><a href="{% url en %}">
-	Home
-	</a></td>
-    <td style="background-color:#D40000" role="presentation" class="dropdown ">
+        <td class="active inicial"><a href="{% url en %}">Home </a></td>
+    <td role="presentation" class="dropdown ">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
-	Who we are
-	</a>
+    	    Who we are</a>
         <ul class="dropdown-menu" role="menu">
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enorigenytrayectoria %}">
 		        Beggining and Development</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enareasdeespecializacion %}">
 		        Specialization Areas</a></li>
 		    <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enorganigrama %}">
-				Organization</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enprofesionalesadjuntos %}">
+		        Organization</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enprofesionalesadjuntos %}">
 		        Professionals attached</a></li>
         </ul>
     </td>
@@ -46,7 +42,8 @@ Ruby de Valencia
             <li role="presentation"><a style="color: #DBA901;" role="menuitem" tabindex="-1" href="{% url enmicropetroglifos %}">Micropetroglyphs</a></li>
             <li role="presentation"><a style="color: #01A9DB;" role="menuitem" tabindex="-1" href="{% url enpiedrasycerrosmiticos %}">
 					Natural Mythical Hills and Stones</a></li>
-        </ul>    </td>
+        </ul>
+    </td>
     <td role="presentation" class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
 					Educational <br> programms</a>
@@ -55,7 +52,7 @@ Ruby de Valencia
 					The rupestrian Art in the School</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enconvenios %}">
 					Agreements - Alliances</a></li>
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enenlacesrelacionados %}">
+		    <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enenlacesrelacionados %}">
 					Sites related with rupestrian manifestations</a></li>
         </ul>
     </td>

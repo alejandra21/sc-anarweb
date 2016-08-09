@@ -2,43 +2,125 @@
 {% extends "en/productosyservicios-base.html" %}
 {% load staticfiles%}
 
-{% block pagetitle %}Visitas Guiadas{% endblock %}
-{% block title %}Visitas Guiadas{% endblock %}
+{% block pagetitle %}Guided Visits{% endblock %}
+{% block title %}{% endblock %}
 
 {% block content %}
-<p>
-<b>ANAR</b> desarrolla un variado programa de visitas guiadas y excursiones a sitios con <b>Manifestaciones Rupestres</b> en diferentes ecosistemas y lugares de interés turístico en varios estados del país, ofreciéndolos a colegios, universidades y grupos de 5 a 15 personas previo acuerdo.
-</p>
+<ul id="fondo" style="width:100%;height:800px;z-index=1;display:none;"></ul>
+<ul id="1" class="dropdown-image " role="menu">
+	<img src="{% static "images/productosyservicios/visitas/1 Visitas g.png" %}" style="width:370px;border:solid 2px red"/>
+	<div class="description" style="font-size:11px"><br>
+		<p style="margin-left:215px">
+			It visits guided to the rupestrian places of the Vargas and Aragua <br>
+			states, with the students of the IUTIRLA.
+		</p>
+	<div onclick="setImageVisible('1','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
+<ul id="2" class="dropdown-image " role="menu">
+	<img src="{% static "images/productosyservicios/visitas/2 Visitas g.png" %}" style="width:370px;border:solid 2px red"/>
+	<div class="description" style="font-size:11px"><br>
+		<p style="margin-left:215px">
+			Caminata etnobotánica.<br>
+			Hacia Sitio Rupestre.
+		</p>
+	<div onclick="setImageVisible('2','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
+<ul id="3" class="dropdown-image " role="menu">
+	<img src="{% static "images/productosyservicios/visitas/3 Visitas g.png" %}" style="width:370px;border:solid 2px red"/>
+	<div class="description" style="font-size:11px"><br>
+		<p style="margin-left:215px">
+			Museo Arqueológico.<br>
+			Colonia Tovar.<br>
+			Estado Aragua.
+		</p>
+	<div onclick="setImageVisible('3','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
+<ul id="4" class="dropdown-image " role="menu">
+	<img src="{% static "images/productosyservicios/visitas/4 Visitas g.png" %}" style="width:370px;border:solid 2px red"/>
+	<div class="description" style="font-size:11px"><br>
+		<p style="margin-left:215px">
+			Sector Los Yánez.<br>
+			Hacienda El Limón.<br>
+			Estado Vargas.
+		</p>
+	<div onclick="setImageVisible('4','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
+<ul id="5" class="dropdown-image " role="menu">
+	<img src="{% static "images/productosyservicios/visitas/5 Visitas g.png" %}" style="width:370px;border:solid 2px red"/>
+	<div class="description" style="font-size:11px"><br>
+		<p style="margin-left:215px">
+			<span style="color:red">435</span><br>
+			<span style="color:red">PETROGLYPH</span><br>
+			<b><i>Panariwa.</i></b><br>
+			Carayaca.<br>
+			Estado Vargas.
+		</p>
+	<div onclick="setImageVisible('5','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
+<ul id="6" class="dropdown-image " role="menu">
+	<img src="{% static "images/productosyservicios/visitas/6 Visitas g.png" %}" style="width:370px;border:solid 2px red"/>
+	<div class="description" style="font-size:11px"><br>
+		<p style="margin-left:215px">
+			Rótulo
+		</p>
+	<div onclick="setImageVisible('6','none')" style="font-size:36px;text-align:right">
+		<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	</div>
+</ul>
 
-<table width="100%" align="center">
-	<tbody>
-		<tr>
-			<td align="center" width="30%">
-			<img src="{% static "images/productosyservicios/visitas/1 Visitas g.png"  %}" width="50%" />
-			</td>
-			<td align="center" width="30%">
-			<img src="{% static "images/productosyservicios/visitas/2 Visitas g.png"  %}" width="50%" />
-			</td>
-			<td align="center" width="30%">
-			<img src="{% static "images/productosyservicios/visitas/3 Visitas g.png"  %}" width="50%" />
-			</td>
-		</tr>
-	</tbody>
-</table>
-<br>
-<table width="100%" align="center">
-	<tbody>
-		<tr>
-			<td align="center" width="30%">
-			<img src="{% static "images/productosyservicios/visitas/4 Visitas g.png"  %}" width="50%" />
-			</td>
-			<td align="center" width="30%">
-			<img src="{% static "images/productosyservicios/visitas/5 Visitas g.png"  %}" width="50%" />
-			</td>
-			<td align="center" width="30%">
-			<img src="{% static "images/productosyservicios/visitas/6 Visitas g.png"  %}" width="50%" />
-			</td>
-		</tr>
-	</tbody>
-</table>
+
+<div id="contenido">
+<h3><b>Guided Visits</b></h3>
+	<div class="row">
+	  <div class="col-md-12 col-sm-12 col-xs-12">
+	  	<p class="text-left" style="text-align:left">
+			<b>ANAR</b> develops a varied program of guided visits and trips to places 
+			with <b>Rupestrian Manifestations</b> in different ecosystems and places of 
+			tourist interest in several states of the country, offering them to 
+			schools, universities and groups from 5 to 15 people foresaw agreement.
+		</p>	
+	  </div>
+	</div>
+	
+	<!-- Las imágenes se colocan de tres en tres, en filas distintas para que haya
+		un mejor espaciado entre las mismas. -->
+	<div class="row">
+	  <div class="col-md-4 col-sm-4 col-xs-4">
+	  		<img src="{% static "images/productosyservicios/visitas/1 Visitas g.png"  %}" onclick="setImageVisible('1','block')" />
+	  </div>
+	  <div class="col-md-4 col-sm-4 col-xs-4">
+	  		<img src="{% static "images/productosyservicios/visitas/2 Visitas g.png"  %}" onclick="setImageVisible('2','block')" />
+	  </div>
+	  <div class="col-md-4 col-sm-4 col-xs-4">
+	  		<img src="{% static "images/productosyservicios/visitas/3 Visitas g.png"  %}" onclick="setImageVisible('3','block')" />
+	  </div>
+	</div>
+	
+	<br>
+	<br>
+	 
+	<div class="row"> 
+	  <div class="col-md-4 col-sm-4 col-xs-4">
+	  		<img src="{% static "images/productosyservicios/visitas/4 Visitas g.png"  %}" onclick="setImageVisible('4','block')" />
+	  </div>
+	  <div class="col-md-4 col-sm-4 col-xs-4">
+	  		<img src="{% static "images/productosyservicios/visitas/5 Visitas g.png"  %}" onclick="setImageVisible('5','block')" />
+	  </div>
+	  <div class="col-md-4 col-sm-4 col-xs-4">
+	  		<img src="{% static "images/productosyservicios/visitas/6 Visitas g.png"  %}" onclick="setImageVisible('6','block')" />
+	  </div>
+	</div>
+	
+
+</div>
 {% endblock %}

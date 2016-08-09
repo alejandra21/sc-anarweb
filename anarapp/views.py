@@ -2,7 +2,8 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 
-
+def landing_es(request):
+	return render(request, 'index.html')
 
 def index(request):
     return render(request, 'index.html')
@@ -75,6 +76,9 @@ def programadeeducacionConvenios(request):
 
 def programadeeducacionMaterialdidactico(request):
 	return render(request, 'programadeeducacion/materialdidactico.html')
+	
+def programadeeducacionEnlacesrelacionados(request):
+	return render(request, 'programadeeducacion/enlacesrelacionados.html')
 
 def productosyserviciosPublicaciones(request):
 	return render(request, 'productosyservicios/publicaciones.html')
@@ -91,10 +95,17 @@ def productosyserviciosVisitasguiadas(request):
 def contacto(request):
 	return render(request, 'contacto.html')
 	
-	
+def landing_en(request):
+	return render(request, 'en/index.html')
 
 def en(request):
 	return render(request, 'en/inicio.html')
+	
+def enjuegosdidacticosJuegos(request):
+	return render(request, 'en/juegosdidacticos/juegos.html')
+
+def enjuegosdidacticosRuedaDidactica(request):
+	return render(request, 'en/juegosdidacticos/rueda.html')
 
 def enquienessomosOrigenytrayectoria(request):
 	return render(request, 'en/quienessomos/origenytrayectoria.html')
@@ -152,6 +163,9 @@ def enprogramadeeducacionConvenios(request):
 
 def enprogramadeeducacionMaterialdidactico(request):
 	return render(request, 'en/programadeeducacion/materialdidactico.html')
+	
+def enprogramadeeducacionEnlacesrelacionados(request):
+	return render(request, 'en/programadeeducacion/enlacesrelacionados.html')
 
 def enproductosyserviciosPublicaciones(request):
 	return render(request, 'en/productosyservicios/publicaciones.html')

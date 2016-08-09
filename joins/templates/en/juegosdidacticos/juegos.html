@@ -1,0 +1,27 @@
+{% extends "en/juegos-base.html" %}
+{% load staticfiles%}
+
+{% block pagetitle %}ANAR Didactive Games{% endblock %}
+{% block title %}ANAR Didactive Games{% endblock %}
+
+{% block content %}
+<p>
+    The <b>ANAR</b> has the following didactive games.
+</p>
+
+<div class="row">
+    <div class="col-xs-4 col-xs-offset-4" >
+        <a href="{% url ruedadidactica %}">
+        <h4>
+    		<span style="color:red">
+    			<b>Venezuela Rupestre -<br> Mundo Rupestre</b>
+    		</span>
+	    </h4>
+	  	<img src="{% static "images/productosyservicios/publicaciones/mundo.png"  %}"  />
+	  	</a>
+	</div>
+</div>
+<p>
+    Click an image to open the game.
+</p>
+{% endblock %}
