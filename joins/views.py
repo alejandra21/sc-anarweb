@@ -1232,42 +1232,42 @@ def consulta(request):
 	 	# Se seleccionan las manifestaciones correspondientes
 		if(manifestacionElegida=="Pinturas Rupestres"):
 			manifestacion = ManifestacionYacimiento.objects.filter(esPintura=True)
-			mapa = "/upload/PinturaRupestre.jpg"
+			mapa = "/upload/PinturaRupestre.png"
 
 		elif(manifestacionElegida=="Cerros y Piedras Miticas Naturales"):
 
 			manifestacion = ManifestacionYacimiento.objects.filter(
 				Q(esPiedraMiticaNatural=True)| Q(esCerroMiticoNatural=True))
 
-			mapa = "/upload/Cerros.jpg"
+			mapa = "/upload/Cerros.png"
 
 		elif(manifestacionElegida=='Amoladores,Cupula,Puntos Acoplados'):
 			manifestacion = ManifestacionYacimiento.objects.filter(
 				Q(esAmolador=True)|Q(esCupulas=True)|Q(esPuntosAcoplados=True) )
 
 			#FALTA
-			mapa = "/upload/Amoladores.jpg"
+			mapa = "/upload/Amoladores.png"
 			
 		elif(manifestacionElegida=="Geoglifo"):
 			manifestacion = ManifestacionYacimiento.objects.filter(esGeoglifo=True)
-			mapa = "/upload/Geoglifos.jpg"
+			mapa = "/upload/Geoglifos.png"
 
 		elif(manifestacionElegida=="Micropentoglifos"):
 			# Hay que agregar este atributo en el modelo de datos
 			manifestacion = \
 			ManifestacionYacimiento.objects.filter(esMonumentosMegaliticos=True)
 			#FALTA
-			mapa = "/upload/Micropetroglifos.jpg"
+			mapa = "/upload/Micropetroglifos.png"
 			
 		elif(manifestacionElegida=="Monumentos megaliticos"):
 			manifestacion = \
 			ManifestacionYacimiento.objects.filter(esMonumentosMegaliticos=True)
-			mapa = "/upload/Monumentos.jpg"
+			mapa = "/upload/Monumentos.png"
 
 		elif(manifestacionElegida=="Petroglifos"):
 			manifestacion = ManifestacionYacimiento.objects.filter(esPetroglifo=True)
 			#FALTA
-			mapa = "/upload/Petroglifos.jpg"
+			mapa = "/upload/Petroglifos.png"
 
 		########################################################################	
 
