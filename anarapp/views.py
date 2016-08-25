@@ -91,6 +91,9 @@ def productosyserviciosAsesorias(request):
 
 def productosyserviciosVisitasguiadas(request):
 	return render(request, 'productosyservicios/visitasguiadas.html')
+	
+def productosyserviciosServiciosinformacion(request):
+	return render(request, 'productosyservicios/serviciosinformacion.html')
 
 def contacto(request):
 	return render(request, 'contacto.html')
@@ -178,6 +181,9 @@ def enproductosyserviciosAsesorias(request):
 
 def enproductosyserviciosVisitasguiadas(request):
 	return render(request, 'en/productosyservicios/visitasguiadas.html')
+	
+def enproductosyserviciosServiciosinformacion(request):
+	return render(request, 'en/productosyservicios/serviciosinformacion.html')
 
 def encontacto(request):
 	return render(request, 'en/contacto.html')
