@@ -37,6 +37,7 @@ urlpatterns = patterns('',
     url(r'es/productosyservicios/productos', views.productosyserviciosProductos, name='productos'),
     url(r'es/productosyservicios/asesorias', views.productosyserviciosAsesorias, name='asesorias'),
     url(r'es/productosyservicios/visitas', views.productosyserviciosVisitasguiadas, name='visitasguiadas'),
+    url(r'es/productosyservicios/serviciosinformacion', views.productosyserviciosServiciosinformacion, name='serviciosinformacion'),
     url(r'es/contacto', views.contacto, name='contacto'),
     
     
@@ -67,6 +68,7 @@ urlpatterns = patterns('',
     url(r'en/productosyservicios/productos', views.enproductosyserviciosProductos, name='enproductos'),
     url(r'en/productosyservicios/asesorias', views.enproductosyserviciosAsesorias, name='enasesorias'),
     url(r'en/productosyservicios/visitas', views.enproductosyserviciosVisitasguiadas, name='envisitasguiadas'),
+    url(r'en/productosyservicios/serviciosinformacion', views.enproductosyserviciosServiciosinformacion, name='enserviciosinformacion'),
     url(r'en/contacto', views.encontacto, name='encontacto'),
 
     url(r'en', views.landing_en, name='landing_en'),
