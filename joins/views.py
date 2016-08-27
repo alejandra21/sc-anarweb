@@ -1018,7 +1018,6 @@ def cruces(request,cruce_id):
 
 	elif (cruce_id=="30"):
 
-		codigo = request.GET['codigo']
 		estado = request.GET['estado']
 		noCaras = int(request.GET['noCaras'])
 		noCarasTrabajadas = int(request.GET['noCarasTrabajadas'])
