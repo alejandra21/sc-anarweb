@@ -1241,7 +1241,7 @@ def consulta(request):
 
 			mapa = "/upload/Cerros.png"
 
-		elif(manifestacionElegida=='Amoladores,Cupula,Puntos Acoplados'):
+		elif(manifestacionElegida=='Amoladores,Cupulas,Puntos Acoplados'):
 			manifestacion = ManifestacionYacimiento.objects.filter(
 				Q(esAmolador=True)|Q(esCupulas=True)|Q(esPuntosAcoplados=True) )
 
@@ -1252,14 +1252,14 @@ def consulta(request):
 			manifestacion = ManifestacionYacimiento.objects.filter(esGeoglifo=True)
 			mapa = "/upload/Geoglifos.png"
 
-		elif(manifestacionElegida=="Micropentoglifos"):
+		elif(manifestacionElegida=="Micropetroglifos"):
 			# Hay que agregar este atributo en el modelo de datos
 			manifestacion = \
 			ManifestacionYacimiento.objects.filter(esMonumentosMegaliticos=True)
 			#FALTA
 			mapa = "/upload/Micropetroglifos.png"
 			
-		elif(manifestacionElegida=="Monumentos megaliticos"):
+		elif(manifestacionElegida=="Monumentos Megaliticos"):
 			manifestacion = \
 			ManifestacionYacimiento.objects.filter(esMonumentosMegaliticos=True)
 			mapa = "/upload/Monumentos.png"
