@@ -9,6 +9,7 @@ import os
 urlpatterns = patterns('',    
     url(r'^$', views.index, name='inicio'),
     url(r'cruceUsuario', views.cruceUsuario, name='cruceUsuario'),
+    url(r'administrador', views.administrador, name='administrador'),
     url(r'tiposCruceAdmin', views.tiposCruceAdmin, name='tiposCruceAdmin'),
     url(r'consultaYacYac', views.consultaYacYac, name='consultaYacYac'),
     url(r'consultaYacRoc', views.consultaYacRoc, name='consultaYacRoc'),

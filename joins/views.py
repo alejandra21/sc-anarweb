@@ -22,6 +22,9 @@ def cruceUsuario(request):
 	forma = CrucesYYForm
 	return render(request, 'sistema.html',{'forma':forma})
 
+def administrador(request):
+	return render(request, 'administrador.html')
+
 def tiposCruceAdmin(request):
 	return render(request, 'tipo_consultaAdmin.html')
 
