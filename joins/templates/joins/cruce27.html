@@ -31,7 +31,10 @@
                 <ul> <h4><strong>Rocas :</strong></h4>
                 {% for piedras in resultado.piedra %}
 
-                    <ul><strong>Código</strong>: {{piedras.codigo}}</ul>
+                    <a href="/admin/anarapp/piedra/{{piedras.id}}" style="color:black"> 
+                        <ul><strong>Código</strong>: {{piedras.codigo}}</ul>
+                    </a>
+
                     <ul><strong>Nombre roca</strong>: {{piedras.nombre}}</ul>
 
                     {% for roca in piedras.Piedra2.all %}
