@@ -169,19 +169,22 @@ Ruby de Valencia
                 <div class="media">
                   <div class="media-left media-middle">
 
-                    <img src="/upload/nophoto.png" style="width:110px;height:110px;"/>
-
                     {% if y.BibYacimiento.all %}
                         {% for bib in y.BibYacimiento.all %} 
                             {% if bib.tieneFotografia %}
                             
                                 <img src="/upload/{{bib.tieneFotografia}}" style="width:110px;height:110px;"/>
 
+                            {%else%}
+                                <img src="/upload/nophoto.png" style="width:110px;height:110px;"/>
                             {% endif %}
-
                         {%endfor%}
+
+                    {% else %}
+                        <img src="/upload/nophoto.png" style="width:110px;height:110px;"/>
+                        
                     {% endif %}
-                    
+
                   </div>
                   <div class="media-body">
                     <!--<h4 class="media-heading">{{ y.nombre }}</h4> -->
