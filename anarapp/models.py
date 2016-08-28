@@ -1597,10 +1597,10 @@ class Foto (models.Model):
 
 
 
-    tipoFotoA  = models.BooleanField('13.1.0.1. Aerea')
-    tipoFotoNA = models.BooleanField('13.1.0.2. No Aerea')
-    tipoFotoS  = models.BooleanField('13.1.0.3. Satelital')
-    tipoFotoNeg = models.BooleanField('13.1.0.4. Negativo')
+    tipoFotoA  = models.BooleanField(' Aerea')
+    tipoFotoNA = models.BooleanField(' No Aerea')
+    tipoFotoS  = models.BooleanField(' Satelital')
+    tipoFotoNeg = models.BooleanField(' Negativo')
     fecha = models.CharField('13.1.1. Fecha', blank = True, null= True, max_length=100)
     fotografo  = CharField('13.1.2. Fotógrafo',blank = True, null= True)
     institucion  = CharField('13.1.3. Institucion ',blank = True, null= True)
