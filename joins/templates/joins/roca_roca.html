@@ -1,7 +1,7 @@
 {% extends "website-base.html" %}
 {% load staticfiles %}
 {% block pagetitle %}Pagina Principal{% endblock %}
-{% block title %}Consulta en Base de Datos{% endblock %}
+{% block title %}{% endblock %}
 {% block user %}
 Ruby de Valencia
 {% endblock %}
@@ -192,6 +192,12 @@ $(document).ready(function(){
 });
 </script>
 
+<div class="row" >
+    <div class="col-md-4"><h4><strong>Consulta de base de datos</strong></h4></div>
+    <div class="col-md-4"><h4><strong><ul>Roca-Roca</ul></strong></h4></div>
+</div>
+
+<br>
 <div class="container" style="width: 70%; margin: auto">
   <div class="row">
       <div class="table-responsive">
@@ -201,7 +207,7 @@ $(document).ready(function(){
               <td>
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Cruce 1 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
+                    <h3 class="panel-title"><strong>Cruce 1 </strong></h3>
                   </div>
                   <div class="panel-body">
                     <p>
@@ -215,8 +221,8 @@ $(document).ready(function(){
                       </ul>
                       <form action="/cruces/30/">
                         <label>(3) Estado: {{ form.estado }} </label></br>
-                        <label>(Pa 4) Numero de caras: {{ form.noCaras }} </label></br>
-                        <label>(Pa 5) Numero de caras trabajadas: {{ form.noCarasTrabajadas }} </label></br>
+                        <label>(Pa 4) Número de caras: {{ form.noCaras }} </label></br>
+                        <label>(Pa 5) Número de caras trabajadas: {{ form.noCarasTrabajadas }} </label></br>
                         <input type="submit" class="button" value="Consultar"/>
                        </form>
                     </p>
@@ -229,7 +235,7 @@ $(document).ready(function(){
               <td>
                   <div class="panel panel-default">
                     <div class="panel-heading">
-                      <h3 class="panel-title"><strong>Cruce 2 - <i>(Pa) Roca</i> con <i>(Pa) Roca</i></strong></h3>
+                      <h3 class="panel-title"><strong>Cruce 2 </strong></h3>
                     </div>
                     <div class="panel-body">
                       <p>
@@ -257,7 +263,7 @@ $(document).ready(function(){
               <td>
                   <div class="panel panel-default">
                     <div class="panel-heading">
-                      <h3 class="panel-title"><strong>Cruce 3 - Roca (Pa) con Roca (Pa)</strong></h3>
+                      <h3 class="panel-title"><strong>Cruce 3 </strong></h3>
                     </div>
                     <div class="panel-body">
                       <p>
@@ -279,7 +285,7 @@ $(document).ready(function(){
               <td>
                   <div class="panel panel-default">
                     <div class="panel-heading">
-                      <h3 class="panel-title"><strong>Cruce 4 - Roca (Pa) con Roca (Pa)</strong></h3>
+                      <h3 class="panel-title"><strong>Cruce 4 </strong></h3>
                     </div>
                     <div class="panel-body">
                       <p>
@@ -304,7 +310,7 @@ $(document).ready(function(){
               <td>
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Cruce 5 - Roca (Pa) con Roca (Pa)</strong> </h3>
+                    <h3 class="panel-title"><strong>Cruce 5 </strong> </h3>
                   </div>
                   <div class="panel-body">
                     <p>
@@ -328,7 +334,7 @@ $(document).ready(function(){
               <td>
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Cruce 6 - Roca (Pa) con Roca (Pa)</strong></h3>
+                    <h3 class="panel-title"><strong>Cruce 6 </strong></h3>
                   </div>
                   <div class="panel-body">
                     <p>
