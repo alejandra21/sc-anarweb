@@ -1234,7 +1234,7 @@ def consulta(request):
 	 	# Se seleccionan las manifestaciones correspondientes
 		if(manifestacionElegida=="Pinturas Rupestres"):
 			manifestacion = ManifestacionYacimiento.objects.filter(esPintura=True)
-			mapa = "/upload/PinturaRupestre.png"
+			mapa = "/upload/PinturaRupestres.png"
 
 		elif(manifestacionElegida=="Cerros y Piedras Miticas Naturales"):
 
