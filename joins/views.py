@@ -1323,11 +1323,21 @@ def consulta(request):
 		bibliografia = BibYacimiento.objects.filter(yacimiento__id=y.id)
 
 		for bib in bibliografia:
+			
 			if (bib.tieneFotografia):
-				fotos += [bib.tieneFotografia]
+				primeraFoto = bib.tieneFotografia
 
-		if ( len(fotos) > 0 ):
-			primeraFoto = fotos.pop(0)
+			if (bib.tieneFotografia1):
+				fotos += [bib.tieneFotografia1]
+
+			if (bib.tieneFotografia2):
+				fotos += [bib.tieneFotografia2]
+
+			if (bib.tieneFotografia3):
+				fotos += [bib.tieneFotografia3]
+
+			if (bib.tieneFotografia4):
+				fotos += [bib.tieneFotografia4]
 
 		yacimientoResult += [{'yacimiento':y,'primeraFoto':primeraFoto,'fotos':fotos}]
 		fotos = []
