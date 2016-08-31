@@ -172,7 +172,7 @@ Ruby de Valencia
                     {% if y.fotos %}
 
                     <!-- Carousel -->
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:100px;height:150px;">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:150px;height:150px;">
                       <!-- Wrapper for slides -->
 
                       <div class="carousel-inner" role="listbox">
@@ -200,6 +200,8 @@ Ruby de Valencia
                       </a>
                     </div>
 
+                   </div>
+
                     {% elif y.primeraFoto %}
 
                         <img src="/upload/{{y.primeraFoto}}" style="width:150px;height:150px;"/>
@@ -211,6 +213,9 @@ Ruby de Valencia
                     {% endif %}
 
                   </div>
+
+
+
                   <div class="media-body">
                     <!--<h4 class="media-heading">{{ y.nombre }}</h4> -->
                         <table>
