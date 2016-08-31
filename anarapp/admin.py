@@ -408,6 +408,7 @@ class BibYacimientoInline(admin.StackedInline):
     model = BibYacimiento
     form = forms.BibliografiaForm
     extra = 0
+    min_num = 1
     template = 'InlineTemplates/ApoyosYacimiento.html'
 
 class MatAVYacimientoInline(admin.StackedInline):
