@@ -296,104 +296,89 @@ class NotasYacimientoInline(admin.StackedInline):
 class EstadoConservacionYacimientoYacInline(admin.StackedInline):
     model = EstadoConserYac
     form = forms.EstadoConserYacForm
-    extra = 1
     max_num = 1
     template = 'InlineTemplates/EstadoConservacionYacimiento.html'
 
 class CausasDestruccionYacInline(admin.StackedInline):
     model = CausasDestruccionYac
     form = forms.CausasDestruccionYacForm
-    extra = 1
     max_num = 1
     suit_classes = 'suit-tab suit-tab-conservacion'
 
 class IntensidadDestruccionYacInline(admin.StackedInline):
     model = IntensidadDestruccionYac
     form = forms.IntensidadDestruccionYacForm
-    extra = 1
     max_num = 1
     suit_classes = 'suit-tab suit-tab-conservacion' 
 
 class ConsideracionesTemporalidadYacInline(admin.StackedInline):
     model = ConsiderTemp
     form = forms.ConsiderTempForm
-    extra = 1
     max_num = 1
     suit_classes = 'suit-tab suit-tab-conservacion'
 
 class CronologiaTentativaYacInline(admin.StackedInline):
     model = CronologiaTentativa
     form = forms.CronologiaTentativaForm
-    extra = 1
     suit_classes = 'suit-tab suit-tab-conservacion'
 
 class ManifestacionesAsociadasYacInline(admin.StackedInline):
     model = ManifestacionesAsociadas
     form = forms.ManifestacionesAsociadasForm
-    extra = 1
     max_num = 1
     template = 'InlineTemplates/ManifestacionYacimiento.html'
 
 class ManifestacionesLiticaInline(admin.TabularInline):
     model = ManifestacionesLitica
     form = forms.ManifestacionesLiticaForm
-    extra = 1
     max_num = 1
     suit_classes = 'suit-tab suit-tab-manifestaciones'
 
 class ManifestacionesCeramicaInline(admin.TabularInline):
     model = ManifestacionesCeramica
     form = forms.ManifestacionesCeramicaForm
-    extra = 1
     max_num = 1
     suit_classes = 'suit-tab suit-tab-manifestaciones'
 
 class ManifestacionesOseoInline(admin.TabularInline):
     model = ManifestacionesOseo
     form = forms.ManifestacionesOseoForm
-    extra = 1
     max_num = 1
     suit_classes = 'suit-tab suit-tab-manifestaciones'	
 
 class ManifestacionesConchaInline(admin.TabularInline):
     model = ManifestacionesConcha
     form = forms.ManifestacionesConchaForm
-    extra = 1
     max_num = 1
     suit_classes = 'suit-tab suit-tab-manifestaciones'	
 
 class ManifestacionesCarbonInline(admin.TabularInline):
     model = ManifestacionesCarbon
     form = forms.ManifestacionesCarbonForm
-    extra = 1
     max_num = 1
     suit_classes = 'suit-tab suit-tab-manifestaciones'		
 
 class ManifestacionesMitoInline(admin.TabularInline):
     model = ManifestacionesMito
     form = forms.ManifestacionesMitoForm
-    extra = 1
     max_num = 1
     suit_classes = 'suit-tab suit-tab-manifestaciones'	
 
 class ManifestacionesCementerioInline(admin.TabularInline):
     model = ManifestacionesCementerio
     form = forms.ManifestacionesCementerioForm
-    extra = 1
     max_num = 1
     suit_classes = 'suit-tab suit-tab-manifestaciones'		
 
 class ManifestacionesMonticuloInline(admin.TabularInline):
     model = ManifestacionesMonticulo
     form = forms.ManifestacionesMonticuloForm
-    extra = 1
     max_num = 1
     suit_classes = 'suit-tab suit-tab-manifestaciones'		
 
 class ManifestacionesOtrosInline(admin.StackedInline):
     model = ManifestacionesOtros
     form = forms.ManifestacionesOtrosForm
-    extra = 1
     max_num = 1
     suit_classes = 'suit-tab suit-tab-manifestaciones'		
 	
@@ -407,7 +392,6 @@ class OtrosValoresSitioYacInline(admin.StackedInline):
 class BibYacimientoInline(admin.StackedInline):
     model = BibYacimiento
     form = forms.BibliografiaForm
-    extra = 1
     template = 'InlineTemplates/ApoyosYacimiento.html'
 
 class MatAVYacimientoInline(admin.StackedInline):
@@ -443,7 +427,6 @@ class ObtenidaPorYacInline(admin.StackedInline):
 class ObservacionYacInline(admin.StackedInline):
     model = ObservacionesYac
     form = forms.ObservacionesForm
-    extra = 1
     max_num = 1
     suit_classes = 'suit-tab suit-tab-observaciones'
 
