@@ -3,6 +3,7 @@
 {% load url from future %}
 
 <div class="left-nav" id="left-nav">
+   HOLAAAAAA0
   <ul>
     {% block menu_home %}
       {% url 'admin:index' as index_url %}
@@ -11,6 +12,8 @@
         </a>
       </li>
     {% endblock %}
+
+      HOLAAAAAA1
 
     {% get_menu request as app_list %}
     {% if app_list %}
@@ -32,8 +35,8 @@
           </li>
         {% endif %}
       {% endfor %}
+        HOLAAAAAA2
     {% endif %}
+  HOLAAAAAA3
   </ul>
-
-  HOLAAAAAA
 </div>
