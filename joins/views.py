@@ -1316,6 +1316,7 @@ def consulta(request):
 
 	fotos = []
 	primeraFoto = ""
+	yacimientoResult = []
 
 	for y in yacimiento:
 
