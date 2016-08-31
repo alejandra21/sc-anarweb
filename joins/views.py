@@ -1326,7 +1326,7 @@ def consulta(request):
 			if (bib.tieneFotografia):
 				fotos += [bib.tieneFotografia]
 
-		if ( len(fotos)>1 ):
+		if ( len(fotos) > 0 ):
 			primeraFoto = fotos.pop(0)
 
 		yacimientoResult += [{'yacimiento':y,'primeraFoto':primeraFoto,'fotos':fotos}]
