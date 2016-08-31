@@ -177,14 +177,14 @@ Ruby de Valencia
 
                       <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                          <img src="/upload/{{y.primeraFoto}}" alt="Chania" style="width:150px;height:150px;">
+                           <a href="/upload/{{y.primeraFoto}}"><img src="/upload/{{y.primeraFoto}}" alt="Chania" style="width:150px;height:150px;"/></a>
                         </div>
 
 
                         {% for foto in y.fotos %}
 
                             <div class="item">
-                              <img src="/upload/{{foto}}" alt="Chania" style="width:150px;height:150px;">
+                              <a href="/upload/{{foto}}"><img src="/upload/{{foto}}" alt="Chania" style="width:150px;height:150px;"/> </a>
                             </div>
 
                         {% endfor %}
@@ -204,7 +204,7 @@ Ruby de Valencia
 
                     {% elif y.primeraFoto %}
 
-                        <img src="/upload/{{y.primeraFoto}}" style="width:150px;height:150px;"/>
+                        <a href="/upload/{{y.primeraFoto}}"><img src="/upload/{{y.primeraFoto}}" style="width:150px;height:150px;"/></a>
 
                     {% else %}
 
@@ -279,13 +279,13 @@ Ruby de Valencia
 
                        <div class="carousel-inner" role="listbox">
                          <div class="item active">
-                           <img src="/upload/{{m.primeraFoto}}" alt="Chania" style="width:150px;height:150px;">
+                           <a href="/upload/{{m.primeraFoto}}"><img src="/upload/{{m.primeraFoto}}" alt="Chania" style="width:150px;height:150px;"></a>
                          </div>
 
                          {% for foto in m.fotos %}
 
                              <div class="item">
-                               <img src="/upload/{{foto}}" alt="Chania" style="width:150px;height:150px;">
+                               <a href="/upload/{{foto}}"><img src="/upload/{{foto}}" alt="Chania" style="width:150px;height:150px;"/></a>
                              </div>
 
                          {% endfor %}
@@ -304,9 +304,7 @@ Ruby de Valencia
                     </div>
 
                      {% elif m.primeraFoto %}
-
-                         <img src="/upload/{{m.primeraFoto}}" style="width:150px;height:150px;"/>
-
+                         <a href="/upload/{{m.primeraFoto}}"><img src="/upload/{{m.primeraFoto}}" style="width:150px;height:150px;"/></a>
                      {% else %}
 
                          <img src="/upload/nophoto.png" style="width:150px;height:150px;"/>
