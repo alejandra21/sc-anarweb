@@ -177,14 +177,14 @@ Ruby de Valencia
 
                       <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                          <img src="/upload/{{y.primeraFoto}}" alt="Chania">
+                          <img src="/upload/{{y.primeraFoto}}" alt="Chania" style="width:150px;height:150px;">
                         </div>
 
 
                         {% for foto in y.fotos %}
 
                             <div class="item">
-                              <img src="/upload/{{foto}}" alt="Chania">
+                              <img src="/upload/{{foto}}" alt="Chania" style="width:150px;height:150px;">
                             </div>
 
                         {% endfor %}
@@ -202,11 +202,11 @@ Ruby de Valencia
 
                     {% elif y.primeraFoto %}
 
-                        <img src="/upload/{{y.primeraFoto}}" style="width:110px;height:110px;"/>
+                        <img src="/upload/{{y.primeraFoto}}" style="width:150px;height:150px;"/>
 
                     {% else %}
 
-                        <img src="/upload/nophoto.png" style="width:110px;height:110px;"/>
+                        <img src="/upload/nophoto.png" style="width:150px;height:150px;"/>
 
                     {% endif %}
 
@@ -324,5 +324,4 @@ Ruby de Valencia
 
 {% endif %}
 
-HOLAAAA entoy en templates joins
 {% endblock %}
