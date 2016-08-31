@@ -8,7 +8,7 @@ from anarapp.models import Estado, Piedra, Yacimiento, \
 							CaracSurcoPetroglifo,DescColores,MaterialYacimiento,\
 							ManifestacionesAsociadas,TipoYacimiento,CaracDeLaPintura,\
 							TecnicaParaMicroPetro,EstadoConserYac,TecnicaParaPetroglifo,\
-							Piedra2,FigurasPorTipo
+							Piedra2,FigurasPorTipo,BibYacimiento
 from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
@@ -1320,7 +1320,7 @@ def consulta(request):
 	for y in yacimiento:
 
 		bibliografia = BibYacimiento.objects.filter(yacimiento__id=y.id)
-		
+
 		for bib in bibliografia:
 			if (bib.tieneFotografia):
 				fotos += [bib.tieneFotografia]
