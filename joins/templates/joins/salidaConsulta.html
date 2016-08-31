@@ -169,7 +169,7 @@ Ruby de Valencia
                 <div class="media">
                   <div class="media-left media-middle">
 
-                    {% if y.primeraFoto and y.fotos %}
+                    {% if y.fotos %}
 
                     <!-- Carousel -->
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -177,7 +177,7 @@ Ruby de Valencia
 
                       <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                          <img src="/upload/{{bib.tieneFotografia}}" alt="Chania">
+                          <img src="/upload/{{y.primeraFoto}}" alt="Chania">
                         </div>
 
 
