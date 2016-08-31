@@ -184,7 +184,7 @@ Ruby de Valencia
                         {% for foto in y.fotos %}
 
                             <div class="item">
-                              <img src="/upload/{{bib.tieneFotografia}}" alt="Chania">
+                              <img src="/upload/{{foto}}" alt="Chania">
                             </div>
 
                         {% endfor %}
@@ -202,7 +202,7 @@ Ruby de Valencia
 
                     {% elif y.primeraFoto %}
 
-                        <img src="/upload/{{bib.tieneFotografia}}" style="width:110px;height:110px;"/>
+                        <img src="/upload/{{y.primeraFoto}}" style="width:110px;height:110px;"/>
 
                     {% else %}
 
