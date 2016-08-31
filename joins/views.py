@@ -1314,10 +1314,26 @@ def consulta(request):
 			yacimiento = Yacimiento.objects.filter(nombre__icontains=nombreElegido,
 				estado__nombre__exact=estadoElegido)
 
-	
+	fotos = []
+	primeraFoto = ""
+
+	for y in yacimiento:
+
+		bibliografia = BibYacimiento.objects.filter(yacimiento__id=y.id)
+		
+		for bib in bibliografia:
+			if (bib.tieneFotografia):
+				fotos += [bib.tieneFotografia]
+
+		if ( len(fotos)>1 ):
+			primeraFoto = fotos.pop(0)
+
+		yacimientoResult += [{'yacimiento':y,'primeraFoto':primeraFoto,'fotos':fotos}]
+		fotos = []
+
 
 	return render(request,'joins/salidaConsulta.html', 
-		{'yacimiento':yacimiento,'mapa':mapa,
+		{'yacimiento':yacimientoResult,'mapa':mapa,
 		'manifestacion':manifestacion,'forma':forma,
 		'estadoElegido':estadoElegido,
 		'manifestacionElegida':manifestacionElegida,
