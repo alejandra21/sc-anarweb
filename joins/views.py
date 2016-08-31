@@ -1317,13 +1317,14 @@ def consulta(request):
 	fotos = []
 	primeraFoto = ""
 	yacimientoResult = []
+	manifestacionResult = []
 
 	for y in yacimiento:
 
 		bibliografia = BibYacimiento.objects.filter(yacimiento__id=y.id)
 
 		for bib in bibliografia:
-			
+
 			if (bib.tieneFotografia):
 				primeraFoto = bib.tieneFotografia
 
@@ -1343,9 +1344,34 @@ def consulta(request):
 		fotos = []
 
 
+	for m in manifestacion:
+
+		bibliografia = BibYacimiento.objects.filter(yacimiento__id=m.yacimiento.id)
+
+		for bib in bibliografia:
+
+			if (bib.tieneFotografia):
+				primeraFoto = bib.tieneFotografia
+
+			if (bib.tieneFotografia1):
+				fotos += [bib.tieneFotografia1]
+
+			if (bib.tieneFotografia2):
+				fotos += [bib.tieneFotografia2]
+
+			if (bib.tieneFotografia3):
+				fotos += [bib.tieneFotografia3]
+
+			if (bib.tieneFotografia4):
+				fotos += [bib.tieneFotografia4]
+
+		manifestacionResult += [{'manifestacion':m,'primeraFoto':primeraFoto,'fotos':fotos}]
+		fotos = []
+
+
 	return render(request,'joins/salidaConsulta.html', 
 		{'yacimiento':yacimientoResult,'mapa':mapa,
-		'manifestacion':manifestacion,'forma':forma,
+		'manifestacion':manifestacionResult,'forma':forma,
 		'estadoElegido':estadoElegido,
 		'manifestacionElegida':manifestacionElegida,
 		'nombreElegido':nombreElegido})
