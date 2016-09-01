@@ -411,12 +411,11 @@ class BibYacimientoInline(admin.StackedInline):
     extra = 0
     template = 'InlineTemplates/ApoyosYacimiento.html'
 
-    
+
 
 class MatAVYacimientoInline(admin.StackedInline):
     model = MatAVYacimiento
     form = forms.MatAudioVisualForm
-    extra = 0
     suit_classes = 'suit-tab suit-tab-apoyos'
 
 class VideoYacimientoInline(admin.StackedInline):
