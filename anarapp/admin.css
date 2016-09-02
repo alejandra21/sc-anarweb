@@ -78,6 +78,10 @@ label[for=id_CaracSurcoPetroglifo-0-esAltoRelievePlanar] {
 
 /* LINKS */
 
+body {
+	background: #891111; 
+}
+
 a:link, a:visited {
     color: #891111;
     text-decoration: none;
