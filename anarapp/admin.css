@@ -76,4 +76,23 @@ label[for=id_CaracSurcoPetroglifo-0-esAltoRelievePlanar] {
 	background-position: 120px;
 }
 
+/* LINKS */
+
+a:link, a:visited {
+    color: #891111;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #891111;
+}
+
+a img {
+    border: none;
+}
+
+a.section:link, a.section:visited {
+    color: white;
+    text-decoration: none;
+}
 
