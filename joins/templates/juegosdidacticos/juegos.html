@@ -10,19 +10,39 @@
 </p>
 
 <div class="row">
-    <div class="col-xs-4 col-xs-offset-4" >
-        <a href="{% url ruedadidactica %}">
-        <h4>
+    <div class="col-xs-8 col-xs-offset-2" >
+        <h4 style="text-align:center">
+            <span style="color:gray">
+    			<b>Ruedas</b>
+    		</span>
+    		<br>
     		<span style="color:red">
-    			<b>Venezuela Rupestre -<br> Mundo Rupestre</b>
+    			<b>VENEZUELA RUPESTRE</b>
+    		</span>
+    		<span style="color:gray">
+    			y
+    		</span>
+    		<span style="color:red">
+    			<b>MUNDO RUPESTRE</b>
     		</span>
 	    </h4>
-	  	<img src="{% static "images/productosyservicios/publicaciones/mundo.png"  %}"  />
+	</div>
+</div>
+<br>
+<div class="row">
+    <div class="col-xs-4 col-xs-offset-2" >
+        <a href="{% url ruedadidactica %}">
+	  	<img src="{% static "images/productosyservicios/publicaciones/venezuela.png"  %}" style="width:270px;height:270px" />
+	  	</a>
+	</div>
+	<div class="col-xs-4" >
+        <a href="{% url ruedadidactica %}">
+	  	<img src="{% static "images/productosyservicios/publicaciones/mundo.png"  %}" style="width:270px;height:270px" />
 	  	</a>
 	</div>
 </div>
-<p>
-    Para acceder a los juegos haga clic con el cursor sobre la imagen 
-    correspondiente.
+<br>
+<p style="text-align:center">
+    Para acceder a las ruedas haga click con el cursor en la imagen correspondiente.
 </p>
 {% endblock %}
