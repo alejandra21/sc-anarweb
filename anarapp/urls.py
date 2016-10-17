@@ -6,11 +6,14 @@ from . import views
 urlpatterns = patterns('',
     # ex: /polls/
     #url(r'imagenes/1', views.imagenes1, name='1'),
-    
+    # Las expresiones regulares agrupan desde la mas pequena hasta la mas grande.
+    # por esto, si tienes inicio e iniciosw tienes que poner iniciosw antes.
     url(r'^$', views.index, name='inicio'),
+    url(r'es/inicio-Sw-interactivo', views.inicioswinteractivo, name='inicioswinteractivo'),
+    url(r'en/inicio-Sw-interactivo', views.eninicioswinteractivo, name='eninicioswinteractivo'),
     url(r'es/inicio', views.inicio, name='index'),
     url(r'en/inicio', views.en, name='en'),
-    url(r'sistema', views.sistema, name='sistema'),
+    
     url(r'es/juegosdidacticos/juegos', views.juegosdidacticosJuegos, name='juegosdidacticos'),
     url(r'es/juegosdidacticos/rueda', views.juegosdidacticosRuedaDidactica, name='ruedadidactica'),
     url(r'es/quienessomos/origen', views.quienessomosOrigenytrayectoria, name='origenytrayectoria'),
