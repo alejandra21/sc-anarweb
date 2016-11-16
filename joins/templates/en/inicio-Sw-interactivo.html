@@ -1,15 +1,16 @@
 {% extends "website-base.html" %}
 {% load staticfiles %}
-
-{% block pagetitle %}Contacto{% endblock %}
-{% block title %}Contacto{% endblock %}
+{% block pagetitle %}Pagina Principal{% endblock %}
+{% block title %}Consulta en Base de Datos{% endblock %}
 {% block user %}
 Ruby de Valencia
 {% endblock %}
+
+
 {% block submenu %}
-<ul class="list-inline ">
+<ul class="list-inline">
 	<table><tr>
-        <td style="border-top-left-radius: 10px;border-bottom-left-radius:10px"><a href="{% url index %}">Inicio	</a></td>
+        <td class="active inicial"><a href="{% url index %}">Inicio	</a></td>
     <td role="presentation" class="dropdown ">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
 					Quienes somos</a>
@@ -18,13 +19,13 @@ Ruby de Valencia
 					Origen y Trayectoria</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url areasdeespecializacion %}">
 					&Aacute;reas de Especializaci&oacute;n</a></li>
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="{% url organigrama %}">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url organigrama %}">
 					Organigrama</a></li>
            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url profesionalesadjuntos %}">
 					Profesionales adjuntos</a></li>
-    </ul>
+        </ul>
     </td>
-    <td role="presentation" class="dropdown" >
+    <td role="presentation" class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
 					Patrimonio Rupestre <br> Venezolano
         <ul class="dropdown-menu" role="menu">
@@ -56,8 +57,6 @@ Ruby de Valencia
 					Las Manifestaciones Rupestres y la Escuela</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url convenios %}">
 					Convenios - Alianzas</a></li>
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="{% url enlacesrelacionados %}">
-					Enlaces relacionados con las manifestaciones rupestres</a></li>
         </ul>
     </td>
     <td role="presentation" class="dropdown">
@@ -72,39 +71,32 @@ Ruby de Valencia
 					Asesor&iacute;as</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url visitasguiadas %}">
 					Visitas Guiadas</a></li>
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="{% url serviciosinformacion %}">
-					Servicios de Información</a></li>
         </ul>
     </td>
-    <td style="border:0px;" class="active final"><a href="{% url contacto %}">
+    <td class="final" style="border:0px;"><a href="{% url contacto %}">
 					Contacto</a></td>
 </tr></table>
 </ul>
 {% endblock %}
 
 {% block content %}
-<div class="col-sm-8">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d947.572979230192!2d-66.9081965115211!3d10.484605391315743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDI5JzA0LjYiTiA2NsKwNTQnMjcuNCJX!5e1!3m2!1ses!2sit!4v1476661922213" width="550" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+<div class="row-same-height" >
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<table>
+			<tr>
+				<a class="btn btn-primary btn-lg btn-block btn-consulta" href="/cruces/cruceUsuario">User Query</a><br>
+			</tr>
+			<tr>
+				<a class="btn btn-primary btn-lg btn-block btn-consulta" href="/cruces/tiposCruceAdmin">Admin Query</a>
+			</tr>
+		</table>
+	</div>
+	<div class="col-md-4"></div>
 </div>
-<div class="col-sm-4">
-<p>
-<img src="{% static "images/contacto/direccion.png" %}" class="contact-icon"><b>ANAR</b><br>
-Av Nueva Granada <br>
-Edf TAMAYO & Cía, Piso 1<br>
-Los Rosales<br>
-Caracas, Venezuela<br>
-</p>
-<p>
- <img src="{% static "images/contacto/telefono.png" %}" class="contact-icon">  +58 - 212- 668.12.20
-</p>
-<p>
-<img src="{% static "images/contacto/email.png" %}" class="contact-icon">  anarvenezuela@gmail.com
-</p>
-<p>
-<img src="{% static "images/contacto/email.png" %}" class="contact-icon">  anarvenezuela@yahoo.com
-</p>
-<p>
-<img src="{% static "images/contacto/facebook.png" %}" class="contact-icon">  https://www.facebook.com/ANAR-Archivo-Nacional-de-Arte-Rupestre--1387436064885156/
-</p>
-</div>
+
+
 {% endblock %}
+
+

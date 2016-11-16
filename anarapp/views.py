@@ -5,15 +5,15 @@ from django.shortcuts import render_to_response
 def landing_es(request):
 	return render(request, 'index.html')
 
+def inicioswinteractivo(request):
+    return render(request, 'inicio-Sw-interactivo.html')
+    
 def index(request):
     return render(request, 'index.html')
 
 def inicio(request):
     return render(request, 'inicio.html')
 
-def sistema(request):
-    return render(request, 'sistema.html')
-    
 def juegosdidacticosJuegos(request):
 	return render(request, 'juegosdidacticos/juegos.html')
 
@@ -97,9 +97,13 @@ def productosyserviciosServiciosinformacion(request):
 
 def contacto(request):
 	return render(request, 'contacto.html')
+
 	
 def landing_en(request):
 	return render(request, 'en/index.html')
+
+def eninicioswinteractivo(request):
+    return render(request, 'en/inicio-Sw-interactivo.html')
 
 def en(request):
 	return render(request, 'en/inicio.html')
