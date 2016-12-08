@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import patterns, url, include
 
 #from AnarWeb.apps.yacimientos import views
 from . import views
@@ -9,6 +9,8 @@ urlpatterns = patterns('',
     # Las expresiones regulares agrupan desde la mas pequena hasta la mas grande.
     # por esto, si tienes inicio e iniciosw tienes que poner iniciosw antes.
     url(r'^$', views.index, name='inicio'),
+    url(r'cruces/', include('joins.urls')),
+    
     url(r'es/inicio-Sw-interactivo', views.inicioswinteractivo, name='inicioswinteractivo'),
     url(r'en/inicio-Sw-interactivo', views.eninicioswinteractivo, name='eninicioswinteractivo'),
     url(r'es/inicio', views.inicio, name='index'),
