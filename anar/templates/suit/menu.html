@@ -3,6 +3,7 @@
 {% load url from future %}
 
 <div class="left-nav" id="left-nav">
+   HOLAAAAAA0
   <ul>
     {% block menu_home %}
       {% url 'admin:index' as index_url %}
@@ -12,7 +13,11 @@
       </li>
     {% endblock %}
 
+      HOLAAAAAA1
+
     {% get_menu request as app_list %}
+    <img src="/upload/Logo-ANAR.png">
+
     {% if app_list %}
       {% for app in app_list %}
         {% if app.separator %}
@@ -32,6 +37,10 @@
           </li>
         {% endif %}
       {% endfor %}
+        HOLAAAAAA2
     {% endif %}
+
+    <img src="/upload/Logo-ANAR.png">
+  HOLAAAAAA3
   </ul>
 </div>

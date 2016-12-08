@@ -1,14 +1,14 @@
 {% extends "website-base.html" %}
 {% load staticfiles %}
 {% block pagetitle %}Pagina Principal{% endblock %}
-{% block title %}{% endblock %}
+{% block title %}Consulta en Base de Datos{% endblock %}
 {% block user %}
-Ruby De Valencia
+Ruby de Valencia
 {% endblock %}
 
 
 {% block submenu %}
-<ul class="list-inline ">
+<ul class="list-inline">
 	<table><tr>
         <td class="active inicial"><a href="{% url index %}">Inicio	</a></td>
     <td role="presentation" class="dropdown ">
@@ -19,11 +19,11 @@ Ruby De Valencia
 					Origen y Trayectoria</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url areasdeespecializacion %}">
 					&Aacute;reas de Especializaci&oacute;n</a></li>
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="{% url organigrama %}">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url organigrama %}">
 					Organigrama</a></li>
            <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url profesionalesadjuntos %}">
 					Profesionales adjuntos</a></li>
-    </ul>
+        </ul>
     </td>
     <td role="presentation" class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"  role="button" aria-expanded="false">
@@ -64,7 +64,7 @@ Ruby De Valencia
 					Productos y<br> Servicios</a>
         <ul class="dropdown-menu" role="menu">
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url publicaciones %}">
-					Publicaciones</li>
+					Publicaciones</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url productos %}">
 					Productos</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url asesorias %}">
@@ -73,7 +73,7 @@ Ruby De Valencia
 					Visitas Guiadas</a></li>
         </ul>
     </td>
-    <td class="final" style="border:0px"><a href="{% url contacto %}">
+    <td class="final" style="border:0px;"><a href="{% url contacto %}">
 					Contacto</a></td>
 </tr></table>
 </ul>
@@ -81,34 +81,20 @@ Ruby De Valencia
 
 {% block content %}
 
-<form action="/cruces/consulta/" method="get">
-
-    {% csrf_token %}
-
-    <table>
-        <td>
-            <label>Manifestación</label>
-            {{ forma.manifestacion }}
-        </td>
-        <td>
-            <label>Estado</label>
-                    {{ forma.estado }}
-        </td>
-        <td>
-            <label>Nombre</label>
-            {{ forma.nombre }}
-        </td>
-    </table> 
-    <br>
-    <center><input type="submit" value="Aceptar" /> </center>
-</form>
-<br>
-<div class="panel panel-default">
-  <div class="panel-body">
-    Sin resultados.
-  </div>
+<div class="row-same-height" >
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<table>
+			<tr>
+				<a class="btn btn-primary btn-lg btn-block btn-consulta" href="/admin">Sitio administrativo</a><br>
+			</tr>
+			<tr>
+				<a class="btn btn-primary btn-lg btn-block btn-consulta" href="/cruces/tiposCruceAdmin"> Consultas</a>
+			</tr>
+		</table>
+	</div>
+	<div class="col-md-4"></div>
 </div>
 
+
 {% endblock %}
-
-

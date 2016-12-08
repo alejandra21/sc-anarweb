@@ -38,10 +38,10 @@ OPCIONES_MANIFESTACIONES = (
     ('---', '---'),
     ('Pinturas Rupestres','Pinturas Rupestres'),
     ('Cerros y Piedras Miticas Naturales','Cerros y Piedras Miticas Naturales'),
-    ('Amoladores,Cupula,Puntos Acoplados','Amoladores,Cúpula,Puntos Acoplados'),
+    ('Amoladores,Cupulas,Puntos Acoplados','Amoladores,Cúpulas,Puntos Acoplados'),
     ('Geoglifo','Geoglifo'),
-    ('Micropentoglifos','Micropentoglifos'),
-    ('Monumentos megaliticos','Monumentos megaliticos'),
+    ('Micropetroglifos','Micropetroglifos'),
+    ('Monumentos Megaliticos','Monumentos Megaliticos'),
     ('Petroglifos','Petroglifos'),
 )
 

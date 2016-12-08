@@ -1,7 +1,7 @@
 {% extends "website-base.html" %}
 {% load staticfiles %}
 {% block pagetitle %}Pagina Principal{% endblock %}
-{% block title %}Consulta en Base de Datos{% endblock %}
+{% block title %}{% endblock %}
 {% block user %}
 Ruby de Valencia
 {% endblock %}
@@ -81,15 +81,17 @@ Ruby de Valencia
 
 {% block content %}
 
+
+<h3><strong>Consulta en Base de Datos</strong></h3>
 <div class="row-same-height" >
 	<div class="col-md-4"></div>
 	<div class="col-md-4">
 		<table>
 			<tr>
-				<a class="btn btn-primary btn-lg btn-block btn-consulta" href="/cruces/cruceUsuario">Consulta usuario</a><br>
+				<a class="btn btn-primary btn-lg btn-block btn-consulta" href="/cruces/cruceUsuario">Usuario</a><br>
 			</tr>
 			<tr>
-				<a class="btn btn-primary btn-lg btn-block btn-consulta" href="/cruces/tiposCruceAdmin"> Consulta administrador</a>
+				<a class="btn btn-primary btn-lg btn-block btn-consulta" href="/cruces/administrador"> Administrador</a>
 			</tr>
 		</table>
 	</div>

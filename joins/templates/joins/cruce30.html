@@ -11,30 +11,40 @@
 
 {% block content %}
 
+{% if listaResultados %}
+	<ul>
+	    {% for resultado in listaResultados %}
+			<h4>
+				<a href="/admin/anarapp/yacimiento/{{resultado.yacimiento.id}}">
+					<li><strong>Nombre:</strong>{{resultado.yacimiento.nombre}}</li>
+				</a>
+			</h4>
+			<i> 
+				<ul><strong>Código</strong>: {{resultado.yacimiento.codigo}}</ul>
+				<ul><strong>Estado</strong>: {{resultado.yacimiento.estado.nombre}}</ul>
 
-<ul>
-    {% for resultado in listaResultados %}
-		<h4>
-			<a href="/admin/anarapp/yacimiento/{{resultado.yacimiento.id}}">
-				<li><strong>Nombre:</strong>{{resultado.yacimiento.nombre}}</li>
-			</a>
-		</h4>
-		<i> 
-			<ul><strong>Código</strong>: {{resultado.yacimiento.codigo}}</ul>
-			<ul><strong>Estado</strong>: {{resultado.yacimiento.estado.nombre}}</ul>
+				<ul><h4><strong>Rocas :</strong></h4>
+				{% for piedras in resultado.piedra %}
 
-			<ul><h4><strong>Rocas :</strong></h4>
-			{% for piedras in resultado.piedra %}
-				<ul><strong>Código</strong>: {{piedras.piedra.codigo}}</ul>
-				<ul><strong>Estado</strong>: {{piedras.piedra.estado.nombre}}</ul>
-			{% endfor %}
+					<a href="/admin/anarapp/piedra/{{piedras.piedra.id}}" style="color:black"> 
+						<ul><strong>Código</strong>: {{piedras.piedra.codigo}}</ul>
+                    </a>
+                    
+					<ul><strong>Estado</strong>: {{piedras.piedra.estado.nombre}}</ul>
+				{% endfor %}
 
-			</ul>
+				</ul>
 
-		</i>
-	{%endfor%}
-	
-</ul>
+			</i>
+		{%endfor%}
+		
+	</ul>
+
+{% else %}
+
+  <h4>Sin resultados.</h4>
+  
+{% endif %}
 
 
 {% endblock %}

@@ -8,7 +8,7 @@ from anarapp.models import Estado, Piedra, Yacimiento, \
 							CaracSurcoPetroglifo,DescColores,MaterialYacimiento,\
 							ManifestacionesAsociadas,TipoYacimiento,CaracDeLaPintura,\
 							TecnicaParaMicroPetro,EstadoConserYac,TecnicaParaPetroglifo,\
-							Piedra2,FigurasPorTipo
+							Piedra2,FigurasPorTipo,BibYacimiento
 from joins.forms import CrucesYYForm, CrucesYYFormAdmin
 
 
@@ -21,6 +21,9 @@ def cruceUsuario(request):
 
 	forma = CrucesYYForm
 	return render(request, 'sistema.html',{'forma':forma})
+
+def administrador(request):
+	return render(request, 'administrador.html')
 
 def tiposCruceAdmin(request):
 	return render(request, 'tipo_consultaAdmin.html')
@@ -977,9 +980,44 @@ def cruces(request,cruce_id):
 		return render(request,entrada,{'listaResultados':listaResultados})
 
 
+	elif (cruce_id == "28"):
+
+		estado = request.GET['estado']
+		clasificacion = request.GET['caracteristicaPintura2']
+		anchoDesde = request.GET['anchoDesde']
+		anchoHasta = request.GET['anchoHasta']
+		listaResultados = []
+
+		if (clasificacion == "Linea sencilla"):
+			elementos = CaracDeLaPintura.objects.filter(esLineaSencilla=True)
+
+		elif (clasificacion == "Linea compuesta"):
+			elementos = CaracDeLaPintura.objects.filter(esLineaCompuesta=True)
+
+
+		if (estado != "Todos"):
+			elementos = elementos.filter(yacimiento__estado__nombre=estado)
+
+
+		for result in elementos:
+
+			anchoD = result.anchoDe
+			anchoH = result.anchoA
+
+			if (anchoD <= anchoDesde  and anchoH >= anchoHasta):
+
+
+				roca = Piedra.objects.filter(yacimiento__id=result.yacimiento.id)
+
+				listaResultados += [{'yacimiento':result,'piedra':roca,
+									'anchoDesde':anchoD,'anchoHasta':anchoH}]
+
+
+		return render(request,entrada,{'listaResultados':listaResultados})
+			
+
 	elif (cruce_id=="30"):
 
-		codigo = request.GET['codigo']
 		estado = request.GET['estado']
 		noCaras = int(request.GET['noCaras'])
 		noCarasTrabajadas = int(request.GET['noCarasTrabajadas'])
@@ -1196,42 +1234,42 @@ def consulta(request):
 	 	# Se seleccionan las manifestaciones correspondientes
 		if(manifestacionElegida=="Pinturas Rupestres"):
 			manifestacion = ManifestacionYacimiento.objects.filter(esPintura=True)
-			mapa = "/upload/PinturaRupestre.jpg"
+			mapa = "/upload/PinturasRupestre.png"
 
 		elif(manifestacionElegida=="Cerros y Piedras Miticas Naturales"):
 
 			manifestacion = ManifestacionYacimiento.objects.filter(
 				Q(esPiedraMiticaNatural=True)| Q(esCerroMiticoNatural=True))
 
-			mapa = "/upload/Cerros.jpg"
+			mapa = "/upload/Cerros.png"
 
-		elif(manifestacionElegida=='Amoladores,Cupula,Puntos Acoplados'):
+		elif(manifestacionElegida=='Amoladores,Cupulas,Puntos Acoplados'):
 			manifestacion = ManifestacionYacimiento.objects.filter(
 				Q(esAmolador=True)|Q(esCupulas=True)|Q(esPuntosAcoplados=True) )
 
 			#FALTA
-			mapa = "/upload/Amoladores.jpg"
+			mapa = "/upload/Amoladores.png"
 			
 		elif(manifestacionElegida=="Geoglifo"):
 			manifestacion = ManifestacionYacimiento.objects.filter(esGeoglifo=True)
-			mapa = "/upload/Geoglifos.jpg"
+			mapa = "/upload/Geoglifos.png"
 
-		elif(manifestacionElegida=="Micropentoglifos"):
+		elif(manifestacionElegida=="Micropetroglifos"):
 			# Hay que agregar este atributo en el modelo de datos
 			manifestacion = \
 			ManifestacionYacimiento.objects.filter(esMonumentosMegaliticos=True)
 			#FALTA
-			mapa = "/upload/Micropetroglifos.jpg"
+			mapa = "/upload/Micropetroglifos.png"
 			
-		elif(manifestacionElegida=="Monumentos megaliticos"):
+		elif(manifestacionElegida=="Monumentos Megaliticos"):
 			manifestacion = \
 			ManifestacionYacimiento.objects.filter(esMonumentosMegaliticos=True)
-			mapa = "/upload/Monumentos.jpg"
+			mapa = "/upload/Monumentos.png"
 
 		elif(manifestacionElegida=="Petroglifos"):
 			manifestacion = ManifestacionYacimiento.objects.filter(esPetroglifo=True)
 			#FALTA
-			mapa = "/upload/Petroglifos.jpg"
+			mapa = "/upload/Petroglifos.png"
 
 		########################################################################	
 
@@ -1276,11 +1314,66 @@ def consulta(request):
 			yacimiento = Yacimiento.objects.filter(nombre__icontains=nombreElegido,
 				estado__nombre__exact=estadoElegido)
 
-	
+	fotos = []
+	primeraFoto = ""
+	yacimientoResult = []
+	manifestacionResult = []
+
+	for y in yacimiento:
+
+		bibliografia = BibYacimiento.objects.filter(yacimiento__id=y.id)
+
+		for bib in bibliografia:
+
+			if (bib.tieneFotografia):
+				primeraFoto = bib.tieneFotografia
+
+			if (bib.tieneFotografia1):
+				fotos += [bib.tieneFotografia1]
+
+			if (bib.tieneFotografia2):
+				fotos += [bib.tieneFotografia2]
+
+			if (bib.tieneFotografia3):
+				fotos += [bib.tieneFotografia3]
+
+			if (bib.tieneFotografia4):
+				fotos += [bib.tieneFotografia4]
+
+		yacimientoResult += [{'yacimiento':y,'primeraFoto':primeraFoto,'fotos':fotos}]
+		fotos = []
+		primeraFoto = ""
+
+
+	for m in manifestacion:
+
+		bibliografia = BibYacimiento.objects.filter(yacimiento__id=m.yacimiento.id)
+
+		for bib in bibliografia:
+
+			if (bib.tieneFotografia):
+				primeraFoto = bib.tieneFotografia
+
+			if (bib.tieneFotografia1):
+				fotos += [bib.tieneFotografia1]
+
+			if (bib.tieneFotografia2):
+				fotos += [bib.tieneFotografia2]
+
+			if (bib.tieneFotografia3):
+				fotos += [bib.tieneFotografia3]
+
+			if (bib.tieneFotografia4):
+				fotos += [bib.tieneFotografia4]
+
+		manifestacionResult += [{'manifestacion':m,'primeraFoto':primeraFoto,'fotos':fotos}]
+		fotos = []
+		primeraFoto = ""
+
 
 	return render(request,'joins/salidaConsulta.html', 
-		{'yacimiento':yacimiento,'mapa':mapa,
-		'manifestacion':manifestacion,'forma':forma,
+		{'yacimiento':yacimientoResult,'mapa':mapa,
+		'manifestacion':manifestacionResult,'forma':forma,
 		'estadoElegido':estadoElegido,
 		'manifestacionElegida':manifestacionElegida,
 		'nombreElegido':nombreElegido})

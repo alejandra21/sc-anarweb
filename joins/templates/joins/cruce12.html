@@ -12,20 +12,28 @@
 
 {% block content %}
 
-	<ul>
-	    {% for resultado in listaManifestaciones %}
-			<h4>
-				<a href="/admin/anarapp/yacimiento/{{resultado.yacimiento.id}}">
-					<li><strong>Nombre:</strong>{{resultado.yacimiento.nombre}}</li>
-				</a>
-			</h4>
-			<i> 
-				<ul>Código: {{resultado.yacimiento.codigo}}</ul>
-				<ul>Estado: {{resultado.yacimiento.estado.nombre}}</ul>
-			</i>
-		{%endfor%}
-		
-	</ul>
+	{% if resultado %}
+
+		<ul>
+		    {% for resultado in listaManifestaciones %}
+				<h4>
+					<a href="/admin/anarapp/yacimiento/{{resultado.yacimiento.id}}">
+						<li><strong>Nombre:</strong>{{resultado.yacimiento.nombre}}</li>
+					</a>
+				</h4>
+				<i> 
+					<ul>Código: {{resultado.yacimiento.codigo}}</ul>
+					<ul>Estado: {{resultado.yacimiento.estado.nombre}}</ul>
+				</i>
+			{%endfor%}
+			
+		</ul>
+
+	{% else %}
+
+	  <h4>Sin resultados.</h4>
+	  
+	{% endif %}
 
 {% endblock %}
 

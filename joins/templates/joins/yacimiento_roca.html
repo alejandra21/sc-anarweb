@@ -1,7 +1,7 @@
 {% extends "website-base.html" %}
 {% load staticfiles %}
 {% block pagetitle %}Pagina Principal{% endblock %}
-{% block title %}Consulta en Base de Datos{% endblock %}
+{% block title %}{% endblock %}
 {% block user %}
 Ruby de Valencia
 {% endblock %}
@@ -81,10 +81,16 @@ Ruby de Valencia
 
 {% block content %}
 
+<div class="row" >
+    <div class="col-md-4"><h4><strong>Consulta de base de datos</strong></h4></div>
+    <div class="col-md-4"><h4><strong><ul>Yacimiento-Roca</ul></strong></h4></div>
+</div>
+<br>
+
     <div style="width: 70%; margin: auto">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 1 - <i>(PB1) Yacimiento</i> con <i>(Pa) Roca</i></strong></h3>
+            <h3 class="panel-title"><strong>Cruce 1 </strong></h3>
           </div>
           <div class="panel-body">
             <p>
@@ -102,9 +108,9 @@ Ruby de Valencia
                 Técnicas (23), (23.1.1), (23.)2, con: <br/>
                 <form action="/cruces/27/">
                     <label>(3) Estado: {{ form.estado }} </label></br>
-                    <label>(13) Manifestacion asociada: {{form.manifasociadas}}</label></br>
-                    <label>(14) Ubicacion : {{form.ubicacion}}</label></br>
-                    <label>(24) Caracteristicas del surco: {{form.carasurcopetrotipo3}}</label></br>
+                    <label>(13) Manifestación asociada: {{form.manifasociadas}}</label></br>
+                    <label>(14) Ubicación : {{form.ubicacion}}</label></br>
+                    <label>(24) Características del surco: {{form.carasurcopetrotipo3}}</label></br>
                     <input type="submit" class="button" value="Consultar"/>
                 </form>
             </p>
@@ -113,7 +119,7 @@ Ruby de Valencia
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 2 - <i>(PB1) Yacimiento</i> con <i>(Pa) Roca</i></strong></h3>
+            <h3 class="panel-title"><strong>Cruce 2 </strong></h3>
           </div>
           <div class="panel-body">
             <p>
@@ -124,7 +130,7 @@ Ruby de Valencia
                 <form action="/cruces/28/">
                     <label>(3) Estado: {{ form.estado }} </label></br>
                     <label>(25.2) Pincelada de ancho de: {{form.anchoDesde}} a {{form.anchoHasta}}</label></br>
-                    <label>(25.3) Caracteristica pintura: {{form.caracteristicaPintura2}} </label></br>
+                    <label>(25.3) Característica pintura: {{form.caracteristicaPintura2}} </label></br>
                     <input type="submit" class="button" value="Consultar"/>
                 </form>
             </p>
@@ -133,7 +139,7 @@ Ruby de Valencia
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><strong>Cruce 3 - <i>(PB1) Yacimiento</i> con <i>(Pa) Roca</i></strong></h3>
+            <h3 class="panel-title"><strong>Cruce 3 </strong></h3>
           </div>
           <div class="panel-body">
             <p>

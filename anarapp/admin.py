@@ -407,43 +407,45 @@ class OtrosValoresSitioYacInline(admin.StackedInline):
 class BibYacimientoInline(admin.StackedInline):
     model = BibYacimiento
     form = forms.BibliografiaForm
-    extra = 1
+    min_num = 1
+    extra = 0
     template = 'InlineTemplates/ApoyosYacimiento.html'
+
+
 
 class MatAVYacimientoInline(admin.StackedInline):
     model = MatAVYacimiento
     form = forms.MatAudioVisualForm
-    extra = 1
     suit_classes = 'suit-tab suit-tab-apoyos'
 
 class VideoYacimientoInline(admin.StackedInline):
     model = VideoYacimiento
     form = forms.VideoForm
-    extra = 1
+    extra = 0
     suit_classes = 'suit-tab suit-tab-apoyos'
 
 class PeliYacimientoInline(admin.StackedInline):
     model = PeliYacimiento
     form = forms.VideoForm
-    extra = 1
+    extra = 0
     suit_classes = 'suit-tab suit-tab-apoyos'
 
 class PaginaWebYacInline(admin.TabularInline):
     model = PaginaWebYac
     form = forms.PaginaWebForm
-    extra = 1
+    extra = 0
     suit_classes = 'suit-tab suit-tab-apoyos'    
 
 class MultimediaYacInline(admin.StackedInline):
     model = MultimediaYac
     form = forms.MultimediaForm
-    extra = 1
+    extra = 0
     suit_classes = 'suit-tab suit-tab-apoyos' 
    
 class ObtenidaPorYacInline(admin.StackedInline):
     model = ObtInfoYac
     form = forms.ObtencionInfoForm
-    extra = 1
+    extra = 0
     suit_classes = 'suit-tab suit-tab-apoyos'
 
 class ObservacionYacInline(admin.StackedInline):

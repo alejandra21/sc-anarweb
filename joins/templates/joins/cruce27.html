@@ -31,16 +31,19 @@
                 <ul> <h4><strong>Rocas :</strong></h4>
                 {% for piedras in resultado.piedra %}
 
-                    <ul><strong>Código</strong>: {{piedras.codigo}}</ul>
+                    <a href="/admin/anarapp/piedra/{{piedras.id}}" style="color:black"> 
+                        <ul><strong>Código</strong>: {{piedras.codigo}}</ul>
+                    </a>
+
                     <ul><strong>Nombre roca</strong>: {{piedras.nombre}}</ul>
 
                     {% for roca in piedras.Piedra2.all %}
-                        <ul><strong>(Pa 4)Numero de caras</strong>:{{roca.numeroCaras}}</ul>
-                        <ul><strong>(Pa 5)Numero de caras trabajadas </strong>:{{roca.numeroCarasTrajabadas}}</ul>
+                        <ul><strong>(Pa  4) Numero de caras</strong>:{{roca.numeroCaras}}</ul>
+                        <ul><strong>(Pa  5) Numero de caras trabajadas </strong>:{{roca.numeroCarasTrajabadas}}</ul>
                     {% endfor %}
 
                     {% for roca in piedras.FigurasPorTipo.all %}
-                        <ul><strong>(Pa 6.1)Numero de caras trabajadas</strong>:{{roca.numero}}</ul>
+                        <ul><strong>(Pa6.1) Numero de caras trabajadas</strong>:{{roca.numero}}</ul>
 
                         {% if roca.tipoFigura == 1 %}
                         	<ul><strong>(Pa 9) Tipo de figura </strong>: Antropomorfas</ul>
@@ -69,13 +72,13 @@
                     {% for roca in piedras.ConexionFiguras.all %}
 
                     	{% if roca.conexionFiguras == 1 %}
-                    	    <ul><strong>(Pa 11)Conexion figuras</strong>:Presencia de una sola figura</ul>
+                    	    <ul><strong>(Pa 11) Conexion figuras</strong>:Presencia de una sola figura</ul>
                     	{% elif roca.conexionFiguras == 2  %}
-                    		<ul><strong>(Pa 11)Conexion figuras</strong>:Menos de 10% interconectadas </ul>
+                    		<ul><strong>(Pa 11) Conexion figuras</strong>:Menos de 10% interconectadas </ul>
                     	{% elif roca.conexionFiguras == 3 %}
-                    		<ul><strong>(Pa 11)Conexion figuras</strong>:50% interconectadas </ul>
+                    		<ul><strong>(Pa 11) Conexion figuras</strong>:50% interconectadas </ul>
                     	{% elif roca.conexionFiguras == 4 %}
-                    		<ul><strong>(Pa 11)Conexion figuras</strong>:Mas de 80% interconectadas </ul>
+                    		<ul><strong>(Pa 11) Conexion figuras</strong>:Mas de 80% interconectadas </ul>
                     	{% endif %}
 
                     {% endfor %}

@@ -12,24 +12,32 @@
 
 {% block content %}
 
-<ul>
-    {% for resultado in listaResultado %}
-		<h4>
-			<a href="/admin/anarapp/yacimiento/{{resultado.result.yacimiento.id}}">
-				<li><strong>Nombre:</strong>{{resultado.result.yacimiento.nombre}}</li>
-			</a>
-		</h4>
-		<i> 
-			<ul><strong>Código</strong>: {{resultado.result.yacimiento.codigo}}</ul>
-			<ul><strong>Estado</strong>: {{resultado.result.yacimiento.estado.nombre}}</ul>
-			<ul><strong>Ancho desde</strong>: {{resultado.anchoDesde}}</ul>
-			<ul><strong>Ancho hasta</strong> : {{resultado.anchoHasta}}</ul>
-			<ul><strong>Profundida desde</strong>: {{resultado.profundidadDesde}}</ul>
-			<ul><strong>Profundidad hasta</strong>: {{resultado.profundidadHasta}}</ul>
-		</i>
-	{%endfor%}
-	
-</ul>
+{% if resultado %}
+
+	<ul>
+	    {% for resultado in listaResultado %}
+			<h4>
+				<a href="/admin/anarapp/yacimiento/{{resultado.result.yacimiento.id}}">
+					<li><strong>Nombre:</strong>{{resultado.result.yacimiento.nombre}}</li>
+				</a>
+			</h4>
+			<i> 
+				<ul><strong>Código</strong>: {{resultado.result.yacimiento.codigo}}</ul>
+				<ul><strong>Estado</strong>: {{resultado.result.yacimiento.estado.nombre}}</ul>
+				<ul><strong>Ancho desde</strong>: {{resultado.anchoDesde}}</ul>
+				<ul><strong>Ancho hasta</strong> : {{resultado.anchoHasta}}</ul>
+				<ul><strong>Profundida desde</strong>: {{resultado.profundidadDesde}}</ul>
+				<ul><strong>Profundidad hasta</strong>: {{resultado.profundidadHasta}}</ul>
+			</i>
+		{%endfor%}
+		
+	</ul>
+
+{% else %}
+
+  <h4>Sin resultados.</h4>
+  
+{% endif %}
 
 		
 

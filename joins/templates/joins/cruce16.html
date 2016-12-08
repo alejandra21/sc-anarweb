@@ -18,6 +18,8 @@
 	<h3>Hay un total de {{total}} Pinturas Rupestres que tienen <u>{{tipo}}</u> </h3>
 
 
+{% if listaResultado %}
+
 		{% for result in listaResultado %}
 	    	<a href="/admin/anarapp/yacimiento/{{result.yacimiento.yacimiento.id}}"><h4><strong>Nombre:</strong>{{result.yacimiento.yacimiento.nombre}}</h4></a>
 	    	<li>
@@ -27,6 +29,12 @@
 	    		<strong>Estado:</strong>{{result.yacimiento.yacimiento.estado}} 
 			</li>
     	{% endfor %}
+
+{% else %}
+
+  <h4>Sin resultados.</h4>
+  
+{% endif %}
 
 
 {% endblock %}
