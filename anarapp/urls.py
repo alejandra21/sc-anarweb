@@ -1,5 +1,11 @@
 from django.conf.urls import patterns, url, include
 
+from django.conf import settings
+# Uncomment the next two lines to enable the admin:
+from django.contrib import admin
+
+admin.autodiscover()
+
 #from AnarWeb.apps.yacimientos import views
 from . import views
 
@@ -9,7 +15,17 @@ urlpatterns = patterns('',
     # Las expresiones regulares agrupan desde la mas pequena hasta la mas grande.
     # por esto, si tienes inicio e iniciosw tienes que poner iniciosw antes.
     url(r'^$', views.index, name='inicio'),
+    
     url(r'cruces/', include('joins.urls')),
+    url(r'^upload/(?P<path>.*)$','django.views.static.serve',
+		{'document_root':settings.MEDIA_ROOT,}
+	),
+
+	# Uncomment the admin/doc line below to enable admin documentation:
+	url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+
+	# Uncomment the next line to enable the admin:        
+	url(r'^admin/', include(admin.site.urls)),
     
     url(r'es/inicio-Sw-interactivo', views.inicioswinteractivo, name='inicioswinteractivo'),
     url(r'en/inicio-Sw-interactivo', views.eninicioswinteractivo, name='eninicioswinteractivo'),
